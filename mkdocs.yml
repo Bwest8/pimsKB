@@ -2,6 +2,8 @@ site_name: PIMS Knowledge Base
 
 theme:
   name: material
+  font:
+    text: Roboto
   palette:
 
     # Palette toggle for light mode
@@ -16,13 +18,16 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
   - tags
   - search
 
 extra:
-  version:
-    provider: mike
   consent:
     title: Cookie consent
     description: >- 
