@@ -124,7 +124,7 @@ A unique numeric and/or alphabetical unit used to identify this calendar.
 ### 4 - **CALENDAR DESCRIPTION**
 **Free-form text description of the calendar; its purpose is to target student population.**
 
-!!! info " Required  |  Updateable  |  Max Length: `100`"
+!!! info " <span style="color: red; font-weight: bold;">Required</span>  |  Updateable  |  Max Length: `100`"
     **Business Rules**: A detailed description for the student or group of students for this calendar. IU may include school district name to designate location of IU classroom.
 
 ???+ example "Sample / Valid Value"
