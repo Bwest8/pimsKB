@@ -537,6 +537,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -684,6 +693,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -801,7 +819,7 @@ A single date (June 30), the last day of the current school year indicating the 
 <h3 id="4-calendar-description">4 - <strong>CALENDAR DESCRIPTION</strong><a class="headerlink" href="#4-calendar-description" title="Permanent link">&para;</a></h3>
 <p><strong>Free-form text description of the calendar; its purpose is to target student population.</strong></p>
 <div class="admonition info">
-<p class="admonition-title"> Required  |  Updateable  |  Max Length: <code>100</code></p>
+<p class="admonition-title"> <span style="color: red; font-weight: bold;">Required</span>  |  Updateable  |  Max Length: <code>100</code></p>
 <p><strong>Business Rules</strong>: A detailed description for the student or group of students for this calendar. IU may include school district name to designate location of IU classroom.</p>
 </div>
 <details class="example" open="open">
@@ -928,7 +946,9 @@ A single date (June 30), the last day of the current school year indicating the 
     NUMBER OF SCHEDULED SCHOOL DAYS + TOTAL MAKEUP DAYS – (sum of TOTAL DAYS LOST in Fields 16, 17, and 18)</li>
 </ol>
 <p><strong>The total number of school days is calculated by the formula:</strong></p>
-<p><code>NUMBER OF SCHEDULED SCHOOL DAYS</code> + <code>TOTAL MAKEUP DAYS</code> – (<code>TOTAL DAYS LOST DUE TO STRIKE</code> + <code>TOTAL DAYS LOST DUE TO ACT 80</code> + <code>TOTAL DAYS LOST DUE TO OTHER REASONS</code>)</p>
+<p><code>NUMBER OF SCHEDULED SCHOOL DAYS</code> + <code>TOTAL MAKEUP DAYS</code> 
+– 
+(<code>TOTAL DAYS LOST DUE TO STRIKE</code> + <code>TOTAL DAYS LOST DUE TO ACT 80</code> + <code>TOTAL DAYS LOST DUE TO OTHER REASONS</code>)</p>
 <p>Where:</p>
 <ul>
 <li>
@@ -949,6 +969,43 @@ A single date (June 30), the last day of the current school year indicating the 
 </ul>
 <p><strong>Load Sequence/Dependencies</strong> </p>
 <p>No Dependencies</p>
+<div class="admonition note">
+<p class="admonition-title">The total number of school days is calculated by:</p>
+<ul>
+<li>
+<p>Start with the <strong>NUMBER OF SCHEDULED SCHOOL DAYS</strong> + <strong>TOTAL MAKEUP DAYS</strong></p>
+</li>
+<li>
+<p>Subtract the sum of:</p>
+<ul>
+<li><strong>TOTAL DAYS LOST DUE TO STRIKE</strong></li>
+<li><strong>TOTAL DAYS LOST DUE TO ACT 80</strong></li>
+<li><strong>TOTAL DAYS LOST DUE TO OTHER REASONS</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<p>The total number of school days is calculated by the formula:</p>
+<h2 id="rules_1">Rules<a class="headerlink" href="#rules_1" title="Permanent link">&para;</a></h2>
+<p>See the <a href="#">Rules Section of the Template Domain</a> for rules consistent throughout all templates.</p>
+<div class="admonition note">
+<p class="admonition-title">General Rules</p>
+<ul>
+<li>Fields <code>16</code>, <code>17</code>, <code>18</code>, <code>19</code>, and <code>20</code> must be greater than or equal to zero.</li>
+<li>The sum of <code>TOTAL DAYS LOST</code> in Fields <code>16</code>, <code>17</code>, and <code>18</code> must be:<ul>
+<li>Less than or equal to <code>NUMBER OF SCHEDULED SCHOOL DAYS</code>.</li>
+<li>Greater than or equal to <code>TOTAL MAKE-UP DAYS</code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">TOT_DAYS_IN_SESSION Calculation</p>
+<p><code>TOT_DAYS_IN_SESSION</code> is derived using the following formula:</p>
+<div class="highlight"><pre><span></span><code>NUMBER OF SCHEDULED SCHOOL DAYS + TOTAL MAKEUP DAYS – (sum of TOTAL DAYS LOST in Fields 16, 17, and 18)
+</code></pre></div>
+</div>
 
 
 
