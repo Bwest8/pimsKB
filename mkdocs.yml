@@ -3,7 +3,7 @@ site_name: PIMS Knowledge Base
 theme:
   name: material
   font:
-    text: Roboto
+    text: Ubuntu
   palette:
 
     # Palette toggle for light mode
@@ -17,11 +17,24 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
+  - tables
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+     permalink: true
 
 plugins:
   - tags
