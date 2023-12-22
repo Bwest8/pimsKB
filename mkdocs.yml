@@ -2,6 +2,9 @@ site_name: PIMS Knowledge Base
 
 theme:
   name: material
+  icon:
+    admonition:
+      optional: 'material/checkbox-multiple-blank-outline' # Set your preferred icon here
   font:
     text: Ubuntu
   palette:

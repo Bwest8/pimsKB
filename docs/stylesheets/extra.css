@@ -55,7 +55,26 @@ th, td {
     color: #ffffff; /* Light text for dark backgrounds */
 }
 
-
-
-
-
+:root {
+    --md-admonition-icon--optional: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23757575" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>'); /* SVG for the checkbox-multiple-blank-outline icon */
+  }
+  
+  .md-typeset .admonition.optional,
+  .md-typeset details.optional {
+    border-color: var(--md-grey-700); /* Dark gray for border */
+    background-color: var(--md-grey-100); /* Light gray for background */
+  }
+  
+  .md-typeset .admonition.optional > .admonition-title,
+  .md-typeset details.optional > summary {
+    background-color: var(--md-grey-300); /* Medium light gray for title background */
+    color: var(--md-grey-800); /* Dark gray for title text */
+  }
+  
+  .md-typeset .admonition.optional > .admonition-title::before,
+  .md-typeset details.optional > summary::before {
+    background-color: var(--md-grey-700); /* Dark gray for icon background */
+    -webkit-mask-image: var(--md-admonition-icon--optional);
+            mask-image: var(--md-admonition-icon--optional);
+  }
+  

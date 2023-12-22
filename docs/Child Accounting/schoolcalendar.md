@@ -177,6 +177,31 @@ Provides additional context for calendars created by LEAs for students in certai
 ???+ example "Sample / Valid Value"
     See Appendix R in Volume 2 of the PIMS User Manual for a complete list of valid values.
 
+    | Code   | Calendar Program Codes                                                                 | Educating LEA     |
+    |--------|----------------------------------------------------------------------------------------|-------------------|
+    | `ACTP`   | Approved Career and technical education program operated by school district or charter school | SD, CS            |
+    | `AEDY`   | Alternative Education for Disruptive Youth (PDE Approved Program only)                 | SD                |
+    | `APS-A`  | Approved Private School – placement approved by PDE (PDE-4010, PDE-4011)               | APS               |
+    | `APS-N`  | Approved Private School – placement not approved by PDE                                | APS               |
+    | `CTE-FD` | CTC/AVTS full day program (all vocational)                                            | CTC               |
+    | CTE-FD-H | Home calendar for students in CTC/AVTS full day program                             | SD, IU, CS        |
+    | CTE-FT | CTC/AVTS full-time program (includes academics)                                       | CTC               |
+    | CTE-PT | CTC/AVTS part-time program                                                           | CTC               |
+    | CTE-PT-H | Home calendar for students in CTC/AVTS part-time program                           | SD, IU, CS        |
+    | CT-NR  | CTC/AVTS non-reimbursable program through Secondary CTE Subsidy                       | CTC               |
+    | EI-H   | School-Age Early Intervention Half-Time: report school-age early intervention program for students with an Individualized Education Plan (IEP) in an LEA based half-time program. | SD, IU            |
+    | EI-F   | School-Age Early Intervention Full-Time: report school-age early intervention program for students with an Individualized Education Plan (IEP) in an LEA based full-time program. | SD, IU            |
+    | ICP001 | PPS Autistic Support at John Merck                                                    | IU 2              |
+    | ICP002 | PPS ES Program - Mercy Behavioral Health                                              | IU 2              |
+    | ICP007 | Erie Homes                                                                            | IU 5              |
+    | ICP009 | Warren State Hospital                                                                 | IU 5              |
+    | ICP012 | Cambria County Sheltered Care Program                                                 | IU 8              |
+    | ICP016 | Hershey Medical Center                                                                | IU 15             |
+    | ICP017 | Danville State Hospital                                                               | IU 16             |
+    | ICP018 | Geisinger Medical Center                                                              | IU 16             |
+    | ICP019 | La Sa Quik                                                                            | IU 17             |
+
+
 ---
 ### 9 - **CALENDAR START DATE**
 The date of the first day on the original calendar; this date could be a PDE approved full-day Act 80 day prior to the first day of instruction.
@@ -191,6 +216,125 @@ The date of the first day on the original calendar; this date could be a PDE app
     - **Example**: `2023-08-22`
 
 ---
+### 10 - **CALENDAR END DATE**
+The date of the last day on the original calendar; this date could be a PDE approved full-day Act 80 day after the last day of instruction.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `10`"
+    **Business Rules**: Must be within the range of 2024-01-01 to 2024-07-31.
+
+???+ example "Sample / Valid Value"
+    - `2024-06-18`
+
+---
+### 11 - **INSTRUCTION START DATE**
+The date of the first day of instruction.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `10`"
+    **Business Rules**: Falls on or after Field 9 (CALENDAR START DATE).
+
+???+ example "Sample / Valid Value"
+    - `2023-08-28`
+
+---
+### 12 - **INSTRUCTION END DATE**
+The date of the last day of instruction.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `10`"
+    **Business Rules**: Falls on or before Field 10 (CALENDAR END DATE).
+
+???+ example "Sample / Valid Value"
+    - `2024-06-12`
+
+---
+### 13 - **GRADUATION CEREMONY DATE**
+The date of the seniors’ graduation ceremony.
+
+!!! warning "<span style='color: red; font-weight: bold;'>Conditionally Required</span> | Updateable | Max Length: `10`"
+    **Business Rules**: This field is required for calendars that include grade 12 students. Falls on or after the Field 12 (INSTRUCTION END DATE). **NOTE**: This field is checked by the DQE.
+
+???+ example "Sample / Valid Value"
+    - `2024-06-14`
+
+---
+### 14 - **NUMBER OF SCHEDULED SCHOOL DAYS**
+The number of instructional days on the original calendar – planned student instructional days plus PDE-approved Act 80 full days.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: Must be within the range of 85 to 260. Report days as whole numbers.
+
+???+ example "Sample / Valid Value"
+    - `185`
+
+---
+### 15 - **INSTRUCTIONAL MINUTES IN STANDARD DAY**
+The number of instructional minutes in a regular school day.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: Must be greater than 0 and within the range of 30 to 435. Report minutes as whole numbers.
+
+???+ example "Sample / Valid Value"
+    - `320`
+
+---
+### 16 - **TOTAL DAYS IN SESSION LOST DUE TO STRIKE**
+The number of instructional days lost due to a work stoppage.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: Report days as whole numbers. See rules 1, 2, and 3 below.
+
+???+ example "Sample / Valid Value"
+    - `0`
+
+---
+### 17 - **TOTAL DAYS IN SESSION LOST DUE TO ACT 80**
+The number of instructional days lost due to PDE approved full-day Act 80 dismissals. Do not include any PDE approved Act 80 full-day dismissals that were not used.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: For SD / CTC / IU use only. Report days as whole numbers. This field is required if Field 21 (ACT 80 GROUP) is populated; otherwise use 0. Note: This field is checked by the DQE.
+
+???+ example "Sample / Valid Value"
+    - `4`
+
+---
+### 18 - **TOTAL DAYS IN SESSION LOST DUE TO OTHER REASONS**
+The number of instructional days lost due to reasons such as snow, flood, or adverse weather conditions.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: Report days as whole numbers. If the School Services Office granted a waiver for an emergency school closing, do not include this in the number of days lost. See rules 1, 2, and 3 below.
+
+???+ example "Sample / Valid Value"
+    - `1`
+
+---
+### 19 - **TOTAL MAKE-UP DAYS**
+The number of instructional days made up within or beyond the original calendar.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+    **Business Rules**: Report days as whole numbers. These days should not be included in Field 14 (NUMBER OF SCHEDULED SCHOOL DAYS). See rule 1 below.
+
+???+ example "Sample / Valid Value"
+    - `0`
+
+---
+### 20 - **TOTAL INSTRUCTIONAL MINUTES LOST TO PLANNED SHORTENED DAYS AND PDE EMERGENCY WAIVER**
+The number of actual instructional minutes lost due to planned shortened days and PDE emergency waivers.
+
+!!! info "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `4`"
+    **Business Rules**: Must be within the range of 0 to 9000. Report minutes as whole numbers. If a building/grade does not meet required instructional hours, create a separate School Calendar for this building/grade. See rule 1 below.
+
+???+ example "Sample / Valid Value"
+    - `179`
+
+---
+### 21 - **ACT 80 GROUP**
+A unique numeric and/or alphabetical label used in the Act 80 application to link this School Calendar to a particular Act 80 approval.
+
+!!! warning "<span style='color: red; font-weight: bold;'>Conditionally Required</span> | Updateable | Max Length: `12`"
+    **Business Rules**: For SD / CTC / IU use only. This field is required if Field 17 (TOTAL DAYS IN SESSION LOST DUE TO ACT 80) is greater than zero. Note: This field is checked by the DQE.
+
+???+ example "Sample / Valid Value"
+    - `Elementary`
+
 
 ## Rules
 *See the Rules Section of the Template Domain for rules consistent throughout all templates*
@@ -202,7 +346,9 @@ The date of the first day on the original calendar; this date could be a PDE app
     
 **The total number of school days is calculated by the formula:**
 
-`NUMBER OF SCHEDULED SCHOOL DAYS` + `TOTAL MAKEUP DAYS` – (`TOTAL DAYS LOST DUE TO STRIKE` + `TOTAL DAYS LOST DUE TO ACT 80` + `TOTAL DAYS LOST DUE TO OTHER REASONS`)
+`NUMBER OF SCHEDULED SCHOOL DAYS` + `TOTAL MAKEUP DAYS` 
+– 
+(`TOTAL DAYS LOST DUE TO STRIKE` + `TOTAL DAYS LOST DUE TO ACT 80` + `TOTAL DAYS LOST DUE TO OTHER REASONS`)
 
 Where:
 
@@ -221,3 +367,33 @@ Where:
 **Load Sequence/Dependencies** 
 
 No Dependencies
+
+!!! note "The total number of school days is calculated by:"
+    - Start with the **NUMBER OF SCHEDULED SCHOOL DAYS** + **TOTAL MAKEUP DAYS**
+        
+    - Subtract the sum of:
+        - **TOTAL DAYS LOST DUE TO STRIKE**
+        - **TOTAL DAYS LOST DUE TO ACT 80**
+        - **TOTAL DAYS LOST DUE TO OTHER REASONS**
+
+---
+
+The total number of school days is calculated by the formula:
+
+
+## Rules
+
+See the [Rules Section of the Template Domain](#) for rules consistent throughout all templates.
+
+!!! note "General Rules"
+    - Fields `16`, `17`, `18`, `19`, and `20` must be greater than or equal to zero.
+    - The sum of `TOTAL DAYS LOST` in Fields `16`, `17`, and `18` must be:
+        - Less than or equal to `NUMBER OF SCHEDULED SCHOOL DAYS`.
+        - Greater than or equal to `TOTAL MAKE-UP DAYS`.
+
+!!! example "TOT_DAYS_IN_SESSION Calculation"
+    `TOT_DAYS_IN_SESSION` is derived using the following formula:
+
+    ```
+    NUMBER OF SCHEDULED SCHOOL DAYS + TOTAL MAKEUP DAYS – (sum of TOTAL DAYS LOST in Fields 16, 17, and 18)
+    ```
