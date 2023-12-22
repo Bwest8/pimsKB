@@ -7,8 +7,9 @@ theme:
       optional: 'material/checkbox-multiple-blank-outline' # Set your preferred icon here
   font:
     text: Ubuntu
+  features:
+    - navigation.tabs
   palette:
-
     # Palette toggle for light mode
     - scheme: default
       toggle:
