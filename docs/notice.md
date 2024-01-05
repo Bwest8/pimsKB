@@ -24,8 +24,8 @@
   Deputy Secretary, Office of Child Development and Early Learning
 
 ## Public Education Department Postsecondary PIMS Team
-- **PIMS Project Sponsor**  
+**PIMS Project Sponsor**  
   Dr. Khalid Mumin, Secretary of Education
 
-### Postsecondary PIMS Support Services
+## Postsecondary PIMS Support Services
 Call Toll Free: `1-800-661-2423`

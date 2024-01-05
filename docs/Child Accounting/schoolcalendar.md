@@ -3,7 +3,17 @@
 
 **Target Table: `PIMS_SCHOOL_CALENDAR`** 
 
-This domain applies to the following organizational types only: School Districts, Intermediate Units, Career and Technical Centers, Charter Schools, Private Residential Rehabilitation Institutions (PRRI), and Approved Private Schools (APS). 
+## Applicable Organizational Types
+
+This domain applies to the following organizational types only:
+
+- **School Districts**
+- **Intermediate Units**
+- **Career and Technical Centers**
+- **Charter Schools**
+- **Private Residential Rehabilitation Institutions (PRRI)**
+- **Approved Private Schools (APS)**
+
 
 **Template Description** 
 
@@ -326,7 +336,7 @@ The number of actual instructional minutes lost due to planned shortened days an
     - `179`
 
 ---
-### 21 - **ACT 80 GROUP**
+### [custom] 21 - **ACT 80 GROUP**
 A unique numeric and/or alphabetical label used in the Act 80 application to link this School Calendar to a particular Act 80 approval.
 
 !!! warning "<span style='color: red; font-weight: bold;'>Conditionally Required</span> | Updateable | Max Length: `12`"
@@ -397,3 +407,15 @@ See the [Rules Section of the Template Domain](#) for rules consistent throughou
     ```
     NUMBER OF SCHEDULED SCHOOL DAYS + TOTAL MAKEUP DAYS – (sum of TOTAL DAYS LOST in Fields 16, 17, and 18)
     ```
+
+
+!!! pied-piper "<span style='color: red; font-weight: bold;'>Required</span> | Updateable | Max Length: `3`"
+
+<h3 class="custom-header">
+    <div class="number-box">20</div>
+    <strong>TOTAL INSTRUCTIONAL MINUTES LOST TO PLANNED SHORTENED DAYS AND PDE EMERGENCY WAIVER</strong>
+</h3>
+
+#### Test4
+
+##### Test5
