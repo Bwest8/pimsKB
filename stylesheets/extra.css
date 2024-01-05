@@ -42,16 +42,17 @@ th, td {
     color: var(--md-typeset-table-th-color--dark, #fff); /* Dark mode header text color */
 }
 
-/* Custom style for specific h3 headers */
-.md-typeset h3.custom-h3 {
-    background-color: #f0f0f0; /* Light gray background */
-    padding: 0.5em 1em;
-    border-radius: 8px;
+/* Light mode header background */
+.md-typeset h3 {
+    background-color: #f0f0f0; /* A light gray background */
+    padding: 0.5em 1em; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
 }
 
-[data-md-color-scheme="slate"] .md-typeset h3.custom-h3 {
-    background-color: #424242; /* Darker background for dark mode */
-    color: #ffffff;
+/* Dark mode header background */
+[data-md-color-scheme="slate"] .md-typeset h3 {
+    background-color: #424242; /* A darker background for dark mode */
+    color: #ffffff; /* Light text for dark backgrounds */
 }
 
 
@@ -71,17 +72,4 @@ th, td {
   background-color: rgb(43, 155, 70);
   -webkit-mask-image: var(--md-admonition-icon--pied-piper);
           mask-image: var(--md-admonition-icon--pied-piper);
-}
-
-h3.custom-header {
-    color: #003064; /* Custom text color */
-    border-bottom: 2px solid #007bff; /* Custom underline */
-    padding-bottom: 5px;
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Align items vertically */
-}
-h3.custom-header .number-box {
-    margin-right: 20px; /* Space between the number box and the text */
-    width: 40px; /* Fixed width for the number box */
-    /* Add more styling as needed */
 }
