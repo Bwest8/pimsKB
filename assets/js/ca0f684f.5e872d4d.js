@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpims_manual=self.webpackChunkpims_manual||[]).push([[9],{4220:s=>{s.exports=JSON.parse('{"label":"hello","permalink":"/https://bwest8.github.io/pimsKB/blog/tags/hello","allTagsPath":"/https://bwest8.github.io/pimsKB/blog/tags","count":2,"unlisted":false}')}}]);
