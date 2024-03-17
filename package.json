@@ -6,8 +6,8 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "deploy": "gh-pages -d build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -30,6 +30,7 @@
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/types": "3.1.1",
     "autoprefixer": "^10.4.18",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
   },
