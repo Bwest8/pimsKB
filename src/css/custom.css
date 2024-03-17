@@ -1,0 +1,44 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #1c3c63;
+  --ifm-color-primary-dark: #193659;
+  --ifm-color-primary-darker: #183354;
+  --ifm-color-primary-darkest: #142a45;
+  --ifm-color-primary-light: #1f426d;
+  --ifm-color-primary-lighter: #204572;
+  --ifm-color-primary-lightest: #244e81;
+  --ifm-background-color: #ffffff;
+}
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #9ac7fe;
+  --ifm-color-primary-dark: #72b1fe;
+  --ifm-color-primary-darker: #5da5fd;
+  --ifm-color-primary-darkest: #2184fd;
+  --ifm-color-primary-light: #c2ddfe;
+  --ifm-color-primary-lighter: #d7e9ff;
+  --ifm-color-primary-lightest: #ffffff;
+}
+.container {
+  max-width: 85% !important;
+  margin: 0 auto;
+}
+/* Light mode header background */
+.markdown > h3 {
+  background-color: hsl(0, 0%, 90%); /* A light gray background */
+  padding: 0.2em 0.5em; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+}
+
+/* Dark mode header background */
+html[data-theme='dark'] .markdown > h3 {
+  background-color: #424242; /* A darker background for dark mode */
+  color: #ffffff; /* Light text for dark backgrounds */
+}

@@ -1,0 +1,261 @@
+---
+title: School Enrollment Template
+description: School Enrollment Template Documentation
+---
+
+import Badge from '@site/src/components/Badge';
+import FieldLength from '@site/src/components/FieldLength';
+import Admonition from '@site/src/components/Admonition';
+
+
+**(10 Fields, 10 Collected, Delimited)**
+
+**Rules:** See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+
+**Target Table(s): `SCHOOL_ENROLL`**
+
+## Template Description
+
+This template contains the student enrollment and withdrawal transactions at each school within each LEA. This template will be used to track student mobility. Submit all mobility transactions for all students throughout the entire year, not just students active at the end of the year, and not just the last transaction for a student. At least one record should exist in this template for every student enrolled in an LEA at any time during the school year.
+
+For each reporting date, submit all enrollment entry and exit transactions that occurred since the prior reporting date. For example, for the December Collection Period, submit all transactions dated since the October Collection period. In the event that an enrollment transaction wasn’t entered in the previous reporting period, it is still acceptable to enter the enrollment transaction as long as it occurred within the current school year.
+
+School Enrollment Records are required for all students reported by CTCs with the exceptions of the following:
+
+-   Student Template Field 65 Grad Status Code of S or J
+-   Adult Affidavit Program (AAP) students
+
+All other LEA types must report School Enrollment Records for all students with the following exceptions:
+
+-   Student Template Field 65 Grad Status Code of S or J
+-   Student Template Field 167 Special Ed Referral = Y
+-   Student Template Field 217 AUN of Enrollment is not equal to Field 1 Submitting AUN (for non-CTCs only) - Does not apply when field 217 is an APS/LPAS
+
+:::note
+
+Entry and withdrawal codes help determine the calculation of Full Academic Year (FAY), which is defined as a student being continuously enrolled on or before October 1, 2021, until the last day of the testing window for each subject-specific PSSA and Keystone Exam dates.
+
+:::
+
+## Template Specifications
+
+---
+### 1 - `SUBMITTING AUN`
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="9" /> <br /><br />
+
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+
+</details>
+
+**eScholar Name:** `DISTRICT CODE`
+
+---
+
+### 2 - `SCHOOL NUMBER`
+
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="4" /> <br /><br />
+
+The PDE defined 4-digit code identifying the school.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`1234`
+
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+
+### 3 - `SCHOOL YEAR DATE`
+
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="10" /> <br /><br />
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+
+</details>
+
+---
+
+### 4 - `PASECUREID`
+
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="10" /> <br /><br />
+
+The unique, 10-digit PAsecureID assigned to the student. Informs various indicators in the **Future Ready PA Index**.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+
+### 5 - `ACTIVITY DATE`
+
+<Badge color="secondary">Optional</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="10" /> <br /><br />
+
+The date on which the enrollment activity transaction was recorded in the SIS. This applies to both entry and exit transactions.
+
+
+:::warning[**Business Rules:**]
+
+The date cannot be greater than the current date (no future transaction dates are allowed). If unknown, leave blank or populate with the enrollment date.
+
+:::
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`2024-04-30`
+
+</details>
+
+---
+
+### 6 - `ENROLLMENT DATE`
+
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="10" /> <br /><br />
+
+The date on which the enrollment activity occurred. This applies to both entry and exit transactions.
+
+:::warning[**Business Rules:**]
+
+The date cannot be greater than the current date (no future transaction dates are allowed).
+
+:::
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+`2023-11-01`
+
+</details>
+
+---
+
+### 7 - `ENROLLMENT CODE`
+
+<Badge color="danger">Required</Badge> <Badge color="warning">Key Field</Badge> <FieldLength length="4" /> <br /><br />
+
+The enrollment code that indicates the type of enrollment transaction; applies to both entry and exit transactions.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+See Appendix E in Volume 2 of the PIMS User Manual for a complete list of valid values and sequence of Enrollment Codes.
+
+</details>
+
+---
+
+### 8 - `ENROLLMENT COMMENT`
+
+<Badge color="secondary">Optional</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="6" /> <br /><br />
+
+Deletes the erroneous record from School Enrollment. Copies the erroneous record to an audit table within PIMS.
+
+:::warning[**Business Rules:**]
+
+All information on the enrollment record to be deleted must match the erroneous record in PIMS. Comment should contain DELETE in all capital letters; no spaces or punctuation.
+
+:::
+
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+```
+DELETE
+```
+</details>
+---
+
+### 9 - `ENROLLMENT GRADE LEVEL`
+
+<Badge color="danger">Required</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="3" /> <br /><br />
+
+The grade level of the student involved in the enrollment transaction.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+See Appendix K in Volume 2 of the PIMS User Manual for a complete list of valid values.
+
+</details>
+
+---
+
+### 10 - `RESIDENCE STATUS CODE`
+
+<Badge color="conditional">Conditionally Required</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="1" /> <br /><br />
+
+The residency status of the student as of the enrollment date of the enrollment or withdrawal transaction.
+
+:::note
+
+Further details on RESIDENCE STATUS CODES are in the Section "Students to be Reported in PIMS.
+
+:::
+
+**Sample / Valid Value:**
+
+See Appendix N in Volume 2 of the PIMS User Manual for a complete list of valid values.
+
+<details open>
+  <summary>**Sample / Valid Value:**</summary>
+
+**Codes Used by Educating School District**
+
+| Code  | Residence Status                                                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|-------|---------------------------------------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| `A`     | Resident (includes 1302 Guardianship and Resident Foster Children)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code A: Submitting AUN = District of Residence AUN = Funding District AUN
+
+| Code  | Residence Status                                          | Submitting AUN | District of Residence AUN                                                         | Funding District AUN                                                            |
+|-------|-----------------------------------------------------------|----------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `B`     | 1305, Non-resident Foster Child (Resident Foster Parent)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD, PA State Code or Out-of-State Code  | Foster Parent SD  NOTE: Educating LEA is also the Foster/Funding District AUN.  |
+
+Code B: Submitting AUN = Funding (foster) District. District of Residence AUN ≠ Funding District AUN.
+
+| Code  | Residence Status                                              | Submitting AUN | District of Residence AUN                                                         | Funding District AUN                                                           |
+|-------|---------------------------------------------------------------|----------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| `C`     | 1305, Non-resident Foster Child (Non-resident Foster Parent)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD, PA State Code or Out-of-State Code  | Foster Parent SD  NOTE: Educating LEA is not the Foster/Funding District AUN.  |
+
+Code C: Submitting AUN ≠ Funding (foster) District. District of Residence AUN ≠ Funding District AUN.  
+The Funding District contracted with the Educating SD for education.
+
+| Code  | Residence Status                                                                                               | Submitting AUN | District of Residence AUN           | Funding District AUN                                                                 |
+|-------|----------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|--------------------------------------------------------------------------------------|
+| `D`     | 1306, Institutionalized Non-resident, Unknown District of Residence (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  NOTE: Educating LEA is the Funding/Host SD.  |
+
+Code D: Submitting AUN = Funding (host) District. District of Residence AUN ≠ Funding District AUN. For students with no known resident district in JIAF program, use Code D.
+
+| Code  | Residence Status                                                                                               | Submitting AUN | District of Residence AUN           | Funding District AUN                                                                     |
+|-------|----------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|------------------------------------------------------------------------------------------|
+| `L`     | 1306, Institutionalized Non-resident, Unknown District of Residence (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  NOTE: Educating LEA is not the Funding/Host SD.  |
+
+
+</details>
+
+---
