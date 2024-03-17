@@ -14,7 +14,7 @@ const config = {
   tagline: 'Learn all about PIMS',
   favicon: 'img/favicon.ico',
   url: 'https://bwest8.github.io/',
-  baseUrl: '/',
+  baseUrl: 'https://bwest8.github.io/pimsKB/',
   organizationName: 'PDE',
   trailingSlash: false,
   projectName: 'pimsKB',
