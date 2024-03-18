@@ -34,12 +34,12 @@ const config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           editUrl:
-            'https://github.com/your-organization/your-project/tree/main/docs/',
+            'https://github.com/Bwest8/pimsKB/tree/master/docs/',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/your-organization/your-project/tree/main/blog/',
+            'https://github.com/Bwest8/pimsKB/tree/master/blog/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -75,7 +75,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/your-organization/your-project',
+            href: 'https://github.com/Bwest8/pimsKB',
             label: 'GitHub',
             position: 'right',
           },
@@ -97,16 +97,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/padeptofed',
               },
             ],
           },
@@ -119,12 +111,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/your-organization/your-project',
+                href: 'https://github.com/Bwest8/pimsKB',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My PIMS Knowledge Base. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} PIMS Knowledge Base`,
       },
       prism: {
         theme: prismThemes.github,
