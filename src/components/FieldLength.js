@@ -25,7 +25,7 @@ const FieldLength = ({ length }) => {
     <span
       style={{
         ...fieldLengthStyles,
-        fontSize: '0.75rem',
+        fontSize: '0.80rem',
         fontWeight: '700',
         padding: '0.25rem 0.625rem',
         borderRadius: '0.25rem',
