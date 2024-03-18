@@ -62,7 +62,7 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'PIMS Knowledge Base',
+        title: 'PIMS KB',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',

@@ -93,5 +93,4 @@ Please visit the [Act 13: Evaluation of Educator Effectiveness Toolkit - SAS (pd
 
 Student education records are official, confidential records protected by the Family Educational Rights and Privacy Act (FERPA, 20 USC 1232g). FERPA defines education records as all records, both paper and digital, that schools or education agencies maintain about students. FERPA and other privacy laws (such as Title I and Special Education) ensure that information about students collected by schools and government agencies is released only for specific and legally defined purposes.
 
-Under FERPA Sec. 99.31 and 99.35, education agencies may release personally identifiable information to PDE for the purposes of auditing and evaluating education programs, and for complying with federal and state regulations. See Volume 2 of the PIMS User Manual for additional summary information on [FERPA](#ferpa).
-
+Under FERPA Sec. 99.31 and 99.35, education agencies may release personally identifiable information to PDE for the purposes of auditing and evaluating education programs, and for complying with federal and state regulations. See Volume 2 of the PIMS User Manual for additional summary information on [FERPA](https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html).

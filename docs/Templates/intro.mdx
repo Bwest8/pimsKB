@@ -1,0 +1,164 @@
+# Templates
+
+Templates are the files that will be used to load data into the PIMS data warehouse. Template specifications define the fields required for each file submitted to PIMS. Each template maps directly to a separate table in the data warehouse. By using templates, LEAs are able to use a variety of file formats (comma delimited, tab delimited, pipe) to transmit data as long as all fields within the template are accounted for. Within a given template not all eScholar-defined fields are collected by PDE.
+
+:::note
+If a field is not collected, it still must be accounted for in the template file through use of the appropriate delimiter position (comma, tab, etc.).
+:::
+
+PDE will be using eScholar version 19 templates to submit information for the current school year.
+
+## Key Items to Note with Template Creation
+
+-   eScholar data warehouse provides Lookup Tables for recoding.
+-   Ethnic Codes to Ethnic Descriptions
+-   e.g., 3 = Black/African American (non-Hispanic)
+-   PIMS uses PDE-defined codes.
+-   Data Extraction process must translate local codes to PDE codes.
+-   Lookup Tables will translate PDE codes to PDE descriptions.
+
+## Development Priority
+
+-   Some templates have dependencies on other templates.
+-   Highlighted items within the Load Sequence/Dependencies section at the bottom of each template specification indicate which templates must be submitted prior to the template in question.
+-   Recommendation: Start with Student template.
+
+## Template Information
+
+Each template specification in the PIMS Manual will contain the following sections:
+
+-   Template Name – eScholar template name
+-   Template Description – General description of the template
+-   Target Table – eScholar data warehouse target table name for template  
+    (must be used within the template file name)
+
+## Rules
+
+This section describes any rules that must be followed in creating the template file. Specific file formats supported by the template are identified in the last business rule in each section.
+
+The following rules are constant throughout all templates:
+
+-   All dates must be entered in ISO format: YYYY-MM-DD.
+-   PASECUREID’s must be unique within an LEA.
+-   Code Column: K - component of primary key; U - value is updatable if row exists.
+-   Data can be supplied in either ASCII flat file or delimited formats. Full delimiter support is available.
+-   Every PA public school, including charter schools and career and technical centers (CTCs), has a 4-digit SCHOOL NUMBER.
+
+:::note
+The “Field Name” column within each template represents the PDE field name. In some instances, the IEP field name does not correspond with the eScholar field name. The actual eScholar field name has been populated in the “eScholar Field Name” column of the template. It is necessary to know the actual field name in order to resolve any issues during the data submission process.
+:::
+
+Each template specification within this document will have a table that indicates the following information:
+
+| **Template Headers**               | **Data Field Definition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Field No.                          | eScholar-designated field number; each field can be uniquely identified within the template.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Max Length                         | Field lengths are identified in each template in the “Length” column. Maximum field lengths are specified for fields that do not have pre-defined code sets. This information is critical because the **eScholar load plans will reject any record that contains a field that is greater than the designated length**. Template fields that have pre-defined code sets do not have a length specified – simply adhere to the predefined code set. If the “Max Length” column has “N/A,” that indicates a code set is available for that field. If the length number is followed by a comma and then another number, the latter indicates the number of digits to the right of the decimal point. |
+| Field Name                         | PDE Field Name; highlighted field numbers (Field No.) are those that are collected for PDE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| R/O/CR                             | **R:** Required **O:** Optional  **CR:** Conditionally Required – if the condition is not met, leave the field blank.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Not Collected                      | Field numbers (Field No.) that are not highlighted are not collected by PDE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Code                               | The code column is used to identify how the specific field is applied to the target table in the eScholar Data Warehouse. **K:** Indicates that this column is a component of the set of columns that make up the primary key for the target table. The primary key specifies the uniqueness of each entry in the target table. **U:** Indicates that this column will be updated in the target table if the entry exists and the value of this column has changed.                                                                                                                                                                                                                              |
+| Definitions                        | PDE definition of each field to be collected                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Business Rules                     | Any relevant PDE business rules that must be followed in creating the field value are defined here.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sample/Valid Values / Example Data | If a field requires one value in a specific code set (e.g., Gender – “M” for male and “F” for female), that code set will be defined here. If the field is a free-form field (e.g., Last Name Long), example data will be supplied. If the valid values are located in Volume 2, a note will indicate which appendix.                                                                                                                                                                                                                                                                                                                                                                            |
+
+**NOTE:** Only data elements with their Field No. highlighted in yellow in the templates will be collected by PDE.
+
+## Key Fields
+
+Fields coded “K” are key fields, the fields in which uploaded data cannot be overwritten. In a situation in which there was an upload of data in a key field that needs to be corrected, the entire record must be deleted by PDE staff first and then the corrected record must be uploaded.
+
+## Deletes
+
+To initiate a deletion, complete a PIMS Data Maintenance Request form, available through PIMS Support Services. There are two ways to contact PIMS Support Services:
+
+1.  Online, accessed through the [PDE website](http://www.education.pa.gov/).
+2.  From the top menu hover over **Data and Reporting**,
+3.  Click on **PIMS** in the dropdown menu,
+4.  Click the **PIMS Application Support** box,
+5.  Click the **Help Request Form** link in the navigation box on the right side of the page.
+6.  Through a PIMS Support Services representative, reached by phone at 1-800-661-2423.
+
+## Load Sequence/Dependencies
+
+This section identifies any prerequisite files that must be loaded into eScholar prior to loading the given template file. The relevant templates that must be loaded by LEAs prior to loading the template in question are indicated. For example, whenever there is a template that requests a student ID, the Student template must be submitted first. The following chart illustrates the template dependencies in PIMS.
+
+**PIMS Template Dependency**
+
+| Load This                    | Before These                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Student                      | Student Snapshot Student Course Enrollment CTE Student Fact CTE Student Industry Credential Staff Student Subtest Programs Fact Student Calendar Fact School Enrollment Special Education Snapshot Student Award Fact for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students Student Fact for Career Standards Benchmarks Student Local Assessment Subtest for Early Indicators of Success Student Local Assessment Subtest for Reporting and Analytics Person (see note on page with table of Load Sequence/Dependencies) |
+| Course                       | Course Instructor Student Course Enrollment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Course Instructor            | Student Course Enrollment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Staff                        | Staff Snapshot Staff Assignment Staff Development Fact Course Instructor Staff Student Subtest                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| School Calendar              | Student Calendar Fact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Incident                     | Incident Offender Incident Offender Infraction Incident Offender Infraction Weapon Incident Offender Disciplinary Action Incident Offender Parent Involve Incident Victim                                                                                                                                                                                                                                                                                                                                                                                        |
+| Person                       | Incident Offender Incident Offender Infraction Incident Offender Infraction Weapon Incident Offender Disciplinary Action Incident Offender Parent Involve Incident Victim                                                                                                                                                                                                                                                                                                                                                                                        |
+| Incident Offender            | Incident Offender Infraction Incident Offender Infraction Weapon Incident Offender Disciplinary Action Incident Offender Parent Involve                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Incident Offender Infraction | Incident Offender Infraction Weapon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+## Extracting Data into Template Format
+
+This section will provide guidance on extracting data from source systems into eScholar template format. This information can be used to create individual extraction routines or a system of extraction.
+
+### Data Extraction
+
+Data extraction and submission involve the process of:
+
+-   taking data from source systems
+-   securely submitting files to PIMS
+-   loading data into the PIMS data warehouse
+
+The components of data extraction include:
+
+-   extraction tools
+-   eScholar templates
+-   automation components
+-   documentation
+
+### File Naming Conventions and Common Problems
+
+The following naming convention must be used to extract data files:
+
+-   SubmittingAUN_TargetTable_YYYYMMDDHHMM.xxx
+-   Example: 100000009_STUDENT_201509051134.csv
+    1.  The AUN is the 9-digit Administrative Unit Number code (example 100000009)
+        -   For example, 100000009
+    2.  Target Table
+        -   Located on line 5 of the eScholar templates – e.g., “Student”
+        -   Exact name listed must be used for File naming convention (e.g. Student Course Enrollment Template is COURSE_ENROLL)
+    3.  Time Stamp (ensures uniqueness for the file) e.g., “201509051134”
+        -   Related to the time the file is created, not the collection reporting dates
+    4.  File Extension (data separator type) e.g., “csv”
+        -   csv: comma separated
+        -   tab: tab separated
+
+:::note
+-   Only PIMS Administrators can upload files in PIMS.
+-   For more detail around data extraction, refer to the *eScholar Guide to Extracting Data*
+:::
+
+**Templates within a Collection Data Set and Data Field Accountability**
+
+Please note that all templates required in a data set are not necessarily found within the same domain. For a complete list of templates within each data set, see the “Templates” column of the Elementary\\Secondary Data Collection Calendar.
+
+Where the following comment is used, “*All fields may not be mandatory; however, all fields within each template* **MUST BE** *accounted for in order to transmit data*,” each field from the template must be accounted for in the record. So, for a client building a delimited file, there must be a delimiter for each field in the template, even if there is no value in between delimiters. Similarly, for a client building a fixed-width file, the extract must account for all positions of each field, even if there is no value in those positions.
+
+## Template Submissions by LEA Type
+
+| **Template/Domain**                                                                                                                                                                           | **Reporting LEAs**                                                                                                                                                                            |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Child Accounting**                                                                                                                                                                          |                                                                                                                                                                                               |
+| School Calendar  School Calendar Fact                                                                                                                                                         | School Districts Intermediate Units Career and Technical Centers (CTC) Charter Schools Private Residential Rehabilitation Institutions (PRRI) Approved Private Schools (APS)                  |
+| **Course**                                                                                                                                                                                    |                                                                                                                                                                                               |
+| Course Course Instructor Student Course Enrollment                                                                                                                                            | School Districts Intermediate Units Career and Technical Centers (CTC) Charter Schools State Juvenile Correctional Institutions (SJCI)                                                        |
+| **Discipline**                                                                                                                                                                                |                                                                                                                                                                                               |
+| Incident Person Incident Offender Incident Offender Infraction Incident Offender Infraction Weapon Incident Offender Disciplinary Action Incident Offender Parent Involvement Incident Victim | School Districts Intermediate Units Career and Technical Centers (CTC) Charter Schools                                                                                                        |
+| **District**                                                                                                                                                                                  |                                                                                                                                                                                               |
+| District Fact for Safe Schools                                                                                                                                                                | School Districts Intermediate Units Career and Technical Centers (CTC) Charter Schools                                                                                                        |
+| District Fact for Title III Professional  Development Activities Survey                                                                                                                       | School Districts Intermediate Units Comprehensive Career and Technical Centers Charter Schools                                                                                                |
+| District Fact for LIEP Survey                                                                                                                                                                 | School Districts Comprehensive Career and Technical Centers Charter Schools                                                                                                                   |
+| District Fact for EL Nonpublic  Student Counts                                                                                                                                                | School Districts                                                                                                                                                                              |
+| District Fact for Title I                                                                                                                                                                     | School Districts that serve Title I students Intermediate Units that serve Title I students (see the Volume 1 of the Manual for more information) Charter Schools that serve Title I students |
+| District Fact for Home Education and                                                                                                                                                          | School Districts                                                                                                                                                                              |
+|  Private Tutoring                                                                                                                                                                             |                                                                                                                                                                                               |
