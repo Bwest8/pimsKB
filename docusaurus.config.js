@@ -34,7 +34,7 @@ const config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           editUrl:
-            'https://github.com/Bwest8/pimsKB/tree/master/docs/',
+            'https://github.com/Bwest8/pimsKB/tree/master/',
         },
         blog: {
           showReadingTime: true,
@@ -85,20 +85,44 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Affiliates',
             items: [
               {
-                label: 'Manual',
-                to: '/docs/intro',
+                label: 'Office of Commonwealth Libraries',
+                to: 'https://www.statelibrary.pa.gov/Pages/default.aspx',
+              },
+              {
+                label: 'Professional Standards and Practices Commission',
+                to: 'https://www.pspc.education.pa.gov/Pages/default.aspx',
+              },
+              {
+                label: 'State Board of Education',
+                to: 'https://www.stateboard.education.pa.gov/Pages/default.aspx',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Social Links',
             items: [
               {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/PADepartmentofEducation/',
+              },
+              {
                 label: 'Twitter',
-                href: 'https://twitter.com/padeptofed',
+                href: 'https://twitter.com/PADeptofEd',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/c/PADeptofEd',
+              },
+              {
+                label: 'Pinterest',
+                href: 'https://www.pinterest.com/PADeptOfEd/',
+              },
+              {
+                label: 'Blog',
+                href: 'https://www.education.pa.gov/SchoolofThought/Pages/Blog.aspx',
               },
             ],
           },
@@ -116,7 +140,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} PIMS Knowledge Base`,
+        copyright: `Copyright © ${new Date().getFullYear()}  Commonwealth of Pennsylvania. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
