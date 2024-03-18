@@ -22,7 +22,7 @@ PIMS Manuals Year Definition:
 
 The following are significant initiatives for reporting:
 
-**Every Student Succeeds Act**
+## Every Student Succeeds Act
 
 The federal Every Student Succeeds Act (ESSA) reauthorizes the Elementary and Secondary Education Act (ESEA), first passed in 1965. ESSA replaced the No Child Left Behind Act (NCLB), passed in 2002. The federal law advances ESEA’s promise of ensuring that all students – from pre-kindergarten to postsecondary, and especially low-income students, students of color, students with disabilities, English Learners, and other historically marginalized students – have access to a world-class education that prepares them for postsecondary education, career, and life.
 
@@ -65,11 +65,33 @@ External sources:
 -   National Student Clearinghouse (NSC)
 -   Student Assessment System (SAS)
 
-**Family Educational Rights and Privacy Act**
+## Act 13 Educator Effectiveness Building Level Score (BLS) 
+(from the [Educator Effectiveness site](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit))
+
+Effective with the 2021-2022 school year, the Building Level Score (BLS) for evaluating educator effectiveness will be comprised of available **Assessment**<sup>5</sup>, **Growth**<sup>6</sup>, **Attendance Rate**<sup>7</sup>, and **Graduation Rate**<sup>8</sup> data and adjusted based on the percentage of economically disadvantaged students enrolled in the school (i.e., challenge multiplier) as follows:
+
+1. Calculate the regression coefficient of determination (r2) that estimates the proportion of the variance in school-level data predictable by the percentage of students economically disadvantaged in a school.
+2. Multiply the regression coefficient of determination by .1.
+3. Multiply the product by the most currently available percentage of economically disadvantaged students in the school.
+4. Multiply that product by 100.
+5. Add the final product to the BLS.
+
+Building Level Scores and information on how the building level data were derived are published annually, when available, at [Rating Tool Conversions](https://bit.ly/PAedEffective).
+
+For information on how a BLS is converted to a rating for the purposes of evaluation, see [Rating Tool Conversions](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit).
+
+Building Level Data (BLD) are not attributed to professional employees serving as classroom teachers or as non-teaching professionals who are primarily assigned in a building or buildings within a school entity by which the professional is not employed. Additionally, BLD are never attributed to temporary professional employees serving as classroom teachers or as non-teaching professionals; both are evaluated using only the Observation & Practice measure.
+
+Please visit the [Act 13: Evaluation of Educator Effectiveness Toolkit - SAS (pdesas.org)](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit) for more information.
+
+<sup>5</sup> [Assessment](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit#sup5)
+<sup>6</sup> [Growth](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit#sup6)
+<sup>7</sup> [Attendance Rate](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit#sup7)
+<sup>8</sup> [Graduation Rate](https://pdesas.org/Frameworks/DCEToolKit/Act13EvaluationOfEducatorEffectivenessToolkit#sup8)
+
+## Family Educational Rights and Privacy Act
 
 Student education records are official, confidential records protected by the Family Educational Rights and Privacy Act (FERPA, 20 USC 1232g). FERPA defines education records as all records, both paper and digital, that schools or education agencies maintain about students. FERPA and other privacy laws (such as Title I and Special Education) ensure that information about students collected by schools and government agencies is released only for specific and legally defined purposes.
 
-Under FERPA Sec. 99.31 and 99.35, education agencies may release personally identifiable information to PDE for the purposes of auditing and evaluating education programs, and for complying with federal and state regulations. See Volume 2 of the PIMS User Manual for additional summary information on FERPA.
+Under FERPA Sec. 99.31 and 99.35, education agencies may release personally identifiable information to PDE for the purposes of auditing and evaluating education programs, and for complying with federal and state regulations. See Volume 2 of the PIMS User Manual for additional summary information on [FERPA](#ferpa).
 
-
-### Test

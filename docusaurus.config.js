@@ -83,7 +83,12 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
+        logo: {
+          alt: 'Agency Image',
+          src: 'https://www.education.pa.gov/Style%20Library/Agency/img/logos/pde-blue.png',
+          href: 'https://www.education.pa.gov',
+        },
         links: [
           {
             title: 'Affiliates',
