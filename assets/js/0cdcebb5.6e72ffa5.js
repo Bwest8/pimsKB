@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpims_manual=self.webpackChunkpims_manual||[]).push([[3949],{5808:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/pimsKB/blog/tags/hola","allTagsPath":"/pimsKB/blog/tags","count":1,"unlisted":false}')}}]);

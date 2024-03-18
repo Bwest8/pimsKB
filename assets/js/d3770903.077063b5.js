@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpims_manual=self.webpackChunkpims_manual||[]).push([[2704],{355:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/pimsKB/blog/tags/facebook","allTagsPath":"/pimsKB/blog/tags","count":1,"unlisted":false}')}}]);
