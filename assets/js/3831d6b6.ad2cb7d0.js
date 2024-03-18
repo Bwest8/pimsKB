@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpims_manual=self.webpackChunkpims_manual||[]).push([[9244],{1525:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/pimsKB/blog/tags/docusaurus","allTagsPath":"/pimsKB/blog/tags","count":4,"unlisted":false}')}}]);
