@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bwest8.github.io/pimsKB/blog</id>
-    <title>My PIMS Knowledge Base Blog</title>
+    <title>PIMS Knowledge Base Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bwest8.github.io/pimsKB/blog"/>
-    <subtitle>My PIMS Knowledge Base Blog</subtitle>
+    <subtitle>PIMS Knowledge Base Blog</subtitle>
     <icon>https://bwest8.github.io/pimsKB/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
