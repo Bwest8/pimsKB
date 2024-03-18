@@ -10,8 +10,8 @@ import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My PIMS Knowledge Base',
-  tagline: 'Learn all about PIMS',
+  title: 'PIMS Knowledge Base',
+  tagline: 'Resources for PIMS',
   favicon: 'img/favicon.ico',
   url: 'https://bwest8.github.io/',
   baseUrl: '/pimsKB/',
