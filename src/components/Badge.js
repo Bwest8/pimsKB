@@ -9,9 +9,9 @@ const Badge = ({ color, children }) => {
 
   const lightBadgeStyles = {
     default: {
-      backgroundColor: 'rgb(219, 234, 254)',
-      color: 'rgb(29, 78, 216)',
-      borderColor: 'rgb(96, 165, 250)',
+      backgroundColor: 'rgb(219, 234, 254)', // bg-blue-100
+      color: 'rgb(29, 78, 216)', // text-blue-800
+      borderColor: 'rgb(96, 165, 250)', // border-blue-400
     },
     dark: {
       backgroundColor: 'rgb(243, 244, 246)',
@@ -57,9 +57,9 @@ const Badge = ({ color, children }) => {
 
   const darkBadgeStyles = {
     default: {
-      backgroundColor: 'rgb(31, 41, 55)',
-      color: 'rgb(156, 163, 175)',
-      borderColor: 'rgb(55, 65, 81)',
+      backgroundColor: 'rgb(55, 65, 81)', // dark:bg-gray-700
+      color: 'rgb(96, 165, 250)', // dark:text-blue-400
+      borderColor: 'rgb(96, 165, 250)', // border-blue-400
     },
     dark: {
       backgroundColor: 'rgb(17, 24, 39)',

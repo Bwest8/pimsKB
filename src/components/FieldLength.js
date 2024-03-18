@@ -8,14 +8,14 @@ const FieldLength = ({ length }) => {
   const { colorMode } = useColorMode();
 
   const lightFieldLengthStyles = {
-    backgroundColor: 'rgb(229, 231, 235)',
+    backgroundColor: 'rgb(248, 248, 248)',
     color: 'rgb(55, 65, 81)',
     borderColor: 'rgb(156, 163, 175)',
   };
 
   const darkFieldLengthStyles = {
     backgroundColor: 'rgb(31, 41, 55)',
-    color: 'rgb(156, 163, 175)',
+    color: 'rgb(197, 204, 216)',
     borderColor: 'rgb(75, 85, 99)',
   };
 
