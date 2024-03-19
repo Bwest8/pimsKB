@@ -1,0 +1,60 @@
+# Appendix AA – Categories to Use in the Location  Fact Template for Safe Schools
+
+The tables below detail the values to use in the CATEGORY 1 – CATEGORY 4 fields as well as the COUNT field when reporting habitual truancy and the indication of no reportable School Safety incidents.
+
+:::note
+
+-   The CATEGORY 4 field does not apply to the habitual truancy data or the indication of no reportable School Safety incidents. In these situations, leave this field blank.
+-   The grade level codes used are the same as the CURRENT GRADE LEVEL field within the Student and Student Snapshot Templates.
+-   The ethnicity codes used are the same as the ETHNIC CODE SHORT field within the Student and Student Snapshot Templates.
+-   The data reported in Category 1 and Category 2 must be reported in all UPPER-CASE letters to pass validation.
+:::
+
+## Habitual Truancy
+
+If a school has no habitually truant students for the entire school year submit one record using the category values shown in the table immediately below. Otherwise, submit the data as indicated in the second table.
+
+| Category 1 | Category 2 | Category 3 | Description of what to include in COUNT field                                                                  |
+|------------|------------|------------|----------------------------------------------------------------------------------------------------------------|
+| `TRUANCY`    | `ZERO`       | `ZERO`       | Include 0 to indicate that the school did not have any habitually truant students for the entire school year.  |
+
+| Category 1 | Category 2 | Category 3 | Description of what to include in COUNT field                                                                  |
+|------------|------------|------------|----------------------------------------------------------------------------------------------------------------|
+| `TRUANCY`    | `GRADE`      | `PKA`        | Aggregated \# of habitually truant students for PreK Half Day – Morning (AM) at school                         |
+| `TRUANCY`    | `GRADE`      | `PKP`        | Aggregated \# of habitually truant students for PreK Half Day – Afternoon (PM) at school                       |
+| `TRUANCY`    | `GRADE`      | `PKF`        | Aggregated \# of habitually truant students for PreK Full Day at school                                        |
+| `TRUANCY`    | `GRADE`      | `K4A`        | Aggregated \# of habitually truant students for K4 Half Day – Morning (AM) at school                           |
+| `TRUANCY`    | `GRADE`      | `K4P`        | Aggregated \# of habitually truant students for K4 Half Day – Afternoon (PM) at school                         |
+| `TRUANCY`    | `GRADE`      | `K4F`        | Aggregated \# of habitually truant students for K4 Full Day at school                                          |
+| `TRUANCY`    | `GRADE`      | `K5A`        | Aggregated \# of habitually truant students for K5 Half Day – Morning (AM) at school                           |
+| `TRUANCY`    | `GRADE`      | `K5P`        | Aggregated \# of habitually truant students for K5 Half Day – Afternoon (PM) at school                         |
+| `TRUANCY`    | `GRADE`      | `K5F`        | Aggregated \# of habitually truant students for K5 Full Day at school                                          |
+| `TRUANCY`    | `GRADE`      | `001`        | Aggregated \# of habitually truant students for grade 1 at school                                              |
+| `TRUANCY`    | `GRADE`      | `002`        | Aggregated \# of habitually truant students for grade 2 at school                                              |
+| `TRUANCY`    | `GRADE`      | `003`        | Aggregated \# of habitually truant students for grade 3 at school                                              |
+| `TRUANCY`    | `GRADE`      | `004`        | Aggregated \# of habitually truant students for grade 4 at school                                              |
+| `TRUANCY`    | `GRADE`      | `005`        | Aggregated \# of habitually truant students for grade 5 at school                                              |
+| `TRUANCY`    | `GRADE`      | `006`        | Aggregated \# of habitually truant students for grade 6 at school                                              |
+| `TRUANCY`    | `GRADE`      | `007`        | Aggregated \# of habitually truant students for grade 7 at school                                              |
+| `TRUANCY`    | `GRADE`      | `008`        | Aggregated \# of habitually truant students for grade 8 at school                                              |
+| `TRUANCY`    | `GRADE`      | `009`        | Aggregated \# of habitually truant students for grade 9 at school                                              |
+| `TRUANCY`    | `GRADE`      | `010`        | Aggregated \# of habitually truant students for grade 10 at school                                             |
+| `TRUANCY`    | `GRADE`      | `011`        | Aggregated \# of habitually truant students for grade 11 at school                                             |
+| `TRUANCY`    | `GRADE`      | `012`        | Aggregated \# of habitually truant students for grade 12 at school                                             |
+| `TRUANCY`    | `ETHNICITY`  | `1`          | Aggregated \# of habitually truant American Indian / Alaskan Native (not Hispanic) students at school          |
+| `TRUANCY`    | `ETHNICITY`  | `3`          | Aggregated \# of habitually truant Black or African American (not Hispanic) students at school                 |
+| `TRUANCY`    | `ETHNICITY`  | `4`          | Aggregated \# of habitually truant Hispanic (any race) students at school                                      |
+| `TRUANCY`    | `ETHNICITY`  | `5`          | Aggregated \# of habitually truant White (not Hispanic) students at school                                     |
+| `TRUANCY`    | `ETHNICITY`  | `6`          | Aggregated \# of habitually truant Multi-Racial (not Hispanic) students at school                              |
+| `TRUANCY`    | `ETHNICITY`  | `9`          | Aggregated \# of habitually truant Asian (not Hispanic) students at school                                     |
+| `TRUANCY`    | `ETHNICITY`  | `10`         | Aggregated \# of habitually truant Native Hawaiian or other Pacific Islander (not Hispanic) students at school |
+| `TRUANCY`    | `GENDER`     | `M`          | Aggregated \# of habitually truant males at school                                                             |
+| `TRUANCY`    | `GENDER`     | `F`          | Aggregated \# of habitually truant females at school                                                           |
+
+## Indication of No Reportable School Safety Incidents for a School
+
+Reportable School Safety incidents are to be submitted in detail in the Discipline Domain Templates. Some schools (most often elementary schools) may not have any reportable School Safety incidents for the entire school year. In this situation an LEA must indicate this by submitting a record in the Location Fact Template for each school that does not have reportable incidents for the year. Use the categories in the table below.
+
+| Category 1 | Category 2 | Category 3 | Description of what to include in COUNT field                                                                          |
+|------------|------------|------------|------------------------------------------------------------------------------------------------------------------------|
+| `INCIDENTS`  | `ZERO`       | `ZERO`       | Include 0 to indicate that the school did not have any reportable School Safety incidents for the entire school year.  |

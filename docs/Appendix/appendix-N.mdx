@@ -1,0 +1,191 @@
+# Appendix N – Residency Status and District Codes
+
+:::note
+Appendix N is for use with Field 5 (DISTRICT OF RESIDENCE AUN), Field 6 (FUNDING DISTRICT AUN), and Field 7 (RESIDENCE STATUS CODE) for the Student Calendar Fact Template; Field 10 (RESIDENCE STATUS CODE) for the School Enrollment Template; and Field 117 (DISTRICT OF RESIDENCE AUN) and Field 189 (FUNDING DISTRICT AUN) in the Student and Student Snapshot Templates.
+:::
+
+## Definitions:
+
+**AUN**: The unique, 9-digit Administrative Unit Number assigned by PDE.
+:::note
+If a student is enrolled in a magnet school within their District of Residence, the School Number of Residence should be the magnet school.
+:::
+
+**District of Residence AUN**: The AUN for the school district where the natural/adoptive parent or legal guardian resides. For a 1305 or 1306 student with no known school district of residence, enter the PA State code (999999999). Students whose natural/adoptive parent resides out-of-state should use the Out-of-State code (888888888).
+
+**Funding District AUN**: The AUN for the school district that is financially responsible for the student. This is generally the same as District of Residence, except for non-resident students as noted in the appendix below.
+
+**AUN of Enrollment:** The AUN for the LEA providing the majority of the student’s core academic education.
+
+:::note
+
+-   A value of 888888888 should be entered to indicate the generic “Out-of-State” code.
+-   A value of 999999999 should be entered to indicate the generic “PA State” code.
+-   Letters A to M are values for the Residence Status Code field in the School Enrollment Template (Field 10) and Student Calendar Fact Template (Field 7).
+-   Reporting Adult Affidavit Program (AAP) students in the School Enrollment Template is not required or needed. LEAs may report 999999999 in the District Code of Residence and should report the AUN of the school district where the CTE educating LEA is located in the Funding District AUN for AAP students.
+
+:::note
+Codes apply to all grade levels **with the exception of Adult Affidavit Program (AAP) students.** Reporting Adult Affidavit Program (AAP) students in the School Enrollment Template is not required or needed. LEAs may report “999999999” in the District Code of Residence and should report the AUN of the school district where the CTE educating LEA is located in the Funding District AUN for AAP students.
+:::
+
+
+## Codes Used by Educating School District
+
+| Code  | Residence Status                                                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|-------|---------------------------------------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| `A`     | Resident (includes 1302 Guardianship and Resident Foster Children)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code A: Submitting AUN = District of Residence AUN = Funding District AUN
+
+| Code  | Residence Status                                          | Submitting AUN | District of Residence AUN                                                         | Funding District AUN                                                            |
+|-------|-----------------------------------------------------------|----------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `B`     | 1305, Non-resident Foster Child (Resident Foster Parent)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD, PA State Code or Out-of-State Code  | Foster Parent SD  NOTE: Educating LEA is also the Foster/Funding District AUN.  |
+
+Code B: Submitting AUN = Funding (foster) District. District of Residence AUN ≠ Funding District AUN.
+
+| Code  | Residence Status                                              | Submitting AUN | District of Residence AUN                                                         | Funding District AUN                                                           |
+|-------|---------------------------------------------------------------|----------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| `C`     | 1305, Non-resident Foster Child (Non-resident Foster Parent)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD, PA State Code or Out-of-State Code  | Foster Parent SD  NOTE: Educating LEA is not the Foster/Funding District AUN.  |
+
+Code C: Submitting AUN ≠ Funding (foster) District. District of Residence AUN ≠ Funding District AUN.  
+The Funding District contracted with the Educating SD for education.
+
+| Code  | Residence Status                                                                                               | Submitting AUN | District of Residence AUN           | Funding District AUN                                                                 |
+|-------|----------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|--------------------------------------------------------------------------------------|
+| `D`     | 1306, Institutionalized Non-resident, Unknown District of Residence (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  NOTE: Educating LEA is the Funding/Host SD.  |
+
+Code D: Submitting AUN = Funding (host) District. District of Residence AUN ≠ Funding District AUN. For students with no known resident district in JIAF program, use Code D.
+
+| Code  | Residence Status                                                                                               | Submitting AUN | District of Residence AUN           | Funding District AUN                                                                     |
+|-------|----------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|------------------------------------------------------------------------------------------|
+| `L`     | 1306, Institutionalized Non-resident, Unknown District of Residence (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  NOTE: Educating LEA is not the Funding/Host SD.  |
+
+Code L: Submitting AUN ≠ Funding (host) District. District of Residence AUN ≠ Funding District AUN.  
+The Funding District contracted with the Educating SD for education.
+
+| Code  | Residence Status                                                                                                           | Submitting AUN | District of Residence AUN           | Funding District AUN                    |
+|-------|----------------------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|-----------------------------------------|
+| `E`     | 1306, Institutionalized Non-resident, Unknown District of Residence – Detention (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  |
+
+Code E: Submitting AUN = Funding (host) District. District of Residence AUN ≠ Funding District AUN.
+
+| Code  | Residence Status                                   | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|-------|----------------------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| **`F`** | Rule modified for up-front edit. Use code M        |                |                                               |                                               |
+| **`M`** | 1306, Institutionalized Non-resident Acknowledged  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code M: District of Residence AUN = Funding District AUN
+
+| Code  | Residence Status                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|-------|-------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| **`G`** | Non-resident District Paid Tuition  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code G: District of Residence AUN = Funding District AUN  
+The Resident District contracted with the Educating SD for education.
+
+| Code  | Residence Status                                         | Submitting AUN                        | District of Residence AUN                     | Funding District AUN                                                         |
+|-------|----------------------------------------------------------|---------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------|
+| **`H`** | Non-resident Parent Paid Tuition                         | Educating LEA                         | Natural/Adoptive Parent or Legal Guardian SD  | SD receiving tuition payment for non-resident membership                     |
+| **`I`** | Non-resident Tuition Waiver In-State                     | Educating LEA                         | Natural/Adoptive Parent or Legal Guardian SD  | SD waiving tuition for non-resident membership                               |
+| **`J`** | Non-resident OOS                                         | Educating LEA                         | Out-of-State Code                             | SD waiving tuition or receiving tuition payment for out-of-state membership  |
+| **`K`** | Non-resident Act 6 – specifically, Philadelphia City SD  | Educating LEA (Philadelphia City SD)  | Out-of-State Code                             | Host SD – Philadelphia City SD AUN                                           |
+
+Codes H, I, J, and K: District of Residence AUN ≠ Funding District AUN
+
+## Codes Used by IU, CTC, CS, PRRI, APS, and SJCI
+
+| Code | Residence Status                                                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|------|---------------------------------------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| `A`    | Resident (includes 1302 Guardianship and Resident Foster Children)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code A: District of Residence AUN = Funding District AUN
+
+| Code | Residence Status                                              | Submitting AUN | District of Residence AUN                                                         | Funding District AUN  |
+|------|---------------------------------------------------------------|----------------|-----------------------------------------------------------------------------------|-----------------------|
+| `B`    | Rule modified for up-front edit. Use Code C.                  |                |                                                                                   |                       |
+| `C`    | 1305, Non-resident Foster Child (Non-resident Foster Parent)  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD, PA State Code or Out-of-State Code  | Foster Parent SD      |
+
+Code C: District of Residence AUN ≠ Funding (foster) District. District of Residence AUN ≠ Funding District AUN. The Funding District contracted with the Educating SD for education.
+
+| Code | Residence Status                                                                                               | Submitting AUN | District of Residence AUN           | Funding District AUN                    |
+|------|----------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|-----------------------------------------|
+| `D`    | Rule modified for up-front edit. Use Code L.                                                                   |                |                                     |                                         |
+| `L`    | 1306, Institutionalized Non-resident, Unknown District of Residence (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  |
+
+Code L: District of Residence AUN ≠ Funding District AUN  
+For students with no known resident district in JIAF program, use Code L.
+
+| Code | Residence Status                                                                                                           | Submitting AUN | District of Residence AUN           | Funding District AUN                    |
+|------|----------------------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------|-----------------------------------------|
+| `E`    | 1306, Institutionalized Non-resident, Unknown District of Residence – Detention (formerly referred to as “Ward of State”)  | Educating LEA  | PA State Code or Out-of-State Code  | Host SD – where institution is located  |
+
+Codes E: District of Residence AUN ≠ Funding District AUN
+
+| Code | Residence Status                                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                                                                                    |
+|------|-----------------------------------------------------|----------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `F`    | 1306, Institutionalized  Non-resident Acknowledged  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Host SD – where institution is located, financially responsible to pay educating IU, CTC, PRRI, or APS  |
+
+Code F: District of Residence AUN ≠ Funding District AUN  
+Code F is not applicable to CSs. For acknowledged students in JIAF program, use Code F.
+
+| Code | Residence Status                                   | Submitting AUN | District of Residence AUN                     | Funding District AUN                                                                                          |
+|------|----------------------------------------------------|----------------|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `M`    | 1306, Institutionalized Non-resident Acknowledged  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent SD or Legal Guardian, financially responsible to pay Educating IU, CTC, PRRI, or APS  |
+
+Code M: District of Residence AUN = Funding District AUN  
+For acknowledged students in an ICP, use Code M.
+
+| Code | Residence Status                    | Submitting AUN | District of Residence AUN                     | Funding District AUN                          |
+|------|-------------------------------------|----------------|-----------------------------------------------|-----------------------------------------------|
+| `G`    | Non-resident District Paid Tuition  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | Natural/Adoptive Parent or Legal Guardian SD  |
+
+Code G: District of Residence AUN = Funding District AUN
+
+|  Code | Residence Status                      | Submitting AUN | District of Residence AUN                     | Funding District AUN                                                         |
+|-------|---------------------------------------|----------------|-----------------------------------------------|------------------------------------------------------------------------------|
+| `H`     | Non-resident Parent Paid Tuition      | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | SD receiving tuition payment for non-resident membership                     |
+| `I`     | Non-resident Tuition Waiver In-State  | Educating LEA  | Natural/Adoptive Parent or Legal Guardian SD  | SD waiving tuition for non-resident membership                               |
+| `J`     | Non-resident OOS                      | Educating LEA  | Out-of-State Code                             | SD waiving tuition or receiving tuition payment for out-of-state membership  |
+
+Codes H, I, and J: District of Residence AUN ≠ Funding District AUN.   
+Codes H and I are not applicable to CSs, APSs, PRRIs, or SJCIs.  
+Code J is not applicable to CSs.
+
+| Code | Residence Status                            | Submitting AUN | District of Residence AUN | Funding District AUN  |
+|------|---------------------------------------------|----------------|---------------------------|-----------------------|
+| `K`    | Not applicable for this educating LEA type. |                |                           |                       |
+
+:::tip[**Key**]
+
+| Abbreviation | Definition                                   |
+|--------------|----------------------------------------------|
+| **LEA**         | Local Education Agency                       |
+| **SD**         | School District                              |
+| **IU**         | Intermediate Unit                            |
+| **CS**         | Charter School                               |
+| **CTC**         | Career and Technology Center                 |
+| **PRRI**         | Private Residential Rehabilitative Institution |
+| **APS**         | Approved Private School                      |
+| **SJCI**         | State Juvenile Correctional Institution      |
+:::
+
+## Definitions of Residency Status Codes
+
+1.  **Resident (includes 1302 Guardianship and Resident Foster Children):** Student whose natural/adoptive parent or legal guardian resides in the reporting school district; affidavit student residing with an adult other than natural/adoptive parent (see PA Public School Code, 24 P.S. § 13-1302); emancipated student (see Chapter 11 §11.11); pre-adoptive student; foreign exchange student with a J-1 visa; homeless student not living in a shelter or institution; student whose natural/adoptive parent or guardian is a migrant worker; and student whose natural/adoptive parent or legal guardian and foster parent reside in the reporting school district. The district of residence AUN and the funding district AUN are the same.
+2.  **1305, Non-resident Foster Child, (Resident Foster Parent):** Non-resident student in foster home who is educated by the school district in which the foster parent resides or is educated by an out of-state school. The student’s natural/adoptive parent or legal guardian resides outside the reporting district. (See PA Public School Code, 24 P.S. § 13-1305.) NOTE: Also include student if he/she is in any of the following living arrangements/placements: family living program, formal kinship care, respite care, or transitional foster care. The district of residence AUN and the funding district AUN are different.
+3.  **1305, Non-resident Foster Child, (Non-resident Foster Parent):** Non-resident student in foster home who is educated by a school district that is not the school district of residence of the foster parent or a non-resident foster student educated by an IU, CTC, or CS. The district of residence AUN and the funding district AUN are different.
+4.  **1306, Institutionalized Non-resident, Unknown District of Residence (Host SD is educating):** Institutionalized non-resident student who has been disclaimed on the PDE-4605 “Determination of District of Residence for Students in Facilities or Institutions in Accordance with Section 1306 of School Code” and thus has no known school district of residence. NOTE: Documentation that the location of the district of residence is unknown must be maintained, including an accurate and complete PDE-4605 and supporting documents (ex. court order terminating parental rights or PDE letter confirming ward of state status). The funding district AUN is the host school district’s AUN.
+5.  **1306, Institutionalized Non-resident, Unknown District of Residence – Detention:** Non-resident student who has been disclaimed on the PDE-4605 for whom education was provided in a detention facility. The funding district AUN is the host school district’s AUN.
+
+:::note
+A detention facility is an institution to which children are referred pursuant to a proceeding under 42 Pa. C.S. Chapter 63 (relating to juvenile matters). Documentation that the district of residence is unknown must be maintained, including an accurate and complete PDE-4605 and supporting documents (ex. court order terminating parental rights or PDE letter confirming ward of state status).
+:::
+
+6.  **1306, Institutionalized Non-resident Acknowledged (Host SD is funding):** Institutionalized non-resident student whose school district of residence has been acknowledged on the PDE-4605. See chart for district of residence AUN and funding district AUN guidelines.
+7.  **Non-resident District Paid Tuition:** Non-resident student educated by the reporting school district or LEA whose tuition was paid by the resident school district. The district of residence AUN and the funding district AUN are the same.
+8.  **Non-resident Parent-Paid Tuition:** Non-resident student educated by the reporting school district or LEA whose tuition was paid by a private party (usually the parent). The district of residence AUN and the funding district AUN are different.
+9.  **Non-resident Tuition Waiver In-State:** Non-resident student educated by the reporting school district or LEA whose tuition was waived by the school board. The district of residence AUN and the funding district AUN are different.
+10. **Non-resident OOS:** Non-resident student educated by the reporting school district or LEA whose tuition was either paid by the out-of-state (OOS) school district or parent or waived by the school board. The district of residence AUN and the funding district AUN are different.
+11. **Non-resident Act 6-specifically, Philadelphia City SD:** Non-resident out-of-state medically indigent student hospitalized in exclusively charitable children’s hospitals educated by Philadelphia City SD.
+12. **1306, Institutionalized Non-resident, Unknown District of Residence:** Same specifications as Code D except the funding district AUN is not the educating LEA. This code was added in 2013-14 school year to accommodate situations where a 1306 student with no known district of residence is not educated by the host/funding school district.
+13. **1306, Institutionalized Non-resident Acknowledged:** Institutionalized non-resident student whose school district of residence has been acknowledged on the PDE-4605. This code was added in 2013-14 school year to accommodate situations where the educating LEA is directly billing the district of residence. The district of residence AUN and the funding district AUN are the same.
