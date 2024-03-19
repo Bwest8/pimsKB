@@ -37,7 +37,7 @@ const Badge = ({ color, children, length }) => {
       borderColor: "rgb(253, 224, 71)",
     },
     optional: {
-      backgroundColor: "rgb(226, 232, 240)",
+      backgroundColor: "rgb(250, 250, 250)",
       color: "rgb(51, 65, 85)",
       borderColor: "rgb(148, 163, 184)",
     },
@@ -52,7 +52,7 @@ const Badge = ({ color, children, length }) => {
       borderColor: "rgb(255, 152, 0)",
     },
     maxLength: {
-      backgroundColor: "rgb(248, 248, 248)",
+      backgroundColor: "rgb(230, 230, 230)",
       color: "rgb(55, 65, 81)",
       borderColor: "rgb(156, 163, 175)",
     },
@@ -70,7 +70,7 @@ const Badge = ({ color, children, length }) => {
       borderColor: "rgb(217, 119, 6)",
     },
     optional: {
-      backgroundColor: "rgb(45, 55, 72)",
+      backgroundColor: "rgb(10, 10, 10)",
       color: "rgb(203, 213, 225)",
       borderColor: "rgb(100, 116, 139)",
     },
