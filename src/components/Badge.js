@@ -1,10 +1,8 @@
 // src/components/Badge.js
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
 
 const Badge = ({ color, children }) => {
-  const { isDarkTheme } = useDocusaurusContext();
   const { colorMode } = useColorMode();
 
   const lightBadgeStyles = {

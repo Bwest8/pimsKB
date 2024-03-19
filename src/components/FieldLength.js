@@ -1,10 +1,8 @@
 // src/components/FieldLength.js
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
 
 const FieldLength = ({ length }) => {
-  const { isDarkTheme } = useDocusaurusContext();
   const { colorMode } = useColorMode();
 
   const lightFieldLengthStyles = {
