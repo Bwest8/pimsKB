@@ -3,8 +3,7 @@ title: School Enrollment Template
 description: School Enrollment Template Documentation
 ---
 
-import Badge from '@site/src/components/Badge';
-import FieldLength from '@site/src/components/FieldLength';
+import Badge from '@site/src/components/badges';
 
 **(10 Fields, 10 Collected, Delimited)**
 
@@ -44,7 +43,7 @@ Entry and withdrawal codes help determine the calculation of Full Academic Year 
 
 ---
 ### 1 - SUBMITTING AUN
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="9" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
 
 
 The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
@@ -61,8 +60,7 @@ The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
 ---
 
 ### 2 - SCHOOL NUMBER
-
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="4" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
 
 The PDE defined 4-digit code identifying the school.
 
@@ -78,8 +76,7 @@ The PDE defined 4-digit code identifying the school.
 ---
 
 ### 3 - SCHOOL YEAR DATE
-
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="10" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
 
 A single date (June 30), the last day of the current school year indicating the whole school year.
 
@@ -93,8 +90,7 @@ A single date (June 30), the last day of the current school year indicating the 
 ---
 
 ### 4 - PASECUREID
-
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="10" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
 
 The unique, 10-digit PAsecureID assigned to the student. Informs various indicators in the **Future Ready PA Index**.
 
@@ -110,8 +106,7 @@ The unique, 10-digit PAsecureID assigned to the student. Informs various indicat
 ---
 
 ### 5 - ACTIVITY DATE
-
-<Badge color="secondary">Optional</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="10" /> <br /><br />
+<p><Badge color="secondary">Optional</Badge> <Badge color="updateable" /> <Badge length={10} /></p>
 
 The date on which the enrollment activity transaction was recorded in the SIS. This applies to both entry and exit transactions.
 
@@ -132,8 +127,7 @@ The date cannot be greater than the current date (no future transaction dates ar
 ---
 
 ### 6 - ENROLLMENT DATE
-
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="10" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
 
 The date on which the enrollment activity occurred. This applies to both entry and exit transactions.
 
@@ -153,8 +147,7 @@ The date cannot be greater than the current date (no future transaction dates ar
 ---
 
 ### 7 - ENROLLMENT CODE
-
-<Badge color="danger">Required</Badge> <Badge color="warning">Key</Badge> <FieldLength length="4" /> <br /><br />
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
 
 The enrollment code that indicates the type of enrollment transaction; applies to both entry and exit transactions.
 
@@ -188,8 +181,7 @@ Local education agency (LEA) includes the following school entities: school dist
 ---
 
 ### 8 - ENROLLMENT COMMENT
-
-<Badge color="secondary">Optional</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="6" /> <br /><br />
+<p><Badge color="secondary">Optional</Badge> <Badge color="updateable" /> <Badge length={6} /></p>
 
 Deletes the erroneous record from School Enrollment. Copies the erroneous record to an audit table within PIMS.
 
@@ -209,8 +201,7 @@ All information on the enrollment record to be deleted must match the erroneous 
 ---
 
 ### 9 - ENROLLMENT GRADE LEVEL
-
-<Badge color="danger">Required</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="3" /> <br /><br />
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
 
 The grade level of the student involved in the enrollment transaction.
 
@@ -255,8 +246,7 @@ Transitional First Grade is not a grade level in PIMS. Please enter students in 
 ---
 
 ### 10 - RESIDENCE STATUS CODE
-
-<Badge color="conditional">Conditionally Required</Badge> <Badge color="info">Updateable</Badge> <FieldLength length="1" /> <br /><br />
+<p><Badge color="conditional">Conditionally Required</Badge> <Badge color="updateable" /> <Badge length={1} /></p>
 
 The residency status of the student as of the enrollment date of the enrollment or withdrawal transaction.
 
