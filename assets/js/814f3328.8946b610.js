@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpims_manual=self.webpackChunkpims_manual||[]).push([[472],{5513:s=>{s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Long Blog Post","permalink":"/pimsKB/blog/long-blog-post","unlisted":false}]}')}}]);
