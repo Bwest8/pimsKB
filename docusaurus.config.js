@@ -82,6 +82,10 @@ const config = {
           },
         ],
       },
+      font: {
+        fontFamily: 'Inter, sans-serif',
+        url: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap',
+      },
       footer: {
         style: 'light',
         logo: {

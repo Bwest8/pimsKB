@@ -13,10 +13,11 @@
   --ifm-color-primary-light: #3b4bc7;
   --ifm-color-primary-lighter: #4454ca;
   --ifm-color-primary-lightest: #606dd2;
-  --ifm-navbar-background-color: #F9F9F9; /* Light shade of gray header */
+  --ifm-navbar-background-color: hsl(0, 0%, 90%); /* Light shade of gray header */
   --badge-primary-bg: #B3C3E7;
   --badge-primary-border: #5A7AC9;
   --badge-primary-text: #243B73;
+  --ifm-menu-color-background-active: hsl(0, 0%, 90%);
 }
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -27,8 +28,8 @@
   --ifm-color-primary-light: #45a4e0;
   --ifm-color-primary-lighter: #50aae2;
   --ifm-color-primary-lightest: #72bae7;
-  --ifm-navbar-background-color: #303030; /* Dark gray for header */
-
+  --ifm-navbar-background-color: hsl(0, 0%, 15%); /* Dark gray for header */
+  --ifm-menu-color-background-active: hsl(0, 0%, 15%);
 }
 .container {
   max-width: 85% !important;
@@ -47,3 +48,4 @@ html[data-theme='dark'] .markdown > h3 {
   background-color: #424242; /* A darker background for dark mode */
   color: #ffffff; /* Light text for dark backgrounds */
 }
+
