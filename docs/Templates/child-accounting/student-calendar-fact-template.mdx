@@ -1,0 +1,323 @@
+---
+title: Student Calendar Fact Template 
+description: PIMS Student Calendar Fact Template Specifications
+---
+
+import Badge from '@site/src/components/badges';
+
+**(16 Fields, 15 Collected, Delimited)**
+
+**Target Table: `PIMS_STUDENT_CALENDAR_FACT`**
+
+This domain only applies to the following organizational types: School Districts, Intermediate Units, Career and Technical Centers, Charter Schools, Private Residential Rehabilitation Institutions (PRRI), and Approved Private Schools (APS).
+
+## Template Description
+
+This template is used to associate a student’s membership days with a unique calendar uploaded in the School Calendar file. A student will have more than one record in the Student Calendar Fact file if he or she was withdrawn and reentered due to a change in one of the following key fields: Calendar ID, District of Residence AUN, Funding District AUN, Residence Status Code, Current Grade Level, or Special Education Indicator.
+
+The Days Enrolled and Percentage of Time Enrolled for Calendar fields are used to calculate Average Daily Membership (ADM). The Days Present and Percentage of Time Enrolled for Calendar fields are used to calculate Average Daily Attendance (ADA) for each record.
+
+## Additional Information
+
+**District of Residence AUN, Funding District AUN, and Residence Status Code (Fields 5, 6, and 7)  
+**These key fields are used to identify the school district receiving ADM for state subsidies. Refer to Appendix N in volume 2 of the PIMS User Manual for guidance on populating these important fields.
+
+Uploading multiple Student Calendar Fact records, a common error made by LEAs attempting to correct a key field, results in duplicated membership days. It is important to remove the erroneous records by submitting a PIMS Data Maintenance Request form to PDE for a delete. Run the Student Calendar Fact Validation Report called “Students with Multiple Calendar Fact Records” to identify duplicated membership days.
+
+**Days Enrolled and Days Present (Fields 8 and 9)**
+
+These fields are updatable. The days are not prorated. The Percentage of Time Enrolled in Calendar field is used to prorate or calculate equivalent days enrolled. See examples below.
+
+**Percentage of Time Enrolled for Calendar (Field 10)**
+
+Percent is used to prorate membership if it is less than full time. PIMS calculates equivalent days enrolled by multiplying Days Enrolled by the Percentage of Time Enrolled for Calendar. Equivalent days enrolled divided by days in session equals ADM. Equivalent days present is calculated by multiplying Days Present by the Percentage of Time Enrolled for Calendar. Equivalent days present divided by days in session equals ADA. See examples below.
+
+Most students are enrolled full time with their record showing 100 for the Percentage of Time Enrolled for Calendar. Students enrolled in a part-time pre-kindergarten or kindergarten program (half-day or alternate-day) and students enrolled in a semester-about rotation CTC/AVTS program are considered 100% enrolled.
+
+For students enrolled less than full time, calculate percentage by dividing the student’s weekly instructional time by the total weekly instructional time. For example, a student takes one class per day, five days per week (45 minutes X 5 days = 225 minutes). If weekly instructional time is 1,725 minutes, then 225 ÷ 1,725 = .13, or 13 percent.
+
+If the percentage for part-time membership varies through the school year for a student, calculate a weighted percent. For example, 20% membership for 20 weeks and 30% membership for 16 weeks:
+
+[(20% X 20) + (30% X 16)] ÷ 36 weeks = .244, or 24.
+
+A common error made by LEAs is using the Percentage of Time Enrolled as a percentage of attendance. Another error is prorating the equivalent aggregate days membership twice – by populating the prorated membership days in the Days Enrolled field and by using the Percentage of Time Enrolled field to prorate.
+
+**EXAMPLES:** The following show Days Enrolled and Percentage of Time Enrolled in Calendar when student is enrolled less than 100% of the time.
+
+-   Student is enrolled the full school year, or 180 days, in an intermediate unit class and mainstreamed in a school district class:
+-   Intermediate unit reports 180 days enrolled @ 75% (135 equivalent days ÷ 180 days in session = .750 ADM)
+-   School district reports 180 days enrolled @ 25% (45 equivalent days ÷ 180 days in session = .250 ADM)
+-   Nonpublic, home education or privately tutored student is enrolled for one semester, for two classes or part-time in a public school:
+-   School district reports 90 days enrolled @ 26% (23 equivalent days ÷ 180 days in session = .127 ADM)
+-   Student enrolled in a part-time, half-day program at the high school and CTC/AVTS (50% enrolled, regardless of the actual instructional time):
+-   Charter school reports 180 days @ 50% (90 equivalent days ÷ 180 days in session = .500 ADM)
+-   CTC/AVTS reports 178 days @ 50% (89 equivalent days ÷ 178 days in session = .500 ADM)
+-   Student enrolled part-time (one class) at the high school and full-day at the CTC/AVTS:
+-   School district reports 180 days @ 13% (23 equivalent days ÷ 180 days in session = .127 ADM)
+-   CTC/AVTS reports 178 days @ 87% (155 equivalent days ÷ 178 days in session = .870 ADM)
+-   Membership for part-time students who are on track to graduate is prorated based on the amount of instructional time they receive compared to a full-time student.
+-   School district reports 179 days @ 39% (70 equivalent days ÷ 179 days in session = .391 ADM)
+
+**Sending Charter School (Location) Code and District Code of Sending Charter School (Fields 13 and 14)**
+
+When a charter school contracts with another public entity to educate their student, the educating entity populates these fields with the charter school’s School Number (4-digit building number) and the charter school’s administrative unit number (9-digit AUN). These fields are not key fields. If a student changes charter schools mid-year, the educating entity must create a second Student Calendar Fact record using a different Calendar ID (key field). The “Days Enrolled” will be attributed to each resident school district/charter school combination.
+
+## Template Specifications
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE OF INSTRUCTION`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - CALENDAR ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+A unique numeric and/or alphabetical unit used to identify the calendar for this student's enrollment.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Examples: 
+- `ABCElemKHT` 
+- `WPMS6-7-8` 
+- `CTCAM`
+</details>
+
+---
+### 4 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+The unique, 10-digit PAsecureID assigned to the student.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 5 - DISTRICT OF RESIDENCE AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The AUN of the school district where the parent/legal guardian resides.
+
+:::warning[**Business Rules:**]
+Must be one of the following: one of the 500 Pennsylvania school districts; the generic PA state code of 999999999; or the generic out-of-state code of 888888888.  Refer to Appendix N in Volume 2 of the PIMS User Manual for definitions regarding District of Residence AUN.  
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE OF RESIDENCE`
+
+---
+### 6 - FUNDING DISTRICT AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The AUN of the school district that is financially responsible for the student.  In most cases, this will be the same district as reported under Field 5 (DISTRICT OF RESIDENCE AUN), **EXCEPT** in the case of non-resident foster or institutionalized students.
+
+:::warning[**Business Rules:**]
+This must be one of the 500 Pennsylvania school districts.  See Appendix N in Volume 2 of the PIMS User Manual for a complete list of valid values.  
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789` 
+</details>
+
+**eScholar Name**: `FUNDING DISTRICT CODE`
+
+---
+### 7 - RESIDENCE STATUS CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The residency status of the student.
+
+:::warning[**Business Rules:**]
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix N in Volume 2 of the PIMS User Manual for a complete list of valid values.
+</details>
+
+---
+### 8 - DAYS ENROLLED
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The sum of days present and days absent when school was in session.
+
+
+Informs the Regular Attendance indicator in the **Future Ready PA Index**.
+
+:::warning[**Business Rules:**]
+Must be non-zero and less than or equal to days in session from the LEAs PIMS School Calendar table.  
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`170`
+</details>
+
+---
+### 9 - DAYS PRESENT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={6} /></p>
+
+The number of days present when school was in session.
+
+Informs the Regular Attendance indicator in the **Future Ready PA Index**.
+
+:::warning[**Business Rules:**]
+Must be greater than 0 and less than or equal to Field 8 (DAYS ENROLLED).  Number of days may include 2 decimal points.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`165.25`
+</details>
+
+---
+### 10 - PERCENTAGE OF TIME ENROLLED FOR CALENDAR 
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+For students in membership full-time, report 100.  For students in membership part-time, report the average percent of time in membership per week.
+
+:::warning[**Business Rules:**]
+Must be non-zero and less than or equal to 100. Report percentages as whole numbers without a percentage sign.  Do not report decimals. Thus, 90% should be reported as 90, not 0.90.  
+**NOTE:** A typical part-time, half-day vocational student is 50% at the high school and 50% at the CTC, regardless of the actual instructional time provided.
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: A student receives 225 instructional minutes compared to 1650 instructional minutes per week for full time students: 225/1650 = `14`.
+</details>
+
+---
+### 11 - GRADE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+Indication of the student's grade level.
+
+:::warning[**Business Rules:**]
+A student who is in more than one grade in a school year will have a separate record for the enrollment in each grade.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+See Appendix K in Volume 2 of the PIMS User Manual for a complete list of valid values.
+</details>
+
+**eScholar Name**: `CURRENT GRADE LEVEL`
+
+---
+### 12 
+Field(s) not collected. Must be delimited in template file.
+
+---
+### 13 - SENDING CHARTER SCHOOL – SCHOOL NUMBER
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code of the charter school that contracted with the educating LEA to educate a charter school student.
+
+:::note
+Charter School school number only. This field is required only for non-charter school LEAs educating a charter school student.  If this field is populated,  Field 14 (SENDING CHARTER SCHOOL AUN) must also be populated.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `1234`
+</details>
+
+**eScholar Name**: `SENDING CHARTER SCHOOL CODE`
+
+---
+### 14 - SENDING CHARTER SCHOOL AUN
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={9} /></p>
+
+The 9-digit AUN of the charter school that contracted with the educating LEA to educate a charter school student.
+
+:::note
+This field is required only for non-charter school LEAs educating a charter school student.  If this field is populated,  Field 13 (SENDING CHARTER SCHOOL – SCHOOL NUMBER) must also be populated.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE OF SENDING CHARTER SCHOOL`
+
+---
+### 15 - SPECIAL EDUCATION INDICATOR
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={1} /></p>
+
+Provide an indication of whether the days enrolled are for a special education student.  
+**NOTE**: The implementation date of the IEP indicates when special education services will be provided to the student. Code Y in this field will be used to calculate special education ADM (Average Daily Membership).
+
+:::warning[**Business Rules:**]
+A student may be reported initially as a regular education student (code E or N), then determined eligible for special education services (code Y) during the same school year. This student will have more than one Student Calendar Fact Record.  For child accounting a student with code E or N is considered "not special education."  
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid Values: 
+- Y – has IEP
+- E – exited IEP and transferred to Regular Ed this school year
+- N – no IEP
+</details>
+
+---
+### 16 - DAYS ABSENT – UNEXCUSED
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={6} /></p>
+
+The number of unexcused absences based on local attendance policy (for ex. due to parental neglect, illegal employment, truancy). This includes the number of unlawful absences of a compulsory school age student.
+
+:::warning[**Business Rules:**]
+Field 16 plus Field 9 (DAYS ABSENT-UNEXCUSED plus DAYS PRESENT) must be less than or equal to Field 8 (DAYS ENROLLED).  Number of days may include 2 decimals.  
+**NOTE**: This field is checked by the DQE.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`10.25`
+</details>
+---
