@@ -82,10 +82,20 @@ const config = {
           },
         ],
       },
-      font: {
-        fontFamily: 'Inter, sans-serif',
-        url: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap',
-      },
+      metadata: [
+        {
+          name: 'apple-mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: '#000',
+        },
+        {
+          name: 'msapplication-TileColor',
+          content: '#000',
+        },
+      ],
       footer: {
         style: 'light',
         logo: {

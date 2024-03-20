@@ -4,6 +4,21 @@
  * work well for content-centric websites.
  */
 
+ @font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: InterVariable;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+
+}
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #3443b7;
@@ -15,7 +30,9 @@
   --ifm-color-primary-lightest: #606dd2;
   --ifm-navbar-background-color: hsl(0, 0%, 90%); /* Light shade of gray header */
   --ifm-menu-color-background-active: hsl(0, 0%, 90%);
+  --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
 }
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #2e99dc;
@@ -27,7 +44,9 @@
   --ifm-color-primary-lightest: #72bae7;
   --ifm-navbar-background-color: hsl(0, 0%, 15%); /* Dark gray for header */
   --ifm-menu-color-background-active: hsl(0, 0%, 15%);
+  --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
 }
+
 .container {
   max-width: 85% !important;
   margin: 0 auto;
