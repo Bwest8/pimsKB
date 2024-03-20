@@ -1,7 +1,7 @@
 {
     "name": "PIMS Knowledge Base",
     "short_name": "PIMS KB",
-    "theme_color": "rgb(37, 194, 160)",
+    "theme_color": "{{themeColor}}",
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "./",
