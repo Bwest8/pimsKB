@@ -31,6 +31,8 @@
   --ifm-navbar-background-color: hsl(0, 0%, 90%); /* Light shade of gray header */
   --ifm-menu-color-background-active: hsl(0, 0%, 90%);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
+  --theme-color-light: hsl(0, 0%, 90%);
+  --theme-color-dark: hsl(0, 0%, 15%);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -47,10 +49,10 @@
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
 }
 
-.container {
-  max-width: 85% !important;
-  margin: 0 auto;
-}
+/* .container {
+/*   max-width: 85% !important;
+/*   margin: 0 auto;
+/* }
 
 /* Light mode header background */
 .markdown > h2#template-specs ~ h3 {
