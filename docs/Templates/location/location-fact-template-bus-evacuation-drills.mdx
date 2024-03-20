@@ -1,0 +1,232 @@
+---
+title: Location Fact Template for Bus Evacuation Drills
+description: Location Fact Template for Bus Evacuation Drills Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+# Location Fact Template for Bus Evacuation Drills
+
+**(22 Fields, 10 Collected, Delimited)**
+
+**Target Table(s): `LOCATION_FACT`**
+
+**Load Sequence/Dependencies**
+
+No dependencies
+
+## Template Description
+
+The Bus Evacuation Drill Excel reporting tool is emailed to LEAs from PDE. The reporting tool consists of four rows for each location within the LEA, and three rows for the non-school School Number 9999. School Number 9999 is to be used to report drills held for students bussed to locations other than locations of the reporting LEA. Do not delete or add rows to the reporting tool.
+
+The first row for each LEA location is for reporting the first day of school (Category 03 = FIRSTDAY). Enter Y in the Indicator field, and the date of the first day of school in the Date field.
+
+The second row for each LEA location is used to indicate that no bus evacuation drills are required because students are not bussed to that location (Category 03 = NOBUS). Enter Y in the Indicator field if no bus drills are required, otherwise enter N.
+
+The next two rows for each LEA location are for reporting whether drills were conducted in the fall (Category 03 = FALL) and during the month of March (Category 03 = MARCH). In the indicator field, enter a Y if a drill was held, otherwise enter N. If a drill was held, enter the date of the drill in the Date field. Date must be entered in ISO format (YYYY-MM-DD). If a required drill was not held, a brief explanation is required in the Comment field. In Excel, it may be necessary to format fields as text before entering data.
+
+Some LEAs may bus students to off-site locations. Evacuation drills for students bussed to off-site locations are reported under the School Number 9999. This includes students regularly bussed to other locations such as IUs, CTCs, etc. This does not include student only bussed for field trips and similar activities.
+
+The first row for the non-LEA location 9999 is used to indicate that no bus evacuation drills are required because students are not bussed to any off-site locations (Category 03 = NOBUS). Enter Y in the Indicator field if no bus drills are required, otherwise enter N. If a drill was not required, no explanation is required in the Comment field.
+
+The next two rows for the non-LEA location 9999 are for reporting whether drills were conducted in the fall (Category 03 = FALL) and during the month of March (Category 03 = MARCH). In the indicator field, enter a Y if a drill was held, otherwise enter N. If a drill was held, enter the date of the drill in the Date field. If a required drill was not held, a brief explanation is required in the Comment field.
+
+If a location has multiple drills on different days, the date that all drills were completed for the location should be used.
+
+Save and Upload the File:
+
+1. Click on Save As and name the file correctly (SUBMITTINGAUN_LOCATION_FACT_DATE&TIME).
+
+Example file name: `123456789_LOCATION_FACT_201506110800`.
+
+2. Save file type as a .csv file
+3. Upload the .csv file into PIMS as a Location Fact Template via the C6 Safe School-Bus data set
+
+## Template Specifications for Bus Evacuation Drills
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify *See Rule 1 below.
+:::
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE-defined 4-digit code identifying the school. IUs use SCHOOL NUMBER 0000.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 4 - CATEGORY 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+Description of the data element being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`DRILL`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 5 - CATEGORY 2
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+Type of drill being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`BUS`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 6 - CATEGORY 3
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+Detail being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `FIRSTDAY` 
+- `NOBUS` 
+- `FALL` 
+- `MARCH`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 7-13
+Fields not collected. Must be delimited in template file.
+
+---
+### 14 - PRIMARY MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Use the constant value of INDICATOR.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`INDICATOR`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 15-17
+Fields not collected. Must be delimited in template file.
+
+---
+### 18 - INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indication of whether the record is used to report data. If the school is required to conduct bus evacuation drills: The row in which Category 3 = FIRSTDAY has this indicator set to Y and the date of the first day of school is reported in the Date field. The rows in which Category 3 = FALL or MARCH have this indicator set to Y to indicate a drill was conducted and the date of the drill is reported in the date field. If either drill is not conducted, the indicator in the appropriate row for that drill is set to N and no date is reported. A comment is required in the comment field to explain why a required drill was not conducted. If the school is not required to conduct bus evacuation drills, the row in which Category 3 = NOBUS must have this indicator set to Y and an explanation is required in the COMMENT field.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: Y or N
+</details>
+
+---
+### 19
+Field not collected. Must be delimited in template file.
+
+---
+### 20 - DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+A single date indicating: If Category 03 = FIRSTDAY and Indicator = Y, the date of the first day of school. If Category 03 = FALL and Indicator = Y, the date of the fall bus evacuation drill. If Category 03 = MARCH and Indicator = Y, the date of the March bus evacuation drill.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `2023-09-30`
+</details>
+
+**eScholar Name**: `START DATE`
+
+---
+### 21
+Field not collected. Must be delimited in template file.
+
+---
+### 22 - COMMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={250} /></p>
+
+Enter a brief description as to why a required drill was not conducted, or why the school is not required to conduct bus evacuation drills.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: 
+
+No bussed students, Students bussed by the sending district
+</details>
+
+## Rules 
+
+*See the Rules Section of the Template Domain for rules consistent throughout all templates 
+
+1. In the PDE-provided Bus Evacuation Drill Excel reporting tool, Fields 1, 2, 3, 4, 5, 6, and 14 are prepopulated. Do not edit data in these fields.

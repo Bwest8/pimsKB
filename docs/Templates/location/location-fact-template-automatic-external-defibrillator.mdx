@@ -1,0 +1,256 @@
+---
+title: Location Fact Template for Automatic External Defibrillator (AED)
+description: Location Fact Template for Automatic External Defibrillator Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+**(22 Fields, 11 Collected, Delimited)**
+
+**Target Table(s): `LOCATION_FACT`**
+
+**Load Sequence/Dependencies**
+
+No dependencies
+
+## Template Description
+
+The Location Fact Template for AED Excel reporting tool is emailed to LEAs from PDE. The reporting tool is used to submit the results of AED Report Form. Information is captured in an Excel file, automatically creating the Location Fact Template to be submitted to PIMS.
+
+The PDE- provided reporting tool consists of 21 rows for each location within the LEA, and for the non-school School Number 9999. School Number 9999 is to be used for AEDs that are normally kept in a location not having a School Number, such as an athletic building, in the school resource officer’s vehicle, on a school bus, etc.
+
+The first row for each location allows for reporting that a location has no AEDs. The remaining rows allow for reporting data for up to 20 AEDs. If your LEA must report more than 20 AEDs at a single location, contact the PDE Data Collection Team at [ra-DDQDataCollection@pa.gov](mailto:ra-DDQDataCollection@pa.gov) for assistance.
+
+The AED numbers in the Category 02 column of the Location Fact Template are to assign a unique or ‘key’ value to each record. You need not associate this with any identifying numbers already on the AED.
+
+Although every row of the reporting tool is populated with some data, and all rows may be uploaded, PDE will only use the rows in which the indicator (Field 18) is Y. A Y in this field indicates that you are reporting that the location has no AEDs (if the value in Category 02 is NONE) or you are reporting data for an AED (if the value in Category 02 is AED01 through AED20).
+
+To report a location that has one or more AEDs, find the row for that location having AED01 in the Category 02 field (Field 5):
+
+1.  Enter the general condition of the AED in the condition field (Field 6). Valid values are NEW, GOOD, FAIR, or POOR (uppercase only).
+2.  Enter Y (uppercase only) in the indicator field (Field 18).
+3.  Enter the school year in which the AED was first put into service in the Service Date field (Field 20). Use the June 30 date ending the school year. The current school year is reported as 2022-06-30. Date must be in ISO format.
+4.  Enter the actual date on which the current inspection for the AED expires in the Date Inspection Expires field (Field 21). If components have separate inspection expiration dates, report the earliest date. Date must be in ISO format.
+5.  Enter a brief description of the location of the AED in the Placement field (Field 22).
+6.  Repeat as needed for each AED at each location.
+
+Save and Upload the File:
+
+1.  Click on Save As and name the file correctly (SUBMITTINGAUN_LOCATION_FACT_DATE&TIME).
+
+    Example file name: `123456789_LOCATION_FACT_201506110800`.
+
+2.  Save file type as a .csv file
+3.  Upload the .csv file into PIMS as a Location Fact Template via the C6 Safe Schools - AED data set
+
+
+## Template Specifications for Automatic External Defibrillator (AED)
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify *See Rule 1 below.
+:::
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code Identifying the school. IUs use SCHOOL NUMBER 0000.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 4 - CATEGORY 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+Description of the data element being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`AED`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 5 - CATEGORY 2
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+Unique number identifying each AED in service at the location. The number need not refer to the same AED each year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `AED01` through `AED20` 
+- `NONE`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 6 - CATEGORY 3
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The overall condition of the AED.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `NEW`
+- `GOOD`
+- `FAIR`
+- `POOR` 
+- `NA`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated with the default value, "NA." Modify only if this row is being used to report an AED. *See Rule 2 below.
+:::
+
+---
+### 7-13
+Fields not collected. Must be delimited in template file.
+
+---
+### 14 - PRIMARY MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Use the constant value of INDICATOR.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`INDICATOR`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 15-17
+Fields not collected. Must be delimited in template file.
+
+---
+### 18 - INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indication of whether the location has AED(s) in service.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` 
+- `N`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated with the default value, "N." Modify only if this row is being used to report an AED. *See Rule 2 below.
+:::
+
+---
+### 19
+Field not collected. Must be delimited in template file.
+
+---
+### 20 - SERVICE DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+A single date indicating the school year during which the AED was placed in service; June 30 at the end of the standard school year is used to designate a school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-06-30`
+</details>
+
+**eScholar Name**: `START DATE`
+
+---
+### 21 - DATE INSPECTION EXPIRES
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The date on which the current AED inspection expires. If none, report the earliest date of expiration of any of the components (batteries, pads, etc.)
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-21`
+</details>
+
+**eScholar Name**: `END DATE`
+
+---
+### 22 - PLACEMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3000} /></p>
+
+Enter a brief description of the location of the AED within the school.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Examples: 
+
+Nurses Office, Hallway outside gymnasium.
+</details>
+
+**eScholar Name**: `COMMENT`
+
+---
+
+# Rules
+
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+1. In the PDE-provided AED Excel reporting tool, Fields 1, 2, 3, 4, and 14 are prepopulated. Do not edit data in these fields.
+2. In the PDE-provided AED Excel reporting tool, Fields 6 and 18 are prepopulated with default values that may be edited.

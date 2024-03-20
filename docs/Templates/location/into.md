@@ -1,0 +1,38 @@
+# Location Domain
+
+The LEAs are required to submit the following templates in the Location Domain:
+
+## Templates
+- Location Fact Template for Safe Schools
+- Location Fact Template for Bus Evacuation Drill
+- Location Fact Template for Fire and Security Drills
+
+:::note
+These templates apply to the following organizational types:
+- School Districts 
+- Intermediate Units
+- Career and Technical Centers
+- Charter Schools
+:::
+
+### Location Fact Template for Automatic External Defibrillator (AED)
+
+This template applies to following organizational types:
+- School Districts
+- Career and Technical Centers
+- Charter Schools
+- Intermediate Units
+- State Juvenile Correctional Institutions
+- Approved Private Schools receiving AEDs through the program described in [Act 35 of 2014](https://www.legis.state.pa.us/cfdocs/legis/LI/uconsCheck.cfm?txtType=HTM&yr=1949&sessInd=0&smthLwInd=0&act=0014.&chpt=014.&subchpt=000.&sctn=023.&subsctn=000.), 24 P.S. § 14-1423 Automatic external defibrillators.
+- Private Residential Rehabilitative Institutions receiving AEDs through the program described in Act 35 of 2014, 24 P.S. § 14-1423 Automatic external defibrillators.
+
+## Excel Tools
+
+- **Location Fact Template for Interscholastic Athletic Opportunities Data**
+
+This template applies to schools in the following organizational types that educate a student in any of the grades 7-12:
+- School Districts
+- Comprehensive Career and Technical Centers
+- Charter Schools
+
+All fields may not be mandatory; however, all fields within each template **MUST BE** accounted for in order to transmit data.

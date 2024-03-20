@@ -1,0 +1,265 @@
+---
+title: Location Fact Template for Safe Schools
+description: Location Fact Template for Safe Schools Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+
+**(15 Fields, 9 Collected, Delimited)**
+
+**Target Table(s): `LOCATION_FACT`**
+
+**Load Sequence/Dependencies**
+
+No dependencies
+
+**Template Description**
+
+This template is used to capture the various aggregated data shown in the table below for each school. More information as well as sample data is provided below.
+
+_Habitual Truancy Notes_
+
+Students that are considered habitually truant at any time during the school year are to be reported in aggregate in this template. Note that the aggregate number of habitual truants is to be reported by grade, by ethnicity and by gender. Each habitually truant student should be counted only once in each of these.
+
+Each LEA should have specific policies regarding attendance. Habitually truant shall mean six (6) or more school days of unlawful absences (unexcused absences during the current school year by a child subject to compulsory school attendance). NOTE: LEAs are required to submit a full year of attendance data for the current SY, regardless of instructional delivery model.
+
+This definition of compulsory age distinguishes between all unexcused absences and unlawful absences because the latter are more likely to indicate school and student problems. An unlawful absence is an absence for part of a school day (i.e., at least one class period) or a full day for which a parent or guardian has not indicated in writing that the student is away from school for valid reasons (e.g., illness, medical/dental appointment, funeral of an immediate relative) for a compulsory age student. Suspensions and expulsions are not to be considered as unlawful absences.
+
+Definitions:
+
+- **Unexcused Absence:** unexcused absences for a student of any age.
+- **Unlawful Absence:** any unexcused absence for a compulsory age student. Only unlawful absences will count towards the habitually truant status of a student.
+- **Compulsory Age:** when a student first enrolls in school (which may be no later than 6 years old), until the age of 18 or graduation from a high school, whichever comes first.
+- **Habitually Truant:** a student of compulsory school age that has six (6) or more school days of unlawful absences during any given school year.
+
+| **Category** | **Data Captured** |
+|------------------------------------------------------------------|---------------------------------|
+| Habitual Truancy | Habitual truancy by grade level <br /> Habitual truancy by ethnicity <br /> Habitual truancy by gender |
+| Indication of No Reportable School Safety Incidents for a School | N/A |
+
+PDE will use this data to calculate a truancy rate for each school and LEA. The truancy rate calculation is shown below.
+
+<center> 
+$$\text{TRUANCY RATE} = \frac{\text{NUMBER OF HABITUAL TRUANTS}}{\text{COUNT OF STUDENT MEMBERSHIP}} \times 100$$ 
+</center>
+
+See the template specifications below and Appendix AA in Volume 2 of the PIMS User Manual for more information.
+
+_Indication of No Reportable School Safety Incidents for a School Notes_
+
+Reportable School Safety incidents are to be submitted in detail in the Discipline Domain templates (see the Discipline Domain section for more information on reportable incidents). Some schools (most often elementary schools) may not have any reportable School Safety incidents for the entire school year. In this situation an LEA must indicate such by submitting a record in this template for each school that does not have reportable incidents for the year.
+
+See the template specifications and sample data below as well as Appendix AA in Volume 2 of the PIMS User Manual for more information.
+
+## Template Specifications for Safe Schools
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code identifying the school. IUs use SCHOOL NUMBER 0000.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+  
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+---
+### 4 - CATEGORY 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The highest-level description of the aggregated data being submitted.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix AA in Volume 2 of the PIMS User Manual for a complete list of valid values for the Category 1 – 4 fields.
+</details>
+
+---
+### 5 - CATEGORY 2
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The second level description of the aggregated data being submitted.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix AA in Volume 2 of the PIMS User Manual for a complete list of valid values for the Category 1 – 4 fields.
+</details>
+
+---
+### 6 - CATEGORY 3
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The third level description of the aggregated data being submitted.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix AA in Volume 2 of the PIMS User Manual for a complete list of valid values for the Category 1 – 4 fields.
+</details>
+
+---
+### 7 - CATEGORY 4
+<p><Badge color="conditional" /> <Badge color="key" /> <Badge length={8} /></p>
+
+The fourth level description of the aggregated data being submitted.
+
+:::note
+Only applies to EXPULSION and SUSPENSION data. Leave blank for TRUANCY.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix AA in Volume 2 of the PIMS User Manual for a complete list of valid values for the Category 1 – 4 fields.
+</details>
+
+---
+### 8-13
+Fields not collected. Must be delimited in template file.
+
+---
+### 14 - MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+Use constant of COUNT.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid Value: COUNT
+</details>
+
+---
+### 15 - COUNT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={7} /></p>
+
+The relevant count.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See Appendix AA in Volume 2 of the PIMS User Manual for a description of what to include in this field.
+</details>
+
+
+## Rules 
+
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+
+
+## Sample Data
+
+Sample data is provided below to help LEAs understand how to create this template. This sample data is for one school and is based on the following scenarios:
+
+-   **Habitual Truancy** – The school has 25 habitually truant students for the school year. The breakdown of these students by grade level, ethnicity and gender is outlined in the following table.
+
+<table> <thead> <tr> <th colSpan="2"></th> <th>Number of Habitual Truant Students</th> </tr> </thead> <tbody> <tr> <td rowSpan="3">By Grade</td> <td>10th grade</td> <td>10</td> </tr> <tr> <td>11th grade</td> <td>10</td> </tr> <tr> <td>12th grade</td> <td>5</td> </tr> <tr> <td colSpan="2">Total</td> <td>25</td> </tr> <tr> <td rowSpan="2">By Ethnicity</td> <td>White/Caucasian</td> <td>25</td> </tr> <tr> <td>Total</td> <td>25</td> </tr> <tr> <td rowSpan="2">By Gender</td> <td>Female</td> <td>8</td> </tr> <tr> <td>Male</td> <td>17</td> </tr> <tr> <td colSpan="2">Total</td> <td>25</td> </tr> </tbody> </table>
+
+-   **Expulsions** – Nine (9) students were expelled during the year at the school for reasons of academic or student code violations. The breakdown by infraction category by grade level, by infraction category by ethnicity, and by infraction category by gender is outlined in the following table.
+
+|              | **Number of Students Expelled**      |                                                          |       |
+|--------------|--------------------------------------|----------------------------------------------------------|-------|
+|              | **Expelled due to Academic Reasons** | **Expelled due to Violation of Student Code of Conduct** |       |
+| By Grade     | 10th grade                           | 3                                                        | 1     |
+|              | 11th grade                           | 2                                                        | 2     |
+|              | 12th grade                           | 1                                                        | 0     |
+|              | **Total**                            | **6**                                                    | **3** |
+| By Ethnicity | Black/African American               | 3                                                        | 1     |
+|              | Multi-Racial                         | 0                                                        | 1     |
+|              | White/Caucasian                      | 3                                                        | 1     |
+|              | **Total**                            | **6**                                                    | **3** |
+| By Gender    | Female                               | 0                                                        | 0     |
+|              | Male                                 | 6                                                        | 3     |
+|              | **Total**                            | **6**                                                    | **3** |
+
+-   **Out-of-School Suspensions** – There were 13 incidents at the school during the year that led to 13 students being out of school suspended for reasons of academic or student code violations. The breakdown by infraction category by grade level, by infraction category by ethnicity, and by infraction category by gender is outlined in the following table.
+
+|              | **Number of Out of School Suspension Incidents** |                                                             |       |
+|--------------|--------------------------------------------------|-------------------------------------------------------------|-------|
+|              | **Suspensions due to Academic Reasons**          | **Suspensions due to Violation of Student Code of Conduct** |       |
+| By Grade     | 10th grade                                       | 0                                                           | 1     |
+|              | 11th grade                                       | 4                                                           | 6     |
+|              | 12th grade                                       | 1                                                           | 1     |
+|              | **Total**                                        | **5**                                                       | **8** |
+| By Ethnicity | Black/African American                           | 3                                                           | 2     |
+|              | White/Caucasian                                  | 2                                                           | 6     |
+|              | **Total**                                        | **5**                                                       | **8** |
+| By Gender    | Female                                           | 2                                                           | 2     |
+|              | Male                                             | 3                                                           | 6     |
+|              | **Total**                                        | **5**                                                       | **8** |
+
+**Based on these above scenarios the data submitted in the Location Fact Template for this one school would be as shown below. Note that NC stands for Not Collected.**
+
+| **Submitting AUN** | **School Number** | **School Year Date** | **Category 1** | **Category 2** | **Category 3** | **Category 4** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **Measure Type** | **Count** | **NC** | **NC** | **NC** |
+|--------------------|-------------------|----------------------|----------------|----------------|----------------|----------------|--------|--------|--------|--------|--------|--------|------------------|-----------|--------|--------|--------|
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | GRADE          | 010            |                |        |        |        |        |        |        | COUNT            | 10        |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | GRADE          | 011            |                |        |        |        |        |        |        | COUNT            | 10        |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | GRADE          | 012            |                |        |        |        |        |        |        | COUNT            | 5         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | ETHNICITY      | 5              |                |        |        |        |        |        |        | COUNT            | 25        |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | GENDER         | F              |                |        |        |        |        |        |        | COUNT            | 8         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | TRUANCY        | GENDER         | M              |                |        |        |        |        |        |        | COUNT            | 17        |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GRADE          | 010            | ACADEMIC       |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GRADE          | 010            | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GRADE          | 011            | ACADEMIC       |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GRADE          | 011            | CONDUCT        |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GRADE          | 012            | ACADEMIC       |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | ETHNICITY      | 3              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | ETHNICITY      | 3              | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | ETHNICITY      | 6              | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | ETHNICITY      | 5              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | ETHNICITY      | 5              | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GENDER         | M              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 6         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | EXPULSION      | GENDER         | M              | CONDUCT        |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GRADE          | 010            | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GRADE          | 011            | ACADEMIC       |        |        |        |        |        |        | COUNT            | 4         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GRADE          | 011            | CONDUCT        |        |        |        |        |        |        | COUNT            | 6         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GRADE          | 012            | ACADEMIC       |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GRADE          | 012            | CONDUCT        |        |        |        |        |        |        | COUNT            | 1         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | ETHNICITY      | 3              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | ETHNICITY      | 3              | CONDUCT        |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | ETHNICITY      | 5              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | ETHNICITY      | 5              | CONDUCT        |        |        |        |        |        |        | COUNT            | 6         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GENDER         | F              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GENDER         | F              | CONDUCT        |        |        |        |        |        |        | COUNT            | 2         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GENDER         | M              | ACADEMIC       |        |        |        |        |        |        | COUNT            | 3         |        |        |        |
+| 123456789          | 1234              | 2024-06-30           | SUSPENSION     | GENDER         | M              | CONDUCT        |        |        |        |        |        |        | COUNT            | 6         |        |        |        |

@@ -1,0 +1,266 @@
+---
+title: Location Fact Template for Fire and Security Drills
+description: Location Fact Template for Fire and Security Drills Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+**(22 Fields, 11 Collected, Delimited)**
+
+**Target Table(s): `LOCATION_FACT`**
+
+**Load Sequence/Dependencies**
+
+No dependencies
+
+## Template Description
+
+The Location Fact Template for Fire and Security Drills Excel reporting tool is emailed to LEAs from PDE. The reporting tool is used to submit the results of the Fire and Security Drills Report Form. Information is captured in an Excel file, automatically creating the Location Fact Template to be submitted to PIMS.
+
+The PDE-provided reporting tool consists of thirteen rows for each location within the LEA, one row to be used to identify the first day of school for each location and one row for each month of the year. Every location should report every month whether or not a drill was held. Do not delete or add rows to the reporting tool.
+
+The first row for each LEA location is for reporting the first day of school (Category 03 = FIRSTDAY). Enter Y in the Indicator field, and the date of the first day of school in the Date field.
+
+During the months that there is a fire or security drill held at the LEA a “Y” will be entered in Field 18 (Indicator) and the date the drill took place will be entered in Field 20 (Start Date). On months where no fire or security drill took place an “N” will be entered in Field 18 (Indicator) and a comment as to why no drill took place will be entered in Field 22 (Comment).
+
+Report no more than one drill in a month. If drills in addition to the required drill are conducted, report only the required drill.
+
+Where a single School Number represents more than one physical location (i.e., 0000 for an Intermediate Unit with multiple buildings) and the drills for a month are conducted on different days, report the date on which the final drill was conducted, bringing the location into compliance. For example, there are three physical buildings reported under a single School Number. Buildings 1 and 2 conducted a drill on May 4; building 3 conducted a drill on May 7. Report the drill using the May 7 date.
+
+Section 1517 of the Public School Code requires that a security drill be conducted within 90 days of the commencement of the school year in place of a fire drill and allows two additional security drills to be conducted in place of two fire drills after 90 days from the commencement of the school year (this means ninety (90) calendar days). When a security drill is reported in place of a fire drill, substitute “SECURITY”” for “FIRE” in Field 5, Category 2. Section 1517 establishes specific requirements for the conduct of security drills.
+
+In Category 4 select one of three indicators (01-No Students at that location, 02-School not in session during this month, 03-Other) that explains why no drill was held that month. If 03 is entered in Category 4, briefly describe the other reason in the Field 22 (Comment).
+
+Save and Upload the File:
+
+1.  Click on Save As and name the file correctly (SUBMITTINGAUN_LOCATION_FACT_DATE&TIME).
+
+    Example file name: 123456789_LOCATION_FACT_201506110800.
+
+2.  Save file type as a .csv file.
+3.  Upload the .csv file into PIMS as a Location Fact Template via the C6 Safe Schools - Fire/Sec data set.
+
+## Template Specifications for Fire and Security Drills
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify *See Rule 1 below.
+:::
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE-defined 4-digit code identifying the school. IUs use SCHOOL NUMBER 0000.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 4 - CATEGORY 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+Description of the data element being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`DRILL`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 5 - CATEGORY 2
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+Type of drill being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `FIRE` 
+- `SECURITY`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated with the value, "FIRE." If a security drill is being reported in place of a fire drill, use, "SECURITY." *See Rule 2 below.
+:::
+
+---
+### 6 - CATEGORY 3
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+Identifies the month being reported in this record.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `JUL-JUN`
+- `FIRSTDAY`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 7 - CATEGORY 4
+<p><Badge color="conditional" /> <Badge color="key" /> <Badge length={2} /></p>
+
+Indicator for reasons drills were not held.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `01` – No Students at Location 
+- `02` – School not in session during this month 
+- `03` – Other
+</details>
+
+:::note
+If no fire or security drill was held in that month and an N indicator is in Field 18 then 1 of the 3 key values is entered for a reason.
+:::
+
+---
+### 8-13
+Fields not collected. Must be delimited in template file.
+
+---
+### 14 - PRIMARY MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Use the constant value of INDICATOR.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`INDICATOR`
+</details>
+
+:::danger[Warning:]
+In the PDE-provided reporting tool, this is prepopulated. Do not modify. *See Rule 1 below.
+:::
+
+---
+### 15-17
+Fields not collected. Must be delimited in template file.
+
+---
+### 18 - INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+Indication of whether a drill was held during the month indicated in CATEGORY 03.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+:::danger[Warning]
+In the PDE-provided reporting tool, this is prepopulated with the default value, 'Y' for FIRSTDAY, and "N" for each month. For each month, change this to "Y" if a drill was conducted during the indicated month. *See Rule 2 below.
+:::
+
+---
+### 19
+Field not collected. Must be delimited in template file.
+
+---
+### 20 - DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+A single date indicating the date of the first day of school or the date on which the drill was conducted.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-09-30`
+</details>
+
+**eScholar Name**: `START DATE`
+
+:::info
+Where CATEGORY 03 = "FIRSTDAY," the first day in the school year that school was in session. Where CATEGORY 03 is a month, the date on which a drill, if any, was held. 
+
+If no drill was conducted, leave blank.
+:::
+
+---
+### 21
+Field not collected. Must be delimited in template file.
+
+---
+### 22 - COMMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={250} /></p>
+
+Enter a brief description as to why a required drill was not conducted.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Examples: 
+
+Building temporarily closed.
+</details>
+
+:::warning[Important]
+Required if INDICATOR = N and Category 4 = 03
+:::
+
+## Rules
+
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+1. In the PDE-provided Fire and Security Drills Excel reporting tool, Fields 1, 2, 3, 4, 6 and 14 are prepopulated. Do not edit data in these fields.
+
+2. In the PDE-provided Fire and Security Drills Excel reporting tool, Fields 5 and 18 are prepopulated with default values that may be edited.
+
+

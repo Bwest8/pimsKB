@@ -1,0 +1,228 @@
+---
+title: Programs Fact Template
+description: PIMS Programs Fact Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+**Target Table(s): `PROGRAMS_FACT` (Primary Target), `REASONS_FACT`**
+
+## Template Description
+
+This template is used to track participation for specific programs; a complete list of programs to be collected can be found in Volume 2 of the PIMS User Manual. LEAs must report the actual beginning date (and if applicable, the actual ending date) for a student's participation in a particular program during a school year. Thus, for each reporting date, each LEA will submit two types of records.
+
+The first type of record is for a student **currently active** in a program. It contains each student whose participation in a particular program began on or before the current reporting date but after the prior reporting date, and who is still participating in the program as of the current reporting date. The ending date will be left blank in these records, and the beginning date will be populated with the actual date the student began participating in the program. For example, for the 11/15/2022 reporting date, submit all program participation records with beginning dates after 10/1/2022 up to and including 11/15/2022. If the student participated in a program for the entire 2022-2023 school year, the student would have a submitted record in the October collection with the start date as the beginning of the school year. At the end of the school year, the LEA would then update that same record with the end date of 2023-06-30. If the student continued in that same program in the school year, the LEA would submit a record in the October collection with the start date as the beginning of the school year.
+
+The second type of record is for students that **ended participation** in a program since the prior reporting date. It contains students whose participation began at any point from the start of the current school year up to and including the current reporting date, and whose participation ended after the previous reporting date, up to and including the current reporting date. For these records, both the beginning and ending dates must be populated with the actual dates the student started and ended participation in a particular program. For example, for the 11/15/2021 reporting date, submit all program participation records with ending dates after 10/1/2022 up to and including 11/15/2022. If the student participated in a program for the entire 2022-2023 school year, the student would have a submitted record in the October collection with the start date as the beginning of the school year. At the end of the school year, the LEA would then update that same record with the end date of 2023-06-30. If the student continued in that same program in the school year, the LEA would submit a record in the October collection with the start date as the beginning of the school year.
+
+Program participation records are specific to a particular school year. In the case of a student whose **participation in a program extends over two or more school years**, submit a record in the final (August) submission of each school year that has an ending date equal to the last day of that school year (yyyy-06-30), and then submit a new record in the first (October) submission of the new school year that has a beginning date equal to the first day of the new school year (yyyy-07-01).
+
+For example, consider a student that begins participating in program 001 on 9/5/2022 and ends participation on 9/25/2024. The following records should be submitted for these reporting periods:
+
+- October 2022: program code = 001, school year = 2023-06-30, beginning date = 2022-09-05
+- August 2023: program code = 001, school year = 2023-06-30, beginning date = 2022-09-05, ending date = 2023-06-30
+- October 2023: program code = 001, school year = 2024-06-30, beginning date = 2023-07-01
+- August 2024: program code = 001, school year = 2024-06-30, beginning date = 2023-07-01, ending date = 2024-06-30
+- October 2024: program code = 001, school year = 2025-06-30, beginning date = 2024-07-01, ending date = 2024-09-25
+
+The beginning date for any given record should never be earlier than the first day of the associated school year, and the ending date (when populated) should never be later than the last day of the school year.
+
+:::note
+This template is being used to accommodate the SES provider number for students enrolled in the "SES Tutoring (Federal) – Reading," "SES Tutoring (Federal) – Math," and "SES Tutoring (Federal) – Science" programs (Program Codes 003, 004, and 034 respectively). This will be captured in the Program Provider Type Code (Field 23).
+
+LEAs that have students enrolled in these programs need to ensure their data extracts are modified to accommodate the 25-field layout and populate the Program Provider Type Code as appropriate. LEAs that do not have students enrolled in these programs, however, DO NOT need to modify their extracts. These LEAs can continue to submit the 18-field layout for this template.
+
+PDE requests that LEAs with students in SES tutoring submit records in this template for all students that received this tutoring during the school year, even if the student was not receiving these services at the end of the year. This is so PDE can capture the SES Provider Number within the Program Provider Type Code (Field 23) for all these students as is required by federal law.
+:::
+
+:::info[**IMPORTANT TECHNICAL NOTE**]
+This template is being used to capture the SES provider number for students enrolled in the "SES Tutoring (Federal) – Reading" and "SES Tutoring (Federal) – Math" programs (Program Codes 003 and 004 respectively). This is captured in the PROGRAM PROVIDER TYPE CODE (Field 23) shown below.
+
+LEAs that have students enrolled in these programs need to ensure their data extracts are modified to accommodate the 25-field layout and populate the PROGRAM PROVIDER TYPE CODE as appropriate. LEAs that do not have students enrolled in these programs, however, DO NOT need to modify their extracts. These LEAs can continue to submit the 18-field layout for this template.
+:::
+
+
+## Template Specifications {#template-specifications}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code identifying the school.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::note
+**NOTE:** It is essential that the correct PAsecureID be entered for each student. **LEAs are encouraged to share this number, where appropriate and within FERPA guidelines, to ensure accurate data.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 5 - PROGRAMS CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+The type of program in which the student participates.
+
+<details>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Program Code Description                       | Additional Program Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `029`  | Head Start                                     | Report Head Start students, if Head Start is part of an authorized program of the LEA. Refer to the PIMS User Manual Volume 1, pages 9-10, for additional clarification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `030`  | Pre-K Counts                                   | Report the student if they are participating in an LEA based Pre-K Counts program. Refer to the PIMS User Manual Volume 1, pages 9-10, for additional clarification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `035`  | AEDY – School District                         | Report if student is in a district operated AEDY Program regardless of program location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `036`  | AEDY – Intermediate Unit                       | Report if student is in an intermediate unit operated AEDY Program regardless of program location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `037`  | AEDY – CTC                                     | Report if student is in a CTC operated AEDY Program regardless of program location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `038`  | AEDY – Private                                 | Report if student is in an AEDY Private Provider operated AEDY Program regardless of program location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `055`  | Homeless, Unaccompanied                        | Student meets the McKinney Vento definition of homelessness and is not in the physical custody of a parent or legal guardian. This includes youth who have run away from home, been thrown out of their home, been abandoned by parents or guardians, or separated from their parents for any other reason.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `056`  | Homeless, Accompanied                          | Student meets the McKinney Vento definition of homelessness and is in the physical custody of a parent or legal guardian.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `057`  | 21st Century Community Learning Centers        | Report if the student participates in a 21st Century grant-funded program.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `060`  | Mode of Instruction – Hybrid                   | Report if student is enrolled in a combination of face-to-face learning and remote learning as approved by the LEA’s governing body. (e.g. Monday-Tuesday face to face, Wednesday-Friday remote, on a continuous basis.) This does not include Flexible Instruction Days (FID) or temporary periods that are necessitated by weather or illness, unless the period lasts for more than five consecutive days.  *Students who are enrolled in a virtual course that supplements LEA course offerings should not be considered “hybrid”. Examples include, but are not limited to, advanced placement, dual enrollment, remedial, foreign language, elective, or other courses.*                              |
+| `061`  | Mode of Instruction – Full Time Virtual/Remote | Report if the student is enrolled in remote learning as approved by the LEA’s governing body for 100% of their instructional time for a period longer than five days. Remote education is on-line or distance education that replaces face-to-face course instruction, including synchronous or asynchronous delivery.  Students who attend a brick-and-mortar building while receiving virtual or remote instruction for 100% of their education should be reported as participating in full-time remote instruction. This does not include Flexible Instruction Days (FID) or temporary periods that are necessitated by weather or illness, unless the period lasts for more than five consecutive days. |
+| `062`  | Keystone State ChalleNGe Academy (KSCA)        | Report if the student participates in the Keystone State ChalleNGe Academy.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+:::note[Notes:]
+
+-   Several programs will be tracked directly on the student record. Please refer to the Student and Student Snapshot Templates for specific details and code sets for these programs:
+    -   IEP (Not Gifted)
+    -   Plan 504
+-   Some programs may be tracked in aggregate at the IU level, not the student level. Please refer to the District Annual Facts Template for specific details on how to collect this information. Currently these include:
+    -   EP Service Plan
+-   Some programs may be tracked at the school level, not the student level. Currently these include:
+    -   Project 720
+-   Students coded here as `055` and `056` should also have a nighttime status recorded in the Program Fact Template, Field 18.
+-   The McKinney-Vento Act defines the term "homeless children and youths" as individuals who lack a fixed, regular, and adequate nighttime residence.
+-   Mode of Instruction: This is the manner in which an instructional program is delivered in a given time period. Modes of instruction include fully in-person, hybrid, and fully virtual/remote.
+-   The Education for Homeless Youth Basic Education Circular (BEC) explains the categories of children who are "homeless" and entitled to the protections of the federal law. These categories include:
+    -   children and youths who are sharing the housing of other persons due to loss of housing, economic hardship, or a similar reason; are living in motels, hotels, trailer parks or camping grounds due to the lack of alternative adequate accommodations; are living in emergency or transitional shelters; or are abandoned in hospitals;
+    -   children and youths who have a primary nighttime residence that is a public or private place not designed for or ordinarily used as a regular sleeping accommodation for human beings;
+    -   children and youths who are living in cars, parks, public spaces, abandoned buildings, substandard housing, bus or train stations, or similar settings; and
+
+“migratory children” who qualify as homeless under federal law because the children are living in circumstances described in clauses (i) through (iii) above. The term "migratory children" means children who are (or whose parent(s) or spouse(s) are) migratory agricultural workers, including migratory dairy workers or migratory fishermen, and who have moved from one school district to another in the preceding 36 months, in order to obtain (or accompany such parents or spouses in order to obtain) temporary or seasonal employment in agricultural or fishing work.
+
+:::
+</details>
+
+---
+### 6 - BEGINNING DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+Actual date upon which the student began participating in a program:
+- For Program Code `026` or `027`, this is the date the student was first eligible for tutoring.
+- For Program Codes `055` (Homeless, Unaccompanied) and `056` (Homeless, Accompanied) this is the date the student became homeless.
+
+:::warning
+Must not be greater than current date.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2020-09-03`
+</details>
+
+**eScholar Name**: `PROGRAM START DATE`
+
+---
+### 7 - ENDING DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+Actual date upon which the student stopped participating in a program:
+- For Program Code `026` or `027`, this is the date the student's eligibility for tutoring ended.
+- For Program Codes `055` (Homeless, Unaccompanied) and `056` (Homeless, Accompanied), this is the date the student was no longer homeless.
+
+:::note
+Required only when a student stops participating in a program.  Must be greater than or equal to [BEGINNING DATE](#6---beginning-date).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2020-10-30`
+</details>
+
+**eScholar Name**: `PROGRAM END DATE`
+
+---
+### 8 
+Field(s) not collected. Must be delimited in template file.
+
+---
+### 9 - PROGRAM INTENSITY
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={20} /></p>
+
+This field is no longer used by PDE but is still available for LEA use if desired to display the number of instructional minutes received for the program.
+
+:::info
+This field can be left blank.
+:::
+
+---
+### 10-17
+Field(s) not collected. Must be delimited in template file.
+
+---
+### 18 - PGM PARTICIPATION INFORMATION CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indicator of the living arrangement of a student identified as homeless in [PROGRAMS CODE](#5---programs-code).
+
+:::note
+This field is required for students reported with Program Codes `055` (Homeless, Unaccompanied) and `056` (Homeless, Accompanied).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `S` – shelter, transitional  housing
+- `D` – doubled up 
+- `U` – unsheltered (e.g. cars, parks, campgrounds, temporary trailer, abandoned building, substandard housing)
+- `H` – hotels/motels
+</details>
+
+---

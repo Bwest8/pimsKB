@@ -13,10 +13,7 @@
   --ifm-color-primary-light: #3b4bc7;
   --ifm-color-primary-lighter: #4454ca;
   --ifm-color-primary-lightest: #606dd2;
-  --ifm-navbar-background-color: hsl(0, 0%, 90%); /* Light shade of gray header */
-  --badge-primary-bg: #B3C3E7;
-  --badge-primary-border: #5A7AC9;
-  --badge-primary-text: #243B73;
+  --ifm-navbar-background-color: hsl(0, 0%, 80%); /* Light shade of gray header */
   --ifm-menu-color-background-active: hsl(0, 0%, 90%);
 }
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -37,7 +34,7 @@
 }
 /* Light mode header background */
 .markdown > h3 {
-  background-color: rgb(229, 231, 235); /* A light gray background */
+  background-color: hsl(0, 0%, 90%); /* A light gray background */
   padding: 0.2em 0.5em; /* Add some padding */
   border-radius: 8px; /* Rounded corners */
   font-weight: bold; /* Bold text */
@@ -48,4 +45,3 @@ html[data-theme='dark'] .markdown > h3 {
   background-color: #424242; /* A darker background for dark mode */
   color: #ffffff; /* Light text for dark backgrounds */
 }
-
