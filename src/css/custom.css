@@ -32,16 +32,17 @@
   max-width: 85% !important;
   margin: 0 auto;
 }
+
 /* Light mode header background */
-.markdown > h3 {
-  background-color: hsl(0, 0%, 90%); /* A light gray background */
-  padding: 0.2em 0.5em; /* Add some padding */
-  border-radius: 8px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
+.markdown > h2#template-specs ~ h3 {
+  background-color: hsl(0, 0%, 90%);
+  padding: 0.2em 0.5em;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 /* Dark mode header background */
-html[data-theme='dark'] .markdown > h3 {
-  background-color: #424242; /* A darker background for dark mode */
-  color: #ffffff; /* Light text for dark backgrounds */
+html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
+  background-color: #424242;
+  color: #ffffff;
 }
