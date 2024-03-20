@@ -24,7 +24,33 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [
+    require.resolve('docusaurus-lunr-search'),
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/pimsKbLogo.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -82,20 +108,6 @@ const config = {
           },
         ],
       },
-      metadata: [
-        {
-          name: 'apple-mobile-web-app-capable',
-          content: 'yes',
-        },
-        {
-          name: 'apple-mobile-web-app-status-bar-style',
-          content: '#000',
-        },
-        {
-          name: 'msapplication-TileColor',
-          content: '#000',
-        },
-      ],
       footer: {
         style: 'light',
         logo: {
