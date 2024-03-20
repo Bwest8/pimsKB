@@ -42,8 +42,9 @@ All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa
 
 A unique identifier assigned by the PDE to each staff member reported in PIMS.  Use the 7-digit Professional Personnel ID (PPID) for all certificated and non-certificated staff with direct instructional responsibility for students.
 
-:::note
-Do not use leading zeros or spaces in PPIDs.  Field 8 of the Staff template for this PPID cannot be 'NPA'.
+:::warning[Business Rules:]
+- Do not use leading zeros or spaces in PPIDs.  
+- Field 8 of the Staff template for this PPID cannot be 'NPA'.
 :::
 
 <details open>
@@ -160,8 +161,13 @@ See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid
 
 The percentage of content-specific instruction for a state assessment that a teacher is responsible for providing to an individual student. The PERCENTAGE OF SHARED INSTRUCTION (INSTRUCTIONAL RESPONSIBILITY WEIGHT) will account for shared instruction of a student from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEAs testing window opens for that state assessment.  Zero will add the students to the "removed from roster". 1-100 will add the students to the teacher's roster.
 
-:::note
-Whole number from 0 to and including 100.  Example: This teacher splits instructional responsibility for a student that participates in the entire course 50/50 with another teacher; field is populated with 50 This teacher is the ONLY PA certified educator providing the content specific instruction of the assessed eligible content; field is populated with 100. See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) (pvaas.sas.com) for further clarification.
+:::warning[Business Rules:]
+Whole number from 0 to and including 100.  
+
+**Example:**<br />
+This teacher splits instructional responsibility for a student that participates in the entire course 50/50 with another teacher; field is populated with 50 This teacher is the ONLY PA certified educator providing the content specific instruction of the assessed eligible content; field is populated with 100. 
+
+See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) (pvaas.sas.com) for further clarification.
 :::
 
 <details open>
@@ -176,8 +182,13 @@ Whole number from 0 to and including 100.  Example: This teacher splits instruct
 
 The percentage of days in which a student and a teacher are enrolled together (concurrently enrolled) for instruction for a state assessment, from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEAs testing window opens for that state assessment.   Zero will add the students to the "removed from roster." 1-100 will add the students to the teacher's roster.
 
-:::note
-Whole number from 0 to and including 100.  Example: teacher and student are concurrently enrolled for 35 days in a 140 day course (25 percent of the course); field is populated with 25.  See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) for further clarification.
+:::warning[Business Rules:]
+Whole number from 0 to and including 100.  
+
+**Example:**<br />
+Teacher and student are concurrently enrolled for 35 days in a 140 day course (25 percent of the course); field is populated with 25.  
+
+See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) for further clarification.
 :::
 
 <details open>
@@ -196,7 +207,7 @@ The PDE defined, 4-digit code associated with the instructional relationship bei
 Each record represents a relationship, not a teacher or student.
 :::
 
-:::note
+:::warning[Business Rules:]
 RELATIONSHIP SCHOOL NUMBER must be related to the matching Field 1 (SUBMITTING AUN) in EdNA.
 :::
 
