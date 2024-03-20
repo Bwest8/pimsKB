@@ -5,7 +5,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "./",
-    "start_url": "./index.html",
+    "start_url": "/pimsKB/docs/intro",
     "icons": [
       {
         "src": "img/pimsKbLogo.png",
