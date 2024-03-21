@@ -1,0 +1,136 @@
+---
+title: District Snapshot Template
+description: District Snapshot Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(96 Fields, 6 Collected, Delimited)**
+
+**Target Table(s): `DISTRICT_YEAR`**
+
+**Load Sequence/Dependencies:** No dependencies
+
+
+## Template Description
+
+For school districts and charter schools, Pennsylvania collects the starting age (in months) for the youngest kindergarten student (K4 or K5), as well as the cutoff date to reach minimum age for the program. 
+
+**District Entry Minimum Age:** Populate this age field with the number of months (two digits) rather than the number of years. For example, if the minimum entry age is 5 years 0 months, upload 60.
+
+**District Entry Cutoff Date:** Enter the last date on which a student may meet the minimum required age for entry into the earliest kindergarten program. The date is within the current school year, not the birth year.
+
+**Kindergarten Program Type:** Populate this field with a two-digit code of K4 for a two-year kindergarten program or K5 for a one-year program.
+
+:::note
+Only one record per LEA will be required.
+:::
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+---
+### 3-92
+Fields not collected. Must be delimited in template file.
+
+---
+### 93 - LEA INSTRUCTION START DATE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The date of the first day of instruction for the current school year for the majority of LEA students (may not be the first day of school for kindergarten).
+
+:::warning[Business Rules:]
+Must be within the following date range 2023-07-01 to 2024-10-01 of the current SY.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-09-01`
+</details>
+
+**eScholar Name**: `DISTRICT INSTRUCTION START DATE`
+
+---
+### 94 - LEA ENTRY MINIMUM AGE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The minimum age **in months** required for entry into the earliest kindergarten program offered by LEA.
+
+:::warning[Business Rules:]
+Must be within the range of `48` to `65`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`48`
+</details>
+
+**eScholar Name**: `DISTRICT ENTRY MINIMUM AGE`
+
+---
+### 95 - LEA ENTRY CUTOFF DATE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The last date on which a student may meet the minimum required age for entry into the earliest kindergarten program.
+
+:::warning[Business Rules:]
+The earliest date allowed is 2023-07-01 of the current school year (not the birth year). 
+
+Must be within the following date range 2023-07-01 to 2024-02-01 of the current SY.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-11-30`
+</details>
+
+**eScholar Name**: `DISTRICT ENTRY CUTOFF DATE`
+
+---
+### 96 - KINDERGARTEN PROGRAM TYPE CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The type of kindergarten program. If an LEA operates a two-year kindergarten program, enter `K4`. 
+
+If an LEA operates a traditional one-year kindergarten program, enter `K5`.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `K4`
+- `K5`
+</details>
+
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates

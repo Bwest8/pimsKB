@@ -1,0 +1,684 @@
+---
+title: CTE Student Fact Template
+description: CTE Student Fact Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+**(36 Fields, 29 Collected, Delimited)**
+
+**Target Table(s): `CTE_STUDENT_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template defines the CTE Student Fact table. This table contains the primary details of each CTE student's enrollment within a PDE-approved school-level CTE program and/or registered adult affidavit CTE operated by each LEA. 
+
+This template serves to accommodate PDE data collection requirements for federal (Perkins V) accountability requirements, and PDE's need to account for students that enroll in or complete approved reimbursable secondary CTE programs and/or registered adult affidavit programs.
+
+### Reporting Secondary CTE Students
+
+Report all secondary students within this template who: 
+1. were enrolled in the technical component of a PDE-approved reimbursable secondary CTE program during the reporting year, AND;
+2. completed and signed "Annual Educational and Occupational Objectives for Students Enrolled in a PDE Approved CTE Program" form (PDE-408) or a similar locally developed form directly related to the student's enrollment in the CTE program reported within Field 6 (CIP Code) of this template. 
+
+The student's completed and signed PDE-408 form (or similar form) must be on file with the LEA that holds (owns) the approved CTE program in which the student is reported as enrolled.
+
+:::note
+Do **not** report secondary students within the CTE Student Fact Template who:
+1. lack appropriate signed educational and occupational objectives (PDE-408 form or similar form), 
+2. are taking one career and technical education course without intending to pursue the approved program of study as indicated by an appropriate complete educational and occupational objective form (PDE-408 or similar form), or
+3. are taking a career and technical education course in order to explore careers.
+:::
+
+:::warning[IMPORTANT NOTE:]
+
+LEAs with students enrolled in 2021-2022 PDE approved reimbursable secondary CTE programs held (owned) and operated by the LEA need to submit this template. 
+
+
+- A secondary CTE student may only be reported once at the CIP SCHOOL NUMBER (SCHOOL)-LEVEL within this template. 
+- A secondary student may be reported more than once within this template only if the student was enrolled in approved CTE programs within more than one school (CIP SCHOOL NUMBER) within an LEA during the reporting year.
+:::
+
+## Reporting Adult Affidavit CTE Students
+
+Report all students enrolled in registered adult (only) affidavit CTE programs that meet state program standards/requirements and were submitted and registered as operational in the Career and Technical Education Information System ([CATS](http://www.catsv2.pa.gov/Screens/Login/wfPublicHome.aspx)) for this reporting year. **Do not report adult students enrolled in secondary programs (adult intergenerational programs).** Adult affidavit programs are **adult only** programs.
+
+CATS registered adult affidavit programs **do not include:**
+- Enrichment/hobby-type programs for personal benefit that are not job related and that do not contribute to a person's occupational objective;
+- Programs in Adult Basic Education (ABE), Standard Evening High School (SEHS) or General Education Development (GED) unless the program also meets Career and Technical Education requirements;
+- State-funded Customized Job Training Programs (CJT); 
+- Programs funded 100% with federal monies (e.g. Workforce Investment and Opportunity Act);
+- 100% employer-funded programs; or
+- Any program not open to the public.
+
+CATS registered adult affidavit programs should include the following program types:
+- Registered Apprenticeship: a program for adults enrolled in a registered apprenticeship program involving on-the-job training.
+- Emergency Service: a program for adults in voluntary public emergency service (e.g. Emergency Medical Technology and Firefighting).
+- Other Occupational: a program for adults enrolled in a career and technical program for new occupational preparation or to upgrade their skills.
+
+Questions related to the CTE adult affidavit registration process should be directed to the Bureau of Career and Technical Education at (717) 783-6996.
+
+:::warning[IMPORTANT NOTE:]
+LEAs with students enrolled in 2021-2022 PDE registered adult (only) affidavit programs held (owned) and operated by the LEA need to submit this template. 
+
+**An adult affidavit CTE student may be reported more than once within this template to document each registered adult affidavit program the student was actively enrolled in during the reporting year.**
+:::
+
+:::info[**IMPORTANT TECHNICAL NOTE**]
+This template is designed to accommodate both secondary and AAP CTE students. LEAs need to develop data extracts to accommodate the 36-field layout of this template for BOTH secondary and AAP student records.
+:::
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Field Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::warning[Business Rules:]
+The 10-digit PAsecureID must be reported for the same student within the June 30 Student and Student Snapshot Templates.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Field Name**: `STUDENT ID`
+
+---
+### 4 - CIP SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The unique, PDE-defined, 4-digit school code assigned to the school that owns the CTE program approval or registered adult affidavit program reported for this student in Field 6 - [CIP CODE](#6---cip-code) of this template.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`1234`
+</details>
+
+**eScholar Field Name**: `CTE CIP LOCATION CODE`
+
+---
+### 5 - STUDENT SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+This is a mandatory field within the eScholar templates. It is necessary for all LEAs to enter the same value populated in Field 4 - [CIP SCHOOL NUMBER)](#4---cip-school-number).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`1234`
+</details>
+
+**eScholar Field Name**: `STUDENT LOCATION CODE`
+
+---
+### 6 - CIP CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The 6-digit Classification of Instructional Program (CIP) code that identifies the approved reimbursable secondary CTE program or adult affidavit program (owned and operated by a specific LEA school) serving this student.
+
+:::warning[Business Rules:]
+**Secondary Students:** Report secondary students in only one CIP per CIP-School Number (school) for a reporting year. If the student was enrolled in multiple CTE programs at a school during the reporting year, report the CIP the student was enrolled in last.  
+
+**EXCEPTION:** If a secondary student completed a program before the end of the school year, report the CIP that the student completed.
+
+**Adult Affidavit Program (AAP) Students:** Report AAP student CIP code(s) in distinct CTE Student Fact Template entries **for each AAP CIP in which the student was actively enrolled during the reporting year within a school.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `015999` Include leading zeros. Do not include any decimals.  
+
+Refer to the [CATS Approval System](http://www.catsv2.pa.gov/Screens/Login/wfPublicHome.aspx)   to view a school's approved secondary programs and their associated CIP codes and Delivery Method (Plan of Delivery) approvals for the appropriate reporting year. 
+
+Refer to the Career and Technical Education folder within the PIMS Documents website to view a list of both approved secondary programs and any registered adult affidavit programs for your school.
+</details>
+
+---
+### 7 - DELIVERY METHOD CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+Code identifies "Program of Study" or "Career and Technical" program delivery for secondary CTE. Code also specifically identifies a registered adult affidavit program.
+
+**PROGRAM OF STUDY** – A plan incorporating secondary and postsecondary education elements. Includes coherent and rigorous content aligned with challenging academic standards and relevant career and technical content in a coordinated, non-duplicative progression of courses that align secondary education with postsecondary education to adequately prepare students to succeed in postsecondary education; may include the opportunity for secondary education students to participate in dual or concurrent enrollment programs or other ways to acquire postsecondary education credits that lead to an industry-recognized credential or certificate at the postsecondary level or an associate or baccalaureate degree. All programs of study operate with the agreement conditions specified in the Perkins Statewide Articulation Agreement.
+
+**Career and Technical** – A plan consisting of secondary education that includes rigorous academic and technical components, and leads to admission into a postsecondary certificate, associate degree, or registered apprenticeship program.
+
+**ADULT AFFIDAVIT PROGRAM** – Adult only programs formally registered with PDE's Career and Technical Education Information System (CATS) for this reporting year.
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Report the PDE-approved Delivery Method (Plan of Delivery) Code (`70` or `75`) associated with the appropriate CIP code of the approved reimbursable secondary program (owned and operated by your LEA) serving this student and reported in Field 6 - [CIP CODE](#6---cip-code) of this template.   
+
+Use code `80` to identify all Adult Affidavit program CIPs reported in Field 6 - [CIP CODE](#6---cip-code).
+
+**NOTE:** The code `80` identifier does not include or relate to "adult intergenerational programs."
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid Values: 
+- `70` – Program of Study
+- `75` – Career and Technical
+- `80` – Adult Affidavit Program
+
+Refer to the [CATS Approval System](http://www.catsv2.pa.gov/Screens/Login/wfPublicHome.aspx)  to view a school's approved secondary programs and their associated CIP codes and Delivery Method (Plan of Delivery) approvals for the appropriate reporting year.
+
+Refer to the Career and Technical Education folder within the PIMS Documents website to view a list of both approved secondary programs and any registered adult affidavit programs for your school.
+</details>
+
+---
+### 8 - REPORTING DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The last day of the current school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 9 - REPORTING DATE PERIOD LEVEL
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+All LEAs should provide a value of Year to indicate a student was involved in a CTE program during the reporting school year.
+
+:::warning[Business Rules:]
+All LEAs should provide value of `Year` to indicate a student involved in a CTE program during the reporting school year.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Year`
+</details>
+
+---
+### 10 - CTE STATUS TYPE CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={12} /></p>
+
+A 2-digit code reflecting the most appropriate CTE student status after student received all related technical instruction for the reporting year within the specific program (CIP code) reported in [Field 6 (CIP CODE)](#6---cip-code) of this template.
+
+:::warning[Business Rules:]
+**FOR SECONDARY STUDENTS:** Terminology of "COMPLETED" or "DID NOT COMPLETE CTE PROGRAM" directly relate to whether a student: 
+- completed all secondary- level competencies necessary on their program's task list (or met appropriate related IEP objectives), and
+- completed a PDE-approved occupational end-of-program assessment for the student's reported program CIP (or completed a program that has an assessment waiver).
+
+Refer to the NOCTI-CIP [2020-2021 Test Crosswalk](https://www.careertechpa.org/student-occupational-competency-testing/test-site-coordinator-resources/) document within the Test Site coordinators section of the [Penn State Greater Allegheny web page](https://www.careertechpa.org/student-occupational-competency-testing/) for guidance on which CTE programs have approved end-of-program assessments and those that have assessment waivers. Additional resources are available within the [Guide to Student Occupational Testing in Pennsylvania 2020-2021](https://www.education.pa.gov/Documents/K-12/Career%20and%20Technical%20Education/Assessment%20Information/A%20Guide%20to%20Student%20Occupational%20Competency%20Testing%20in%20Pennsylvania.pdf).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid Values:
+- `10` – Continued or will continue CTE at this school
+- `22` – Transferred or will transfer to a different school
+
+Refer to [Appendix P](docs/appendix/appendix-P.mdx) of Volume 2 of the PIMS User Manual for a complete list of valid values.
+
+**NOTE:** AAP students have a distinct status code set within [Appendix P](docs/appendix/appendix-P.mdx) of Volume 2 of the PIMS User Manual.
+</details>
+
+---
+### 11 - CTE PROGRAM COMPLETION PLAN CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+This is a mandatory field within the eScholar templates. Therefore, it will be necessary for all LEAs to enter a value of `N/A` in this field.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`N/A`
+</details>
+
+---
+### 12 - REGISTERED APPRENTICE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component experience for in-school youth, ages 16 and older (11th and 12th grades), designed to link employers in need of an educated workforce with local education agencies seeking to provide quality work-based education. Must include an apprenticeship sponsor registered with the US Department of Labor.  Learning experience includes a prescribed program of academic and technical preparation, achievement of a high school diploma, a skills certificate, and direct access into postsecondary education or registered apprenticeship training by way of an articulation agreement.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 13 - INTERNSHIP INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component that provides planned, supervised experiential learning with rotation periods of work observation and work exploration in a variety of employment situations ordinarily for short periods of time.   Students are usually not paid for their experience; however, they do receive school credit. These experiences are primarily intended to develop career awareness rather than occupational competence.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether or not this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students N.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 14 - COOPERATIVE WORK INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component providing on-the-job experience in a career and technical education program. Through written arrangement between the school and employer, the student received instruction, including required academic courses and related career and technical instruction, by alternation of study in school with a job related to the career and technical education instruction.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students `N`.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 15 - JOB EXPLORATION INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component providing off-campus, credit-bearing exploratory learning activities occurring in the community with the specific intent to provide realistic career exploration experiences for students.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students `N`.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 16 - AGRICULTURE EXPERIENCE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component providing an educational experience, and which operates as an integral part of a career and technical education agriculture program. These experiences take place at any time during the calendar year and require the students to record, summarize, and use supervised agriculture experience record books. Most experiences are supervised by the agriculture teachers, and they may be paid or unpaid experiences.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students `N`.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`– Student did actively participate in this learning component during reporting year
+- `N`– Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 17 - SCHOOL-SPONSORED ENTERPRISE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component for small businesses created and operated by students where the school implements a real, economically viable business venture. These typically are non-profit activities and can include activities such as house refurbishing and the repair of parks.  
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students `N`.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 18 - NUMBER OF PROGRAM HOURS COMPLETED
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={7} /></p>
+
+**SECONDARY STUDENTS:** The cumulative total secondary CTE program **technical component** instructional hours the student successfully completed for the student's reported CIP (Field 6 – CIP CODE) over the span of the student's secondary education (not just this reporting year) within that CIP. LEAs should use periodic (e.g., quarterly) grades, not year-end cumulative grades to tally successful hours.
+
+**ADULT AFFIDAVIT STUDENTS:** The cumulative total adult affidavit CTE program technical instructional hours the student successfully completed for the student's reported CIP (Field 6) over the span of the student's adult education (not just this reporting year).
+
+Report the hours to the nearest hundredth of an hour.
+
+:::warning[Business Rules:]
+**SECONDARY STUDENTS:** Report `0.00` for students that received a failing grade for all technical instructional hours received within the reported program CIP.
+
+**ADULT AFFIDAVIT STUDENTS:** For **graded** adult affidavit programs report cumulative, successfully completed technical program hours for which the student received a passing grade. Report 0.00 for adult affidavit students that received a failing grade for all technical program instructional hours received within the reported program CIP.
+
+For **ungraded** adult affidavit programs (including Young Farmers programs) report successfully completed program hours based on the student's active program participation and attendance.
+
+Truncate to the nearest hundredth of an hour.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9999.99`
+</details>
+
+---
+### 19 - PERCENTAGE OF PROGRAM COMPLETE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={6} /></p>
+
+**SECONDARY STUDENTS:** The cumulative percent of the (normally scheduled) total CTE program technical component hours the student successfully completed (passed) for the student's reported program Field 6 - [CIP CODE](#6---cip-code). **Secondary Example:** If student's reported secondary program normally operates over the span of three years, the percent reported would be a percent of the total program technical hours normally offered over three years. Refer to the technical component of the approved program's scope and sequence in the Career and Technical Information System (CATS).
+
+**ADULT AFFIDAVIT STUDENTS:** The cumulative percent of the (normally scheduled) total CTE program technical hours the student successfully completed (passed) for the student's reported program CIP (Field 6). **Adult Affidavit Example 1:** If adult affidavit program normally operates over the span of 1 year, the percent reported is a percent of the total program technical hours normally offered over 1 year. **Adult Affidavit Example 2:** If adult affidavit program normally operates over a 6-week period, the percent reported is a percent of total program technical hours normally offered over the 6-week period.
+
+:::note
+This is a percentage of the total technical hours offered by a CTE program's entire normal operational schedule. 
+
+**EXAMPLE**: If program normally operates over the span of three years, the percent reported would be a percent of the total program technical hours normally offered over three years.
+:::
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Percent equals cumulative total program instructional hours successfully completed (Field 18) divided by total technical hours for the entire secondary program as approved in the Career and Technical Education Information System (CATS) scope and sequence or total program hours for the entire Adult Affidavit CIP reported in Field 6 - [CIP CODE](#6---cip-code), multiplied by 100. If a student failed all instructional hours for reporting year AND prior years in the reported program, report `0.00`.
+
+**Adult Affidavit student reporting:** Report appropriate percentage based on total program technical hours normally offered by the entire program Field 6 - [CIP CODE](#6---cip-code). A reminder: for ungraded Adult Affidavit programs, base percentage on student participation hours (versus technical instructional hours passed) divided by total hours offered by entire program.  
+
+**EXCEPTION:** Report `1.00` for all adult affidavit students reported in Young Farmers programs (CIP 01.0301).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid range of values is `0.00` to `100.00`
+
+**NOTE:** Truncate to nearest hundredth of a percent.
+</details>
+
+---
+### 20 - CUMULATIVE POSTSECONDARY CREDITS EARNED
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={6, 2} /></p>
+
+Report total postsecondary credits earned as a secondary student.  
+
+Report the credits to the hundredth of a credit.
+
+:::warning[Business Rules:]
+Report only earned credits awarded and documented on an official postsecondary institution transcript. An example would be credits earned through an LEA College/High School Credit (Dual Enrollment) program where the LEA partners with eligible postsecondary institution(s) to offer high school students the chance to earn both secondary and postsecondary credit via enrollment in postsecondary coursework. 
+
+Report appropriate postsecondary credits earned for either technical and/or academic postsecondary coursework.
+
+Round to the nearest hundredth of a credit.
+
+LEAs may code all adult affidavit students `0.00`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`99.99`
+</details>
+
+---
+### 21
+Field not collected. Must be delimited in template file.
+
+---
+### 22 - WORK-BASED EXPERIENCE INDICATOR  
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component providing off-campus learning gained through training and instruction. Work-based experiences refer to technical skills occurring in a work setting. **This learning component primarily is implemented and used within Job Seeking/Changing Skills, Diversified Occupations, programs (CIP 32.0105).**
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Indicate by `Y` (Yes) or `N` (No) whether this CTE student actively participated in this learning component during the reporting year in order to enhance required instruction in the student's reported program Field 6 - [CIP CODE](#6---cip-code).
+
+**LEAs may code all adult affidavit students `N`.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Student did actively participate in this learning component during reporting year
+- `N` – Student did not actively participate in this learning component during reporting year
+</details>
+
+---
+### 23-25
+Fields not collected. Must be delimited in template file.
+
+---
+### 26 - PELL GRANT INDICATOR
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+**Required for AAP students.**  
+
+Indicator that specifies whether the AAP student received a federal Pell need-based grant during the academic year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 27
+Field not collected. Must be delimited in template file.
+
+---
+### 28 - TASK LIST COMPLETION INDICATOR
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+Required for 12th grade students. 
+
+**Indicates** whether a secondary student has completed all the competencies on the Program of Study (POS) task list or if a POS does not exist, the competencies on the CTE program's task list that is maintained as students move through the program.  This field does not apply to 9th – 11th grade students or AAP.
+
+:::warning[Business Rules:]
+**Secondary Students** Report `Y` if a teacher signs the list signifying that the student fulfilled all competency requirements on the task list during the course of the student's reported program. Report N if the student has not yet completed all the competencies. Report N/A if the student is not in 12th grade.
+
+**Adult Affidavit Students** Report `N/A` for all AAP students.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Yes
+- `N` – No
+- `N/A` - Indicates the template record applies to an AAP student or a student not in 12th grade
+</details>
+
+**eScholar Field Name**: `INCLUDED IN GRADUATION RATE INDICATOR`
+
+---
+### 29
+Field not collected. Must be delimited in template file.
+
+---
+### 30 - PERKINS CONCENTRATOR
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A secondary CTE student who completed at least two state defined CTE Courses in a PDE-approved CTE Secondary program.  Pennsylvania defines a CTE course as a minimum of 240 technical instructional hours as planned per year in a PDE-approved CTE program. (Completing at least 480 technical instructional hours is required for PDE-approved one-year CTE programs.)
+
+:::warning[Business Rules:]
+Report secondary CTE students only.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Yes (2 Courses/480 hours)
+- `N` – No
+</details>
+
+**eScholar Field Name**: `CTE CONCENTRATOR INDICATOR`
+
+---
+### 31 - PERKINS PARTICIPANT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A secondary CTE student who completed at least one state defined CTE Courses in a PDE-approved CTE Secondary program.  Pennsylvania defines a CTE course as a minimum of 240 technical instructional hours as planned per year in a PDE-approved CTE program.
+
+:::warning[Business Rules:]
+Report secondary CTE students only.  If the CTE student is a concentrator, this field must be `Y` – Yes.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – Yes (1 Courses/240 hours)
+- `N` – No
+</details>
+
+**eScholar Field Name**: `CTE PARTICIPANT INDICATOR`
+
+---
+### 32
+Field not collected. Must be delimited in template file.
+
+---
+### 33 - SIMULATED WORK ENVIRONMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component providing an immersive experience in a protected educational setting that replicates workplace tools, processes and/or environments.
+
+Informs the Industry-Based Learning indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+Report secondary CTE students only.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+**eScholar Field Name**: `SIMULATED WORK ENVIRONMENT`
+
+---
+### 34 - CERTIFICATE OF APPRENTICESHIP
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The CTE program-related Field 6 - [CIP CODE](#6---cip-code) learning component must comply with Pennsylvania Department of Labor and industry Apprenticeship Training Office standards through a written agreement with a registered apprenticeship sponsor.
+
+:::warning[Business Rules:] 
+Required for CTE students that fall into one of the situations described in the valid value list.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `APP` - CTE student received a Certificate of Completion of an Apprenticeship in the reporting year
+- `PRE` - If this CTE student participated in a pre-apprenticeship program in the reporting year.
+</details>
+
+**eScholar Field Name**: `APPRENTICESHIP INFO CODE`
+
+---
+### 35 - DEGREE AWARDED
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={5} /></p>
+
+Report CTE student if they have been awarded an Associate degree or Baccalaureate degree during the reporting year.
+
+:::warning[Business Rules:]
+Required for CTE students that fall into one of the situations described in the valid value list.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `ASSOC` - Associate Degree
+- `BACCA` - Baccalaureate Degree
+</details>
+
+**eScholar Field Name**: `DEGREE AWARDED CODE`
+
+---
+### 36 - ADULT CUMULATIVE CREDIT EQUIVALENCY
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={6} /></p>
+
+Using the Accreditation Guide for the Pennsylvania Public Postsecondary Vocational Education, calculate the credit equivalency for each adult student eligible for federal financial aid.
+
+:::warning[Business Rules:]
+Only to be completed for adult students enrolled in accredited CTC/IUs. See [Accreditation Guide](https://www.education.pa.gov/K-12/Career%20and%20Technical%20Education/Accreditation/Pages/default.aspx) for more details.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`999.99`
+</details>
+
+**eScholar Field Name**: `CUMULATIVE CREDIT EQUIVALENCY`
+
+
+## Rules
+
+See the Rules Section of the Template Domain

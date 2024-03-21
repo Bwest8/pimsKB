@@ -1,0 +1,208 @@
+---
+title: District Fact Template for Title I
+description: District Fact Template for Title I Data Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(11 Fields, 8 Collected, Delimited)**
+
+**Target Table: `DISTRICT_FACT`**
+
+**Load Sequence/Dependencies**
+
+No dependencies
+
+:::note
+Each LEA must provide a response for each question in [Appendix AE](docs/appendix/appendix-AE.mdx). 
+:::
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+---
+### 3 - CATEGORY 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={6} /></p>
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AE](docs/appendix/appendix-AE.mdx) for a complete list of valid values.
+
+`TAS`
+</details>
+
+---
+### 4 - CATEGORY 2
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AE](docs/appendix/appendix-AE.mdx) for a complete list of valid values.
+
+`GRADE`
+</details>
+
+---
+### 5 - CATEGORY 3
+<p><Badge color="conditional" /> <Badge color="key" /> <Badge length={7} /></p>
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AE](docs/appendix/appendix-AE.mdx) for a complete list of valid values.
+
+`KDG`
+</details>
+
+---
+### 6 - MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={7} /></p>
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AE](docs/appendix/appendix-AE.mdx) for a complete list of valid values.
+
+`COUNT`
+</details>
+
+---
+### 7 - COUNT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={7} /></p>
+
+If MEASURE TYPE = `COUNT`, the count should be supplied in this field.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2`
+</details>
+
+---
+### 8-10
+Fields not collected. Must be delimited in template file.
+
+---
+### 11 - CATEGORY 4
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AE](docs/appendix/appendix-AE.mdx) for a complete list of valid values.
+
+`TITLE1STUD`
+</details>
+
+
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+
+## Sample
+**Sample Title I Submission for the District Fact Template**
+
+:::note
+note that NC stands for Not Collected
+:::
+
+| **Submitting AUN** | **School Year Date** | **Category 1** | **Category 2** | **Category 3** | **Measure Type** | **Count** | **AMOUNT** | **%** | **NC** | **Category 4** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** |
+|--------------------|----------------------|----------------|----------------|----------------|------------------|-----------|------------|-------|--------|----------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 123456789          | 2024-06-30           | NONPUB         | SERVED         | TOTAL          | COUNT            | 8         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 1              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 9              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 3              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 4              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 10             | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 5              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | ETHNICITY      | 6              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 1              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 9              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 3              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 4              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 10             | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 5              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | ETHNICITY      | 6              | COUNT            | 10        |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | A02            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | A02            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | A02            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | A35            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | A35            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | A35            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | KDG            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | KDG            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | KDG            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 001            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 001            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 001            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 002            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 002            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 002            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 003            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 003            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 003            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 004            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 004            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 004            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 005            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 005            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 005            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 006            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 006            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 006            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 007            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 007            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 007            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 008            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 008            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 008            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 009            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 009            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 009            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 010            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 010            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 010            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 011            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 011            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 011            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBTAS         | GRADE          | 012            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | PUBSWP         | GRADE          | 012            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | NONPUB         | GRADE          | 012            | COUNT            | 5         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | SPECIAL        | WDISABL        | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | SPECIAL        | HMLST1         | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | SPECIAL        | EL             | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | TAS            | SPECIAL        | MIGRNT         | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | SPECIAL        | WDISABL        | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | SPECIAL        | HMLST1         | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | SPECIAL        | EL             | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2024-06-30           | SWP            | SPECIAL        | MIGRNT         | COUNT            | 3         |            |       |        | TITLE1STUD     |        |        |        |        |        |        |        |        |        |        |
