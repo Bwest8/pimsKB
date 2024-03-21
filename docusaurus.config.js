@@ -112,7 +112,8 @@ const config = {
         style: 'light',
         logo: {
           alt: 'Agency Image',
-          src: 'https://www.education.pa.gov/Style%20Library/Agency/img/logos/pde-blue.png',
+          src: '/img/pde-blue.png',
+          srcDark: '/img/pde-white.png',
           href: 'https://www.education.pa.gov',
         },
         links: [
