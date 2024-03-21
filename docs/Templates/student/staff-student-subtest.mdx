@@ -44,7 +44,7 @@ A unique identifier assigned by the PDE to each staff member reported in PIMS.  
 
 :::warning[Business Rules:]
 - Do not use leading zeros or spaces in PPIDs.  
-- Field 8 of the Staff template for this PPID cannot be 'NPA'.
+- Field 8 of the Staff template for this PPID cannot be `NPA`
 :::
 
 <details open>
@@ -124,7 +124,48 @@ LEAs may submit records related to any of the assessments listed in the Valid Va
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid values.
+| Test Description Code | Test Description Definition |
+|-----------------------|-----------------------------|
+| `KALG1`                 | KEYSTONE - Algebra I        |
+| `KALG1`                 | KEYSTONE - Algebra I        |
+| `KALG1`                 | KEYSTONE - Algebra I        |
+| `KBIO`                  | KEYSTONE - Biology          |
+| `KBIO`                  | KEYSTONE - Biology          |
+| `KBIO`                  | KEYSTONE - Biology          |
+| `KLIT`                  | KEYSTONE - Literature       |
+| `KLIT`                  | KEYSTONE - Literature       |
+| `KLIT`                  | KEYSTONE - Literature       |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAELA`               | PSSA English Language Arts  |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSAM`                 | PSSA Mathematics            |
+| `PSSASCI`               | PSSA Science                |
+| `PSSASCI`               | PSSA Science                |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAELA`               | PASA English Language Arts  |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASAM`                 | PASA Mathematics            |
+| `PASASCI`               | PASA Science                |
+| `PASASCI`               | PASA Science                |
+| `PASASCI`               | PASA Science                |
 </details>
 
 ---
@@ -152,7 +193,48 @@ LEAs may submit records related to any of the assessments listed in the Valid Va
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid values.
+| Subtest Identifier | Subtest Identifier Definition       |
+|--------------------|-------------------------------------|
+| `KALG1SPR`           | Keystone Algebra I Spring           |
+| `KALG1SUM`           | Keystone Algebra I Summer           |
+| `KALG1WIN`           | Keystone Algebra I Winter           |
+| `KBIOSPR`            | Keystone Biology Spring             |
+| `KBIOSUM`            | Keystone Biology Summer             |
+| `KBIOWIN`            | Keystone Biology Winter             |
+| `KLITSPR`            | Keystone Literature Spring          |
+| `KLITSUM`            | Keystone Literature Summer          |
+| `KLITWIN`            | Keystone Literature Winter          |
+| `PSSAELA3`           | PSSA English/Language Arts Grade 3  |
+| `PSSAELA4`           | PSSA English/Language Arts Grade 4  |
+| `PSSAELA5`           | PSSA English/Language Arts Grade 5  |
+| `PSSAELA6`           | PSSA English/Language Arts Grade 6  |
+| `PSSAELA7`           | PSSA English/Language Arts Grade 7  |
+| `PSSAELA8`           | PSSA English/Language Arts Grade 8  |
+| `PSSAM3`             | PSSA Mathematics                    |
+| `PSSAM4`             | PSSA Mathematics                    |
+| `PSSAM5`             | PSSA Mathematics                    |
+| `PSSAM6`             | PSSA Mathematics                    |
+| `PSSAM7`             | PSSA Mathematics                    |
+| `PSSAM8`             | PSSA Mathematics                    |
+| `PSSASCI4`           | PSSA Science Grade 4                |
+| `PSSASCI8`           | PSSA Science Grade 8                |
+| `PASAELA3`           | PASA English Language Arts Grade 3  |
+| `PASAELA4`           | PASA English Language Arts Grade 4  |
+| `PASAELA5`           | PASA English Language Arts Grade 5  |
+| `PASAELA6`           | PASA English Language Arts Grade 6  |
+| `PASAELA7`           | PASA English Language Arts Grade 7  |
+| `PASAELA8`           | PASA English Language Arts Grade 8  |
+| `PASAELA11`          | PASA English Language Arts Grade 11 |
+| `PASAM3`             | PASA Mathematics Grade 3            |
+| `PASAM4`             | PASA Mathematics Grade 4            |
+| `PASAM5`             | PASA Mathematics Grade 5            |
+| `PASAM6`             | PASA Mathematics Grade 6            |
+| `PASAM7`             | PASA Mathematics Grade 7            |
+| `PASAM8`             | PASA Mathematics Grade 8            |
+| `PASAM11`            | PASA Mathematics Grade 11           |
+| `PASASCI4`           | PASA Science Grade 4                |
+| `PASASCI8`           | PASA Science Grade 8                |
+| `PASASCI11`          | PASA Science Grade 11               |
 </details>
 
 ---
@@ -162,12 +244,13 @@ See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid
 The percentage of content-specific instruction for a state assessment that a teacher is responsible for providing to an individual student. The PERCENTAGE OF SHARED INSTRUCTION (INSTRUCTIONAL RESPONSIBILITY WEIGHT) will account for shared instruction of a student from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEAs testing window opens for that state assessment.  Zero will add the students to the "removed from roster". 1-100 will add the students to the teacher's roster.
 
 :::warning[Business Rules:]
-Whole number from 0 to and including 100.  
+Whole number from `0` to and including `100`.  
 
-**Example:**<br />
-This teacher splits instructional responsibility for a student that participates in the entire course 50/50 with another teacher; field is populated with 50 This teacher is the ONLY PA certified educator providing the content specific instruction of the assessed eligible content; field is populated with 100. 
+**Example:**
 
-See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) (pvaas.sas.com) for further clarification.
+This teacher splits instructional responsibility for a student that participates in the entire course 50/50 with another teacher; field is populated with 50 This teacher is the ONLY PA certified educator providing the content specific instruction of the assessed eligible content; field is populated with `100`. 
+
+See the Instructional Responsibility section on the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) (pvaas.sas.com) for further clarification.
 :::
 
 <details open>
@@ -183,10 +266,11 @@ See the Instructional Responsibility section the Roster Verification FAQ documen
 The percentage of days in which a student and a teacher are enrolled together (concurrently enrolled) for instruction for a state assessment, from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEAs testing window opens for that state assessment.   Zero will add the students to the "removed from roster." 1-100 will add the students to the teacher's roster.
 
 :::warning[Business Rules:]
-Whole number from 0 to and including 100.  
+Whole number from `0` to and including `100`.  
 
-**Example:**<br />
-Teacher and student are concurrently enrolled for 35 days in a 140 day course (25 percent of the course); field is populated with 25.  
+**Example:**
+
+Teacher and student are concurrently enrolled for 35 days in a 140 day course (25 percent of the course); field is populated with `25`.  
 
 See the Instructional Responsibility section the Roster Verification FAQ document on the [PVAAS website](https://pvaas.sas.com/) for further clarification.
 :::
@@ -208,7 +292,7 @@ Each record represents a relationship, not a teacher or student.
 :::
 
 :::warning[Business Rules:]
-RELATIONSHIP SCHOOL NUMBER must be related to the matching Field 1 (SUBMITTING AUN) in EdNA.
+RELATIONSHIP SCHOOL NUMBER must be related to the matching [Field 1 (SUBMITTING AUN)](#1---submitting-aun) in EdNA.
 :::
 
 <details open>
