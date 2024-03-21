@@ -1,41 +1,22 @@
-# Website
+# PIMS Knowledge Base (PIMS KB)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Welcome to the Pennsylvania Information Management System (PIMS) Knowledge Base, also known as PIMS KB! This documentation has been converted from PDF to a web site for improved accessibility and navigation.
 
-### Installation
+## Introduction
 
-```
-$ yarn
-```
+The Pennsylvania Information Management System (PIMS) is a collaborative effort between the Pennsylvania Department of Education (PDE) and local education agencies (LEAs) across the commonwealth. PIMS is a statewide, longitudinal data system (SLDS) that efficiently and accurately manages, analyzes, disaggregates, and uses individual data for each student served by Pennsylvania's pre-K through grade 12 public education system.
 
-### Local Development
+## Key Purposes of PIMS
 
-```
-$ yarn start
-```
+PIMS serves several important purposes, including:
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- Meeting current state and federal reporting requirements
+- Improving education decision-making through the use of high-quality data and decision support tools
+- Providing longitudinal tracking of education progress over time and across LEAs
+- Reporting timely and accurate education data through standardized and ad hoc reporting capabilities
 
-### Build
+## Getting Started
 
-```
-$ yarn build
-```
+To get started with PIMS KB, please navigate through the documentation using the sidebar menu. If you have any questions or need assistance, please contact the PIMS support team.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+We hope you find the PIMS Knowledge Base helpful in understanding and utilizing the Pennsylvania Information Management System.
