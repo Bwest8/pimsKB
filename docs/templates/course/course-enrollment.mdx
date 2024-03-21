@@ -1,0 +1,243 @@
+---
+title: Student Course Enrollment Template
+description: Student Course Enrollment Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(24 Fields, 14 Collected, Delimited)**
+
+**Target Table: `COURSE_ENROLL`**
+
+| **Load Sequence/Dependencies** |
+|--------------------------------|
+| COURSE                         |
+| STUDENT                        |
+| COURSE INSTRUCTOR              |
+
+
+## Template Description
+
+The Student Course Enrollment Template contains information on student enrollment in each course/section combination. The Student Course Enrollment Template must be submitted in a cumulative fashion indicating all students enrolled in a specific section of a course for the school year.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code identifying the school.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4 - ENROLLMENT PERIOD NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+The identification of the marking period entry that identifies the time period covered by the course/section combination; PDE will collect one enrollment period for the current SY.
+
+:::warning[Business Rules:]
+All LEAs should enter a value of `002` in the Enrollment Period Number field.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`002`
+</details>
+
+---
+### 5 - EFFECTIVE DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The date on which the enrollment information becomes effective. If the actual entry date is unknown, the first day of the marking period should be used.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-09-01`
+</details>
+
+---
+### 6 - ENROLLMENT CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={6} /></p>
+
+The enrollment code that indicates the type of enrollment transaction that occurred; only enrollment date is required at this time.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`E1` – student enrolls in a course
+</details>
+
+---
+### 7 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.  Informs various indicators in the **Future Ready PA Index**.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 8-9
+Fields not collected. Must be delimited in template file.
+
+---
+### 10 - REQUEST SEQUENCE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+Use the Request Sequence field to distinguish between enrollments in identical course/section combinations for the same student.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`3`
+</details>
+
+---
+### 11-12
+Fields not collected. Must be delimited in template file.
+
+---
+### 13 - SUPPLEMENTARY COURSE DIFFERENTIATOR
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={2} /></p>
+
+This field is used to help make a course unique where the same Course Code is offered in more than one-time period during the school year. This field will represent the general span of time in which a course and its sections are offered.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix O](docs/appendix/appendix-O.mdx) for a complete list of valid values.
+</details>
+
+---
+### 14 - COURSE CODE LONG
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, local, LEA-specific Course Code.
+
+:::warning[Business Rules:]
+- Courses may have multiple sections. Each course should have a single Course Code Long.   
+- **Do not** assign separate course codes to sections of the same course.
+:::
+
+---
+### 15 - COURSE DELIVERY MODEL CODE
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The method used to deliver instruction to the student for this section of the Course Code.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `0340` – in school
+- `0341` – other K-12 educational institution
+- `0342` – post-secondary facility
+- `0752` – community facility
+- `0754` – hospital
+- `0997` – business
+- `1111` – blended/hybrid
+- `2192` – home
+- `3018` – library/media center
+- `9998` – online course
+- `9999` – other
+</details>
+
+---
+### 16-19
+Fields not collected. Must be delimited in template file.
+
+---
+### 20 - SECTION CODE LONG
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={25} /></p>
+
+Class section number assigned by LEA to identify distinct classes.
+
+:::warning[Business Rules:]
+This field should be the local section number only.
+:::
+
+---
+### 21-22
+Fields not collected. Must be delimited in template file.
+
+---
+### 23 - DUAL CREDIT STUDENT TAKE CREDIT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicates whether a student took the credit from the dual credit course or not.
+
+:::warning[Business Rules:]
+Required if Course Template [DUAL CREDIT (field 32)](#32---dual-credit) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+**eScholar Name**: `GPA IMPACT`
+
+---
+### 24 - DUAL CREDIT COURSE PASS  
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicates whether the student passed the course or not.
+
+:::warning[Business Rules:]
+Required if Student Course Enrollment Template, [DUAL CREDIT STUDENT TAKE CREDIT (field 23)](#23---dual-credit-student-take-credit) = `Y`
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` 
+- `N`
+</details>
+
+## Rules
+
+See the Rules Section of the Template Domain

@@ -1,0 +1,292 @@
+---
+title: Course Template
+description: Course Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(79 Fields, 15 Collected, Delimited)**
+
+**Target Table: `COURSE`**
+
+**Load Sequence/Dependencies:** No dependencies
+
+
+## Template Description
+
+This template is used to collect the attributes of each course at each school. Use the Course Instructor Template to associate the Teacher of Record with each course section. Use the Student Course Enrollment Template to associate courses with the students enrolled in each section. This table maps the local course to the standardized state codes. The Course Template should include all courses with students enrolled during the current school year.
+
+:::note
+- Accurate reporting of courses in assessed grades/subjects is especially important. PDE will use course data to inform attribution decisions related to accountability.
+- Courses may have multiple sections. Each course should have a single Course Code Long. Do not give separate sections of the same course different local course codes.
+:::
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code identifying the school.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4
+Field not Collected. Must be delimited in template file.
+
+---
+### 5 - COURSE NAME
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={50} /></p>
+
+Provide the descriptive local course name given to a course of study offered in a school or other institution or organization.
+
+:::warning[Business Rules:]
+For College/High School Credit (Dual Credit) courses, provide the name of the course used by the postsecondary institution.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`English III`
+</details>
+
+---
+### 6-8
+Fields not Collected. Must be delimited in template file.
+
+---
+### 9 - NUMBER OF CREDITS
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1.2} /></p>
+
+Indicates the amount of college credits earned with completion of the **dual credit** course.
+
+:::warning[Business Rules:]
+Required if Field 32 [DUAL CREDIT](#32---dual-credit) = `Y`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`3.00`
+</details>
+
+---
+### 10-25
+Fields not Collected. Must be delimited in template file.
+
+---
+### 26 - SUPPLEMENTARY COURSE DIFFERENTIATOR
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={2} /></p>
+
+This field is used to help make a course unique where the same COURSE CODE is offered in more than one time period during the school year. This field will represent the general span of time in which a course and its sections are offered.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix O](docs/appendix/appendix-O.mdx) for a complete list of valid values.
+</details>
+
+---
+### 27 - COURSE CODE LONG
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, local, LEA-specific COURSE CODE.
+
+:::warning[Business Rules:]
+**NOTE:** Courses may have multiple sections. Each course should have a single COURSE CODE LONG.   **Do not** assign a separate course code to sections of the same course.
+:::
+
+---
+### 28
+Field not Collected. Must be delimited in template file.
+
+--- 
+### 29 - ALTERNATE COURSE CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={8} /></p>
+
+Pennsylvania's Standardized Course Codes.  For College/High School Credit (Dual Credit) courses, use the course code that best describes the content of the postsecondary course.
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix A](docs/appendix/appendix-A.mdx) for a complete list of valid values.
+</details>
+
+---
+### 30 - REQUIREMENTS INDICATOR CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication that this course credit is required for a high school diploma. 
+
+Only populate this field with `Y` if the specific course is a graduation requirement for all students.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 31
+Field not Collected. Must be delimited in template file.
+
+---
+### 32 - DUAL CREDIT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A course arranged, coordinated, sponsored, and/or paid for by the reporting LEA, where a student can earn postsecondary credit by passing, without taking a third-party exam.
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+:::warning[Business Rules:]
+This field may be populated with Y only if the alternate course code is populated with the 2-digit SCED subject area codes followed by 990. Otherwise, populate with N.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 33 - ADVANCED PLACEMENT INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication of whether a course can make a student eligible for Advanced Placement credits for a postsecondary institution.
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N` 
+</details>
+
+---
+### 34-39
+Fields not Collected. Must be delimited in template file.
+
+---
+### 40 - INTERNATIONAL BACCALAUREATE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication of whether a course is part of an international baccalaureate program.
+
+Informs the Rigorous Courses of Study indicator in the **Future Ready PA Index**.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 41-62
+Fields not Collected. Must be delimited in template file.
+
+---
+### 63 - END OF COURSE EXAM
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+Provide an indication that the reported course culminates in a Keystone exam.
+
+:::warning[Business Rules:]
+This field is required for any course that culminates in a Keystone exam.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `KLIT`
+- `KBIO`
+- `KALG`
+</details>
+
+**eScholar Name**: `END OF COURSE EXAM REQUIRED CODE`
+
+---
+### 64-65
+Fields not Collected. Must be delimited in template file.
+
+---
+### 66 - ORGANIZATION DEFINING COURSE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={9} /></p>
+
+AUN of entity with Dual Credit Agreement.  [Dual Credit Agreements between School Entities and Institutions of Higher Education (pa.gov)](https://www.education.pa.gov/Policy-Funding/BECS/Purdons/Pages/DualCreditAgreements.aspx)
+
+:::warning[Business Rules:]
+Must be valid IHE in EdNA.  Required if Field 32 [DUAL CREDIT](#32---dual-credit) = `Y`
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/).
+
+`123456789`
+</details>
+
+---
+### 67-78
+Fields not Collected. Must be delimited in template file.
+
+---
+### 79 - CAMBRIDGE ADVANCED COURSE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication of whether a course is a Cambridge Advanced course: An academically rigorous college-level program offered by Cambridge Assessment International Education, a part of the University of Cambridge, comprised of a one-year AS-Level and a two-year A-Level course and exam and the core requirements of the AICE Diploma program.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+**eScholar Name**: `OTHER CHARACTERISTIC INDICATOR`
+
+## Rules
+
+See the Rules Section of the Template Domain
