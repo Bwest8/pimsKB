@@ -1,0 +1,531 @@
+---
+title: Special Education Snapshot Template
+description: Special Education Snapshot Template Documentation
+---
+
+import Badge from '@site/src/components/badges';
+
+**(80 Fields, 25 Collected, Delimited)**
+
+**Target Table(s): `SPECIAL_ED_SNAP`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template describes the primary details of students' participation in special education in the current school year. Only students in school age programs K4 – 12 who have a valid IEP on 12/1 should be included in the December submission. The July submission should include all special education students 14 years of age or older as of July 1 of the current school year or any student who has a transition plan as part of their IEP.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by PDE.
+
+:::warning[Business Rules:]
+The Valid Value must equal the (Special Education) school district, the charter school where the student is enrolled (NOT educating LEA, IU, APS, CTC, or other entity).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The PDE defined, 4-digit code identifying the school the student attends within the district of residence.  
+
+For Special Ed Reporting – the District of Residence should indicate 9999 for students educated in other LEAs.
+
+:::warning[Business Rules:]
+If the district of residence does not have a school with the appropriate grade level for the student (a 12th grade student whose district of residence does not have a high school), use 0000.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`1234`
+</details>
+
+**eScholar Name**: `PRIMARY SPECIAL ED LOCATION CODE`
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4
+Field not collected. Must be delimited in template file.
+
+---
+### 5 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::note
+It is essential that the correct PAsecureID be entered for each student. 
+
+**LEAs are encouraged to share this number, where appropriate and within FERPA guidelines, to ensure accurate data.**
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 6-9
+Fields not collected. Must be delimited in template file.
+
+---
+### 10 - SPECIAL EDUCATION TEACHER NAME 
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+Enter the legal last name of the teacher providing the majority of the special education services.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Smith`
+</details>
+
+---
+### 11 - PRIMARY DISABILITY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+Enter the PRIMARY DISABILITY as identified on the Evaluation / Reevaluation Report.
+
+:::warning[Business Rules:]
+This MUST match [Field 34 (CHALLENGE TYPE)](#34---challenge-type) of the Student Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Disability Code | Disability Description                                                                                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `2121`            | Autistic/Autism                                                                                                                                                               |
+| `2122`            | Deaf-blindness                                                                                                                                                                |
+| `2123`            | Hearing impairment including deafness                                                                                                                                         |
+| `2124`            | Intellectual disability                                                                                                                                                       |
+| `2125`            | Multiple disabilities                                                                                                                                                         |
+| `2126`            | Orthopedic impairment                                                                                                                                                         |
+| `2127`            | Emotional disturbance                                                                                                                                                         |
+| `2128`            | Specific learning disability                                                                                                                                                  |
+| `2129`            | Speech or language impairment                                                                                                                                                 |
+| `2130`            | Traumatic brain injury                                                                                                                                                        |
+| `2131`            | Visual impairment including blindness                                                                                                                                         |
+| `2132`            | Other health impairment                                                                                                                                                       |
+| `2134`            | Developmental delay  **NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates)                    |
+| `2135`            | Infants and Toddlers with Disabilities  **NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates) |
+</details>
+
+---
+### 12 - SECONDARY DISABILITY 
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+Enter the secondary disability as identified on the Evaluation / Reevaluation Report.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Disability Code | Disability Description                                                                                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `2106`            | Gifted with Disability                                                                                                                                                        |
+| `2121`            | Autistic/Autism                                                                                                                                                               |
+| `2122`            | Deaf-blindness                                                                                                                                                                |
+| `2123`            | Hearing impairment including deafness                                                                                                                                         |
+| `2124`            | Intellectual disability                                                                                                                                                       |
+| `2125`            | Multiple disabilities                                                                                                                                                         |
+| `2126`            | Orthopedic impairment                                                                                                                                                         |
+| `2127`            | Emotional disturbance                                                                                                                                                         |
+| `2128`            | Specific learning disability                                                                                                                                                  |
+| `2129`            | Speech or language impairment                                                                                                                                                 |
+| `2130`            | Traumatic brain injury                                                                                                                                                        |
+| `2131`            | Visual impairment including blindness                                                                                                                                         |
+| `2132`            | Other health impairment                                                                                                                                                       |
+| `2134`            | Developmental delay  **NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates)                    |
+| `2135`            | Infants and Toddlers with Disabilities  **NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates) |
+</details>
+
+---
+### 13-14
+Fields not collected. Must be delimited in template file.
+
+---
+### 15 - AMOUNT OF SPECIAL EDUCATION SERVICES
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+The amount of special education services as identified on the IEP or Notice of Recommended Educational Placement.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `01 – Itinerant` 
+- `02 – Reserved (formerly Resource)`
+- `03 – Reserved (formerly Part-time)` 
+- `04 – Full-time`
+- `05 - Reserved`
+- `06 – Supplemental Resource`
+</details>
+
+---
+### 16
+Field not collected. Must be delimited in template file.
+
+---
+### 17 - TYPE OF SUPPORT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+The primary support provided to student based on their needs as identified on the IEP or Notice of Recommended Educational Placement.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `01 – Learning`
+- `02 – Life Skills`
+- `03 – Multi-disabilities`
+- `04 – Emotional` 
+- `06 – Deaf or Hearing Impaired`
+- `07 – Speech and Language`
+- `08 – Physical`
+- `10 – Blind or Visually Impaired`
+- `26 – Autistic`
+</details>
+
+---
+### 18-31
+Fields not collected. Must be delimited in template file.
+
+---
+### 32 - PRIMARY PLACEMENT TYPE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A student placed in a residential facility or group home by a non-educational agency (e.g. court systems; departments of corrections; departments of children, youth, and families; department of social services; etc).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 33
+Field not collected. Must be delimited in template file.
+
+---
+### 34 - DATE EXITED SPECIAL EDUCATION
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The date the student exited the special education program.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2020-12-06`
+</details>
+
+**eScholar Name**: `SPECIAL ED EXIT DATE`
+
+---
+### 35 - SNAPSHOT DATE 
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+One of the standard reporting dates defined by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-12-01`  
+</details>
+
+---
+### 36-43
+Fields not collected. Must be delimited in template file.
+
+---
+### 44 - EDUCATIONAL ENVIRONMENT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={8} /></p>
+
+Students with disabilities must be educated in regular public-school buildings with non-disabled students to the extent possible, as indicated in Section VIII (A or B) of the IEP.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Description                                                                                                                                                         |
+|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `01`   | Approved Private School (Non-Residential) 4010 Funded Students Only                                                                                                 |
+| `02`   | Approved Private School (Residential) 4010 Funded Students Only                                                                                                     |
+| `05`   | Public Separate Facility (Residential)                                                                                                                              |
+| `06`   | Other Private Separate Facility (Residential)                                                                                                                       |
+| `09`   | Hospital/Home Bound                                                                                                                                                 |
+| `12`   | Public Separate Facility (Non-Residential)                                                                                                                          |
+| `14`   | Out of State Facility                                                                                                                                               |
+| `15`   | Instruction in the Home                                                                                                                                             |
+| `16`   | Other Private Separate Facility (Non-Residential)                                                                                                                   |
+| `18`   | Correctional Facility                                                                                                                                               |
+| `19`   | Inside the regular class 80 percent or more of the day (formerly Special Education Outside the Regular Class Less Than 21% of the day)                              |
+| `20`   | Inside regular class no more than 79% of day and no less than 40% of the day (formerly Special Education Outside the Regular Class At Least 21% of the Day (21-60%)) |
+| `21`   | Inside regular class less than 40 percent of the day (formerly Special Education Outside the Regular Class More than 60% of the Day (61% or more))                   |
+</details>
+
+**eScholar Name**: `PRIMARY SETTING CODE`
+
+---
+### 45 - TRANSITION IEP STATUS CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicate whether the student have a transition plan as part of their IEP.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 46-48
+Fields not collected. Must be delimited in template file.
+
+---
+### 49 - EDUCATIONAL ENVIRONMENT PERCENTAGE (SCHOOL AGE PROGRAM)
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+Actual percentage of time that students are educated in regular classrooms in public school buildings with non-disabled students as indicated in Section VIII (A) of the IEP.
+
+:::warning[Business Rules:]
+This item is not applicable to students not educated in regular buildings as indicated in Section VIII (B) of the IEP.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`60`
+</details>
+
+**eScholar Name**: `PROGRAM INTEGRATED PERCENTAGE`
+
+---
+### 50-51
+Fields not collected. Must be delimited in template file.
+
+---
+### 52 - REASON FOR EXITING SPECIAL EDUCATION
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={16} /></p>
+
+Indicate the reason the student exited the program.
+
+:::warning[Business Rules:]
+If a student exits an LEA for any reason or is exited out of special education, there must be an Exit Code and Exit Reason. 
+
+If a student transfers to another LEA within PA and is continuing in special education, use Reason Code `99`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Description                                |
+|------|--------------------------------------------|
+| `01`   | Graduated with Regular High School Diploma |
+| `02`   | Received a GED                             |
+| `03`   | Reached Maximum Age (age 21)               |
+| `04`   | Dropped Out                                |
+| `05`   | Transferred to Regular Education           |
+| `06`   | Moved out of PA, known to be continuing    |
+| `09`   | Died                                       |
+| `99`   | Moved within PA, known to be continuing    |
+</details>
+
+**eScholar Name**: `PRIMARY EXIT REASON CODE`
+
+---
+### 53 - LEP STATUS (Y/N)
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+This field indicates whether the student is currently identified as an EL.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 54-69
+Fields not collected. Must be delimited in template file.
+
+---
+### 70 - SERVICE PROVIDER
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={50} /></p>
+
+Enter the 9-digit AUN of the special education service provider as indicated on the IEP or Notice of Recommended Educational Placement.
+
+If the AUN doesn't exist, enter the actual name of the service provider.
+This indicates the entity providing special education services.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`100000009`
+</details>
+
+**eScholar Name**: `PRIMARY SERVICE PROVIDER`
+
+---
+### 71 - LOCATION OF SPECIAL EDUCATION SERVICES
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={100} /></p>
+
+The PDE-defined, 4-digit code identifying the school where special education services are provided. 
+
+If a student is at a location that does not have a designated school code, enter the actual name of the building.
+
+:::warning[Business Rules:]
+Enter the four-digit building code (when applicable). If no code exists, enter the actual name of the building. 9999 and 0000 are not valid values.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`1234`
+</details>
+
+---
+### 72
+Field not collected. Must be delimited in template file.
+
+---
+### 73 - TRANS IEP (COMP INT PAID WORK EXP)
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Did the Student participate in a competitive integrated paid work experience?
+
+:::warning[Business Rules:]
+Required if [Field 45 (Transition IEP Status Code)](#45---transition-iep-status-code) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+**eScholar Name**: `TRANSITION IEP PAID WORK INDICATOR`
+
+---
+### 74 - TRANS IEP (JOB COACHING)
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Did the student participate in individual job coaching services funded by the school in a paid work experience?
+
+:::warning[Business Rules:]
+Required if [Field 45 (Transition IEP Status Code)](#45---transition-iep-status-code) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+**eScholar Name**: `TRANSITION IEP JOB SUPPORT INDICATOR`
+
+---
+### 75 - TRANS IEP (COMP INT EMP GOAL)
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Does the student have an outcome goal of competitive integrated employment?
+
+:::warning[Business Rules:]
+Required if [Field 45 (Transition IEP Status Code)](#45---transition-iep-status-code) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` 
+- `N`
+</details>
+
+**eScholar Name**: `TRANSITION IEP CAREER EXPLORATION INDICATOR`
+
+---
+### 76 - TRANS IEP (COMP INT EMP)
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Upon exiting high school, was the student employed in a competitive integrated setting?
+
+:::warning[Business Rules:]
+Required if [Field 45 (Transition IEP Status Code)](#45---transition-iep-status-code) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N` 
+</details>
+
+**eScholar Name**: `TRANSITION IEP PAID WORK MODIFIED INDICATOR`
+
+---
+### 77-79
+Fields not collected. Must be delimited in template file.
+
+---
+### 80 - RACE/ETHNICITY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+A single code indicating the race and ethnicity of the student.
+
+:::warning[Business Rules:]
+Refer to "[Race/Ethnicity: Federal Race and Ethnicity Standards](/docs/race-ethnicity-gender-standards)" in this volume of the manual for an explanation of the federal race and ethnicity codes.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1 – American Indian/Alaskan Native (not Hispanic)`
+- `3 – Black or African American (not Hispanic)`
+- `4 – Hispanic (any race)` 
+- `5 – White (not Hispanic)`
+- `6 – Multi-Racial (not Hispanic)`
+- `9 – Asian (not Hispanic)`
+- `10 – Native Hawaiian or other Pacific Islander (not Hispanic)`
+</details>
+
+## Rules
+
+See the Rules Section of the Template Domain

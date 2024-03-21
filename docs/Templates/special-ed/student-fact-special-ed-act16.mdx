@@ -1,0 +1,133 @@
+---
+title: Student Fact Template – Special Education for the Act 16 Report
+description: Student Fact Template Documentation for the Act 16 Report
+---
+
+import Badge from '@site/src/components/badges';
+
+**(7 Fields, 7 Collected, Delimited)**
+
+**Target Table(s): `STUDENT_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+For the previous school year, identify the educational expenditure cost range category (see [Appendix AJ](docs/appendix/appendix-AJ.mdx)) for each student with disabilities. The expenditure range is based on the total cost of the student's special education program directed by an individualized education program (IEP) for the entire school year (7/1 through 6/30).
+
+The template should be submitted by the School District of Residence, NOT by the educating LEA, IU, APS, county prison, CTC, or other entity.
+
+Exceptions:
+
+- Students enrolled in a charter school are reported by the charter school.
+- 1305 (Foster Home) students are reported by the school district in which the student resides with the foster parents.
+- Students educated in state adult and state juvenile correctional facilities are reported by the PA Department of Corrections Education.
+- Gifted students are not included in this submission.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx). 
+
+`123456789`
+</details>
+
+**eScholar Field Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Field Name**: `STUDENT ID`
+
+---
+### 4 - REPORTING DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The last day of the current school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 5 - COLLECTION
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={100} /></p>
+
+Constant Value of ACT16.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`ACT16`
+</details>
+
+**eScholar Field Name**: `CATEGORY SET CODE`
+
+---
+### 6 - MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Constant Value of COUNT.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`COUNT`
+</details>
+
+---
+### 7 - ACT16 FUND CATEGORY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={7} /></p>
+
+ACT16 Fund Category Code
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Description               | Category                                      |
+|------|---------------------------|-----------------------------------------------|
+| `0`    | \$1.00 - \$5,042.49       | Category 1A special education funding formula |
+| `1`    | \$5,042.50 - \$27,535.15  | Category 1B special education funding formula |
+| `2`    | \$27,535.16 - \$55,070.31 | Category 2 special education funding formula  |
+| `3`    | \$55,070.32 - \$82,605.51 | Category 3A special education funding formula |
+| `4`    | \$82,605.52 and over      | Category 3B special education funding formula |
+</details>
+
+**eScholar Field Name**: `CATEGORY 1`
+
+## Rules
+
+See the Rules Section of the Template Domain
