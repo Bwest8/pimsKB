@@ -1,0 +1,106 @@
+---
+title: Student Award Fact Template for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students
+description: Student Award Fact Template for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(6 Fields, 6 Collected, Delimited)**
+
+**Target Table(s): `STUDENT_AWARD_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template defines the Student Award Fact table. This table contains data related to the Industry-Recognized Credentials awarded to and Work-Based Learning Experiences engaged in by students in grades 7 through 12.
+
+The Industry-Based Learning Indicator identifies the percentage of 12th graders who demonstrate meaningful engagement in exploration and preparation in industry-based technical skills within grades 7 through 12 prior to graduation. The [Industry-Based Learning Indicator guidance document](https://www.education.pa.gov/K-12/ESSA/FutureReady/Pages/FRIndustryGuidelines.aspx) (located at Pennsylvania Department of Education > K-12 > ESSA > [Industry-Based Learning Indicator for the Future Ready PA Index: Guidelines for Data Collection, Monitoring, and Reporting](https://www.education.pa.gov/K-12/ESSA/FutureReady/Pages/FRIndustryGuidelines.aspx)) provides additional information for data collection, reporting, and monitoring. Non-CTE students will enter "ICN" for Industry-Recognized Credential or "WBL" for Work-Based Learning experiences in Field 5 and the associated work-based learning experience code in Field 4, as noted in the guidance document.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+The unique, 9-digit AUN assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::warning[Business Rules:]
+The 10-digit PAsecureID must be reported for the same student within the June 30 Student and Student Snapshot Templates.
+:::
+
+**eScholar Name**: `STUDENT ID`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+---
+### 4 - AWARD CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+The unique code assigned to identify the subgroup that pertains to the credential.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AM](docs/appendix/appendix-AM.mdx) for a list of Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students
+</details>
+
+---
+### 5 - AWARD TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+Code to identify Award Type
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `ICN` - Industry-Recognized Credential
+- `WBL` - Work-Based Learning Experience
+</details>
+
+---
+### 6 - AWARD DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+Date on which the credential was earned, or the experience was completed. If more than one credential or experience reported with the same award code and award type is awarded on the same date, the date of one may be changed to allow the reporting of both records.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2019-04-05`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

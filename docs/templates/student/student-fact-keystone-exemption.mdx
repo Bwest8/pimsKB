@@ -1,0 +1,149 @@
+---
+title: Student Fact Template for Keystone Exemption Reporting
+description: Student Fact Template for Keystone Exemption Reporting Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(13 Fields, 8 Collected, Delimited)**
+
+**Target Table(s): `STUDENT_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template defines the Student Fact table for Keystone Exemption and Non-numeric proficiency reporting. This data set is used to report students enrolled who were enrolled in in Keystone "trigger-equivalent" courses in the 2019-20 school year, who tested or would have tested in a 2019-20 school year Keystone testing window. 
+
+LEAs will report whether the student would have been a first-time or repeat tester in the applicable subject area in the 2019-20 school year. 
+
+LEAs will also report whether the student passed the Keystone "trigger-equivalent" course.
+
+Students need not have been enrolled in the reporting LEA in the 2019-20 school year. Students who were enrolled in Keystone "trigger-equivalent" courses in the 2019-20 school year in another LEA (public, private, or out-of-state) may be reported by the LEA in which the student is enrolled in the reporting year. For example:
+
+Student A was enrolled in a Keystone "trigger-equivalent" course in a private school in 2019-20 and transferred to a PIMS-reporting LEA for the 2023-24 school year. The PIMS-reporting LEA will report the student in the 2023-24 Keystone Exemption data set.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+The unique, 9-digit AUN assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date indicating the whole school year; June 30 at the end of the standard school year is used to designate a school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::warning[Business Rules:]
+The 10-digit PAsecureID must be reported for the same student within the June 30 Student Snapshot and Student templates.
+:::
+
+**eScholar Name**: `STUDENT ID`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+---
+### 4 - REPORTING DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The last day of the current school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 5 - CATEGORY SET CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={100} /></p>
+
+Description Keystone course subject area in which the student was enrolled in the 2019-20 school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `ALG1920` - Algebra 1
+- `BIO1920` - Biology
+- `LIT1920` - Literature
+</details>
+
+---
+### 6 - PRIMARY MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Use the constant value of INDICATOR.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`INDICATOR`
+</details>
+
+---
+### 7-9
+Fields not collected. Must be delimited in template file.
+
+---
+### 10 - INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indication of whether the student for whom the exemption is reported completed and passed the Keystone "trigger" course for the subject area reported in field 5, Category Set Code
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 11-12
+Fields not collected. Must be delimited in template file.
+
+---
+### 13 - COMMENT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={6} /></p>
+
+Indication of whether the student would have been a first-time Keystone test-taker or a repeat test–taker in the subject area reported in Field 5
+
+**eScholar Name**: `FACT COMMENT`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `FIRST`
+- `REPEAT`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

@@ -1,0 +1,128 @@
+---
+title: Student Fact Template for Career Standards Benchmarks
+description: Student Fact Template for Career Standards Benchmarks Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(10 Fields, 7 Collected, Delimited)**
+
+**Target Table(s): `STUDENT_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template defines the Student Fact table for Career Standards Benchmarks. This table contains data (Y or N indicator) related to the students in grades 5, 8, and 11 expected to meet the benchmarks identified in State Board of Education regulations, pertaining to Career Education and Work Standards (CEW Standards). This schoolwide indicator represents a calculated percent of students who demonstrate engagement in career exploration, preparation, and implementation of individualized career plans through separate, specific measures based on grade level. The reporting requirements are as follows:
+
+- Grade 5 benchmark—6 pieces of evidence
+- Grade 8 benchmark—6 pieces of evidence, including a career plan
+- Grade 11 benchmark—8 pieces of evidence, including the portfolio and evidence that demonstrates career plan implementation.
+
+The four strands of the CEW Standards should be addressed at least once in the benchmark collection. Additional information about the Career Readiness Indicator can be found in the [Guidance document](https://www.education.pa.gov/Documents/About%20PDE/FutureReadyPA/Future%20Ready%20PA%20Index%20Career%20Readiness%20Guidance%20V2.pdf).
+
+## Student Fact Template for Career Standards Benchmarks Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+The unique, 9-digit AUN assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student.
+
+:::warning[Business Rules:]
+The 10-digit PAsecureID must be reported for the same student within the June 30 Student and Student Snapshot Templates.
+:::
+
+**eScholar Name**: `STUDENT ID`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+---
+### 4 - REPORTING DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The last day of the current school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 5 - CATEGORY SET CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={100} /></p>
+
+Description of the data element being reported.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `CSB05` - 5th grade students
+- `CSB08` - 8th grade students 
+- `CSB11` - 11th grade students
+</details>
+
+---
+### 6 - PRIMARY MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Use the constant value of INDICATOR.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`INDICATOR`
+</details>
+
+---
+### 7-9
+Fields not collected. Must be delimited in template file.
+
+---
+### 10 - INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indication of whether the student met the benchmark.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

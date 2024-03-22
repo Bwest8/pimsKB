@@ -1,0 +1,43 @@
+---
+title: Student Snapshot Template
+description: Student Snapshot Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(226 Fields, 71 Collected, Delimited)**
+
+**Target Table(s): `STUD_SNAPSHOT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+The Student Snapshot Template contains the same information as the Student Template, with the addition of a snapshot date. Each Student Snapshot Template is used for a different purpose and the criteria of the students included may be different from other Student Snapshots. Some Student Snapshots are not true Snapshots in time, refer to the October Student How-To Guide for exceptions.
+
+The only difference between the Student and Student Snapshot Templates is the inclusion of the SNAPSHOT DATE (Field 83) in the Student Snapshot Template. See the Student Template above for all other Student Snapshot Data Elements.
+
+## Template Specifications {#template-specs}
+
+---
+### 83 - SNAPSHOT DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+One of the standard reporting dates defined by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-05`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain
+
+:::note
+**Related to Migrant Status**
+
+Official Migrant data will be sourced into PIMS from MIS2000, the official source. Therefore, submission of migrant is required for Adult CTE students only
+:::

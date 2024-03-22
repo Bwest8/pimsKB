@@ -1,0 +1,109 @@
+---
+title: Staff Development Fact Template
+description: Staff Development Fact Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(14 Fields, 5 Collected, Delimited)**
+
+**Target Table(s): `STAFF_DEV_FACT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STAFF                        |
+
+## Template Description
+
+This template collects qualification and training data on directly employed or contracted School Security Guards, School Resource Officers and School Police Officers. All security staff members for the entire year should be reported, even if the individual is no longer working in this capacity at the end of the school year. School security personnel that are reported in this template should not be included in the District Fact Template for Safe Schools. 
+
+This template specifically collects the following dates:
+
+- Date of the most recent initial training.
+- Date of the most recent firearms qualification.
+- Date of the most recent CPR qualification.
+- Date of the most recent first aid qualification.
+- Number of hours of Municipal Police Officer's Education and Training Commission (MPOETC) training.
+- Number of hours of National Association of School Resource Officers (NASRO) training.
+- Number of hours of local training.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+--- 
+### 2 - PPID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+A unique identifier for each staff member; use the 7-digit Professional Personnel ID (PPID) for all certificated staff and non-certificated staff.  For school security personnel who have a PPID, report the PPID.   For school security personnel without a PPID:  Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by SS; or if the school security personnel does not have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by SS.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `6925031` 
+- `SS123456` (for school security staff without a PPID)
+</details>
+
+**eScholar Name**: `STAFF ID`
+
+---
+### 3 - ACTIVITY CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+The code identifying the type of qualification or training.  Submit one record per value per person.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AP](docs/appendix/appendix-AP.mdx) for a list of valid values.
+</details>
+
+---
+### 4 - ACTIVITY START DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+Date of most recent qualification or training: For `INITIAL`, `WEAP`, `CPR`, and `FIRST AID`, use actual date qualification obtained or training. For `MPOETC`, `NASRO` and `LOCAL` trainings, use School Year Date of YYYY-06-30
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `2023-01-01`
+- `2024-06-30`
+</details>
+
+---
+### 5-13
+Fields not collected. Must be delimited in template file.
+
+---
+### 14 - ACTIVITY HOURS
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+Number of hours of training within the current year for `MPOETC`, `NASRO`, or `LOCAL`.
+
+:::warning[Business Rules:]
+Required if [ACTIVITY CODE](#3---activity-code) = `MPOETC`, `NASRO`, or `LOCAL`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`10`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

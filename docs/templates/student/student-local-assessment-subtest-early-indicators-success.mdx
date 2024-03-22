@@ -1,0 +1,185 @@
+---
+title: Student Local Assessment Subtest for Early Indicators of Success
+description: Student Local Assessment Subtest for Early Indicators of Success Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(19 Fields, 11 Collected, Delimited)**
+
+**Target Table(s): `STUDENT_LOCAL_ASSMNT_SUBTEST`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
+## Template Description
+
+This template identifies whether a student has met the applicable standards for grade 3 reading and grade 7 math where the LEA has chosen to exercise the local assessment option in lieu of the standard PSSA for either or both of the grade 3 reading and grade 7 math indicators of success.
+
+LEAs have the option to report data from locally identified assessment systems for the Grade 3 Reading/Grade 7 Mathematics Early Indicators of Success indicator on the Future Ready PA Index. In identifying an assessment system for this measure, LEAs must take basic steps to evaluate the quality and sufficiency of evidence to support the use of the assessment and interpretation of its results. In addition, to ensure comparability and fairness, all students in the grades 3 and 7 cohorts across the LEA must participate in the same assessment. For more information on these standards and assurances, please refer to the following document: [Guidance for Evaluating Locally Selected Measures for Use in the Future Ready PA Index for Grade 3 Reading and Grade 7 Mathematics](http://www.education.pa.gov/Documents/About%20PDE/FutureReadyPA/Future%20Ready%20PA%20Index%20Gr%203%20Reading%20Gr%207%20Math.pdf). The assessment must provide for accessibility features or accommodations that allow it to be used by a minimum of 95% of the students in each school who are enrolled for a full academic year. Schools that do not attain a 95% participation rate on the locally selected assessment will have their data reverted to PSSA assessment data. Additionally, LEAs who chose not to use locally identified assessments will have their data default to their corresponding PSSA assessments for reporting to the Future Ready PA Index.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - TEST DESCRIPTION
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+The constant value of LOCAL.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`LOCAL`
+</details>
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+**eScholar Name**: `ASSESSMENT SCHOOL YEAR DATE`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4 - SUBTEST AREA
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={25} /></p>
+
+Description of the test subject area.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `MATH`
+- `READING`
+</details>
+
+---
+### 5 - SUBTEST GRADE LEVEL
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={15} /></p>
+
+Grade level for which the test was administered.
+
+:::warning[Business Rules:]
+Must match the grade level reported for the student in the Student Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix K](docs/appendix/appendix-K.mdx) for valid values corresponding to grades 3 and 7.
+</details>
+
+---
+### 6 - SUBTEST VERSION ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={1} /></p>
+
+The constant value 1.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1`
+</details>
+
+---
+### 7-9
+Fields not collected. Must be delimited in template file.
+
+---
+### 10 - PASECUREID
+<p><Badge color="required" /> <Badge length={12} /></p>
+
+The unique, 10-digit PAsecureID assigned to the student
+
+**eScholar Name**: `STUDENT ID`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+---
+### 11 - TEST DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The date on which the test was taken.
+
+:::warning[Business Rules:]
+Cannot be greater than the current date.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-30`
+</details>
+
+---
+### 12-14
+Fields not collected. Must be delimited in template file.
+
+---
+### 15 - SCORE TYPE1
+<p><Badge color="required" /> <Badge color="mapping" /> <Badge length={3} /></p>
+
+The constant value STD.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`STD`
+</details>
+
+---
+### 16-17
+Fields not collected. Must be delimited in template file.
+
+---
+### 18 - STANDARD ACHIEVED 1
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The standard achieved is "met on-track standard"; use the constant value MOTS.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`MOTS`
+</details>
+
+---
+### 19 - STUDENT MET STANDARD
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication of whether the student met the standard identified.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain
