@@ -1,0 +1,107 @@
+---
+title: Incident Offender Parent Involvement Template
+description: Incident Offender Parent Involvement Template Documentation
+---
+import Badge from '@site/src/components/badges';  
+
+**(6 Fields, 6 Collected, Delimited)**
+
+**Target Table: `INCIDENT_OFFNDR_PARENT_INVOLVE`**
+
+| **Load Sequence/Dependencies** |
+|--------------------------------|
+| INCIDENT                       |
+| PERSON                         |
+| INCIDENT OFFENDER              |
+
+## Template Description
+This template connects an incident and the offender to one or multiple parental involvement types. If there are multiple parental involvement types for an incident/offender, include multiple records within this template with the same Incident ID and Offender ID. If there is no parental involvement, do not submit a record in this template.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE where the incident took place.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - INCIDENT ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+An identifier assigned by the LEA to the incident; this identifier must be unique within each LEA per school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9801`
+</details>
+
+---
+### 3 - OFFENDER ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+An identifier for the offender involved in an incident.
+
+:::warning[Business Rules:]
+Must be the same value used in [Field 2 (PERSON ID)](#2---person-id) within the Person Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`887`
+</details>
+
+---
+### 4 - PARENTAL INVOLVEMENT CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={1} /></p>
+
+The code of the parental involvement type for the offender and incident.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – written notification
+- `2` – telephone conference
+- `3` – school conference
+- `4` – family counseling
+- `5` – law enforcement / legal involvement
+- `6` – other
+</details>
+
+---
+### 5 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 6 - PARENTAL INVOLVEMENT COMMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={500} /></p>
+
+Comment regarding the parental involvement.
+
+:::warning[Business Rules:]
+Required if the [Field 4 (PARENTAL INVOLVEMENT CODE)](#4---parental-involvement-code) = `6`.
+:::
+
+---
+## Rules
+See the Rules Section of the Template Domain

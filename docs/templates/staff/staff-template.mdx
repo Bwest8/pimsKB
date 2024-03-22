@@ -1,0 +1,625 @@
+---
+title: Staff Template
+description: Staff Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(116 Fields, 35 Collected, Delimited)**
+
+**Target Table(s): `STAFF`**
+
+**Load Sequence/Dependency:** No dependencies
+
+## Template Description
+
+This template is meant to reflect the current professional employee situation – there is only one LEA record for each professional employee, even if the employee has worked in more than one location within the LEA for a given collection period.
+
+School security personnel, including directly employed or contracted school police officers, school resource officers, and school security officers, are collected in this template. These staff members are to be reported during Collection Window 6 for the Safe Schools data set, not during the October Staff Submission. During this submission only the fields listed below are required. All school security personnel for the entire school year should be reported during this window, even if the individual is no longer working in this capacity at the end of the school year. 
+
+:::note
+Professional staff should not be submitted during the summer security staff submission. School security personnel that are reported in this template should not be included in the District Fact Template for Safe Schools.
+:::
+
+Staff that were reported as Active in the previous year and have terminated for any reason since October of the prior year should be reported in C1 Staff with Staff and Staff Snapshot including all termination data.
+
+Staff that leave the LEA for any reason after the C1 Staff Collection should be terminated in C6 Staff updates with Staff template having all termination fields completed.
+
+Fields required for the Safe Schools data set during Collection Window 6:
+
+- Field 1 – SUBMITTING AUN
+- Field 2 – PPID  
+- Field 14 – SCHOOL NUMBER
+- Field 48 - STAFF QUALIFICATION STATUS CODE
+- Field 65 - FIRST NAME
+- Field 66 - LAST NAME 
+- Field 95 - AUTHORIZED TO CARRY WEAPON INDICATOR
+
+:::note
+If an LEA has no directly employed or contracted school security personnel, a record indicating this must be entered in the District Fact Template, refer to this section.
+:::
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by PDE for the LEA that employs (or contracts with the private entity for) the person.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - PPID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+A unique identifier for each staff member; use the 7-digit Professional Personnel ID (PPID) for all certificated staff and non-certificated staff. For school security personnel who have a PPID, report the PPID. For school security personnel without a PPID: Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by SS; or if the school security personnel does not have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by SS.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `6925031`
+- `SS123456`
+</details>
+
+**eScholar Name**: `STAFF ID`
+
+---
+### 8 - JOB DESCRIPTION
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The level of access that should be granted in the PVAAS Roster Verification system for this school year. Value in this field will be used to create account credentials and authorize specific levels of access to PVAAS.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Job Description Code | Role                         | Definition                                                                                                                                              | Example                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `SWS`                  | School and Student Access    | Access to PVAAS as a School User for school level reports and student level reports (including value-added, diagnostic, and student projection reports) | This often includes lead teachers, classroom teachers, and other professional staff who need access to school level data AND student level data such as, but not limited to: Asst Principal, Dean of Students, School Counselor, regular and special education teachers responsible for instruction in state tested grades/subjects/courses, and teachers responsible for interventions/academic supports for students. |
+| `SNS`                  | School and No Student Access | Access to PVAAS as a School User for school level reports (including value-added and diagnostic reports), but NO access to student data                 | This often includes classroom teachers and other professional staff who need access to school level data but do NOT need access to student level data.                                                                                                                                                                                                                                                                  |
+| `NPA`                  | No PVAAS Access              | No access to PVAAS as a School User                                                                                                                     | This staff member does NOT need a School User PVAAS account. This could include school staff who do not need access to PVAAS, as well as district administrators who would access PVAAS as a District Users or Admin.                                                                                                                                                                                                   |
+
+:::note
+Access to student-level data is determined locally by each LEA and should follow local policies regarding data access. The Job Description Codes above apply only to PVAAS School User accounts/access. Admin-type accounts, District User accounts, and access customizations must be managed manually in the PVAAS system by the appropriate users.
+:::
+</details>
+
+**eScholar Name**: `POSITION TITLE`
+
+---
+### 14 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The PDE-defined, 4-digit school code identifying the primary school of employment for the staff member. LEA off-site locations use 9999. Staff assigned to district office use 0000. Private schools use 0000.
+
+:::warning[Business Rules:]
+Required and is the code of the primary location for the staff member. IUs use SCHOOL NUMBER 0000.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 17 - STAFF EMPLOYMENT TYPE CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+An indication of whether an individual is employed for a standard number of hours (as determined by civil or organizational policies) in a week, month, or other period of time.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `F` – full time
+- `P` – part time
+</details>
+
+---
+### 20 - GENDER
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A person's gender.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `M` – male
+- `F` – female
+</details>
+
+**eScholar Name**: `GENDER CODE`
+
+---
+### 21 - RACE / ETHNICITY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The general racial or ethnic category that most clearly reflects the individual's recognition of their community or with which the individual most identifies.
+
+:::warning[Business Rules:]
+Required if known. Refer to "Race/Ethnicity: Federal Race and Ethnicity Standards" in this volume of the manual for an explanation of the federal race and ethnicity codes.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – American Indian/Alaskan Native (not Hispanic)
+- `3` – Black or African American (not Hispanic)
+- `4` – Hispanic (any race)
+- `5` – White (not Hispanic)
+- `6` – Multi-Racial (not Hispanic)
+- `9` – Asian (not Hispanic)
+- `10` – Native Hawaiian or other Pacific Islander (not Hispanic
+
+</details>
+
+**eScholar Name**: `RACE OR ETHNICITY CODE`
+
+---
+### 23 - HOME PHONE
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={14} /></p>
+
+The telephone number including the area code.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`717-555-1212`
+</details>
+
+---
+### 25 - ADDRESS 1
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={40} /></p>
+
+The street number and street name or post office box number of home address.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`222 Main St.`
+</details>
+
+---
+### 26 - ADDRESS 2
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={40} /></p>
+
+Additional street address information, if necessary.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Apt. 107`
+</details>
+
+---
+### 27 - CITY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+The name of the city in which an address is located.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Harrisburg`
+</details>
+
+---
+### 28 - STATE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The 2-character abbreviation for the state (within the United States) or outlying area in which an address is located.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`PA`
+</details>
+
+---
+### 29 - ZIP
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The 5- or 9-digit zip code portion of home address.
+
+**eScholar Name**: `FULL ZIP CODE`
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`17126-0333`
+</details>
+
+---
+### 35 - CURRENT SERVICE DATE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The month, day, and year on which an individual was hired for a position. **NOTE:** This must be the date the professional first was hired for the current position, even if that is a prior year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1990-09-01`
+</details>
+
+---
+### 36 - EXIT DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The month, day, and year on which an individual ended a period of self-employment or employment with an organization or institution.
+
+:::warning[Business Rules:]
+This field is required for exited staff only.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2022-07-15`
+</details>
+
+---
+### 39 - YEARS EXPERIENCE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The total number of years that an individual has worked in 1 or more educational institutions. Enter whole numbers only, not fractions or decimals. Employment in states other than PA and in private schools may be counted.
+
+:::warning[Business Rules:]
+An individual in their first year should be reported as one (1). 
+
+**Do not enter zero.** 
+
+This should only include years as a professional in Pre-K – 12 education.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`20`
+</details>
+
+---
+### 40 - BIRTH DATE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The month, day, and year on which an individual was born.
+
+:::warning[Business Rules:]
+Must match birth date reported in Teacher Information Management System (TIMS) and must be within a set range so the age is between 22 and 80.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1991-07-15`
+</details>
+
+---
+### 41 - ACTIVE / INACTIVE INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicate employment status based on your selection of a valid value.
+
+:::warning[Business Rules:]
+Staff previously reported as Active or on leave who are no longer employed by the LEA must be reported as terminated. For terminated staff, be sure to populate Field 54 [TERMINATION CODE](#54---termination-code).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `A` – active
+- `T` – terminated
+- `M` – military leave
+- `S` – sabbatical leave
+- `U` – suspension
+- `O` – other
+- `H` – charter school
+- `W` – workers’ compensation
+
+</details>
+
+---
+### 43 - YEARS EXPERIENCE IN DISTRICT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The total number of consecutive years that an individual has worked for the LEA. Enter whole numbers only, not fractions or decimals. This should only include years as a professional in Pre-K – 12 education.
+
+:::warning[Business Rules:]
+An individual in their first year should be reported as one (1). 
+
+**Do not enter zero.** 
+
+If an individual leaves the LEA and returns, he/she starts over.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`15`
+</details>
+
+---
+### 44 - JOB CLASS CODE LONG
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The category that most clearly reflects the nature and degree of an individual's participation in the work force.
+
+:::warning[Business Rules:]
+If field 2 (PPID)= `9999999`, must be SC; If field 2(PPID)=`8888888`, must be CP.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+:::note[Disclaimer:] 
+The codes and definitions used in this document do not represent legal opinions. For questions regarding the employment status of individual employees, LEAs are directed to consult with their solicitor or other qualified counsel.
+:::
+
+|  **Job Class Code**                                                  |  **Notes**                                                                                                                                                                                                                                                                                                                            |  **Definition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  `PE` - Professional Employee                                       |  Teaching Professional Employee                                                                                                                                                                                                                                                                                                       |  **Professional Employee:** The term "professional employee" shall include those who are certificated as teachers, supervisors, supervising principals, principals, assistant principals, vice-principals, directors of career and technical education, dental hygienists, visiting teachers, home and school visitors, school counselors, child nutrition program specialists, school librarians, school secretaries the selection of whom is on the basis of merit as determined by eligibility lists and school nurses. (24 P.S. § 11-1101(1))                           |
+|  `NTPE` - Professional Employee (non-teaching)                      |  Non-teaching Professional Employee                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|  `TPE` - Temporary Professional Employee                            |   \*Temporary Professional employee shall include individuals that have not attained tenure.   This does not include substitutes.                                                                                                                                                                                                     |  **Temporary Professional Employee:** The term "temporary professional employee" shall mean any individual who has been employed to perform, for a limited time, the duties of a newly created position or of a regular professional employe whose services have been terminated by death, resignation, suspension or removal. (24 P.S. § 11-1101(3))                                                                                                                                                                                                                       |
+|  `SP` - Substitute (Other than Temporary or Professional Employee)  |  Not evaluated                                                                                                                                                                                                                                                                                                                        |  **Substitute:** The term "substitute" shall mean any individual who has been employed to perform the duties of a regular professional employe during such period of time as the regular professional employe is absent on sabbatical leave or for other legal cause authorized and approved by the board of school directors or to perform the duties of a temporary professional employe who is absent. (24 P.S. § 11-1101(2))  *\* Act 13 indicates that substitutes being included for evaluation is an LEA decision based on bargaining agreement/solicitor input.*    |
+|  `SPE` - Substitute                                                  |  A substitute that *could* be evaluated based on LEA bargaining agreement requirements.                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|  `SC` - Subcontracted Staff                                         |  Must be reported for all contracted staff  \*For *Act 13 Educator Effectiveness, contracted staff from another PIMS reporting entity such as an IU or SD may be included for PVAAS S*taff Student Subtest *data through their direct employer. To avoid redundancy, this data should not be reported through the contracting LEA.*   |   **Subcontracted Staff:** Subcontracted Staff shall include individuals provided by another entity, including third party vendors or other LEAs (such as an IU or neighboring SD) to perform the duties of regular professional employees.                                                                                                                                                                                                                                                                                                                                 |
+|  `CP` - College Professor                                           |  Must be reported when using PPID 8888888                                                                                                                                                                                                                                                                                             |  **College Professor:** College Professor shall include individuals provided by a college or university to perform services in collaboration with LEA professional employees that offer students the opportunity to obtain Dual credit.                                                                                                                                                                                                                                                                                                                                     |
+
+</details>
+
+---
+### 48 - STAFF QUALIFICATION STATUS CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The type of school security staff.
+
+:::warning[Business Rules:]
+Required for school security staff This field should be used for school security staff only. 
+
+**NOTE:** This only applies for the Safe Schools Collection.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Abbreviation | Title                    | Description                                                                                                                                                                                                                                                                                 |
+|--------------|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `SSO`          | School Security Officer | An individual employed by a school entity, nonpublic school, third-party vendor, or independent contractor assigned to a school for routine safety and security duties. They are not engaged in programs with students and have not been granted powers under section 1306-C(2) and (3).                       |
+| `SRO`          | School Resource Officer | A law enforcement officer commissioned and employed by a law enforcement agency. Their duty station is located in a school, and their stationing is established by an agreement between the agency and the school entity. This includes active certified sheriffs or deputy sheriffs with stationing established by a written agreement between the county, sheriff's office, and the school entity. |
+| `SPO`          | School Police Officer    | 1. A law enforcement officer employed by a school district or nonpublic school. Their responsibilities and work hours are established by the school entity. <br /> 2. An independent contractor or an individual provided through a third-party vendor who has been appointed under section 1302-C.                   |
+
+</details>
+
+---
+### 52 - ANNUAL SALARY
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+The salary or wage (**in whole dollars** **only**) an individual is paid before deductions (excluding differentials). If currently in contract negotiations, enter most current salary. **Substitutes are not included in this report unless they are filling a vacant position.** See Staff How-To Guide for more information.
+
+:::warning[Business Rules:]
+Report the annual contract salary to the nearest dollar. **Do not report cents.** Do not report "extra" salary paid for extra duties assumed voluntarily (for example, coaching football).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`45000`
+</details>
+
+---
+### 54 - TERMINATION CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+The primary reason for the termination of the employment relationship. If staff member was included on prior report and has left the LEA, include on report and indicate appropriate termination code.
+
+:::warning[Business Rules:]
+This field is required for exited staff only.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Termination Code | Termination Reason                                                                                                |
+|------------------|-------------------------------------------------------------------------------------------------------------------|
+| `01`               | Resigned / terminated, remained in education                                                                      |
+| `02`               | Resigned / terminated, left education                                                                             |
+| `03`               | Furloughed / laid off                                                                                             |
+| `05`               | School Closed (for terminating staff when a school is anticipated to close permanently prior to next school year) |
+| `06`               | Retired                                                                                                           |
+| `07`               | Death / illness                                                                                                   |
+| `08`               | Other                                                                                                             |
+| `14`               | Disciplinary action                                                                                               |
+| `15`               | Retired PPID (use only if directed by PDE for PPIDs reported incorrectly in prior years that cannot be corrected) |
+</details>
+
+**eScholar Name**: `EMPLOYMENT SEPARATION REASON CODE`
+
+---
+### 55-56
+Fields not collected. Must be delimited in template file.
+
+---
+### 57 - ALTERNATE STAFF ID
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
+
+A unique number or alphanumeric code assigned by the LEA to identify a staff member. If no local LEA ID exists, reenter the value from the Field 2 [STAFF ID](#2---ppid).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`987654`
+</details>
+
+---
+### 58-62
+Fields not collected. Must be delimited in template file.
+
+---
+### 63 - LOCAL CONTRACT
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicates whether the staff member has a current contract or is working without a contract, because the contract is currently in negotiations.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y` – has a current contract
+- `N` – is in negotiations
+</details>
+
+---
+### 64-70
+Fields not collected. Must be delimited in template file.
+
+---
+### 71 - HIGHEST DEGREE INSTITUTION CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The extent of formal instruction an individual has received (i.e., the highest grade in school completed or its equivalent, or the highest degree received).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Highest Level of Education Completed Description                           |
+|------|----------------------------------------------------------------------------|
+| `9998` | Less than HS graduate                                                      |
+| `2409` | High school equivalency (e.g., GED)                                        |
+| `1044` | High school diploma                                                        |
+| `0819` | Vocational certificate                                                     |
+| `1049` | Some college but no degree                                                 |
+| `1050` | Associate's degree (two years or more)                                     |
+| `1051` | Bachelor's (Baccalaureate) degree (e.g., B.A., A.B., B.S.)                 |
+| `1054` | Master's degree (e.g., M.A., M.S., M. Eng., M.Ed., M.S.W., M.B.A., M.L.S.) |
+| `1055` | Specialist's degree (e.g., Ed.S.)                                          |
+| `1057` | Doctoral (Doctor's) degree (e.g., Ph.D., Ed.D.)                            |
+</details>
+
+---
+### 72
+Field not collected. Must be delimited in template file.
+
+---
+### 73 - ADDRESS 3
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={40} /></p>
+
+The apartment, room, or suite number of an address.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Apt. 12, Ste.`
+</details>
+
+---
+### 74-75
+Fields not collected. Must be delimited in template file.
+
+---
+### 76 - E-MAIL ADDRESS
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={80} /></p>
+
+The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs. Work email addresses are strongly recommended.
+
+:::warning[Business Rules:]
+This field will be used in conjunction with Field 8 (JOB DESCRIPTION) to create PVAAS user accounts. 
+
+Must be a valid e-mail address: **username**, "**at symbol**" (@), **domain** and **extension**.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`jdoe@LEA.org`
+</details>
+
+---
+### 77 - MIDDLE NAME
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={60} /></p>
+
+A secondary name given to an individual at birth, baptism, or during another naming ceremony.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Louise`
+</details>
+
+---
+### 78-82
+Fields not collected. Must be delimited in template file.
+
+---
+### 83 - EMPLOYMENT ELIGIBILITY VERIFICATION
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The second form of documentation (supplemental to an identification document with photograph, e.g., driver's license) furnished by an individual verifying their eligibility to be legally employed in the United States.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+| Code | Employment Eligibility Verification Description                                                                                                                         |
+|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `1018` | U.S. passport                                                                                                                                                           |
+| `1019` | Certificate of U.S. citizenship (INS Form N-560 or N-561)                                                                                                               |
+| `1020` | Certificate of naturalization (INS Form N-550 or N-570)                                                                                                                 |
+| `1024` | Unexpired employment authorization card (INS Form I-688A)                                                                                                               |
+| `1022` | Alien registration receipt card with photograph (INS Form I-151 or I-155)                                                                                               |
+| `1023` | Unexpired temporary resident card (INS Form I-688)                                                                                                                      |
+| `1025` | Unexpired reentry permit (INS Form I-327)                                                                                                                               |
+| `1026` | Unexpired refugee travel document (INS Form I-571)                                                                                                                      |
+| `1034` | Unexpired employment authorization document issued by the INS (other than those listed above)                                                                           |
+| `1028` | U.S. social security card issued by the Social Security Administration (other than a card stating it is not valid for employment)                                       |
+| `1029` | Certification of birth abroad issued by the Department of State (Form FS-545 or Form DS-1350)                                                                           |
+| `1030` | Original or certified copy of a birth certificate issued by a state, county, municipal authority, or outlying possession of the United States bearing an official seal  |
+| `1031` | Native American tribal document                                                                                                                                         |
+| `1032` | U.S. citizen ID card (INS Form I-197)                                                                                                                                   |
+| `1033` | ID card for use of resident citizen in the United States (INS Form I-179)                                                                                               |
+| `9999` | Other                                                                                                                                                                   |
+</details>
+
+---
+### 84-94
+Fields not collected. Must be delimited in template file.
+
+---
+### 95 - AUTHORIZED TO CARRY WEAPON INDICATOR
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Specifies whether the school security staff member is authorized to carry a weapon.
+
+:::warning[Business Rules:]
+Required for school security personnel (School Police Officer, School Resource Officer, School Security Officer).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 96-115
+Fields not collected. Must be delimited in template file.
+
+---
+### 116 - GENDER IDENTITY
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Identifies an individual's personal conception of oneself. This is for state and local use.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`X`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

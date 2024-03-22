@@ -1,0 +1,197 @@
+---
+title: Incident Victim Template 
+description: Incident Victim Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(12 Fields, 11 Collected, Delimited)**
+
+**Target Table: `INCIDENT_VICTIM`**
+
+| **Load Sequence/Dependencies** |
+|--------------------------------|
+| INCIDENT                       |
+| PERSON                         |
+
+## Template Description
+This template connects one or multiple victims to each specific incident. In cases of incidents when there are crimes against property, such as vandalism in Field 5 of this template, Valid Value 8 (school/school facility) should be used. Note that not all incidents will have a victim. For example, a fighting incident will not have a victim (all parties are considered offenders in this case). See [Appendix Z](docs/appendix/appendix-Z.mdx) in Volume 2 of the PIMS User Manual for more information (the "Infraction has Victims" column). If there are no victims associated with the incident, do not submit any records in this template.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - INCIDENT ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+An identifier assigned by the LEA to the incident; this identifier must be unique within each LEA per school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9801`
+</details>
+
+---
+### 3 - VICTIM ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+An identifier for the victim involved in an incident. This can be the PAsecureID if the victim is a current student but does not have to be.  If the victim is not a current student, or if the LEA desires not to submit the PAsecureID, use an identifier assigned by the LEA.
+
+:::warning[Business Rules:]
+Must be the same value used in [Field 2 (PERSON ID)](#2---person-id) within the Person Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`887`
+</details>
+
+---
+### 4 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 5 - VICTIM TYPE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The type of victim.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – student
+- `2` – student with IEP
+- `3` – student from another LEA
+- `4` – parent
+- `5` – adult visitor / intruder
+- `6` – district employee
+- `7` – other or unknown
+- `8` – school / school facility
+</details>
+
+---
+### 6 - AGE AT TIME OF INCIDENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The age of the victim at the time of the incident.
+
+:::warning[Business Rules:]
+- Required if age is known. 
+- If unknown, leave null or blank.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`14`
+</details>
+
+---
+### 7 - GRADE LEVEL CODE AT TIME OF INCIDENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The grade level of the victim at the time of the incident.
+
+:::warning[Business Rules:]
+- Required if grade is known. 
+- If unknown, leave null or blank.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix K](docs/appendix/appendix-K.mdx) for a complete list of valid values.
+</details>
+
+---
+### 8 - STUDENT ASSISTANCE PROGRAM REFERRAL INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A Y/N indicator that specifies whether the victim was referred to the Student Assistance Program.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 9 - INJURY SEVERITY CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Specifies whether the victim sustained a physical injury.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – Victim did not sustain physical injury
+- `3` – Injury but NOT serious bodily injury
+- `4` – Serious bodily injury
+- `5` – Death
+</details>
+
+---
+### 10 - MEDICAL TREATMENT REQUIRED INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A Y/N indicator that specifies whether the victim received medical treatment.
+
+:::warning[Business Rules:]
+Required if known.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 11
+Field not Collected. Must be delimited in template file.
+
+---
+### 12 - INCIDENT VICTIM COMMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={500} /></p>
+
+Comment regarding the medical treatment of the victim.
+
+:::warning[Business Rules:]
+Required if [Field 10 (MEDICAL TREATMENT REQUIRED INDICATOR)](#10---medical-treatment-required-indicator) = `Y`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Victim treated in ER and released.`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain
