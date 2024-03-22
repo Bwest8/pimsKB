@@ -1,0 +1,192 @@
+---
+title: Staff Assignment Template
+description: Staff Assignment Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(26 Fields, 9 Collected, Delimited)**
+
+**Target Table(s): `STAFF_ASSIGNMENT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STAFF                        |
+
+## Template Description
+
+This template will be used to track point-in-time information on staff assignments. The Staff Assignment Template must be submitted in a point-in-time fashion. Include one record per staff assignment in this template. There is no limit to the number of staff assignments that can be included here. Include all assignments for each staff member. Assignments should exist for all staff included on the Staff Snapshot Template. Do not include short term substitutes in the Staff Assignment Template. **Include long-term substitutes ONLY where filling a vacancy**.
+
+:::note
+The percent of time is a cumulative total for the entire school year. **The sum of percent time should equal 100 for full-time staff**.
+:::
+
+This template also is used to collect data on the connection between directly employed or contracted school security personnel (including school police officers, school resource officers, and school security guards) and the schools they are responsible for patrolling. These individuals need to be submitted within this template only during the Safe Schools collection in June. All security staff members for the entire year should be reported, even if the individual is no longer working in this capacity at the end of the school year. School security personnel that are reported in this template should not be included in the District Fact Template for Safe Schools. There is a single assignment code for school security staff `9998`.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)  
+
+`123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - PPID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+A unique identifier for each staff member; use the 7-digit Professional Personnel ID (PPID) for all certificated staff and non-certificated staff.  For school security personnel who have a PPID, report the PPID.   For school security personnel without a PPID:  Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by SS; or if the school security personnel does not have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by SS.
+
+:::warning[Business Rules:]
+The PPID must be consistent across all templates and must not include leading zeroes.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `6925031`
+- `SS123456` (for school security staff without a PPID)
+</details>
+
+**eScholar Name**: `STAFF ID`
+
+---
+### 3 - ASSIGNMENT CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+Code for the certificated or non-certificated assignment.
+
+:::warning[Business Rules:]
+For school security staff use 9998.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix B](docs/appendix/appendix-B.mdx) for a list of valid values.
+</details>
+
+---
+### 4 - SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE-defined, 4-digit code identifying the school where the staff member is assigned.  For Staff Assignment, school security staff should be reported at their individual locations. 0000 should only be used if they are assigned to an administrative building.
+
+:::warning[Business Rules:]
+- Classroom teacher positions should not be reported at 0000 (Only applies to the following organizational types: CS, CTC, SD, SJCI).
+- Administrative staff identified as an LEA level position, location must be reported at 0000 (Only applies to the following organizational types: IU, SD, SJCI).
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)  
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE`
+
+---
+### 5 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 6 - ASSIGNMENT DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+If the assignment is a continuation from the previous school year, enter the actual date the employee began an assignment. For staff assignments within the current school year, enter the actual start date of the staff assignment.  For school security staff ONLY, you may use 2019-07-01 if the actual start date during the year is unknown.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1987-01-04`
+- `2019-07-01`
+</details>
+
+---
+### 7 - COMPLETION DATE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+Assignment exit date – the date an employee left a specific assignment to move to another assignment in the same LEA, or the date an employee was terminated from the LEA.  This field does not apply to school security staff.
+
+:::warning[Business Rules:]
+- Conditionally Required (CR) for PA Inspired Leadership (PIL) positions that have ended.
+- Must be greater than [Field 6 (ASSIGNMENT DATE)](#6---assignment-date).
+- Staff assignments held during current school year do not require a completion date to be reported and should be left blank until the Staff member leaves the assignment.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-31`
+</details>
+
+---
+### 8-17
+Fields not collected. Must be delimited in template file.
+
+---
+### 18 - PERCENT TIME ASSIGNED
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The actual number of hours worked in a position divided by the maximum number of hours the position allows.  See the Staff How-To Guide for more information on this field.
+
+:::note
+The total percent of time for all assignments for the **entire** school year should equal 100 for full-time staff. Accurate value must be reported for all staff, including school security staff.
+:::
+
+:::warning[Business Rules:]
+An FTE of 90% should be entered as 90, not as 0.90 (do not include the percentage symbol).
+
+**NOTE:** In rare instances a staff member may accept additional Pre-K – 12 duties that are beyond the requirements of her full-time position, resulting in a percent time assigned greater than 100.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`100`
+</details>
+
+---
+### 19-25
+Fields not collected. Must be delimited in template file.
+
+---
+### 26 - PRIMARY ASSIGNMENT INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+An indication of whether the assignment is the staff member's main assignment.
+
+:::warning[Business Rules:]
+- Additional assignments can be submitted for a staff member, but only one assignment can be primary.  
+- Primary Assignment will be used to group staff into categories when averaging salaries. Primary Assignment should be chosen to ensure staff are categorized appropriately in averages.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain

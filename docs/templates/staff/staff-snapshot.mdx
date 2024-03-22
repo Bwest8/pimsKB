@@ -1,0 +1,60 @@
+---
+title: Staff Snapshot Template
+description: Staff Snapshot Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(116 Fields, 36 Collected, Delimited)**
+
+**Target Table(s): `STAFF_SNAPSHOT`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STAFF                        |
+
+## Template Description
+
+This table is used to record a point-in-time view of the staff population. The Staff Snapshot Template can be used to track changes over time since there is one record for each staff member for each snapshot date. The Staff Snapshot Template must be submitted in a point-in-time fashion. All types of professional staff should be included in this template. However, terminated staff should be included in this template only if they have been terminated since the last collection period.
+
+School security personnel, including directly employed or contracted school police officers, school resource officers, and school security guards, also are collected in this template. These staff members are to be reported during Collection Window 6 for the Safe Schools data set, not during the October Staff Submission. During this submission only the fields listed below are required. All school security personnel members for the entire school year should be reported during this window, even if the individual no longer is working in this capacity at the end of the school year. School security personnel that are reported in this template should not be included in the District Fact Template for Safe Schools.
+
+Staff that were reported as Active in the previous year and have terminated for any reason since October of the prior year should be reported in C1 Staff with Staff and Staff Snapshot including all termination data.
+
+Staff that leave the LEA for any reason after the C1 Staff Collection should be terminated in C6 Staff updates with Staff template having all termination fields completed.
+
+Fields required for the Safe Schools data set during Collection Window 6:
+
+- Field 1 – SUBMITTING AUN
+- Field 2 – PPID
+- Field 14 – SCHOOL NUMBER
+- Field 48 – STAFF QUALIFICATION STATUS CODE
+- Field 50 – SNAPSHOT DATE
+- Field 65 – FIRST NAME
+- Field 66 – LAST NAME
+- Field 95 – AUTHORIZED TO CARRY WEAPON INDICATOR
+
+If an LEA has no directly employed or contracted security staff, a record indicating this must be entered in the District Fact Template, refer to this section.
+
+The only difference between the Staff and Staff Snapshot Templates is the inclusion of the SNAPSHOT DATE (Field 50) in the Staff Snapshot Template. See the Staff Template above for all other Staff Snapshot Data Elements.
+
+## Template Specifications {#template-specs}
+
+---
+### 50 - SNAPSHOT DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+Indicates the reporting period date for the staff record.
+
+:::warning[Business Rules:]
+This template is a mirror of the STAFF Template where SNAPSHOT DATE must be populated and is reserved for compatibility with the STAFF_SNAPSHOT Table.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-01`
+</details>
+
+---
+## Rules
+See the Rules Section of the Template Domain
