@@ -50,7 +50,136 @@ module.exports = {
             'templates/course/student-course-enrollment',
           ],
         },
-        // ... (rest of the categories and items)
+        {
+          type: 'category',
+          label: 'CTE',
+          link: {
+            type: 'doc',
+            id: 'templates/cte/intro',
+          },
+          items: [
+            'templates/cte/cte-student-fact',
+            'templates/cte/cte-student-industry-credential',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Discipline',
+          link: {
+            type: 'doc',
+            id: 'templates/discipline/intro',
+          },
+          items: [
+            'templates/discipline/incident-offender-disciplinary-action',
+            'templates/discipline/incident-offender-infraction-weapon',
+            'templates/discipline/incident-offender-infraction',
+            'templates/discipline/incident-offender-parent-involvement',
+            'templates/discipline/incident-offender',
+            'templates/discipline/incident-victim',
+            'templates/discipline/incident',
+            'templates/discipline/person',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'District',
+          link: {
+            type: 'doc',
+            id: 'templates/district/intro',
+          },
+          items: [
+            'templates/district/distract-fact-home-ed-private-tutoring',
+            'templates/district/district-fact-english-leaners',
+            'templates/district/district-fact-safe-schools',
+            'templates/district/district-fact-staff-vacancies',
+            'templates/district/district-fact-support-personnel',
+            'templates/district/district-fact-title-i',
+            'templates/district/district-snapshot',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Enrollment',
+          link: {
+            type: 'doc',
+            id: 'templates/enrollment/intro',
+          },
+          items: [
+            'templates/enrollment/school-enrollment-template',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Location',
+          link: {
+            type: 'doc',
+            id: 'templates/location/intro',
+          },
+          items: [
+            'templates/location/location-fact-template-aed',
+            'templates/location/location-fact-template-bus-evacuation-drills',
+            'templates/location/location-fact-template-fire-security-drills',
+            'templates/location/location-fact-template-interscholastic-athletic-opportunities-data',
+            'templates/location/location-fact-template-safe-schools',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Programs',
+          link: {
+            type: 'doc',
+            id: 'templates/programs/intro',
+          },
+          items: [
+            'templates/programs/programs-fact-template',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Special Education',
+          link: {
+            type: 'doc',
+            id: 'templates/special-ed/intro',
+          },
+          items: [
+            'templates/special-ed/special-education-snapshot',
+            'templates/special-ed/student-fact-special-ed-act16',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Staff',
+          link: {
+            type: 'doc',
+            id: 'templates/staff/intro',
+          },
+          items: [
+            'templates/staff/person-el-coordinator',
+            'templates/staff/person-role-el-coordinator',
+            'templates/staff/staff-assignment',
+            'templates/staff/staff-development-fact',
+            'templates/staff/staff-snapshot',
+            'templates/staff/staff-template',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Student',
+          link: {
+            type: 'doc',
+            id: 'templates/student/intro',
+          },
+          items: [
+            'templates/student/staff-student-subtest',
+            'templates/student/student-award-fact-icn-wbl',
+            'templates/student/student-fact-career-standards-benchmarks',
+            'templates/student/student-fact-keystone-exemption',
+            'templates/student/student-local-assessment-subtest-early-indicators-success',
+            'templates/student/student-local-assessment-subtest-reporting-analytics',
+            'templates/student/student-snapshot',
+            'templates/student/student-template',
+          ],
+        },
       ],
     },
     {
@@ -96,7 +225,6 @@ module.exports = {
         'appendix/appendix-AQ',
         'appendix/appendix-AR',
         'appendix/appendix-AS',
-
       ],
     },
   ],
