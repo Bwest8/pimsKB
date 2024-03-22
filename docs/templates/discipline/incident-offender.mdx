@@ -1,0 +1,322 @@
+---
+title: Incident Offender Template
+description: Incident Offender Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(22 Fields, 18 Collected, Delimited)**
+
+**Target Table: `INCIDENT_OFFNDR`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+| INCIDENT                     |
+| PERSON                       |
+
+## Template Description
+This template connects one or multiple offenders to each specific incident. If there are multiple offenders include multiple records within this template with the same Incident ID.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - INCIDENT ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+An identifier assigned by the LEA to the incident; this identifier must be unique within each LEA per school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9801`
+</details>
+
+---
+### 3 - OFFENDER ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+An identifier for the offender involved in an incident.
+
+:::warning[Business Rules:] 
+Must be the same value used in [Field 2 (PERSON ID)](#2---person-id) within the Person Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`887`
+</details>
+
+---
+### 4 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 5 - OFFENDER TYPE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The type of offender.
+
+:::warning[Business Rules:]
+When the offender is a student from another LEA and the student has an IEP, report as 2 – student with IEP.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – student
+- `2` – student with IEP
+- `3` – student from another LEA
+- `4` – parent
+- `5` – adult visitor / intruder
+- `6` – district employee
+- `7` – other or unknown
+</details>
+
+---
+### 6 - AGE AT TIME OF INCIDENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The age of the offender at the time of the incident.
+
+:::warning[Business Rules:]
+Required if age is known. If unknown, leave null or blank.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`14`
+</details>
+
+---
+### 7 - GRADE LEVEL CODE AT TIME OF INCIDENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The grade level of the offender at the time of the incident.
+
+:::warning[Business Rules:] 
+Required if grade is known. If unknown, leave null or blank.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix K](docs/appendix/appendix-K.mdx) for a complete list of valid values.
+</details>
+
+---
+### 8 - LLE NOTIFIED INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A Y/ N indicator that specifies whether the incident in which the offender is involved required notification (for police action, investigation, arrest, etc.) of local law enforcement (municipal or State Police) , including a School Resource Officer. This does not include mere consultation with or notification to School Police Officers or local law enforcement without engagement (police action, investigation, arrest, etc).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 9 - NAME OF LLE CONTACTED
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={100} /></p>
+
+The name of the local law enforcement office contacted regarding this offender and incident.
+
+:::warning[Business Rules:]
+Required if [Field 8 (LLE NOTIFIED)](#8---lle-notified-indicator) = Y
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Hampton Township Police Department`
+</details>
+
+---
+### 10 - ARRESTED CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+An indicator of whether the offender was arrested for this incident; see Valid Values.  NOTE: Removal of student by police does not constitute an arrest. There will be many situations in which law enforcement takes a student into custody but will not initiate criminal charges against the student. Any initiation of prosecution is considered an arrest, whether or not the offender is physically taken into custody. This includes the filing of a juvenile petition, the filing of criminal charges, or the filing or issuance of a citation.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `N` – not arrested
+- `YW` – arrested for weapons violation
+- `YN` – arrested but not for weapons violation
+- `P` – arrest pending
+</details>
+
+---
+### 11 - ADJUDICATION CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The type of adjudication of the offender for this incident.
+
+:::warning[Business Rules:]
+Required if [Field 10 (ARRESTED CODE)](#10---arrested-code) = YW or YN
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – adjudicated delinquent
+- `2` – convicted as adult
+- `6` – unknown
+- `7` – Withdrawal/dismissal of charges
+- `8` – Found not guilty
+- `9` – Found/pled guilty
+</details>
+
+---
+### 12 - ASSIGNED TO ALTERNATIVE EDUCATION INDICATOR
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicator of whether the student was assigned to alternative education for this incident. Use of this field will be discontinued in 2024-25.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 13 - WEAPON DETECTED METHOD CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+A description of how the weapons involved in the incident for the offender were detected.
+
+:::warning[Business Rules:] 
+Required if [Field 10 (ARRESTED CODE)](#10---arrested-code) = `YW`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – detected by scanner / security
+- `2` – detected by school staff
+- `3` – detected by fellow student
+- `4` – detected by other adult visitor
+- `5` – other
+</details>
+
+---
+### 14 - WEAPON DETECTED COMMENT
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={500} /></p>
+
+Weapon detection comment.
+
+:::warning[Business Rules:]
+Required if [Field 13 (WEAPON DETECTED METHOD CODE)](#13---weapon-detected-method-code) = `5` – Other.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Knife found outside school property.`
+</details>
+
+---
+### 15
+Field not Collected. Must be delimited in template file.
+
+---
+### 16 - PRIMARY DISABILITY CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+Enter the PRIMARY DISABILITY as identified on the Evaluation / Reevaluation Report.
+
+:::warning[Business Rules:]
+Required if [Incident Offender Field 5 (OFFENDER TYPE)](#5---offender-type) = `2` – Student with IEP.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix H](docs/appendix/appendix-H.mdx) for a complete list of valid values.
+</details>
+
+---
+### 17 - INJURY SEVERITY CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Specifies whether the offender sustained a physical injury.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – Offender did not sustain physical injury
+- `3` – Injury but NOT serious bodily injury
+- `4` – Serious bodily injury
+- `5` – Death
+</details>
+
+---  
+### 18-20
+Fields not collected. Must be delimited in template file.
+
+---
+### 21 - SENDING DISTRICT OR CHARTER AUN
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={9} /></p>
+
+Provide the AUN of the Charter school or District of Residence who sent the student to be educated at your LEA. If student is Foster, provide AUN of the District where foster parents reside.
+
+:::warning[Business Rules:] 
+Required if [Incident Offender Field 5 (OFFENDER TYPE)](#5---offender-type) is in `1`, `2`, or `3`.  Only AUNs of SD and CS are valid.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.ed.state.pa.us/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `SENDING DISTRICT CODE`
+
+---
+### 22 - PRIMARY PLACEMENT TYPE 
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+At the time of the incident, was the student placed in a residential facility or group home by a non-educational agency (e.g., court systems; departments of corrections; departments of children, youth, and families; department of social services; etc.)
+
+:::warning[Business Rules:]
+Required if [Incident Offender Field 5 (OFFENDER TYPE)](#5---offender-type) = 2 – Student with IEP
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`  
+</details>
+
+## Rules
+See the Rules Section of the Template Domain

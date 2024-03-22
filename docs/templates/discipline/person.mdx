@@ -1,0 +1,195 @@
+---
+title: Person Template 
+description: Person Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(10 Fields, 10 Collected, Delimited)**
+
+**Target Table: `PERSON`**
+
+| **Load Sequence/Dependency** |
+|------------------------------|
+|            STUDENT           |
+
+## Template Description
+This template defines the primary details of both offenders and victims.
+
+Note that this template can be used to individually identify a victim or offender as it contains fields for the PAsecureID (Field 5) and name (Fields 7 and 8). LEAs, however, do not need to identify a victim individually using these fields. LEAs can elect to keep the victim anonymous by using an LEA-created ID instead of the PAsecureID to populate these fields within this template for victims. Note that the gender and race/ethnicity of the person is required if known.
+
+The person, if known or unknown, must be individually identified within this template. The PAsecureID must be submitted in Field 5 if the offender is a known current student. If the offender is not a current student, the first and last name should be entered in Fields 7 and 8. In the cases that an offender is unknown the LEA should use an identifier assigned by the LEA.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - PERSON ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+An identifier for the person (offender or victim) involved in an incident; this can be the PAsecureID if the person is a current student. The PAsecureID does not need to be submitted for victims, however. If the person is not a current student or if the LEA desires not to submit the PAsecureID, use an identifier assigned by the LEA.
+
+:::warning[Business Rules:]
+This identifier must be unique to the individual within an LEA per school year.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`887` or `1000000009`
+</details>
+
+---
+### 3 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 4 - PERSON AUN
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN of the LEA to which the person belongs; AUN is assigned by the PDE.
+
+:::warning[Business Rules:]
+Only required if the person (offender or victim) is currently enrolled in an LEA other than where the incident took place.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `PERSON DISTRICT CODE`
+
+---
+### 5 - PASECUREID
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={12} /></p>
+
+If a current student, the unique, 10-digit PAsecureID assigned to the student.
+
+:::warning[Business Rules:]
+Required for offenders that are current students; this field does not need to be submitted for victims.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 6 - LOCAL PERSON ID
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={20} /></p>
+
+The local identifier used by the LEA to track the offender or victim, if different than [Field 2 (PERSON ID)](#2---person-id).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1523`
+</details>
+
+---
+### 7 - FIRST NAME
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={60} /></p>
+
+The first name of the offender or victim.
+
+:::warning[Business Rules:]
+Required for offenders if they do not have a PAsecureID and if the name is known; this field does not need to be submitted for victims.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`John`
+</details>
+
+---
+### 8 - LAST NAME
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={60} /></p>
+
+The last name of the offender or victim.
+
+:::warning[Business Rules:]
+Required for offenders if they do not have a PAsecureID and if the name is known.  This field does not need to be submitted for victims.  See the October Student How-To Guide for further information.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Smith`
+</details>
+
+---
+### 9 - RACE / ETHNICITY
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={2} /></p>
+
+A single code indicating the race and ethnicity of the offender or victim.
+
+:::warning[Business Rules:]
+Required if known.  Refer to "[Race/Ethnicity: Federal Race and Ethnicity Standards](/docs/race-ethnicity-gender-standards)" in this volume of the manual for an explanation of the federal race and ethnicity codes.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – American Indian/Alaskan Native
+- `3` – Black/African American (not Hispanic)
+- `4` – Hispanic (any race)
+- `5` – White/Caucasian (not Hispanic)
+- `6` – Multi-Racial (not Hispanic)
+- `9` – Asian (not Hispanic)
+- `10` – Native Hawaiian or other Pacific Islander (not Hispanic)
+</details>
+
+**eScholar Name**: `RACE OR ETHNICITY CODE`
+
+---
+### 10 - GENDER
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The gender of the offender or victim.
+
+:::warning[Business Rules:]
+Required if known.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `M` – male
+- `F` – female
+</details>
+
+**eScholar Name**: `GENDER CODE`
+
+## Rules
+
+See the Rules Section of the Template Domain

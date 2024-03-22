@@ -1,0 +1,175 @@
+---
+title: Incident Template
+description: Incident Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(25 Fields, 11 Collected, Delimited)**
+
+**Target Table: `INCIDENT`**
+
+**Load Sequence/Dependency:** No dependencies
+
+## Template Description
+
+This template defines the primary details of a discipline incident. One record should be submitted per each reportable School Safety incident. See the Discipline Domain description for more information on reportable incidents. If a school has no reportable School Safety incidents for the entire school year a record indicating this must be entered in the Location Fact Template, refer to that section.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 3 - INCIDENT ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+An identifier assigned by the LEA to the incident; this identifier must be unique within each LEA per school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9801`
+</details>
+
+---
+### 4 - INCIDENT DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+The date the incident took place.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2023-10-05`
+</details>
+
+---
+### 5 - SCHOOL NUMBER OF INCIDENT
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined 4-digit code identifying the school where the incident took place.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`1234`
+</details>
+
+**eScholar Name**: `LOCATION CODE OF INCIDENT`
+
+---
+### 6 - LOCAL INCIDENT ID
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={30} /></p>
+
+The local identifier used by the LEA to track the incident, if different than [Field 3 (INCIDENT ID)](#3---incident-id).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1523`
+</details>
+
+---
+### 7 - INCIDENT PLACE CODE
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The place of occurrence of the incident.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix Y](docs/appendix/appendix-Y.mdx) for a complete list of valid values.
+</details>
+
+---
+### 8 - INCIDENT TIME FRAME CODE
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+The time the incident occurred.
+
+:::warning[Business Rules:]
+Required if [Field 7 (INCIDENT PLACE CODE)](#7---incident-place-code) = `1` - On school property/grounds.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` – before school hours
+- `2` – during school hours
+- `3` – after school hours
+</details>
+
+---
+### 9 - INCIDENT AGAINST PROPERTY INDICATOR
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicator that specifies whether the incident was against property.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 10-23
+Fields not collected. Must be delimited in template file.
+
+---
+### 24 - UNFOUNDED INDICATOR
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={1} /></p>
+
+Indicator that identifies a reported incident determined to be unfounded.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `Y`
+- `N`
+</details>
+
+---
+### 25 - LLE INCIDENT NUMBER
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={20} /></p>
+
+The incident number used by the local law enforcement agency to identify the incident.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`A1-1234568`
+</details>
+
+**eScholar Name**: `LLE INCIDENT ID`
+
+## Rules
+
+See the Rules Section of the Template Domain
