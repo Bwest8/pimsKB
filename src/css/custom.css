@@ -67,3 +67,7 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   background-color: #424242;
   color: #ffffff;
 }
+
+.menu__list-item-collapsible {
+  font-weight: 700;
+}
