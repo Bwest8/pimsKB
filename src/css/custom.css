@@ -68,6 +68,12 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   color: #ffffff;
 }
 
-.menu__list-item-collapsible {
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
+  font-weight: 800;
+  line-height: 100%
+}
+
+.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible .menu__link {
   font-weight: 700;
+  line-height: 100%
 }
