@@ -1,0 +1,128 @@
+---
+title: Incident Offender Infraction Weapon Template
+description: Incident Offender Infraction Weapon Template Documentation
+---
+import Badge from '@site/src/components/badges';
+
+**(7 Fields, 7 Collected, Delimited)**
+
+**Target Table: `INCIDENT_OFFNDR_INFR_WEAPON`**
+
+| **Load Sequence/Dependencies** |
+|--------------------------------|
+| INCIDENT                       |
+| PERSON                         |
+| INCIDENT OFFENDER              |
+| INCIDENT OFFENDER INFRACTION   |
+
+## Template Description
+This template connects a weapon to the offender and infraction. If multiple weapon types apply to the incident/offender submit multiple records.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and school numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  
+
+`123456789`
+</details>
+
+**eScholar Name**: `SUBMITTING DISTRICT CODE`
+
+---
+### 2 - INCIDENT ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={30} /></p>
+
+An identifier assigned by the LEA to the incident; this identifier must be unique within each LEA per school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`9801`
+</details>
+
+---
+### 3 - OFFENDER ID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+An identifier for the offender involved in an incident.
+
+:::warning[Business Rules:]
+Must be the same value used in [Field 2 (PERSON ID)](#2---person-id) within the Person Template and in [Field 3 (OFFENDER ID)](#3---offender-id) of the Incident Offender Infraction Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`887`
+</details>
+
+---
+### 4 - INFRACTION CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={2} /></p>
+
+The code of the infraction for the offender.
+
+:::warning[Business Rules:]
+Use a constant value of `54`, denoting Possession of Weapon in the Incident Offender Infraction Template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`54`
+</details>
+
+---
+### 5 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`2024-06-30`
+</details>
+
+---
+### 6 - WEAPON CODE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={20} /></p>
+
+If weapons were involved, specify the type of weapon for this incident, offender, and infraction. If more than one type of weapon is involved report each type in a separate record.
+
+:::warning[Business Rules:]
+Required if [Field 4 (INFRACTION CODE)](#4---infraction-code) is `54`.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+See [Appendix AQ](docs/appendix/appendix-AQ.mdx) for a complete list of valid values.
+</details>
+
+---
+### 7 - WEAPON COUNT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+The count of weapons of the type in [WEAPON CODE](#6---weapon-code) involved in this incident for this offender and infraction.
+
+:::warning[Business Rules:]
+Required if [Field 4 (INFRACTION CODE)](#4---infraction-code) is `54`
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`1`
+</details>
+
+## Rules
+See the Rules Section of the Template Domain
