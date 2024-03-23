@@ -7,6 +7,10 @@ import Badge from '@site/src/components/badges';
 
 **Target Table(s): `PROGRAMS_FACT` (Primary Target), `REASONS_FACT`**
 
+| **Load Sequence/Dependency** |
+|------------------------------|
+| STUDENT                      |
+
 ## Template Description
 
 This template is used to track participation for specific programs; a complete list of programs to be collected can be found in Volume 2 of the PIMS User Manual. LEAs must report the actual beginning date (and if applicable, the actual ending date) for a student's participation in a particular program during a school year. Thus, for each reporting date, each LEA will submit two types of records.
@@ -36,7 +40,7 @@ PDE requests that LEAs with students in SES tutoring submit records in this temp
 :::
 
 :::info[**IMPORTANT TECHNICAL NOTE**]
-This template is being used to capture the SES provider number for students enrolled in the "SES Tutoring (Federal) – Reading" and "SES Tutoring (Federal) – Math" programs (Program Codes 003 and 004 respectively). This is captured in the PROGRAM PROVIDER TYPE CODE (Field 23) shown below.
+This template is being used to capture the SES provider number for students enrolled in the "SES Tutoring (Federal) – Reading" and "SES Tutoring (Federal) – Math" programs (Program Codes `003` and `004` respectively). This is captured in the PROGRAM PROVIDER TYPE CODE (Field 23) shown below.
 
 LEAs that have students enrolled in these programs need to ensure their data extracts are modified to accommodate the 25-field layout and populate the PROGRAM PROVIDER TYPE CODE as appropriate. LEAs that do not have students enrolled in these programs, however, DO NOT need to modify their extracts. These LEAs can continue to submit the 18-field layout for this template.
 :::
@@ -53,7 +57,9 @@ The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `123456789`
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`123456789`
 </details>
 
 **eScholar Name**: `DISTRICT CODE`
@@ -67,7 +73,9 @@ The PDE defined 4-digit code identifying the school.
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).  Example: `1234`
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+`1234`
 </details>
 
 **eScholar Name**: `LOCATION CODE`
@@ -91,7 +99,9 @@ A single date (June 30), the last day of the current school year indicating the 
 The unique, 10-digit PAsecureID assigned to the student.
 
 :::note
-**NOTE:** It is essential that the correct PAsecureID be entered for each student. **LEAs are encouraged to share this number, where appropriate and within FERPA guidelines, to ensure accurate data.**
+It is essential that the correct PAsecureID be entered for each student. 
+
+**LEAs are encouraged to share this number, where appropriate and within FERPA guidelines, to ensure accurate data.**
 :::
 
 <details open>
@@ -226,3 +236,5 @@ This field is required for students reported with Program Codes `055` (Homeless,
 </details>
 
 ---
+## Rules
+See the Rules Section of the Template Domain

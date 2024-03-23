@@ -69,11 +69,22 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 }
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
-  font-weight: 800;
-  line-height: 100%
+  font-weight: 750;
+  line-height: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+
 }
 
 .theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible .menu__link {
-  font-weight: 700;
+  font-weight: 600;
   line-height: 100%
+}
+
+.navbar__link {
+  font-weight: 750;
+}
+
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible {
+  border-bottom: 0.10rem solid #808080;
 }
