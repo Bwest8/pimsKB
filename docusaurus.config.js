@@ -100,7 +100,7 @@ const config = {
             position: 'left',
             label: 'Manual',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'How-To Guides', position: 'left'},
           {
             href: 'https://github.com/Bwest8/pimsKB',
             label: 'GitHub',
