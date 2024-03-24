@@ -550,7 +550,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students as N. Studen
 Indicates the student's gifted status and participation in a Gifted and Talented program.
 
 :::warning[Business Rules:]
-LEAs with registered **AAPs** may code all AAP grade-level students as N.
+LEAs with registered **AAPs** may code all AAP grade-level students as `N`.
 :::
 
 <details open>
@@ -571,7 +571,21 @@ LEAs with registered **AAPs** may code all AAP grade-level students as N.
 This field indicates the economically disadvantaged status of a student and is used to provide the economically disadvantaged disaggregation. Informs various indicators in the **Future Ready PA Index**.
 
 :::warning[Business Rules:]
-To determine if a student is economically disadvantaged, poverty data sources such as Temporary Assistance for Needy Families cases, census poor, Medicaid, children living in institutions for the neglected or delinquent, or those supported in foster homes may be used. If such data are not available, use the most recent reliable data available at the time of determination, such as free and reduced-price lunch eligibility. For Community Eligibility Provision (CEP) schools, do not use free and reduced-price lunch eligibility to determine a student's economic status. By definition, all students in CEP schools are to be reported as food program eligible (Field 131 of the Student and Student Snapshot Templates). In addition to using other poverty source data indicators, LEAs with **AAPs** CTE enrollees should populate with Y if AAP student is eligible to receive a Pell grant or comparable state need-based financial assistance.
+To determine if a student is economically disadvantaged, the following poverty data sources may be used:
+
+- Temporary Assistance for Needy Families cases
+- Census poor
+- Medicaid
+- Children living in institutions for the neglected or delinquent
+- Those supported in foster homes
+
+If such data are not available, use the most recent reliable data available at the time of determination, such as free and reduced-price lunch eligibility.
+
+For Community Eligibility Provision (CEP) schools:
+- Do not use free and reduced-price lunch eligibility to determine a student's economic status.
+- By definition, all students in CEP schools are to be reported as food program eligible (Field 131 of the Student and Student Snapshot Templates).
+
+In addition to using other poverty source data indicators, LEAs with **AAP** CTE enrollees should populate with `Y` if the AAP student is eligible to receive a Pell grant or comparable state need-based financial assistance.
 :::
 
 <details open>
@@ -644,7 +658,7 @@ Field not collected. Must be delimited in template file.
 A Title III Indicator to identify EL students that are Title III served in districts that accept Title III funds. Indicate if the student participates in or benefits from any supplemental activities or receives any supplemental materials funded by Title III. All ELs in a district that accepts Title III funds may not be Title III served.
 
 :::warning[Business Rules:]
-This field is conditionally required for ELs with a Valid Value of `01` or `06` in Field 41 (EL STATUS).
+This field is conditionally required for ELs with a Valid Value of `01` or `06` in Field 41 - [EL STATUS](#41---el-status).
 :::
 
 <details open>
@@ -698,7 +712,9 @@ This field is required for any student enrolled in grades 9 – 12.
 The most recent date that the student entered the LEA. If a student withdraws from the LEA then returns, the date of the student's re-enrollment in the LEA.
 
 :::warning[Business Rules:]
-This should only be the current school year for new students in their first year at an LEA. LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (2019-07-01).
+This should only be the current school year for new students in their first year at an LEA. 
+
+LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (20XX-07-01).
 :::
 
 **eScholar Name**: `DISTRICT ENTRY DATE`
@@ -706,7 +722,7 @@ This should only be the current school year for new students in their first year
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2016-07-01`
+- `2024-07-01`
 </details>
 
 ---
@@ -716,13 +732,15 @@ This should only be the current school year for new students in their first year
 The most recent date that the student entered the school. If a student withdraws from the LEA then returns, the date of the student's re-enrollment in the LEA. If the student changes schools within the LEA due to a grade change, during the school year, do not update the school entry date.
 
 :::warning[Business Rules:]
-For new students in their first year at a school only, this should be the current school year. LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (2019-07-01).
+For new students in their first year at a school only, this should be the current school year. 
+
+LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (20XX-07-01).
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2019-07-01`
+- `2024-07-01`
 </details>
 
 ---
@@ -810,7 +828,15 @@ Fields not collected. Must be delimited in template file.
 The AUN of the school district where the parent/legal guardian resides.
 
 :::warning[Business Rules:]
-This must be one of the following: one of the 500 Pennsylvania school districts. the generic PA state code of `999999999`. The generic out-of-state code of `888888888`. Refer to [Appendix N](docs/appendix/appendix-N.mdx) for a complete list of Residency Status Codes. **This field is checked by the Data Quality Engine (DQE)**
+This must be one of the following:
+
+- One of the 500 Pennsylvania school districts.
+- The generic PA state code of `999999999`.
+- The generic out-of-state code of `888888888`.
+
+Refer to [Appendix N](docs/appendix/appendix-N.mdx) for a complete list of Residency Status Codes.
+
+**This field is checked by the Data Quality Engine (DQE)**
 :::
 
 <details open>
@@ -881,7 +907,9 @@ In the case of re-entry into US schools, the calculation for YEARS IN US SCHOOLS
 An appendage, if any, used to denote an individual's generation in their family (e.g., Jr, Sr, III).
 
 :::warning[Business Rules:]
-**Suffix should be split out from last name, both here and in PAsecureID.** If student previously submitted into PAsecureID with suffix in last name field, resubmit into PAsecureID with the suffix split out. **NOTE:** DO NOT create a new PAsecureID; edit the existing one. See the October Student How-To Guide for further information.
+**Suffix should be split out from last name, both here and in PAsecureID.** If student previously submitted into PAsecureID with suffix in last name field, resubmit into PAsecureID with the suffix split out. 
+
+**NOTE:** DO NOT create a new PAsecureID; edit the existing one. See the October Student How-To Guide for further information.
 :::
 
 <details open>
@@ -1001,10 +1029,19 @@ Fields not collected. Must be delimited in template file.
 ### 165 - SCHOOL NUMBER OF RESIDENCE
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={4} /></p>
 
-The PDE defined, 4-digit code of the public school that the student would attend, based on (1) their grade level and (2) home address of their parents/legal guardian. This must be a School Number related to the reported Field 117 (DISTRICT OF RESIDENCE AUN).
+The PDE defined, 4-digit code of the public school that the student would attend, based on (1) their grade level and (2) home address of their parents/legal guardian. 
+
+This must be a School Number related to the reported Field 117 - [DISTRICT OF RESIDENCE AUN](#117---district-of-residence-aun).
 
 :::warning[Business Rules:]
-If the district of residence AUN is the PA State Code 999999999 use School Number 9999. If the district of residence AUN is out of state (88888888) use 9999. If the district of residence does not have a school with the appropriate grade level for the student (a 12th grade student whose district of residence does not have a high school), use 0000. Required for all LEA types EXCEPT Charter Schools. For charter school students (optional) use the School Number of the school the student would attend in the district of residence if not in the charter school. LEAs with registered **AAPs** may code all AAP grade-level students as 9999.
+- If the district of residence AUN is the PA State Code `999999999` use School Number `9999`. 
+- If the district of residence AUN is out of state (`88888888`) use `9999`. 
+- If the district of residence does not have a school with the appropriate grade level for the student (a 12th grade student whose district of residence does not have a high school), use `0000`. 
+
+**Required for all LEA types EXCEPT Charter Schools.** 
+- For charter school students (optional) use the School Number of the school the student would attend in the district of residence if not in the charter school. 
+
+LEAs with registered **AAPs** may code all AAP grade-level students as `9999`.
 :::
 
 **eScholar Name**: `LOCATION CODE OF RESIDENCE`
@@ -1036,12 +1073,16 @@ This field is needed for secondary and adult affidavit CTE students only.
 ### 167 - SPECIAL EDUCATION REFERRAL (Special Education Services Provided Outside the LEA)
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-Special Education students that are receiving 100% of their services from the following PIMS Reporting agencies (SD, IU, CS, CTC, PRRI, SJCI) instead of their Special Education Reporting Entity (School District or Charter School). If the Special Education Reporting Agency is also the educating LEA, this field must equal N. If the student is referred to a Licensed Private, APS or other similar entities this field must also equal N.
+Special Education students that are receiving 100% of their services from the following PIMS Reporting agencies (SD, IU, CS, CTC, PRRI, SJCI) instead of their Special Education Reporting Entity (School District or Charter School). 
+
+If the Special Education Reporting Agency is also the educating LEA, this field must equal `N`. 
+
+If the student is referred to a Licensed Private, APS or other similar entities this field must also equal `N`.
 
 :::warning[Business Rules:]
-Must be a Special Education student. Valid Value in Field 38 (SPECIAL EDUCATION) must be `Y` or `E` to value this field with a `Y`.
+Must be a Special Education student. Valid Value in Field 38 - [SPECIAL EDUCATION](#38---special-education) must be `Y` or `E` to value this field with a `Y`.
 
-District of Residence and Charter Schools are the only entities allowed to have `Y` in this field.
+**District of Residence and Charter Schools are the only entities allowed to have `Y` in this field.**
 :::
 
 <details open>
@@ -1077,10 +1118,14 @@ Fields not collected. Must be delimited in template file.
 ### 189 - FUNDING DISTRICT AUN
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={9} /></p>
 
-The AUN of the school district that is financially responsible for the student. In most cases, this will be the same district as reported under Field 117 (DISTRICT OF RESIDENCE AUN), **EXCEPT** in the case of non-resident foster or institutionalized students.
+The AUN of the school district that is financially responsible for the student. In most cases, this will be the same district as reported under Field 117 - [DISTRICT OF RESIDENCE AUN](#117---district-of-residence-aun), **EXCEPT** in the case of non-resident foster or institutionalized students.
 
 :::warning[Business Rules:]
-**This must be one of the Pennsylvania school districts.** Refer to section "Students to be Reported in PIMS." Also, refer to [Appendix N](docs/appendix/appendix-N.mdx) in Volume 2 of the PIMS User Manual for a full list of Residency Status Codes. LEAs with registered **AAPs** may code all AAP grade-level students with the AUN of the school district where the CTE AAP education entity is located.
+**This must be one of the Pennsylvania school districts.** 
+
+Refer to section [Students to be Reported in PIMS](docs/students-to-be-reported.mdx). Also, refer to [Appendix N](docs/appendix/appendix-N.mdx) for a full list of Residency Status Codes. 
+
+LEAs with registered **AAPs** may code all AAP grade-level students with the AUN of the school district where the CTE AAP education entity is located.
 :::
 
 <details open>
@@ -1098,7 +1143,7 @@ The AUN of the school district that is financially responsible for the student. 
 This field is only required for students educated by LEA schools classified as either "occupational" or "comprehensive" Career and Technical Centers (CTCs) on PDE's [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx) This field indicates whether or not a normal full complement of "primary academics" is administered and provided to this student by the reported CTC school identified in Field 2 (SCHOOL NUMBER) of this template. For this data element, "primary academics" include English, Reading/Language Arts, Language Instruction Education Program (LIEP), Mathematics, Sciences, and Social Studies (history, economics, geography, and civics and government). **Note**: According to the Attribution Map used for assessment and accountability, if an assessed subject is taught, the occupational or comprehensive CTC will be attributed with the student's participation and performance.
 
 :::warning[Business Rules:]
-This field must be populated for all students educated by occupational and comprehensive CTC schools as identified in Field 2 (SCHOOL NUMBER) of this template.
+This field must be populated for all students educated by occupational and comprehensive CTC schools as identified in Field 2 [SCHOOL NUMBER](#2---school-number) of this template.
 :::
 
 <details open>
@@ -1119,7 +1164,11 @@ Fields not collected. Must be delimited in template file.
 Indicate whether the student's parent/guardian is an active duty member of a branch of the United States Armed Forces (Army, Navy, Air Force, Marine Corp, and Coast Guard) including full-time National Guard.
 
 :::warning[Business Rules:]
-Set field to "Y" if the condition is true at any time during the school year, otherwise set to "N". Parent/Guardian includes legal guardian or other person standing in loco parentis (such as grandparent or stepparent with who the child lives, or a person whom is legally responsible for the child's welfare including a foster parent on active military duty. It is not applicable for group home, detention centers and wards of state.
+Set field to `Y` if the condition is true at any time during the school year, otherwise set to `N`. 
+
+Parent/Guardian includes legal guardian or other person standing in loco parentis (such as grandparent or stepparent with who the child lives, or a person whom is legally responsible for the child's welfare including a foster parent on active military duty). 
+
+It is not applicable for group home, detention centers and wards of state.
 :::
 
 <details open>
@@ -1161,13 +1210,17 @@ Fields not collected. Must be delimited in template file.
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
 Identifies the associated assessment(s) in which a student participates throughout the given school year. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. Follow these rules for applying the assessment participation code:
-• LEAs with PASA eligible students in grades 3-8 and 11 use Code A regardless of testing agency. (Do not use code I)
-• LEAs not administering an assessment to a student are to use Code I.
-• LEAs administering an assessment indicate the appropriate code.
-NOTE: Purposes of this field are to generate precode labels for the PSSA and to produce the PIMS PASA DLM Enrollment Report. This field is not used for PSSA Accountability. During the Accountability snapshot, this field can remain unchanged. Students in grades 3-8 must test in the PSSA (code B) or PASA (code A) per Chapter 4 requirements. The LEA should use Code I (Not Participating) for the student that is dually enrolled in a PIMS-reporting LEA, but being educated outside the reporting LEA.
+
+- LEAs with PASA eligible students in grades 3-8 and 11 use Code A regardless of testing agency. (Do not use code `I`)
+- LEAs not administering an assessment to a student are to use Code `I`.
+- LEAs administering an assessment indicate the appropriate code.
+
+:::note
+Purposes of this field are to generate precode labels for the PSSA and to produce the PIMS PASA DLM Enrollment Report. This field is not used for PSSA Accountability. During the Accountability snapshot, this field can remain unchanged. Students in grades 3-8 must test in the PSSA (code `B`) or PASA (code `A`) per Chapter 4 requirements. The LEA should use Code `I` (Not Participating) for the student that is dually enrolled in a PIMS-reporting LEA, but being educated outside the reporting LEA.
+:::
 
 :::warning[Business Rules:]
-If PASA Testing Agency AUN (field 226) is reported, this must be A.
+If Field 226 - [PASA Testing Agency AUN](#226---pasa-testing-agency-aun) is reported, this must be `A`.
 :::
 
 <details open>
@@ -1189,10 +1242,12 @@ Field not collected. Must be delimited in template file.
 ### 214 - KEYSTONE WINTER ASSESSMENT
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
 
-Identifies that a student will participate in a Winter Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. **NOTE:** Adherence to these rules will reduce the need for hand-bubbling of test booklets.
+Identifies that a student will participate in a Winter Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. 
 
-:::warning[Business Rules:]
-**NOTE:** The purpose of this field is to generate precode labels. This field is not used for Accountability.
+**Adherence to these rules will reduce the need for hand-bubbling of test booklets.**
+
+:::note
+The purpose of this field is to generate precode labels. This field is not used for Accountability.
 :::
 
 <details open>
@@ -1209,10 +1264,12 @@ Identifies that a student will participate in a Winter Keystone Assessment. This
 ### 215 - KEYSTONE SPRING ASSESSMENT
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
 
-Identifies that a student will participate in a Spring Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. **NOTE:** Adherence to these rules will reduce the need for hand-bubbling of test booklets.
+Identifies that a student will participate in a Spring Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. 
 
-:::warning[Business Rules:]
-**NOTE:** The purpose of this field is to generate precode labels. This field is not used for Accountability.
+**Adherence to these rules will reduce the need for hand-bubbling of test booklets.**
+
+:::note
+The purpose of this field is to generate precode labels. This field is not used for Accountability.
 :::
 
 <details open>
@@ -1229,10 +1286,12 @@ Identifies that a student will participate in a Spring Keystone Assessment. This
 ### 216 - KEYSTONE SUMMER ASSESSMENT
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
 
-Identifies that a student will participate in a Summer Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. **NOTE:** Adherence to these rules will reduce the need for hand-bubbling of test booklets.
+Identifies that a student will participate in a Summer Keystone Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of pre-code labels by various testing vendors. 
 
-:::warning[Business Rules:]
-**NOTE:** The purpose of this field is to generate precode labels. This field is not used for Accountability.
+**Adherence to these rules will reduce the need for hand-bubbling of test booklets.**
+
+:::note
+The purpose of this field is to generate precode labels. This field is not used for Accountability.
 :::
 
 <details open>
@@ -1249,10 +1308,12 @@ Identifies that a student will participate in a Summer Keystone Assessment. This
 ### 217 - AUN OF ENROLLMENT
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={9} /></p>
 
-Provide the AUN of the LEA providing the majority of the student's core academic education. Only PIMS Reporting Agency AUNs are valid (SD, IU, CS, CTC, APS, PRRI, SJCI). If the AUN is not PIMS-reporting, this should equal Field 1. Informs various indicators in the **Future Ready PA Index**.
+Provide the AUN of the LEA providing the majority of the student's core academic education. Only PIMS Reporting Agency AUNs are valid (SD, IU, CS, CTC, APS, PRRI, SJCI). If the AUN is not PIMS-reporting, this should equal Field 1. 
+
+Informs various indicators in the **Future Ready PA Index**.
 
 :::warning[Business Rules:]
-This field is used to identify the LEA providing the majority of the student's core academic education. If this is the same as the reporting LEA (SUBMITTING AUN is reported in Field 1), a school enrollment must exist in the warehouse, or in an accompanying school enrollment upload file.
+This field is used to identify the LEA providing the majority of the student's core academic education. If this is the same as the reporting LEA ([SUBMITTING AUN](#1---submitting-aun) is reported in Field 1), a school enrollment must exist in the warehouse, or in an accompanying school enrollment upload file.
 :::
 
 <details open>
@@ -1271,7 +1332,9 @@ Fields not collected. Must be delimited in template file.
 ### 221 - ACCESS FOR ELLS ASSESSMENT
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={20} /></p>
 
-Identifies that a student will participate in an EL Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of precode labels by various testing vendors. **NOTE:** Adherence to these rules will reduce the need for hand-bubbling of test booklets.
+Identifies that a student will participate in an EL Assessment. This field will facilitate PDE parsing data for LEAs administering the test and support the creation of precode labels by various testing vendors. 
+
+**Adherence to these rules will reduce the need for hand-bubbling of test booklets.**
 
 :::warning[Business Rules:]
 This data is needed for EL students only.
@@ -1294,7 +1357,7 @@ This data is needed for EL students only.
 Student will have been enrolled in US school \< or equal to 12 months by the end of current year ELA/Keystone Literature testing window and was not previously exempted.
 
 :::warning[Business Rules:]
-A student can only be assigned a Valid Value of Y once in their educational career.
+**A student can only be assigned a Valid Value of `Y` once in their educational career.**
 :::
 
 <details open>
