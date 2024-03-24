@@ -13,7 +13,13 @@ import Badge from '@site/src/components/badges';
 
 **Load Sequence/Dependencies:** No Dependencies
 
-This domain applies to the following organizational types only: School Districts, Intermediate Units, Career and Technical Centers, Charter Schools, Private Residential Rehabilitation Institutions (PRRI), and Approved Private Schools (APS).
+This domain applies to the following organizational types only:
+- School Districts
+- Intermediate Units
+- Career and Technical Centers
+- Charter Schools
+- Private Residential Rehabilitation Institutions (PRRI)
+- Approved Private Schools (APS)
 
 ## Template Description
 
@@ -32,15 +38,17 @@ The Days in Session calculated with School Calendar data must agree with the act
 
 ## Additional Information
 
-**Calendar ID and Calendar Description (Fields 3 and 4)**
+**Field 3 - [CALENDAR ID](#3---calendar-id) & Field 4 - [CALENDAR DESCRIPTION](#4---calendar-description)** 
 
 The Calendar ID provides a unique identifier for each different calendar that will be linked to each student on the Student Calendar Fact Template. Therefore, it is important to create a Calendar ID that is easily identifiable. The Calendar Description field may be used to provide a more detailed description.
 
-**Rotation Pattern Code (Field 7)**
+---
+**Field 7 - [ROTATION PATTERN CODE](#7---rotation-pattern-code)** 
 
 This field is populated for half-day or alternate-day pre-kindergarten and kindergarten School Calendars. It also is populated for School Calendars created for students in part-time CTC/AVTS vocational programs (half-day and semester-about).
 
-**Calendar Programs Code (Field 8) – Refer to Appendix R in the PIMS User Manual, Volume 2**
+---
+**Field 8 - [CALENDAR PROGRAMS CODE](#8---calendar-programs-code) – Refer to [Appendix R](docs/appendix/appendix-R.mdx)** 
 
 This field is required in the School Calendar created for students in the following situations:
 
@@ -54,15 +62,19 @@ This field is required in the School Calendar created for students in the follow
 -   Students educated/uploaded by an APS
 -   Students educated/uploaded by a PRRI
 
-**NOTE:** School Calendars for semester-about rotation at CTC/AVTS must have Rotation Pattern Code of S and Calendar Program Code of CTE-PT or CTE-PT-H to receive accurate State subsidies.
+:::note
+School Calendars for semester-about rotation at CTC/AVTS must have Rotation Pattern Code of `S` and Calendar Program Code of `CTE-PT` or `CTE-PT-H` to receive accurate State subsidies.
+:::
 
-**Instruction Start Date and Instruction End Date (Fields 11 and 12)**
+---
+**Field 11 - [INSTRUCTION START DATE](#11---instruction-start-date) & Field 12 - [INSTRUCTION END DATE](#12---instruction-end-date)**   
 
 For a part-time semester-about rotation CTC/AVTS calendar, enter the Instruction Start and End Date for the semester.
 
 If a program was added after the school year began or cancelled before the school year ended, enter these dates as if the program operated the entire school year. For example, a full-time kindergarten program was added in October or an alternative education program for disruptive youth was cancelled in April; enter the same Instruction Start and End Date as it applies to the majority of the students in that grade level or building.
 
-**Number of Scheduled School Days (Field 14)**
+---
+**Field 14 - [NUMBER OF SCHEDULED SCHOOL DAYS](#14---number-of-scheduled-school-days)** 
 
 The Number of Scheduled School Days is the number of instructional days on the original calendar or revised original calendar (planned student days plus PDE-approved, full-day Act 80 dismissals). Revisions for any rescheduling to accommodate days lost or made up are entered in the Total Days in Session Lost or Total Make-Up Days fields.
 
@@ -72,7 +84,8 @@ The Number of Scheduled School Days is the number of instructional days on the o
 -   If a School Calendar is created for one student, the Number of Scheduled School Days is NOT the number of days a student is enrolled. Use the number of instructional days on the original calendar for this school year.
 -   For IUs with classrooms located in school district buildings and following that building’s calendar, enter the number of instructional days provided. DO NOT POPULATE Fields 16, 17, 18, and 19 for lost days and make-up days. Indicate the name of the school district where IU classroom is located in Calendar Description, Field 4.
 
-    **Instructional Minutes in Standard Day (Field 15)**
+---
+**Field 15 - [INSTRUCTIONAL MINUTES IN STANDARD DAY](#15---instructional-minutes-in-standard-day)** 
 
 Enter the actual instructional minutes in a regular school day (not clock hours). Refer to Basic Education Circular 24 P. S. § 15-1504, Instructional Time and Act 80 Exceptions, for a list of activities that may be included in the calculation of instructional time.
 
@@ -81,15 +94,21 @@ If the number of Instructional Minutes in a Standard School Day was not the same
 [310 x 140 days] + [330 x 40 days] = 56,600 total instructional minutes  
 56,600 ÷ 180 total instructional days = 314 average minutes in a standard day
 
-**Total Instructional Minutes Lost to Planned Shortened Days and PDE Emergency Waiver (Field 20)**
+---
+**Field 20 - [TOTAL INSTRUCTIONAL MINUTES LOST TO PLANNED SHORTENED DAYS AND PDE EMERGENCY WAIVER](#20---total-instructional-minutes-lost-to-planned-shortened-days-and-pde-emergency-waiver)** 
 
 Enter the actual instructional time lost due to planned early dismissals (not clock hours). Do not report time lost for full-day dismissals (strike, Act 80, etc.). Also include in total the number of instructional minutes lost due to emergency school closing when the instructional day is waived by PDE.
 
-**Act 80 Group (Field 21)**
+---
+**Field 21 - [ACT 80 GROUP](#21---act-80-group)** 
 
 Act 80 is applicable to school districts, career and technical centers, and intermediate units. If Total Days in Session Lost Due to Act 80 (Field 17) is greater than zero, then enter the unique alphanumeric identifier used in the Act 80 application to link this School Calendar to a particular Act 80 approval.
 
-**NOTE**: The Act 80 Group label must be entered exactly, or the School Calendar will not properly upload. Examples: SRVTAM ≠ SR VT-AM or ELEM ≠ Elem.
+:::note
+The Act 80 Group label must be entered exactly, or the School Calendar will not properly upload. 
+
+**Examples:** SRVTAM ≠ SR VT-AM or ELEM ≠ Elem.
+:::
 
 ## Template Specifications {#template-specs}
 
@@ -123,7 +142,7 @@ All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
 A unique numeric and/or alphabetical unit used to identify this calendar.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 To the extent possible, create a CALENDAR ID that is descriptive of the unique calendar.
 :::
 
@@ -141,7 +160,7 @@ To the extent possible, create a CALENDAR ID that is descriptive of the unique c
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={100} /></p>
 Free-form text description of the calendar; its purpose is to target student population.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 A detailed description for the student or group of students for this calendar.  IU may include school district name to designate location of IU classroom.
 :::
 
@@ -155,7 +174,7 @@ A detailed description for the student or group of students for this calendar.  
 </details>
 
 ---
-### 5-6
+### 5-6 🛇
 Field(s) not collected. Must be delimted in template file.
 
 ---
@@ -163,8 +182,9 @@ Field(s) not collected. Must be delimted in template file.
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
 For part-time CTC/AVTS programs enter code for half-day, one-week, two-week, three-week, nine-week, semester rotation, or other.  For part-time pre-kindergarten or kindergarten enter code for half-day or alternate day.
 :::note
-Required only for part-time CTC/AVTS programs, and for part-time pre-kindergarten and kindergarten programs**.**  If H, Field 15 (INSTRUCTIONAL MINUTES IN STANDARD DAY) must be between 30 and 270.  
-**NOTE**: This field is checked by the Data Quality Engine (DQE).
+Required only for part-time CTC/AVTS programs, and for part-time pre-kindergarten and kindergarten programs**.**  If H, Field 15 (INSTRUCTIONAL MINUTES IN STANDARD DAY) must be between 30 and 270.
+
+**This field is checked by the Data Quality Engine (DQE).**
 :::
 
 <details open>
@@ -189,16 +209,17 @@ For part-time Pre-K or kindergarten programs:
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={8} /></p>
 Provides additional context for calendars created by LEAs for students in certain special situations.
 :::note
-Required (R) field for these reporting LEAs: CTC PRRI APS  
-Conditionally Required (CR) for all other LEA types.
 
-**NOTE**: This field is checked by the DQE.
+- **Required** field for these reporting LEAs: CTC PRRI APS
+- **Conditionally required** field for all other LEA types.
+
+**This field is checked by the DQE.**
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix R in Volume 2 of the PIMS User Manual for a complete list of valid values.
+See [Appendix R](docs/appendix/appendix-R.mdx) for a complete list of valid values.
 </details>  
 
 ---
@@ -206,7 +227,7 @@ See Appendix R in Volume 2 of the PIMS User Manual for a complete list of valid 
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
 The date of the first day on the original calendar; this date could be a PDE approved full-day Act 80 day prior to the first day of instruction.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Must be within the range of 2023-06-25 to 2024-01-31
 :::
 <details open>
@@ -220,7 +241,7 @@ Must be within the range of 2023-06-25 to 2024-01-31
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
 The date of the last day on the original calendar; this date could be a PDE approved full-day Act 80 day after the last day of instruction.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Must be within the range of 2024-01-01 to 2024-07-31  
 :::
 <details open>
@@ -234,7 +255,7 @@ Must be within the range of 2024-01-01 to 2024-07-31
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
 The date of the first day of instruction.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Falls on or after Field 9 - [CALENDAR START DATE](#9---calendar-start-date).
 :::
 <details open>
@@ -248,7 +269,7 @@ Falls on or after Field 9 - [CALENDAR START DATE](#9---calendar-start-date).
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={10} /></p>
 The date of the last day of instruction.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Falls on or before Field 10 - [CALENDAR END DATE](#10---calendar-end-date).
 :::
 <details open>
@@ -265,7 +286,7 @@ The date of the seniors' graduation ceremony.
 :::note
 This field is required for calendars that include grade 12 students.  Falls on or after the Field 12 - [INSTRUCTION END DATE](#12---instruction-end-date).
 
-**NOTE**: This field is checked by the DQE.
+**This field is checked by the DQE.**
 :::
 
 <details open>
@@ -279,7 +300,7 @@ This field is required for calendars that include grade 12 students.  Falls on o
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
 The number of instructional days on the original calendar – planned student instructional days plus PDE-approved Act 80 full days.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Must be within the range of `85` to `260`. Report days as whole numbers.
 :::
 <details open>
@@ -293,7 +314,7 @@ Must be within the range of `85` to `260`. Report days as whole numbers.
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
 The number of instructional minutes in a regular school day.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Must be greater than `0` and within the range of `30` to `435`. Report minutes as whole numbers.
 :::
 <details open>
@@ -307,10 +328,10 @@ Must be greater than `0` and within the range of `30` to `435`. Report minutes a
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
 The number of instructional days lost due to a work stoppage.
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Report days as whole numbers.
 
-*See rules 1, 2, and 3 below.*
+*See [rules](#rules) 1, 2, and 3 below.*
 :::
 <details open>
 <summary>**Sample / Valid Value:**</summary>
@@ -328,9 +349,9 @@ The number of instructional days lost due to PDE approved full-day Act 80 dismis
 Report days as whole numbers.  
 This field is required if Field 21 - [ACT 80 GROUP](#21---act-80-group) is populated; otherwise use `0`.  
 
-*See rules 1, 2, and 3 below.*
+*See [rules](#rules) 1, 2, and 3 below.*
 
-**NOTE**: This field is checked by the DQE.
+**This field is checked by the DQE.**
 :::
 
 <details open>
@@ -344,9 +365,10 @@ This field is required if Field 21 - [ACT 80 GROUP](#21---act-80-group) is popul
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
 The number of instructional days lost due to other reasons such as snow, flood, or adverse weather conditions.  If the School Services Office granted a waiver for an emergency school closing, do not include this in the number of days lost.
 
-:::warning[**Business Rules:**]
-Report days as whole numbers.  
-\*See rules 1, 2, and 3 below.
+:::warning[Business Rules]
+Report days as whole numbers.
+
+*See [rules](#rules) 1, 2, and 3 below.*
 :::
 <details open>
 <summary>**Sample / Valid Value:**</summary>
@@ -361,10 +383,10 @@ The number of instructional days made up within or beyond the original calendar.
 
 **These days should not be included in Field 14 - [NUMBER OF SCHEDULED SCHOOL DAYS](#14---number-of-scheduled-school-days).**
 
-:::warning[**Business Rules:**]
+:::warning[Business Rules]
 Report days as whole numbers.
 
-*See rule 1 below.*
+*See [rule](#rules) 1 below.*
 :::
 
 <details open>
@@ -376,14 +398,16 @@ Report days as whole numbers.
 
 ### 20 - TOTAL INSTRUCTIONAL MINUTES LOST TO PLANNED SHORTENED DAYS AND PDE EMERGENCY WAIVER
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
-The number of actual instructional minutes lost due to the following: early dismissals or late starts for Act 80 and other planned shortened days; or lost time due to emergency school closing for which PDE granted a waiver for a lost instructional day.  Do not include minutes lost due to early dismissals or late starts because of inclement weather.
+The number of actual instructional minutes lost due to the following: early dismissals or late starts for Act 80 and other planned shortened days; or lost time due to emergency school closing for which PDE granted a waiver for a lost instructional day. 
 
-:::warning[**Business Rules:**]
+**Do not include minutes lost due to early dismissals or late starts because of inclement weather.**
+
+:::warning[Business Rules]
 Must be within the range of `0` to `9000`. Report minutes as whole numbers.
 
 If a building/grade does not meet required instructional hours (`900` for grades KFT-6 or `990` for grades 7-12), create a separate School Calendar for this building/grade.
 
-*See rule 1 below.*
+*See [rule](#rules) 1 below.*
 :::
 
 <details open>
@@ -399,8 +423,9 @@ A unique numeric and/or alphabetical label used in the Act 80 application to lin
 
 :::note 
 **For SD / CTC / IU use only.**  
-This field is required if  Field 17 - [TOTAL DAYS IN SESSION LOST DUE TO ACT 80](#17---total-days-in-session-lost-due-to-act-80) is greater than zero.  
-**NOTE**: This field is checked by the DQE.
+This field is required if  Field 17 - [TOTAL DAYS IN SESSION LOST DUE TO ACT 80](#17---total-days-in-session-lost-due-to-act-80) is greater than zero.
+
+**This field is checked by the DQE.**
 :::
 <details open>
 <summary>**Sample / Valid Value:**</summary>
