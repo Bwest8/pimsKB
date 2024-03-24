@@ -35,8 +35,8 @@ module.exports = {
             id: 'templates/child-accounting/intro',
           },
           items: [
-            'templates/child-accounting/school-calendar-template',
-            'templates/child-accounting/student-calendar-fact-template',
+            'templates/child-accounting/school-calendar',
+            'templates/child-accounting/student-calendar-fact',
           ],
         },
         {
@@ -47,7 +47,7 @@ module.exports = {
             id: 'templates/course/intro',
           },
           items: [
-            'templates/course/course-template',
+            'templates/course/course',
             'templates/course/course-instructor',
             'templates/course/student-course-enrollment',
           ],
@@ -107,7 +107,7 @@ module.exports = {
             id: 'templates/enrollment/intro',
           },
           items: [
-            'templates/enrollment/school-enrollment-template',
+            'templates/enrollment/school-enrollment',
           ],
         },
         {
@@ -118,11 +118,11 @@ module.exports = {
             id: 'templates/location/intro',
           },
           items: [
-            'templates/location/location-fact-template-safe-schools',
-            'templates/location/location-fact-template-bus-evacuation-drills',
-            'templates/location/location-fact-template-fire-security-drills',
-            'templates/location/location-fact-template-aed',
-            'templates/location/location-fact-template-interscholastic-athletic-opportunities-data',
+            'templates/location/location-fact-safe-schools',
+            'templates/location/location-fact-bus-evacuation-drills',
+            'templates/location/location-fact-fire-security-drills',
+            'templates/location/location-fact-aed',
+            'templates/location/location-fact-interscholastic-athletic-opportunities-data',
           ],
         },
         {
@@ -133,7 +133,7 @@ module.exports = {
             id: 'templates/programs/intro',
           },
           items: [
-            'templates/programs/programs-fact-template',
+            'templates/programs/programs-fact',
           ],
         },
         {
@@ -156,7 +156,7 @@ module.exports = {
             id: 'templates/staff/intro',
           },
           items: [
-            'templates/staff/staff-template',
+            'templates/staff/staff',
             'templates/staff/staff-snapshot',
             'templates/staff/staff-assignment',
             'templates/staff/staff-development-fact',
@@ -172,7 +172,7 @@ module.exports = {
             id: 'templates/student/intro',
           },
           items: [
-            'templates/student/student-template',
+            'templates/student/student',
             'templates/student/student-snapshot',
             'templates/student/staff-student-subtest',
             'templates/student/student-award-fact-icn-wbl',
