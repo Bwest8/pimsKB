@@ -452,7 +452,7 @@ This field pertains to graduation status *and* dropout status, as well as transf
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix AL in Volume 2 of the PIMS User Manual for a complete list of valid values.
+See [Appendix AL](docs/appendix/appendix-AL.mdx) for a complete list of valid values.
 </details>
 
 **eScholar Name**: `GRADUATION STATUS CODE`
@@ -470,7 +470,7 @@ Value 998 is valid for dropouts only. Values 010 – 100 are valid for graduates
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix M in Volume 2 of the PIMS User Manual for a complete list of valid values.
+See [Appendix M](docs/appendix/appendix-M.mdx) for a complete list of valid values.
 </details>
 
 ---
@@ -486,7 +486,7 @@ Required for students that fall into one of the situations described in the vali
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix L in Volume 2 of the PIMS User Manual for a complete list of valid values.
+See [Appendix L](docs/appendix/appendix-L.mdx) for a complete list of valid values.
 </details>
 
 ---
@@ -593,7 +593,7 @@ Field not collected. Must be delimited in template file.
 Identification of specific mobility situations.
 
 :::warning[Business Rules:]
-Use C in the case of a Special Education referral student not being educated by your LEA, where the student is referred to an outside placement that does not report to PIMS.
+Use `C` in the case of a Special Education referral student not being educated by your LEA, where the student is referred to an outside placement that does not report to PIMS.
 :::
 
 <details open>
@@ -601,7 +601,8 @@ Use C in the case of a Special Education referral student not being educated by 
 
 - `A` - "No Show or Drop Out" - student who was never educated by this LEA in the reporting SY
 - `B` - "Summer Transfer" - student who was never educated by this LEA in the reporting SY
-- `C` - "Other" – student who was never educated by this LEA during the reporting SY. Example: Special Education student referred to an outside placement who was never educated by your LEA.
+- `C` - "Other" – student who was never educated by this LEA during the reporting SY. 
+  - **Example:** Special Education student referred to an outside placement who was never educated by your LEA.
 </details>
 
 ---
@@ -611,7 +612,7 @@ Use C in the case of a Special Education referral student not being educated by 
 The type of diploma/credential that is awarded to a student in recognition of their completion of the curricular requirements.
 
 :::warning[Business Rules:]
-This field is required for students that have graduated. (Field 65 = "G").
+This field is required for students that have graduated. (Field 65 - [GRAD STATUS](#65---grad-status) = `G`).
 :::
 
 <details open>
@@ -643,7 +644,7 @@ Field not collected. Must be delimited in template file.
 A Title III Indicator to identify EL students that are Title III served in districts that accept Title III funds. Indicate if the student participates in or benefits from any supplemental activities or receives any supplemental materials funded by Title III. All ELs in a district that accepts Title III funds may not be Title III served.
 
 :::warning[Business Rules:]
-This field is conditionally required for ELs with a Valid Value of 01 or 06 in Field 41 (EL STATUS).
+This field is conditionally required for ELs with a Valid Value of `01` or `06` in Field 41 (EL STATUS).
 :::
 
 <details open>
@@ -809,7 +810,7 @@ Fields not collected. Must be delimited in template file.
 The AUN of the school district where the parent/legal guardian resides.
 
 :::warning[Business Rules:]
-This must be one of the following: one of the 500 Pennsylvania school districts. the generic PA state code of 999999999. The generic out-of-state code of 888888888. Refer to Appendix N in Volume 2 of the PIMS User Manual for a complete list of Residency Status Codes. **This field is checked by the Data Quality Engine (DQE)**
+This must be one of the following: one of the 500 Pennsylvania school districts. the generic PA state code of `999999999`. The generic out-of-state code of `888888888`. Refer to [Appendix N](docs/appendix/appendix-N.mdx) for a complete list of Residency Status Codes. **This field is checked by the Data Quality Engine (DQE)**
 :::
 
 <details open>
@@ -848,7 +849,7 @@ LEAs with registered **AAPs** may leave this field blank for all AAP grade-level
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See Appendix J in Volume 2 of the PIMS User Manual for a complete list of valid NCES country and language codes.
+See [Appendix J](docs/appendix/appendix-J.mdx) for a complete list of valid NCES country and language codes.
 </details>
 
 ---
