@@ -42,13 +42,16 @@ All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa
 ### 2 - SCHOOL NUMBER
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
 
-The PDE-defined, 4-digit code identifying the school that is reporting the student.  All public schools have a 4-digit school code that is other than 0000 or 9999.
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
 
-**NOTES:**
-- IUs, PRRIs and APSs use School Number 0000.
-- If a student is at a location that does not have a designated school code, use 9999 as the School Number. PSSA and Keystone precodes will not be generated for code 9999.
+The PDE-defined, 4-digit code identifying the school that is reporting the student.  All public schools have a 4-digit school code that is other than `0000` or `9999`.
 
-:::warning[Business Rules:]
+:::note
+- IUs, PRRIs and APSs use School Number `0000`.
+- If a student is at a location that does not have a designated school code, use 9999 as the School Number. PSSA and Keystone precodes will not be generated for code `9999`.
+:::
+
+:::warning[Business Rules]
 - For Child Accounting, a student's average daily attendance (ADA) is attributed to the SCHOOL NUMBER populated in this record.
 - For Special Education – the Special Education Reporting LEA uses 9999 for students educated in other LEAs.
 :::
@@ -79,9 +82,11 @@ A single date (June 30), the last day of the current school year indicating the 
 ### 4 - PASECUREID
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
 
-The unique, 10-digit PAsecureID assigned to the student.  Informs various indicators in the **Future Ready PA Index**.
+The unique, 10-digit PAsecureID assigned to the student.
 
-:::warning[Business Rules:]
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
+
+:::warning[Business Rules]
 STUDENT IDs must be unique within an LEA. Therefore, only a single instance of a student is to be supplied in source file.
 :::
 
@@ -103,14 +108,40 @@ Fields not collected. Must be delimited in template file.
 
 Indication of the student's grade level.
 
-:::warning[Business Rules:]
-Special Ed students must be coded with an actual grade level. The appropriate grade level can be found on the student's IEP.
+:::warning[Business Rules]
+- Special Ed students must be coded with an actual grade level. The appropriate grade level can be found on the student's IEP.
+- `PKA`, `PKP`, and `PKF` are not valid codes for the Special Education Collections of December and July.
+- `AAP` is used to identify adult students enrolled in Adult Affidavit Programs (which are adult only programs) formally registered with the Bureau of Career and Technical Education via the Career and Technical Education Information System (CATS) for this reporting year.  
+  - **NOTE:** This grade code DOES NOT apply to adults enrolled in "adult intergenerational programs" (historically referred to as "Adults in Secondary Programs"). This type of adult student is not to be reported in PIMS.
 :::
 
-<details open>
+<details>
 <summary>**Sample / Valid Value:**</summary>
 
-See [Appendix K](docs/appendix/appendix-K.mdx) for a complete list of valid values.
+| Code | Description |
+|------|-------------|
+| `PKA`  | PreK Half Day – Morning (AM) |
+| `PKP`  | PreK Half Day – Afternoon (PM) |
+| `PKF`  | PreK Full Day |
+| `K4A`  | K4 Half Day – Morning (AM) |
+| `K4P`  | K4 Half Day – Afternoon (PM) |
+| `K4F`  | K4 Full Day |
+| `K5A`  | K5 Half Day – Morning (AM) |
+| `K5P`  | K5 Half Day – Afternoon (PM) |
+| `K5F`  | K5 Full Day |
+| `001`  | Grade 1 |
+| `002`  | Grade 2 |
+| `003`  | Grade 3 |
+| `004`  | Grade 4 |
+| `005`  | Grade 5 |
+| `006`  | Grade 6 |
+| `007`  | Grade 7 |
+| `008`  | Grade 8 |
+| `009`  | Grade 9 |
+| `010`  | Grade 10 |
+| `011`  | Grade 11 |
+| `012`  | Grade 12 |
+| `AAP`  | Adult Affidavit Program |
 </details>
 
 **eScholar Name**: `CURRENT GRADE LEVEL`
@@ -125,7 +156,7 @@ Fields not collected. Must be delimited in template file.
 
 Provide the homeroom number for the student for the given year.  This field is used for determining class size in the elementary school grades and in off-site preschool programs.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 LEAs with registered **Adult Affidavit Programs (AAPs)** may code all AAP grade-level students as AAPHR.
 :::
 
@@ -156,8 +187,10 @@ Provide a code that represents the gender of the student. This may be the studen
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `M` – male
-- `F` – female
+| Code | Description |
+|------|-------------|
+| `M`  | Male |
+| `F`  | Female |
 </details>
 
 **eScholar Name**: `GENDER CODE`
@@ -168,7 +201,7 @@ Provide a code that represents the gender of the student. This may be the studen
 
 Provide the street name and number of the student's mailing address.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Address information is needed for CTE secondary students, Perkins funded CTE adult affidavit program students and Special Education students.
 :::
 
@@ -184,7 +217,7 @@ Address information is needed for CTE secondary students, Perkins funded CTE adu
 
 Provide additional information concerning the street address of the student's mailing address, such as apartment number.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Address information is needed for CTE secondary students, Perkins funded CTE adult affidavit program students and Special Education students.
 :::
 
@@ -200,7 +233,7 @@ Address information is needed for CTE secondary students, Perkins funded CTE adu
 
 Provide the city of the student's mailing address.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Address information is needed for CTE secondary students, Perkins funded CTE adult affidavit program students and Special Education students.
 :::
 
@@ -216,14 +249,16 @@ Address information is needed for CTE secondary students, Perkins funded CTE adu
 
 Provide the official 2-character US Postal Service abbreviation for the student's mailing address.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Address information is needed for CTE secondary students, Perkins funded CTE adult affidavit program students and Special Education students.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See [Appendix D](docs/appendix/appendix-D.mdx) for the full list of state abbreviations.  Example: `PA`
+See [Appendix D](docs/appendix/appendix-D.mdx) for the full list of state abbreviations.
+
+`PA`
 </details>
 
 ---
@@ -232,7 +267,7 @@ See [Appendix D](docs/appendix/appendix-D.mdx) for the full list of state abbrev
 
 Provide the official US Postal Code for the student's mailing address.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 If this field is populated, the values should be in the format ###### or #####-####.
 :::
 
@@ -252,22 +287,26 @@ Fields not collected. Must be delimited in template file.
 ### 27 - RACE / ETHNICITY
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
 
-A single code indicating the race and ethnicity of the student.  Informs various indicators in the **Future Ready PA Index**.
+A single code indicating the race and ethnicity of the student.
 
-:::warning[Business Rules:]
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
+
+:::warning[Business Rules]
 Refer to "[Race/Ethnicity: Federal Race and Ethnicity Standards](/docs/race-ethnicity-gender-standards)" in this volume of the manual for an explanation of the federal race and ethnicity codes.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `1` – American Indian/Alaskan Native (not Hispanic)
-- `3` – Black or African American (not Hispanic)
-- `4` – Hispanic (any race)
-- `5` – White (not Hispanic)
-- `6` – Multi-Racial (not Hispanic)
-- `9` – Asian (not Hispanic)
-- `10` – Native Hawaiian or other Pacific Islander (not Hispanic)
+| Code | Description |
+|------|-------------|
+| `1`  | American Indian/Alaskan Native (not Hispanic) |
+| `3`  | Black or African American (not Hispanic) |
+| `4`  | Hispanic (any race) |
+| `5`  | White (not Hispanic) |
+| `6`  | Multi-Racial (not Hispanic) |
+| `9`  | Asian (not Hispanic) |
+| `10` | Native Hawaiian or other Pacific Islander (not Hispanic) |
 </details>
 
 **eScholar Name**: `RACE OR ETHNICITY CODE`
@@ -282,16 +321,18 @@ Fields not collected. Must be delimited in template file.
 
 Use this field to indicate if a student participates in free or reduced lunch program.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 LEAs with registered **AAPs** should code all AAP grade-level students as N.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `F` – free
-- `R` – reduced price
-- `N` – neither
+| Code | Description |
+|------|-------------|
+| `F`  | Free |
+| `R`  | Reduced price |
+| `N`  | Neither |
 </details>
 
 ---
@@ -304,14 +345,29 @@ Student's primary Challenge Type.  This often is referred to as Disability throu
 This MUST match Field 11 [PRIMARY DISABILITY](docs/templates/special-ed/special-education-snapshot.mdx#11---primary-disability) of the Special Education Snapshot Template.
 :::
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field is required only if Field 38 [SPECIAL EDUCATION](#38---special-education) = `Y` or `E`.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See [Appendix H](docs/appendix/appendix-H.mdx) for a complete list of valid values.
+| Disability Code | Disability Description                                                                                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `2121`            | Autistic/Autism                                                                                                                                                               |
+| `2122`            | Deaf-blindness                                                                                                                                                                |
+| `2123`            | Hearing impairment including deafness                                                                                                                                         |
+| `2124`            | Intellectual disability                                                                                                                                                       |
+| `2125`            | Multiple disabilities                                                                                                                                                         |
+| `2126`            | Orthopedic impairment                                                                                                                                                         |
+| `2127`            | Emotional disturbance                                                                                                                                                         |
+| `2128`            | Specific learning disability                                                                                                                                                  |
+| `2129`            | Speech or language impairment                                                                                                                                                 |
+| `2130`            | Traumatic brain injury                                                                                                                                                        |
+| `2131`            | Visual impairment including blindness                                                                                                                                         |
+| `2132`            | Other health impairment                                                                                                                                                       |
+| `2134`            | Developmental delay  <br />**NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates)                    |
+| `2135`            | Infants and Toddlers with Disabilities  <br />**NOTE:** this code is not valid for the Special Education collection (Student/Student Snapshot/Special Education Snapshot Templates) |
 </details>
 
 ---
@@ -322,18 +378,22 @@ Fields not collected. Must be delimited in template file.
 ### 38 - SPECIAL EDUCATION
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-Provide an indication of whether the student is a special education student. This field is used for tracking presence of IEP for Precode.  Informs various indicators in the **Future Ready PA Index**.
+Provide an indication of whether the student is a special education student. This field is used for tracking presence of IEP for Precode.
 
-:::warning[Business Rules:]
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
+
+:::warning[Business Rules]
 LEAs with registered **AAPs** should code all AAP grade-level students as N.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` – has IEP
-- `E` – exited IEP and transferred to Regular Ed this school year
-- `N` – no IEP
+| Code | Description |
+|------|-------------|
+| `Y`  | Has IEP |
+| `E`  | Exited IEP and transferred to Regular Ed this school year |
+| `N`  | No IEP |
 </details>
 
 ---
@@ -344,24 +404,31 @@ Fields not collected. Must be delimited in template file.
 ### 41 - EL STATUS
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
 
-This field indicates whether the student: is currently identified as an EL; Is currently identified as an EL who has Limited or Interrupted Formal Education (LIFE); was formerly EL, has exited, and is being monitored; was formerly EL, has exited, and no longer is being monitored, or; was never identified as EL.  Informs various indicators in the **Future Ready PA Index**.
+This field indicates whether the student: is currently identified as an EL; Is currently identified as an EL who has Limited or Interrupted Formal Education (LIFE); was formerly EL, has exited, and is being monitored; was formerly EL, has exited, and no longer is being monitored, or; was never identified as EL.
 
-:::warning[Business Rules:]
-- Code **AAPs** grade-level students as 01 when student has limited ability in speaking, reading, writing or understanding English language and whose native language is other than English or lives in environment in which a language other than English is dominant. Otherwise, code AAP students as 99.
-- Criteria used to determine if the student has Limited or Interrupted Formal Education (LIFE) Valid Value 06: is enrolling after grade 2, and has a literacy score of less than 3.5 on the WIDA Screener, and has at least two fewer years of age appropriate schooling than peers or has unenrolled from U.S. Schools to enroll in schools in other countries (including Puerto Rico) more than two times in the past four years, and has limited encoding/ decoding skills in native language (as indicated by family interview and/ or native language measures and/or review of academic records)
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
+
+:::warning[Business Rules] 
+- Code **AAPs** grade-level students as `01` when student has limited ability in speaking, reading, writing or understanding English language and whose native language is other than English or lives in environment in which a language other than English is dominant. Otherwise, code AAP students as `99`. 
+- Criteria used to determine if the student has Limited or Interrupted Formal Education (LIFE) Valid Value `06`: 
+  - is enrolling after grade 2, and 
+  - has a literacy score of less than 3.5 on the WIDA Screener, and 
+  - has at least two fewer years of age appropriate schooling than peers or has unenrolled from U.S. Schools to enroll in schools in other countries (including Puerto Rico) more than two times in the past four years, and 
+  - has limited encoding/ decoding skills in native language (as indicated by family interview and/ or native language measures and/or review of academic records) 
 :::
-
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `01` – current EL, not LIFE
-- `03` – former EL, exited, and in 1st year of monitoring
-- `04` – former EL, exited, and in 2nd year of monitoring
-- `05` – former EL, exited, and no longer monitored
-- `06` – current EL, LIFE (Limited or Interrupted Formal Education)
-- `07` – former EL, exited, and in 3rd year of monitoring
-- `08` – former EL, exited, and in 4th year of monitoring
-- `99` – never EL
+| Code | Description |
+|------|-------------|
+| `01` | Current EL, not LIFE |
+| `03` | Former EL, exited, and in 1st year of monitoring |
+| `04` | Former EL, exited, and in 2nd year of monitoring |
+| `05` | Former EL, exited, and no longer monitored |
+| `06` | Current EL, LIFE (Limited or Interrupted Formal Education) |
+| `07` | Former EL, exited, and in 3rd year of monitoring |
+| `08` | Former EL, exited, and in 4th year of monitoring |
+| `99` | Never EL |
 </details>
 
 **eScholar Name**: `LEP PARTICIPATION`
@@ -376,21 +443,23 @@ Fields not collected. Must be delimited in template file.
 
 LIEP Type provided to EL student (if student is in multiple Programs, select the value of the Program providing the highest percentage of instruction) - [LIEP Classifications Guidance](http://www.education.pa.gov/Teachers%20-%20Administrators/Curriculum/English%20As%20A%20Second%20Language/Pages/ELDProgram.aspx)
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Select only one program for each individual student. This field is required for all students where Field 41 (EL STATUS) = `01` or `06`. A Flow Chart can be found on page 4 of the hyperlink in the Definition.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `21` - Mixed Bilingual
-- `22` - EL Bilingual
-- `23` - EL Specific Transitional Instruction
-- `24` - Mixed Classes with Native Language Support
-- `25` - EL Specific English-only
-- `26` - Mixed Classes with English-only Support
-- `27` - Parental refusal-mixed classes with English-only support
-- `98` - LIEP type 21-26 provided by another entity – English only support provided at this entity
+| Code | Description |
+|------|-------------|
+| `21` | Mixed Bilingual |
+| `22` | EL Bilingual |
+| `23` | EL Specific Transitional Instruction |
+| `24` | Mixed Classes with Native Language Support |
+| `25` | EL Specific English-only |
+| `26` | Mixed Classes with English-only Support |
+| `27` | Parental refusal-mixed classes with English-only support |
+| `98` | LIEP type 21-26 provided by another entity – English only support provided at this entity |
 </details>
 
 **eScholar Name**: `SPECIAL PROGRAM CODE`
@@ -405,14 +474,14 @@ Fields not collected. Must be delimited in template file.
 
 The School Number within the LEA that is responsible for the student based on Best Interest Determination. If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the school number (4-digit building number) of the Best Interest Determination (BID) school.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 School Number must exist within BID AUN (Field 51).
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `1234`
+`1234`
 </details>
 
 **eScholar Name**: `PREVIOUS LOCATION CODE`
@@ -423,14 +492,14 @@ School Number must exist within BID AUN (Field 51).
 
 The AUN of the LEA that is responsible for the student based on Best Interest Determination. If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the AUN of the Best Interest Determination (BID) school district.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Will not match Submitting AUN (Field 1)
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `123456789`
+`123456789`
 </details>
 
 **eScholar Name**: `PREVIOUS DISTRICT CODE`
@@ -445,14 +514,30 @@ Fields not collected. Must be delimited in template file.
 
 Indication of whether a student graduates, drops out, or transfers.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field pertains to graduation status *and* dropout status, as well as transfers. Use appropriate code for students for whom one of the situations in the Valid Values list applies. **This field does not apply to AAPs students.**
 :::
 
-<details open>
+<details>
 <summary>**Sample / Valid Value:**</summary>
 
-See [Appendix AL](docs/appendix/appendix-AL.mdx) for a complete list of valid values.
+| Code | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Matching Enrollment Template \> Withdrawal Code | Matching Special Ed Snapshot \> Template Exit Code                |
+|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------|
+| `A`    | Dropped out: academic problems                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `WD01`                                            | `03` – Reached maximum age 04 – Dropped out                         |
+| `B`    | Dropped out: behavior problems                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `WD01`                                            | `03` – Reached maximum age 04 – Dropped out                         |
+| `C`    | Dropped out: child, married, or pregnant                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `WD01`                                            | `03` – Reached maximum age 04 – Dropped out                         |
+| `D`    | Dropped out: disliked school                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `WD01`                                            | `03` – Reached maximum age 04 – Dropped out                         |
+| `G`    | Graduated with regular diploma or GED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `WD04`                                            | `01` – Graduated with HS diploma<br /> `02` – Received GED<br /> `04` – Dropped out |
+| `H`    | Dropped out: enrolled but did not show                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `WD09`                                            | `03` – Reached maximum age<br /> `04` – Dropped out                         |
+| `I`    | Retired PAsecureID (PDE use only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | N/A                                             | N/A                                                               |
+| `J`    | Incorrectly reported but cannot be deleted (Internal Snapshots only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | N/A                                             | N/A                                                               |
+| `L`    | Left PA public school system but didn’t drop out (e.g., transferred out of PA, transferred to private school, died, etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `WD03` **or** `WD06`                                | `06` – Moved out of PA, known to be continuing<br /> `09` – Died            |
+| `O`    | Dropped out: other reason                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `WD01`                                            | `03` – Reached maximum age<br /> `04` – Dropped out                         |
+| `R`    | Dropped out: runaway or expelled                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `WD01`                                            | `03` – Reached maximum age<br /> `04` – Dropped out                         |
+| `S`    | ONLY for students graduating between July 1 and September 30 (inclusive) whose graduation is reported in the prior school year, and who must be reported in the current year Student Template because of other reporting requirements. Examples include Special Ed students graduating after July 1 whose exit must be reported in the school year that began on July 1; and students who complete graduation requirements after classes begin in the school year that began on July 1 and whose membership must be reported in the new school year that began on July 1. | N/A                                             | `01` – Graduated with HS diploma                                    |
+| `T`    | Transferred to another LEA in PA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `WD02`                                            | `99` – Moved within PA, known to be continuing                      |
+| `W`    | Dropped out: wanted to work                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `WD01`                                            | `03` – Reached maximum age 04 – Dropped out                         |
+
 </details>
 
 **eScholar Name**: `GRADUATION STATUS CODE`
@@ -463,7 +548,7 @@ See [Appendix AL](docs/appendix/appendix-AL.mdx) for a complete list of valid va
 
 Indication of the type of activity the student plans for after graduation or after dropping out.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Value 998 is valid for dropouts only. Values 010 – 100 are valid for graduates only. Value 997 is valid for special education students with an IEP only. **Required for dropouts and high school graduates only.**
 :::
 
@@ -479,14 +564,22 @@ See [Appendix M](docs/appendix/appendix-M.mdx) for a complete list of valid valu
 
 Indication of the current status of the student.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Required for students that fall into one of the situations described in the valid value list.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-See [Appendix L](docs/appendix/appendix-L.mdx) for a complete list of valid values.
+| Code  | Student Status Descriptions                                                                     |
+|-------|-------------------------------------------------------------------------------------------------|
+| `A`     | Home-schooled student attending public school part-time                                         |
+| `O`     | NonPublic student attending a public school part-time or full-time                              |
+| `R`     | Court and/or Agency placed (Not in a foster home)                                               |
+| `U`     | 1305 Non-resident foster student (Residency Status Code B or C)                                 |
+| `V`     | Parent paying educating district or educating district waiving tuition for non-resident student |
+| `W`     | Opportunity Scholarship Tax Credit Student                                                      |
+
 </details>
 
 ---
@@ -495,14 +588,14 @@ See [Appendix L](docs/appendix/appendix-L.mdx) for a complete list of valid valu
 
 The date when the student was initially enrolled in an ELD or bilingual education program in a US school. Use best information available on prior enrollments.
 
-:::warning[Business Rules:]
-**This field does not apply to AAPs students that are coded as "Current EL" in Field 41 (EL STATUS).**
+:::warning[Business Rules]
+**This field does not apply to AAPs students that are coded as "Current EL" in Field 41 [EL STATUS](#41---el-status).**
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2008-09-01`
+`2008-09-01`
 </details>
 
 **eScholar Name**: `LAST STATUS DATE`
@@ -513,15 +606,17 @@ The date when the student was initially enrolled in an ELD or bilingual educatio
 
 This field identifies students who: (1) have a current Section 504 service agreement plan in place AND (2) are considered disabled and eligible for protection under the Americans with Disabilities Act (ADA) of 1990, as amended by the ADA Amendments Act of 2008. ADA (as amended) defines "disability" as (1) a physical or mental impairment that substantially limits a major life activity; (2) a record of such an impairment; or (3) being regarded as having such an impairment.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Populate this data element, as appropriate, for all students. Consult appropriate LEA Section 504/ADA compliance officer(s) to determine those students with a current Section 504 service agreement plan in place. **NOTE:** Populate this field with N for students recorded as having a current/active IEP in Field 38 (SPECIAL EDUCATION) of this template.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Student has a current Section 504 service agreement plan in place and is considered disabled per ADA.
-- `N` - Student does not have a current Section 504 service agreement plan in place.
+| Code | Description |
+|------|-------------|
+| `Y`  | Student has a current Section 504 service agreement plan in place and is considered disabled per ADA. |
+| `N`  | Student does not have a current Section 504 service agreement plan in place. |
 </details>
 
 **eScholar Name**: `ADA STATUS INDICATOR`
@@ -532,7 +627,7 @@ Populate this data element, as appropriate, for all students. Consult appropriat
 
 An indication of whether the student has entered the country on a student visa (usually 2-year) and is not intending to remain here permanently.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 LEAs with registered **AAPs** may code all AAP grade-level students as N. Student's age must be 15 or greater.
 :::
 
@@ -549,17 +644,19 @@ LEAs with registered **AAPs** may code all AAP grade-level students as N. Studen
 
 Indicates the student's gifted status and participation in a Gifted and Talented program.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 LEAs with registered **AAPs** may code all AAP grade-level students as `N`.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `GY` - Gifted, has GIEP
-- `GS` - Gifted, receives gifted services through IEP
-- `GX` - Gifted, does not receive gifted services
-- `N` - Not applicable
+| Code | Description |
+|------|-------------|
+| `GY` | Gifted, has GIEP |
+| `GS` | Gifted, receives gifted services through IEP |
+| `GX` | Gifted, does not receive gifted services |
+| `N`  | Not applicable |
 </details>
 
 **eScholar Name**: `GIFTED PARTICIPATION CODE`
@@ -568,9 +665,11 @@ LEAs with registered **AAPs** may code all AAP grade-level students as `N`.
 ### 88 - ECONOMIC DISADVANTAGED STATUS CODE
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-This field indicates the economically disadvantaged status of a student and is used to provide the economically disadvantaged disaggregation. Informs various indicators in the **Future Ready PA Index**.
+This field indicates the economically disadvantaged status of a student and is used to provide the economically disadvantaged disaggregation. 
 
-:::warning[Business Rules:]
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
+
+:::warning[Business Rules]
 To determine if a student is economically disadvantaged, the following poverty data sources may be used:
 
 - Temporary Assistance for Needy Families cases
@@ -592,7 +691,6 @@ In addition to using other poverty source data indicators, LEAs with **AAP** CTE
 <summary>**Sample / Valid Value:**</summary>
 
 - `Y` 
-
 - `N`
 </details>
 
@@ -606,17 +704,18 @@ Field not collected. Must be delimited in template file.
 
 Identification of specific mobility situations.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Use `C` in the case of a Special Education referral student not being educated by your LEA, where the student is referred to an outside placement that does not report to PIMS.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `A` - "No Show or Drop Out" - student who was never educated by this LEA in the reporting SY
-- `B` - "Summer Transfer" - student who was never educated by this LEA in the reporting SY
-- `C` - "Other" – student who was never educated by this LEA during the reporting SY. 
-  - **Example:** Special Education student referred to an outside placement who was never educated by your LEA.
+| Code | Description |
+|------|-------------|
+| `A`  | "No Show or Drop Out" - student who was never educated by this LEA in the reporting SY |
+| `B`  | "Summer Transfer" - student who was never educated by this LEA in the reporting SY |
+| `C`  | "Other" – student who was never educated by this LEA during the reporting SY.<br />**Example:**<br />Special Education student referred to an outside placement who was never educated by your LEA. |
 </details>
 
 ---
@@ -625,16 +724,18 @@ Use `C` in the case of a Special Education referral student not being educated b
 
 The type of diploma/credential that is awarded to a student in recognition of their completion of the curricular requirements.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field is required for students that have graduated. (Field 65 - [GRAD STATUS](#65---grad-status) = `G`).
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `806` - Regular diploma
-- `816` - General Education Development (GED) credential
-- `826` - Keystone Diploma
+| Code | Description |
+|------|-------------|
+| `806`| Regular diploma |
+| `816`| General Education Development (GED) credential |
+| `826`| Keystone Diploma |
 </details>
 
 ---
@@ -657,15 +758,17 @@ Field not collected. Must be delimited in template file.
 
 A Title III Indicator to identify EL students that are Title III served in districts that accept Title III funds. Indicate if the student participates in or benefits from any supplemental activities or receives any supplemental materials funded by Title III. All ELs in a district that accepts Title III funds may not be Title III served.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field is conditionally required for ELs with a Valid Value of `01` or `06` in Field 41 - [EL STATUS](#41---el-status).
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Title III served
-- `N` - Not Title III served
+| Code | Description |
+|------|-------------|
+| `Y`  | Title III served |
+| `N`  | Not Title III served |
 </details>
 
 **eScholar Name**: `LEP/ELL ELIGIBILITY`
@@ -676,15 +779,17 @@ This field is conditionally required for ELs with a Valid Value of `01` or `06` 
 
 A Title I Part A indicator to identify students that are Title I Part A participants.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 If your Title I Part A Program is delivered school-wide, ensure that all values are `Y`.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Title I Part A
-- `N` - Not Title I Part A
+| Code | Description |
+|------|-------------|
+| `Y`  | Title I Part A |
+| `N`  | Not Title I Part A |
 </details>
 
 **eScholar Name**: `PROGRAM SERVICE CODE`
@@ -695,14 +800,14 @@ If your Title I Part A Program is delivered school-wide, ensure that all values 
 
 The school year in which the student entered 9th grade for the first time. The school year is represented by a single date indicating the whole school year; June 30 at the end of the standard school year is used to designate a school year.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field is required for any student enrolled in grades 9 – 12.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2024-06-30`
+`2024-06-30`
 </details>
 
 ---
@@ -711,7 +816,7 @@ This field is required for any student enrolled in grades 9 – 12.
 
 The most recent date that the student entered the LEA. If a student withdraws from the LEA then returns, the date of the student's re-enrollment in the LEA.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This should only be the current school year for new students in their first year at an LEA. 
 
 LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (20XX-07-01).
@@ -722,7 +827,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students with a July 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2024-07-01`
+`2024-07-01`
 </details>
 
 ---
@@ -731,7 +836,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students with a July 
 
 The most recent date that the student entered the school. If a student withdraws from the LEA then returns, the date of the student's re-enrollment in the LEA. If the student changes schools within the LEA due to a grade change, during the school year, do not update the school entry date.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 For new students in their first year at a school only, this should be the current school year. 
 
 LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (20XX-07-01).
@@ -740,7 +845,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students with a July 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2024-07-01`
+`2024-07-01`
 </details>
 
 ---
@@ -749,14 +854,14 @@ LEAs with registered **AAPs** may code all AAP grade-level students with a July 
 
 The first date that the student entered any public LEA in Pennsylvania (Do not use student's date of birth). If a student left PA public education and then returned to any public LEA in PA, the date of the student's re-enrollment in that LEA.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field must be populated with the actual date. LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (2019-07-01).
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2016-07-01`
+`2016-07-01`
 </details>
 
 ---
@@ -765,7 +870,7 @@ This field must be populated with the actual date. LEAs with registered **AAPs**
 
 The date that the student first enrolled in a US school. For this purpose, enrollment in a school in Puerto Rico does not count as enrollment in a US school. Use best information available on prior enrollments.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This data is needed for EL students only.
 
 This field does not apply to **AAPs** students that are coded as "Current EL" (codes `01` or `06`, but not `98` in Field 45) in Field 41 [EL STATUS](#41---el-status).
@@ -776,7 +881,7 @@ This field does not apply to **AAPs** students that are coded as "Current EL" (c
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `2013-08-01`
+`2013-08-01`
 </details>
 
 ---
@@ -785,7 +890,7 @@ This field does not apply to **AAPs** students that are coded as "Current EL" (c
 
 (G) Homeless individuals described in section 725 of the McKinney-Vento Homeless Assistance Act (42 U.S.C. 11434a) Section 725 of the McKinney-Vento Act, as amended by the ESSA, defines the following terms: (a) Homeless children and youths means individuals who lack a fixed, regular, and adequate nighttime residence. The term includes— (1) Children and youths who are sharing the housing of other persons due to loss of housing, economic hardship, or a similar reason; are living in motels, hotels, trailer parks, or camping grounds due to the lack of alternative adequate accommodations; are living in emergency or transitional shelters; or are abandoned in hospitals. (2) Children and youths who have a primary nighttime residence that is a public or private place not designed for or ordinarily used as a regular sleeping accommodation for human beings. (3) Children and youths who are living in cars, parks, public spaces, abandoned buildings, substandard housing, bus or train stations, or similar settings; and (4) Migratory children (as defined in section 1309 of the Elementary and Secondary Education Act of 1965, as amended), who qualify as homeless because they are living in circumstances described in this definition.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 **Report Adult Affidavit (AAP)** students only.
 :::
 
@@ -804,7 +909,7 @@ This field does not apply to **AAPs** students that are coded as "Current EL" (c
 
 Migrant student is defined as a student who is a migrant worker or whose parent or spouse is a migrant worker. U.S. Department of Health and Human Services definition identifies a migrant worker as "an individual whose principal employment is in agriculture on a seasonal basis, who has been so employed within the last 24 months, and who establishes for the purpose of such employment a temporary abode."
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 **Report Adult Affidavit (AAP)** students only.
 :::
 
@@ -827,7 +932,7 @@ Fields not collected. Must be delimited in template file.
 
 The AUN of the school district where the parent/legal guardian resides.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This must be one of the following:
 
 - One of the 500 Pennsylvania school districts.
@@ -842,7 +947,7 @@ Refer to [Appendix N](docs/appendix/appendix-N.mdx) for a complete list of Resid
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `123456789`
+`123456789`
 </details>
 
 **eScholar Name**: `DISTRICT CODE OF RESIDENCE`
@@ -868,7 +973,7 @@ Specifies whether the student is a single parent. A single parent is any individ
 
 The NCES Code for the native language a child is/was exposed to that resulted in identification as an English Learner. Conditionally required if native language is other than US English.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 LEAs with registered **AAPs** may leave this field blank for all AAP grade-level students.
 :::
 
@@ -886,18 +991,29 @@ Field not collected. Must be delimited in template file.
 ### 125 - YEARS IN US SCHOOLS
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-An integer value (1, 2, or 3) that indicates the years that a student meets the Title III immigrant definition as follows: A student who: is age 3 – 21; and was not born in any U.S. state; and has not been attending one or more schools in any one or more U.S. state for more than three full academic years. Students from Puerto Rico are not considered Immigrants. Foreign Exchange students should be considered immigrants. This information is used for Title III Immigrant funding purposes only.
+An integer value (`1`, `2`, or `3`) that indicates the years that a student meets the Title III immigrant definition as follows:
 
-:::warning[Business Rules:]
+A student who:
+- is age 3 – 21; and
+- was not born in any U.S. state; and
+- has not been attending one or more schools in any one or more U.S. state for more than three full academic years.
+
+Students from Puerto Rico are not considered Immigrants. Foreign Exchange students should be considered immigrants.
+
+This information is used for Title III Immigrant funding purposes only.
+
+:::warning[Business Rules]
 In the case of re-entry into US schools, the calculation for YEARS IN US SCHOOLS is cumulative. Calculation of number of months is from date of enrollment to October 1 of the current school year. Use best information available.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-`1` - 0 – 12 months
-`2` - 13 – 24 months
-`3` - 25 – 36 months
+| Code | Description |
+|------|-------------|
+| `1`  | 0 – 12 months |
+| `2`  | 13 – 24 months |
+| `3`  | 25 – 36 months |
 </details>
 
 ---
@@ -906,27 +1022,34 @@ In the case of re-entry into US schools, the calculation for YEARS IN US SCHOOLS
 
 An appendage, if any, used to denote an individual's generation in their family (e.g., Jr, Sr, III).
 
-:::warning[Business Rules:]
+::::warning[Business Rules]
 **Suffix should be split out from last name, both here and in PAsecureID.** If student previously submitted into PAsecureID with suffix in last name field, resubmit into PAsecureID with the suffix split out. 
 
-**NOTE:** DO NOT create a new PAsecureID; edit the existing one. See the October Student How-To Guide for further information.
+:::note
+**DO NOT create a new PAsecureID; edit the existing one.**
+
+See the October Student How-To Guide for further information.
 :::
+
+::::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Jr`
-- `Sr`
-- `I`
-- `II`
-- `III`
-- `IV`
-- `V`
-- `VI`
-- `VII`
-- `VIII`
-- `IX`
-- `X`
+| Code | Description |
+|------|-------------|
+| `Jr` | Junior |
+| `Sr` | Senior |
+| `I`  | The First |
+| `II` | The Second |
+| `III`| The Third |
+| `IV` | The Fourth |
+| `V`  | The Fifth |
+| `VI` | The Sixth |
+| `VII`| The Seventh |
+| `VIII`| The Eighth |
+| `IX` | The Ninth |
+| `X`  | The Tenth |
 </details>
 
 ---
@@ -939,16 +1062,19 @@ Fields not collected. Must be delimited in template file.
 
 The student's eligibility to participate in the free/reduced lunch program.
 
-:::warning[Business Rules:]
-All students receiving free or reduced-price lunch in Community Eligibility Provision (CEP) schools are to be reported as food program eligible, regardless of their economic status. Students in non-CEP schools are to be reported as eligible if they are eligible to participate in the free or reduced-price lunch program.
+:::warning[Business Rules]
+- All students receiving free or reduced-price lunch in Community Eligibility Provision (CEP) schools are to be reported as food program eligible, regardless of their economic status. 
+- Students in non-CEP schools are to be reported as eligible if they are eligible to participate in the free or reduced-price lunch program.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `F` - Free
-- `R` - Reduced price
-- `N` - Neither
+| Code | Description |
+|------|-------------|
+| `F`  | Free |
+| `R`  | Reduced price |
+| `N`  | Neither |
 </details>
 
 ---
@@ -961,7 +1087,7 @@ Field not collected. Must be delimited in template file.
 
 The legal last name (surname) of the student.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 See the October Student How-To Guide for new guideline regarding hyphenated last names. Do not include suffix in last name.
 :::
 
@@ -997,14 +1123,14 @@ Fields not collected. Must be delimited in template file.
 
 The middle name of the student.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Whenever possible, this is to be the **FULL** middle name, not just the middle initial.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Howard`
+`Howard`
 </details>
 
 ---
@@ -1017,7 +1143,7 @@ Fields not collected. Must be delimited in template file.
 
 Additional information concerning the street address of the student's mailing address, such as a building or site number.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Address information is needed for CTE secondary students and Perkins funded CTE adult affidavit program students.
 :::
 
@@ -1033,7 +1159,7 @@ The PDE defined, 4-digit code of the public school that the student would attend
 
 This must be a School Number related to the reported Field 117 - [DISTRICT OF RESIDENCE AUN](#117---district-of-residence-aun).
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 - If the district of residence AUN is the PA State Code `999999999` use School Number `9999`. 
 - If the district of residence AUN is out of state (`88888888`) use `9999`. 
 - If the district of residence does not have a school with the appropriate grade level for the student (a 12th grade student whose district of residence does not have a high school), use `0000`. 
@@ -1056,9 +1182,11 @@ LEAs with registered **AAPs** may code all AAP grade-level students as `9999`.
 ### 166 - OUT OF WORKFORCE INDIVIDUAL
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-An indication of whether the student is considered an Out of Workforce Individual (Displaced Homemaker). The term Out of Workforce Individual means an individual who, "(A)(i) has worked primarily without remuneration to care for a home and family, and for that reason has diminished marketable skills; (ii) has been dependent on the income of another family member but is no longer supported by that income; or (iii) is a parent whose youngest dependent child will become ineligible to receive assistance under part A of title IV of the Social Security Act (42 U.S.C. 601 et seq.) not later than 2 years after the date on which the parent applies for assistance under such title"; and "(B) is unemployed or underemployed and is experiencing difficulty in obtaining or upgrading employment."
+An indication of whether the student is considered an Out of Workforce Individual (Displaced Homemaker). 
 
-:::warning[Business Rules:]
+The term Out of Workforce Individual means an individual who, "(A)(i) has worked primarily without remuneration to care for a home and family, and for that reason has diminished marketable skills; (ii) has been dependent on the income of another family member but is no longer supported by that income; or (iii) is a parent whose youngest dependent child will become ineligible to receive assistance under part A of title IV of the Social Security Act (42 U.S.C. 601 et seq.) not later than 2 years after the date on which the parent applies for assistance under such title"; and "(B) is unemployed or underemployed and is experiencing difficulty in obtaining or upgrading employment."
+
+:::warning[Business Rules]
 This field is needed for secondary and adult affidavit CTE students only.
 :::
 
@@ -1079,7 +1207,7 @@ If the Special Education Reporting Agency is also the educating LEA, this field 
 
 If the student is referred to a Licensed Private, APS or other similar entities this field must also equal `N`.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Must be a Special Education student. Valid Value in Field 38 - [SPECIAL EDUCATION](#38---special-education) must be `Y` or `E` to value this field with a `Y`.
 
 **District of Residence and Charter Schools are the only entities allowed to have `Y` in this field.**
@@ -1120,7 +1248,7 @@ Fields not collected. Must be delimited in template file.
 
 The AUN of the school district that is financially responsible for the student. In most cases, this will be the same district as reported under Field 117 - [DISTRICT OF RESIDENCE AUN](#117---district-of-residence-aun), **EXCEPT** in the case of non-resident foster or institutionalized students.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 **This must be one of the Pennsylvania school districts.** 
 
 Refer to section [Students to be Reported in PIMS](docs/students-to-be-reported.mdx). Also, refer to [Appendix N](docs/appendix/appendix-N.mdx) for a full list of Residency Status Codes. 
@@ -1131,7 +1259,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students with the AUN
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `123456789`
+`123456789`
 </details>
 
 **eScholar Name**: `FUNDING DISTRICT CODE`
@@ -1142,7 +1270,7 @@ LEAs with registered **AAPs** may code all AAP grade-level students with the AUN
 
 This field is only required for students educated by LEA schools classified as either "occupational" or "comprehensive" Career and Technical Centers (CTCs) on PDE's [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx) This field indicates whether or not a normal full complement of "primary academics" is administered and provided to this student by the reported CTC school identified in Field 2 (SCHOOL NUMBER) of this template. For this data element, "primary academics" include English, Reading/Language Arts, Language Instruction Education Program (LIEP), Mathematics, Sciences, and Social Studies (history, economics, geography, and civics and government). **Note**: According to the Attribution Map used for assessment and accountability, if an assessed subject is taught, the occupational or comprehensive CTC will be attributed with the student's participation and performance.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field must be populated for all students educated by occupational and comprehensive CTC schools as identified in Field 2 [SCHOOL NUMBER](#2---school-number) of this template.
 :::
 
@@ -1163,7 +1291,7 @@ Fields not collected. Must be delimited in template file.
 
 Indicate whether the student's parent/guardian is an active duty member of a branch of the United States Armed Forces (Army, Navy, Air Force, Marine Corp, and Coast Guard) including full-time National Guard.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Set field to `Y` if the condition is true at any time during the school year, otherwise set to `N`. 
 
 Parent/Guardian includes legal guardian or other person standing in loco parentis (such as grandparent or stepparent with who the child lives, or a person whom is legally responsible for the child's welfare including a foster parent on active military duty). 
@@ -1188,7 +1316,7 @@ Field not collected. Must be delimited in template file.
 
 An AAP student who is in or has aged out of Foster Care.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 **Report Adult Affidavit (AAP)** students only.
 :::
 
@@ -1219,17 +1347,19 @@ Identifies the associated assessment(s) in which a student participates througho
 Purposes of this field are to generate precode labels for the PSSA and to produce the PIMS PASA DLM Enrollment Report. This field is not used for PSSA Accountability. During the Accountability snapshot, this field can remain unchanged. Students in grades 3-8 must test in the PSSA (code `B`) or PASA (code `A`) per Chapter 4 requirements. The LEA should use Code `I` (Not Participating) for the student that is dually enrolled in a PIMS-reporting LEA, but being educated outside the reporting LEA.
 :::
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 If Field 226 - [PASA Testing Agency AUN](#226---pasa-testing-agency-aun) is reported, this must be `A`.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `A` - PASA, no PSSA precode label
-- `B` - PSSA, receive precode label
-- `I` - Not participating in any of these assessments
-- `N` - PSSA Online testing, no label required
+| Code | Description |
+|------|-------------|
+| `A`  | PASA, no PSSA precode label |
+| `B`  | PSSA, receive precode label |
+| `I`  | Not participating in any of these assessments |
+| `N`  | PSSA Online testing, no label required |
 </details>
 
 **eScholar Name**: `ASSESSMENT PARTICIPATION CODE`
@@ -1253,9 +1383,11 @@ The purpose of this field is to generate precode labels. This field is not used 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Receive precode label
-- `N` - Not testing
-- `O` - Online testing, no label required
+| Code | Description |
+|------|-------------|
+| `Y`  | Receive precode label |
+| `N`  | Not testing |
+| `O`  | Online testing, no label required |
 </details>
 
 **eScholar Name**: `ASSESSMENT PARTICIPATION CODE 2`
@@ -1275,9 +1407,11 @@ The purpose of this field is to generate precode labels. This field is not used 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Receive precode label
-- `N` - Not testing
-- `O` - Online testing, no label required
+| Code | Description |
+|------|-------------|
+| `Y`  | Receive precode label |
+| `N`  | Not testing |
+| `O`  | Online testing, no label required |
 </details>
 
 **eScholar Name**: `ASSESSMENT PARTICIPATION CODE 3`
@@ -1297,9 +1431,11 @@ The purpose of this field is to generate precode labels. This field is not used 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `Y` - Receive precode label
-- `N` - Not testing
-- `O` - Online testing, no label required
+| Code | Description |
+|------|-------------|
+| `Y`  | Receive precode label |
+| `N`  | Not testing |
+| `O`  | Online testing, no label required |
 </details>
 
 **eScholar Name**: `ASSESSMENT PARTICIPATION CODE 4`
@@ -1310,16 +1446,16 @@ The purpose of this field is to generate precode labels. This field is not used 
 
 Provide the AUN of the LEA providing the majority of the student's core academic education. Only PIMS Reporting Agency AUNs are valid (SD, IU, CS, CTC, APS, PRRI, SJCI). If the AUN is not PIMS-reporting, this should equal Field 1. 
 
-Informs various indicators in the **Future Ready PA Index**.
+Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This field is used to identify the LEA providing the majority of the student's core academic education. If this is the same as the reporting LEA ([SUBMITTING AUN](#1---submitting-aun) is reported in Field 1), a school enrollment must exist in the warehouse, or in an accompanying school enrollment upload file.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `123456789`
+`123456789`
 </details>
 
 **eScholar Name**: `DISTRICT OF ENROLLMENT CODE`
@@ -1336,16 +1472,18 @@ Identifies that a student will participate in an EL Assessment. This field will 
 
 **Adherence to these rules will reduce the need for hand-bubbling of test booklets.**
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 This data is needed for EL students only.
 :::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-- `E` - ACCESS for ELLs precode label
-- `A` - Alternate ACCESS for ELLs precode label
-- `O` - Other LEA requesting precode label
+| Code | Description |
+|------|-------------|
+| `E`  | ACCESS for ELLs precode label |
+| `A`  | Alternate ACCESS for ELLs precode label |
+| `O`  | Other LEA requesting precode label |
 </details>
 
 **eScholar Name**: `ASSESSMENT PARTICIPATION CODE 5`
@@ -1356,7 +1494,7 @@ This data is needed for EL students only.
 
 Student will have been enrolled in US school \< or equal to 12 months by the end of current year ELA/Keystone Literature testing window and was not previously exempted.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 **A student can only be assigned a Valid Value of `Y` once in their educational career.**
 :::
 
@@ -1400,7 +1538,9 @@ Identifies a student's personal conception of oneself. This is for state and loc
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
-`X` - Gender Non-binary or Not Listed (identify exclusively as neither male nor female)
+| Code | Description |
+|------|-------------|
+| `X`  | Gender Non-binary or Not Listed (identify exclusively as neither male nor female) |
 </details>
 
 ---
@@ -1409,7 +1549,7 @@ Identifies a student's personal conception of oneself. This is for state and loc
 
 AUN of the agency administering the PASA for the student. This field places a student on the PIMS PASA DLM Enrollment Report of the agency that will assess the student using PASA DLM.
 
-:::warning[Business Rules:]
+:::warning[Business Rules]
 Must be valid in EdNA. Required if Field 212 - [PSSA / PASA ASSESSMENT](#212---pssa--pasa-assessment) = `A`.
 :::
 
@@ -1423,4 +1563,4 @@ Must be valid in EdNA. Required if Field 212 - [PSSA / PASA ASSESSMENT](#212---p
 
 ---
 ## Rules
-See the Rules Section of the Template Domain
+See the [Rules](/docs/templates/intro.mdx#rules) Section of the Template Domain
