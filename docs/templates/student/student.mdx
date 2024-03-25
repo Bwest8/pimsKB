@@ -154,7 +154,9 @@ Fields not collected. Must be delimited in template file.
 ### 13 - HOME ROOM
 <p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={20} /></p>
 
-Provide the homeroom number for the student for the given year.  This field is used for determining class size in the elementary school grades and in off-site preschool programs.
+Provide the homeroom number for the student for the given year.
+
+This field is used for determining class size in the elementary school grades and in off-site preschool programs.
 
 :::warning[Business Rules]
 LEAs with registered **Adult Affidavit Programs (AAPs)** may code all AAP grade-level students as AAPHR.
@@ -322,7 +324,7 @@ Fields not collected. Must be delimited in template file.
 Use this field to indicate if a student participates in free or reduced lunch program.
 
 :::warning[Business Rules]
-LEAs with registered **AAPs** should code all AAP grade-level students as N.
+LEAs with registered **AAPs** should code all AAP grade-level students as `N`.
 :::
 
 <details open>
@@ -378,12 +380,14 @@ Fields not collected. Must be delimited in template file.
 ### 38 - SPECIAL EDUCATION
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-Provide an indication of whether the student is a special education student. This field is used for tracking presence of IEP for Precode.
+Provide an indication of whether the student is a special education student. 
+
+This field is used for tracking presence of IEP for Precode.
 
 Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
 
 :::warning[Business Rules]
-LEAs with registered **AAPs** should code all AAP grade-level students as N.
+LEAs with registered **AAPs** should code all AAP grade-level students as `N`.
 :::
 
 <details open>
@@ -404,7 +408,12 @@ Fields not collected. Must be delimited in template file.
 ### 41 - EL STATUS
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={2} /></p>
 
-This field indicates whether the student: is currently identified as an EL; Is currently identified as an EL who has Limited or Interrupted Formal Education (LIFE); was formerly EL, has exited, and is being monitored; was formerly EL, has exited, and no longer is being monitored, or; was never identified as EL.
+This field indicates whether the student:
+- is currently identified as an EL;
+- is currently identified as an EL who has Limited or Interrupted Formal Education (LIFE);
+- was formerly EL, has exited, and is being monitored;
+- was formerly EL, has exited, and no longer is being monitored, or;
+- was never identified as EL.
 
 Informs various indicators in the **[Future Ready PA Index](/docs/intro#future-ready-pa-index)**.
 
@@ -444,7 +453,9 @@ Fields not collected. Must be delimited in template file.
 LIEP Type provided to EL student (if student is in multiple Programs, select the value of the Program providing the highest percentage of instruction) - [LIEP Classifications Guidance](http://www.education.pa.gov/Teachers%20-%20Administrators/Curriculum/English%20As%20A%20Second%20Language/Pages/ELDProgram.aspx)
 
 :::warning[Business Rules]
-Select only one program for each individual student. This field is required for all students where Field 41 (EL STATUS) = `01` or `06`. A Flow Chart can be found on page 4 of the hyperlink in the Definition.
+Select only one program for each individual student. This field is required for all students where Field 41 (EL STATUS) = `01` or `06`. 
+
+A Flow Chart can be found on page 4 of the hyperlink in the Definition.
 :::
 
 <details open>
@@ -472,10 +483,12 @@ Fields not collected. Must be delimited in template file.
 ### 50 - BID SCHOOL NUMBER
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={4} /></p>
 
-The School Number within the LEA that is responsible for the student based on Best Interest Determination. If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the school number (4-digit building number) of the Best Interest Determination (BID) school.
+The School Number within the LEA that is responsible for the student based on Best Interest Determination. 
+
+If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the school number (4-digit building number) of the Best Interest Determination (BID) school.
 
 :::warning[Business Rules]
-School Number must exist within BID AUN (Field 51).
+School Number must exist within Field 51 - [BID AUN](#51---bid-aun).
 :::
 
 <details open>
@@ -490,10 +503,12 @@ School Number must exist within BID AUN (Field 51).
 ### 51 - BID AUN
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={9} /></p>
 
-The AUN of the LEA that is responsible for the student based on Best Interest Determination. If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the AUN of the Best Interest Determination (BID) school district.
+The AUN of the LEA that is responsible for the student based on Best Interest Determination. 
+
+If it is determined to be in the child's best interest, the child has the right to remain in the school of origin. If this occurs, the educating (receiving) entity should populate this field with the AUN of the Best Interest Determination (BID) school district.
 
 :::warning[Business Rules]
-Will not match Submitting AUN (Field 1)
+Will not match Field 1 - [SUBMITTING AUN](#1---submitting-aun)
 :::
 
 <details open>
@@ -515,7 +530,11 @@ Fields not collected. Must be delimited in template file.
 Indication of whether a student graduates, drops out, or transfers.
 
 :::warning[Business Rules]
-This field pertains to graduation status *and* dropout status, as well as transfers. Use appropriate code for students for whom one of the situations in the Valid Values list applies. **This field does not apply to AAPs students.**
+This field pertains to graduation status *and* dropout status, as well as transfers. 
+
+Use appropriate code for students for whom one of the situations in the Valid Values list applies. 
+
+**This field does not apply to AAPs students.**
 :::
 
 <details>
@@ -549,7 +568,12 @@ This field pertains to graduation status *and* dropout status, as well as transf
 Indication of the type of activity the student plans for after graduation or after dropping out.
 
 :::warning[Business Rules]
-Value 998 is valid for dropouts only. Values 010 – 100 are valid for graduates only. Value 997 is valid for special education students with an IEP only. **Required for dropouts and high school graduates only.**
+
+- Value `998` is valid for dropouts only. 
+- Values `010` – `100` are valid for graduates only. 
+- Value `997` is valid for special education students with an IEP only.
+
+**Required for dropouts and high school graduates only.**
 :::
 
 <details open>
@@ -606,9 +630,14 @@ The date when the student was initially enrolled in an ELD or bilingual educatio
 
 This field identifies students who: (1) have a current Section 504 service agreement plan in place AND (2) are considered disabled and eligible for protection under the Americans with Disabilities Act (ADA) of 1990, as amended by the ADA Amendments Act of 2008. ADA (as amended) defines "disability" as (1) a physical or mental impairment that substantially limits a major life activity; (2) a record of such an impairment; or (3) being regarded as having such an impairment.
 
-:::warning[Business Rules]
-Populate this data element, as appropriate, for all students. Consult appropriate LEA Section 504/ADA compliance officer(s) to determine those students with a current Section 504 service agreement plan in place. **NOTE:** Populate this field with N for students recorded as having a current/active IEP in Field 38 (SPECIAL EDUCATION) of this template.
+::::warning[Business Rules]
+Populate this data element, as appropriate, for all students. Consult appropriate LEA Section 504/ADA compliance officer(s) to determine those students with a current Section 504 service agreement plan in place.
+
+:::note
+Populate this field with `N` for students recorded as having a current/active IEP in Field 38 [SPECIAL EDUCATION](#38---special-education) of this template.
 :::
+
+::::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
@@ -628,7 +657,8 @@ Populate this data element, as appropriate, for all students. Consult appropriat
 An indication of whether the student has entered the country on a student visa (usually 2-year) and is not intending to remain here permanently.
 
 :::warning[Business Rules]
-LEAs with registered **AAPs** may code all AAP grade-level students as N. Student's age must be 15 or greater.
+- LEAs with registered **AAPs** may code all AAP grade-level students as `N`. 
+- Student's age must be 15 or greater.
 :::
 
 <details open>
@@ -855,7 +885,8 @@ LEAs with registered **AAPs** may code all AAP grade-level students with a July 
 The first date that the student entered any public LEA in Pennsylvania (Do not use student's date of birth). If a student left PA public education and then returned to any public LEA in PA, the date of the student's re-enrollment in that LEA.
 
 :::warning[Business Rules]
-This field must be populated with the actual date. LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (2019-07-01).
+- This field must be populated with the actual date.
+- LEAs with registered **AAPs** may code all AAP grade-level students with a July 1 reporting year date (20XX-07-01).
 :::
 
 <details open>
@@ -956,7 +987,11 @@ Refer to [Appendix N](docs/appendix/appendix-N.mdx) for a complete list of Resid
 ### 120 - STUDENT IS A SINGLE PARENT
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-Specifies whether the student is a single parent. A single parent is any individual who is unmarried or legally separated from a spouse and who has a minor child or children for which the parent has either custody or joint custody or is pregnant. This is a Perkins requirement. This is an element required for secondary and adult affidavit program CTE students only.
+Specifies whether the student is a single parent. A single parent is any individual who is unmarried or legally separated from a spouse and who has a minor child or children for which the parent has either custody or joint custody or is pregnant. 
+
+This is a Perkins requirement. 
+
+**This is an element required for secondary and adult affidavit program CTE students only.**
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
