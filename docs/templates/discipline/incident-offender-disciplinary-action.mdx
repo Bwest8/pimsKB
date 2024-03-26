@@ -92,9 +92,15 @@ Fields not collected. Must be delimited in template file.
 
 ---
 ### 8 - ORIGINAL DISCIPLINARY ACTION DURATION
-<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={6,2} /></p>
+<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={6} /></p>
 
-The number of school days the student was suspended, expelled, or removed to an interim alternative education setting for the incident. If the duration extends beyond the last day of the school term, report only the number of days up to and including the last day of the school term. If the entire duration of a disciplinary action `S3`- `S9` is to be served in the following school year, leave blank and report S10 (other) and describe the actual disciplinary action and duration in field 11 [DISCPILINARY ACTION COMMENT](#11---disciplinary-action-comment).
+The number of school days the student was suspended, expelled, or removed to an interim alternative education setting for the incident.
+
+- If the duration extends beyond the last day of the school term, report only the number of days up to and including the last day of the school term.
+- If the entire duration of a disciplinary action `S3`- `S9` is to be served in the following school year:
+   - Leave blank
+   - Report `S10` (other)
+   - Describe the actual disciplinary action and duration in Field 11 [DISCPILINARY ACTION COMMENT](#11---disciplinary-action-comment).
 
 :::warning[Business Rules:]
 Required if [Field 4 (DISCIPLINARY ACTION CODE)](#4---disciplinary-action-code) = `S3` – `S9`.

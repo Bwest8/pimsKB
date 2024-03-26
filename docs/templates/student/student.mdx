@@ -42,8 +42,6 @@ All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa
 ### 2 - SCHOOL NUMBER
 <p><Badge color="required" /> <Badge color="updateable" /> <Badge length={4} /></p>
 
-All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
-
 The PDE-defined, 4-digit code identifying the school that is reporting the student.  All public schools have a 4-digit school code that is other than `0000` or `9999`.
 
 :::note
@@ -1304,7 +1302,21 @@ LEAs with registered **AAPs** may code all AAP grade-level students with the AUN
 ### 190 - CTE INDICATOR
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={1} /></p>
 
-This field is only required for students educated by LEA schools classified as either "occupational" or "comprehensive" Career and Technical Centers (CTCs) on PDE's [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx) This field indicates whether or not a normal full complement of "primary academics" is administered and provided to this student by the reported CTC school identified in Field 2 (SCHOOL NUMBER) of this template. For this data element, "primary academics" include English, Reading/Language Arts, Language Instruction Education Program (LIEP), Mathematics, Sciences, and Social Studies (history, economics, geography, and civics and government). **Note**: According to the Attribution Map used for assessment and accountability, if an assessed subject is taught, the occupational or comprehensive CTC will be attributed with the student's participation and performance.
+**This field is only required for students educated by LEA schools classified as either "occupational" or "comprehensive" Career and Technical Centers (CTCs) on PDE's [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).**
+
+This field indicates whether or not a normal full complement of "primary academics" is administered and provided to this student by the reported CTC school identified in Field 2 - [SCHOOL NUMBER](#2---school-number) of this template.
+
+For this data element, "primary academics" include:
+- English
+- Reading/Language Arts
+- Language Instruction Education Program (LIEP)
+- Mathematics
+- Sciences
+- Social Studies (history, economics, geography, and civics and government)
+
+:::note
+According to the Attribution Map used for assessment and accountability, if an assessed subject is taught, the occupational or comprehensive CTC will be attributed with the student's participation and performance.
+:::
 
 :::warning[Business Rules]
 This field must be populated for all students educated by occupational and comprehensive CTC schools as identified in Field 2 [SCHOOL NUMBER](#2---school-number) of this template.

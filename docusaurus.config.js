@@ -58,15 +58,24 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            () => (ast) => {
+              ast.children.forEach((node) => {
+                if (node.type === 'text' && node.value.includes('{date:')) {
+                  const dateKey = node.value.match(/{date:(\w+)}/)[1];
+                  node.type = 'jsx';
+                  node.value = `<DateInsert date="${dateKey}" />`;
+                }
+              });
+            },
+          ],
           rehypePlugins: [rehypeKatex],
-          editUrl:
-            'https://github.com/Bwest8/pimsKB/tree/master/',
+          editUrl: 'https://github.com/Bwest8/pimsKB/tree/master/',
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            'https://github.com/Bwest8/pimsKB/tree/master/blog/',
+          editUrl: 'https://github.com/Bwest8/pimsKB/tree/master/blog/',
         },
         theme: {
           customCss: './src/css/custom.css',
