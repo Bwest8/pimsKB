@@ -7,6 +7,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import tailwindPlugin from "./plugins/tailwind-plugin.cjs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -14,7 +15,7 @@ const config = {
   tagline: 'Resources for PIMS',
   favicon: 'img/favicon.ico',
   url: 'https://bwest8.github.io/',
-  baseUrl: '/pimsKB/',
+  baseUrl: '/',
   organizationName: 'PDE',
   trailingSlash: false,
   projectName: 'pimsKB',
@@ -25,6 +26,16 @@ const config = {
     locales: ['en'],
   },
   plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
     require.resolve('docusaurus-lunr-search'),
     [
       '@docusaurus/plugin-pwa',
@@ -98,6 +109,7 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'PIMS KB',
+        hideOnScroll: true,
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',

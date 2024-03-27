@@ -1,9 +1,9 @@
 import DateInsert from '@site/src/components/DateInsert';
 
-// Current Year (YYYY)
+// Current Year (YYYY) - The date the user is viewing the site
 <DateInsert date="currentYear" />
 
-// Previous Year (YYYY)
+// Previous Year (YYYY) - The date the user is viewing the site
 <DateInsert date="previousYear" />
 
 // Current School Year End Date (YYYY-06-30)
