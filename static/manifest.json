@@ -8,12 +8,12 @@
     "start_url": "/docs/intro",
     "icons": [
       {
-        "src": "img/pimsKbLogo.png",
+        "src": "img/pimskb-logo.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "img/pimsKbLogo.png",
+        "src": "img/pimskb-logo.png",
         "sizes": "512x512",
         "type": "image/png"
       }
