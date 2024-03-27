@@ -106,13 +106,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/pimskb-social-card.jpg',
       navbar: {
-        title: 'PIMS KB',
+
         hideOnScroll: true,
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'pimsKB Logo',
+          src: 'img/pimskb-logo-light.png',
+          srcDark: '/img/pimskb-logo-dark.png',
         },
         items: [
           {
