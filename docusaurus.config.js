@@ -14,7 +14,7 @@ const config = {
   title: 'PIMS Knowledge Base',
   tagline: 'Resources for PIMS',
   favicon: 'img/favicon.ico',
-  url: 'https://bwest8.github.io/',
+  url: 'https://pimskb.vercel.app/',
   baseUrl: '/',
   organizationName: 'PDE',
   trailingSlash: false,
