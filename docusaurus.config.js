@@ -106,7 +106,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/pimskb-social-card.jpg',
+      image: 'img/pimskb-social-card.png',
       navbar: {
 
         hideOnScroll: true,
