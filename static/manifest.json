@@ -1,7 +1,6 @@
 {
     "name": "PIMS Knowledge Base",
     "short_name": "PIMS KB",
-    "description":"Resources for PIMS",
     "theme_color": "{{themeColor}}",
     "background_color": "#ffffff",
     "display": "minimal-ui",

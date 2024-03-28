@@ -31,6 +31,7 @@ const config = {
           { tagName: 'link', rel: 'icon', href: '/img/pimsKbLogo.png' },
           { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
           { tagName: 'meta', name: 'theme-color', content: '#262626' },
+          { tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes',},
         ],
       },
     ],
