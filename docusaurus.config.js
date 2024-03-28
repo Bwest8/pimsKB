@@ -21,16 +21,6 @@ const config = {
   },
 
   plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
     require.resolve('docusaurus-lunr-search'),
     [
       '@docusaurus/plugin-pwa',
@@ -53,18 +43,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          remarkPlugins: [
-            remarkMath,
-            () => (ast) => {
-              ast.children.forEach((node) => {
-                if (node.type === 'text' && node.value.includes('{date:')) {
-                  const dateKey = node.value.match(/{date:(\w+)}/)[1];
-                  node.type = 'jsx';
-                  node.value = `<DateInsert date="${dateKey}" />`;
-                }
-              });
-            },
-          ],
+          remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           editUrl: 'https://github.com/Bwest8/pimsKB/tree/master/',
         },
@@ -106,8 +85,19 @@ const config = {
             position: 'left',
             label: 'Manual',
           },
-          {to: '/blog', label: 'How-To Guides', position: 'left'},
-          {to: '/blog', label: 'DQE Rules', position: 'left'},
+          {
+            type: 'docSidebar',
+            position: 'left', 
+            sidebarId: 'howToGuides',
+            label: 'How-to Guides',
+          },
+          {
+            type: 'docSidebar',  
+            position: 'left',
+            sidebarId: 'dqeRules',
+            label: 'DQE Rules',
+          },
+          // {to: 'blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/Bwest8/pimsKB',
             label: 'GitHub',
