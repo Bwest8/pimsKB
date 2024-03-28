@@ -91,3 +91,7 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible {
   border-bottom: 0.10rem solid #808080;
 }
+
+.table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
+  font-weight: bold;
+}

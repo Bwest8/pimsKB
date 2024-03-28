@@ -1,13 +1,7 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import tailwindPlugin from "./plugins/tailwind-plugin.cjs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,6 +19,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
   plugins: [
     async function myPlugin(context, options) {
       return {
@@ -43,25 +38,14 @@ const config = {
         debug: true,
         offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/pimsKbLogo.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json',
-          },
-          {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: '#262626',
-          },
+          { tagName: 'link', rel: 'icon', href: '/img/pimsKbLogo.png' },
+          { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
+          { tagName: 'meta', name: 'theme-color', content: '#262626' },
         ],
       },
     ],
   ],
+
   presets: [
     [
       'classic',
@@ -94,25 +78,25 @@ const config = {
       }),
     ],
   ],
+
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
       type: 'text/css',
-      integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       crossorigin: 'anonymous',
     },
   ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/pimskb-social-card.png',
       navbar: {
-
         hideOnScroll: true,
         logo: {
           alt: 'pimsKB Logo',
-          src: 'img/pimskb-logo-light.png',
+          src: 'img/pimskb-logo-light.png', 
           srcDark: '/img/pimskb-logo-dark.png',
         },
         items: [
@@ -123,6 +107,7 @@ const config = {
             label: 'Manual',
           },
           {to: '/blog', label: 'How-To Guides', position: 'left'},
+          {to: '/dqe', label: 'DQE Rules', position: 'left'},
           {
             href: 'https://github.com/Bwest8/pimsKB',
             label: 'GitHub',
@@ -159,39 +144,18 @@ const config = {
           {
             title: 'Social Links',
             items: [
-              {
-                label: 'Facebook',
-                href: 'https://www.facebook.com/PADepartmentofEducation/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/PADeptofEd',
-              },
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/c/PADeptofEd',
-              },
-              {
-                label: 'Pinterest',
-                href: 'https://www.pinterest.com/PADeptOfEd/',
-              },
-              {
-                label: 'Blog',
-                href: 'https://www.education.pa.gov/SchoolofThought/Pages/Blog.aspx',
-              },
+              {label: 'Facebook', href: 'https://www.facebook.com/PADepartmentofEducation/'},
+              {label: 'Twitter', href: 'https://twitter.com/PADeptofEd'},  
+              {label: 'YouTube', href: 'https://www.youtube.com/c/PADeptofEd'},
+              {label: 'Pinterest', href: 'https://www.pinterest.com/PADeptOfEd/'},
+              {label: 'Blog', href: 'https://www.education.pa.gov/SchoolofThought/Pages/Blog.aspx'},
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Bwest8/pimsKB',
-              },
+              {label: 'Blog', to: '/blog'},
+              {label: 'GitHub', href: 'https://github.com/Bwest8/pimsKB'},
             ],
           },
         ],
