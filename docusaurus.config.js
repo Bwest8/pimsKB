@@ -107,7 +107,7 @@ const config = {
             label: 'Manual',
           },
           {to: '/blog', label: 'How-To Guides', position: 'left'},
-          {to: '/dqe', label: 'DQE Rules', position: 'left'},
+          {to: '/blog', label: 'DQE Rules', position: 'left'},
           {
             href: 'https://github.com/Bwest8/pimsKB',
             label: 'GitHub',
