@@ -1,0 +1,694 @@
+---
+title: October Staff Data Set
+description: October Staff Data Set
+displayed_sidebar: howToGuides
+---
+
+# Executive Summary
+
+**Professional Personnel**
+
+The annual October Staff collection in the Pennsylvania Information Management System (PIMS) began in the 2007-08 school year. This data set uses a snapshot to summarize a school’s professional staff. The data set is designed to capture all professional-level positions and the people filling those positions in a Local Education Agency (LEA). October Staff data is used in several ways:
+
+-   To inform Pennsylvania education support decisions.
+-   To provide summary statistics for display in the Future Ready PA Index (FRPI).
+-   To inform teacher certification processes with data describing experience.
+-   To fulfill federal reporting requirements
+-   To provide the Pennsylvania Value-Added Assessment System (PVAAS) vendor with termination data for use in accounts management, and
+-   To populate the Pennsylvania Educator Effectiveness Rating System (PEERS) with demographic data, saving users substantial data entry time.
+
+The October Staff data set contains several important pieces of information including:
+
+-   Positions in an LEA (excludes vacancies).
+-   Salaries for all professional staff.
+-   Recent terminations (defined as leaving the LEA, regardless of reason).
+-   Demographic characteristics of employees, used in summary reports; and
+-   Years of experience, both in an LEA and in the school system.
+
+Accurate and complete data are crucial because of the significance this data set has on other data sets and programs. It is critical for the PIMS Administrator to submit, review, and edit the data prior to the closing of the collection one window. It is just as critical for the Chief School Administrator (CSA) to review and confirm the data are accurate prior to signing and submitting the Accuracy Certification Statement (ACS) to the Pennsylvania Department of Education (PDE).
+
+
+**Support Personnel**
+
+The Support Personnel (SupPer) data collection became a part of the PIMS collection in the 2015-16 school year. This data set uses a snapshot of staff to summarize a school’s support staff. The data set is designed to capture support positions in an LEA. Support personnel data is collected exclusively to fulfill federal reporting requirements.
+
+SupPer is a unique PIMS collection because the data are collected as a count for each of several grouping levels, not records representing individuals. The data are grouped in the following ways:
+
+-   Employment status categories
+-   Gender categories
+-   Race/Ethnicity categories
+-   Position categories
+
+The SupPer data set reflects an LEA’s support complement on the October 1 snapshot date. PDE collects the data during the October 1 – Collection 1 window. Professional staff data, collected in another data set, are also collected in that window. PDE summarizes the combined October Staff and SupPer data sets in its reports to the United States Department of Education (USDE) through EdFacts. The ACS for the two data sets is combined into a single document to help LEA administrators see exactly how PIMS analysts interpret LEA data submissions and ensure data accuracy.
+
+It is critical for the CSA to review and confirm the data is accurate prior to signing and submitting the staff ACS to PDE.
+
+**EL Coordinator**
+
+The EL Coordinator data collection became a part of the PIMS collection in the 2020-21 school year. This data set identifies a coordinator to receive communications and testing materials related to mandatory ACCESS for ELLs testing provided by WIDA.
+
+Updates of EL Coordinator data are collected through a year-round updateable collection window that allows the English Language Development (ELD) Program Office to maintain a current contact list for providing important policy and procedure communications to LEAs.
+
+**Professional Staff Vacancy**
+
+Staff Vacancy data became a part of the PIMS collection in the 2023-2024 school year. This data provides detailed information of professional positions that remain vacant at the start of the instructional school year. This data will inform the ongoing review of Teacher Shortages and will help to identify target subject areas more accurately in order to drive initiatives intended to combat and prevent future shortages.
+
+# *Professional Personnel*
+
+## Who Must Report
+
+School districts, intermediate units, career and technical centers, charter schools, and state juvenile correctional institutions must report October Staff data.
+
+## What Must Be Reported
+
+LEAs must report all professional personnel who are employed, on long-term leave, or subcontracted from a non-PIMS-reporting entity on October 1 of the reporting year. Staff hired after October 1 are excluded.
+
+This data set contains all positions listed in the *PIMS Manual, Volume 2*, Appendix B. It excludes the following positions:
+
+-   Positions filled by temporary staff (day-to-day temp workers).
+-   Security staff; and
+-   Support positions reported in the Support Personnel (SupPer) data set.
+
+Only report the person who fills a given position, even if they are on long term leave. Do not report the non-permanent person filling the position while the regular employee is on leave. Substitutes are only included when those substitutes fill vacancies.
+
+Professional staff members, including substitutes, who are hired or contracted to fill a temporary need that is not caused by the absence of another staff member should be reported.
+
+LEAs do not need to report assignments for terminated staff, except when terminated staff filled Pennsylvania Inspired Leadership (PIL) assignments.
+
+1.  **What is the** [**Pennsylvania Inspired Leadership (PIL)**](http://www.education.pa.gov/teachers%20-%20administrators/pa%20inspired%20leaders/pages/default.aspx) **program?  
+    **The Pennsylvania Inspired Leadership (PIL) Program is a statewide, standards-based continuing professional education program for school and system leaders. The comprehensive, cohort-based program is focused on developing the capacity of leaders to improve student achievement. Any staff member that holds a PIL position for greater than 90 days must be reported to PIMS.
+
+    Act 45 of 2007 (Act 45) amended Act 48 of 1999 (Act 48) for school leaders in certain school board approved positions. If a staff member serves on a certificate in one of the positions listed below, they are required to earn professional development hours by participating in PIL-approved events. Per Act 48, they must earn 180 continuing professional education hours within the five-year cycle. Per Act 45, the hours must be Act 48 PIL hours. Staff can only earn Act 48 PIL hours by completing courses offered by PIL or by completing PDE-approved courses offered by other providers.
+
+2.  **What Assignment Codes are defined as PA Inspired Leadership (PIL) Positions?**
+
+| **Code** | **Staff Assignments**                          |
+|----------|------------------------------------------------|
+| `1100`     | Elementary Principal                           |
+| `1101`     | Assistant or Vice Elementary Principal         |
+| `1105`     | Secondary Principal                            |
+| `1106`     | Assistant or Vice Secondary Principal          |
+| `1111`     | Principal, K12 or Middle School                |
+| `1112`     | Assistant or Vice Middle School Principal      |
+| `1150`     | Superintendent                                 |
+| `1155`     | Assistant Superintendent                       |
+| `1160`     | Intermediate Unit Executive Director           |
+| `1165`     | Intermediate Unit Assistant Executive Director |
+| `2300`     | Director, Career and Technical Education       |
+
+## October Staff PIMS Templates
+
+The core of this data set comes from two PIMS templates: *Staff Snapshot* and *Staff Assignments.* Both the *Staff Snapshot* and *Staff Assignments* templates are dependent on the *Staff* template. The *Staff Snapshot* and *Staff Assignments* templates have a one-to-many relationship in PIMS.
+
+### **Staff Template**
+
+The *Staff* template contains a list of LEA employees and contractors and their relevant demographic information. The specification for this template is in the Staff domain of the *PIMS Manual Vol. 1*. The template captures one person per record. Contracted Private Vendor personnel should be reported with individually identifiable information to accurately report staffing needs. Individual information for contracted staff, such as PPIDs, should be available from the contracting agency.
+
+The *Staff* template is used in the PVAAS accounts management process described in the C6 PVAAS Data Set manual. The *Staff* template is not referenced in any summary statistics reports.
+
+### **Staff Snapshot Template**
+
+Like the *Staff* template, the *Staff Snapshot* template contains a list of LEA employees and contractors and their relevant demographic information. However, the *Staff Snapshot* template includes a snapshot date field, making this template a date-specific list of contractors and employees. The specification for this template is in the *Staff* domain of the *PIMS Manual Vol. 1*. The template captures one person per record. Contracted Private Vendor personnel should be reported with individually identifiable information to accurately report staffing needs. Individual information for contracted staff, such as PPIDs should be available from the contracting agency.
+
+The *Staff Snapshot* template is used in several PDE reports including published data files. The most used fields in this template describe years of experience, salary, and education.
+
+The *Staff Snapshot* template is also used to deactivate PVAAS accounts once per year. All staff reported as terminated in the snapshot will have accounts deactivated in PVAAS through this process. Note this process is not designed to replace local accounts management effort but is instead an additional way to ensure PVAAS data is only available to those with an educational need for this information.
+
+### **Staff Assignments Template**
+
+The *Staff Assignments* template contains a list of assignments held by LEA staff. The specification for this template is in the *Staff* domain of the *PIMS Manual Vol. 1*. The template captures one assignment per record.
+
+The *Staff Assignments* template is used in several PDE reports, including published data files and reports to the U.S. Department of Education. Many PDE reports group assignments into broader categories. Common categories include classroom teachers, administrators, or coordinate services staff. In some cases, PDE focuses on primary assignments in its reports. This is usually the case in reports focusing on averages.
+
+# Timeline
+
+## September Pre-Collection Data Preparation
+
+-   Check key field data twice – especially PPID
+-   Verify required fields filled with valid values
+-   Ensure non-terminated staff do not have “Exit Date” or “Termination Code” populated
+-   Check the submission file for the correct file name
+
+## Pre-Collection Sandbox Testing
+
+-   Upload data to Sandbox
+-   Run Sandbox error reports
+-   Correct and upload data as needed
+
+## October 1 Collection Window
+
+Submit the following templates to PIMS:
+
+-   *Staff* Template
+-   *Staff Snapshot* Template
+-   *Staff Assignments* Template
+
+## Follow-up, Review and Editing Window
+
+-   Run error reports: PIMSReportsV2\> Staff (listed below Reports to Run)
+-   Make any corrections necessary and test corrections in the PIMS Sandbox
+-   PDE may send out error reports via email notifying LEAs of additional errors that may need to be addressed during this window
+
+## Correction Window
+
+-   Upload data as needed to correct any errors identified in error reports
+-   Re-run error reports to verify that errors have been corrected
+
+## Post Correction Window
+
+Run the LEA Staff Profile ACS report in PIMSReportsV2 and verify that the information is accurate. If all staff information (including SupPer and Staff Vacancy) is correct, sign, scan and return the LEA Staff Profile ACS to PDE at the email address provided on the first page of the ACS.
+
+It is critical for the CSA to review and confirm the data is accurate prior to signing and submitting the LEA Staff Profile ACS to PDE. Accurate reporting and verification through this document ensure your LEA is represented accurately in all reports and that proper funding is allocated to your LEA. This information can be audited, and inaccuracies can result in published audit findings.
+
+# PIMSReports V2 Reports
+
+## Reports to Run
+
+**Run Staff Snapshot & Staff Assignments Template Details Reports in Excel®**
+
+-   No refresh needed
+    -   Location: Staff\> Professional Personnel
+
+**Sort and use filters to analyze data**
+
+-   Ensure all records processed correctly through ETL
+    -   All schools and 0000 represented
+    -   No classroom teachers reported at 0000
+    -   Key administrators reported
+    -   Valid data in all fields
+
+**Run Staff Error Reports**
+
+-   Professional Personnel Edits
+    -   Previous Year Non-Terminated Staff Not in Current Year Staff Snapshot
+    -   Years Experience & Years Experience in District CY-PY
+    -   Duplicate Staff Reported at Other LEAs
+
+**Update LEA source system if errors are identified in the error reports**
+
+-   Re-upload updated files into PIMS
+
+## Accuracy Certification Statement
+
+**Run the Accuracy Certification Statement often:**
+
+-   Wait 90 minutes after refresh at noon or 5:30 a.m.
+    -   Run the LEA Staff Profile ACS after correcting errors identified by the error reports.
+        -   Review the LEA Staff Profile ACS for accuracy.
+    -   Run error reports if you have errors in the ACS.
+
+**Calculations for the LEA Staff Profile ACS**
+
+**Run Staff Assignment Template details report**
+
+**For CY FTE:**
+
+-   Click on column J (Percent Time Assigned) to highlight the entire column. Then look at the calculated figures provided at the bottom of the Excel screen to find the Sum of the highlighted cells.
+-   Divide that Sum value by 100 = CY FTE
+
+    **For Total Non-Terminated Staff reported:**
+
+-   Select Entire Sheet
+-   Click on Data
+-   Select Remove Duplicates
+-   Unselect All
+-   Check PPID
+-   Click ok
+
+This will tell you how many duplicates were removed and how many unique values remain. That unique value is your total number of non-terminated Staff reported.
+
+If you forget to look at unique values remaining, you can simply select column E (PPID) and look at the count value at the bottom of the Excel screen. Subtract 1 if you have column headings.
+
+**Accuracy Certification Statement Submission:**
+
+-   Do not submit the LEA Staff Profile ACS if you have errors on the ACS or PDE feedback report
+    -   Have the chief school administrator sign and submit the LEA Staff Profile ACS
+    -   PDF format recommended
+        -   Email to: **RA-EDACSsubmission@pa.gov**
+    -   Verify SupPer Collection is completed and accurate
+    -   Verify that the Professional Staff Vacancy Collection is complete and accurate
+    -   Run and submit the LEA Staff Profile ACS annually, no later than the ACS due date specified on the Elementary/Secondary Data Collection Calendar
+
+# Frequently Asked Questions
+
+## Staff and Staff Snapshot Templates FAQs
+
+1.  **How should the Staff and Staff Snapshot templates be submitted?**
+-   All professional personnel and school security personnel should be reported in the *Staff* and *Staff Snapshot* templates. Professional staff must be reported in the October snapshot; school security staff must be reported in the June snapshot. See the *Staff to Be Reported in PIMS* section of the *PIMS User Manual, Volume 1*, for more information on which staff members should be reported.
+1.  **Can an LEA decide to populate the Snapshot Date within the Staff template so that the format of this template is consistent with the Staff Snapshot template?**
+-   Yes, LEAs can populate this field. It will be ignored in the *Staff* template.
+1.  **How are staff reported if they are not assigned to a particular school?**
+-   Each LEA will use a generic location code of 9999 for staff working off-site.
+-   Use a generic location code of 0000 for LEA administrators who work at administrative offices and not directly with students, e.g., superintendents, CEO’s, business managers, home and school visitors, etc.
+-   LEAs with a single school location such as charter schools and AVTSs/CTCs should use the single school location for all staff instead of 0000.
+-   Staff who work directly with students at multiple schools, such as psychologists, social workers, and school nurses may be assigned to the location where they spend most of their time.
+1.  **What should be entered in the “annual salary” field if professional personnel are in negotiations working without a contract?**
+-   Submit the most current salaries available and report “NO” in Field 63 (Local Contract).
+1.  **What does annual salary include?**
+-   If the employee is employed by two or more LEAs, enter only the salary for the reporting LEA and enter the percent of time employed within the reporting LEA only. For personnel servicing both elementary/secondary and adult programs, do not include salary covering the adult portion of the assignment.
+-   Do not include fringe benefits or extra pay for extra duties assumed voluntarily, such as coaching and student activity advising.
+-   Enter the full contract salary for personnel on leave and indicate the type of leave in the “Active/Inactive Indicator” column. DO NOT prorate the salary of an individual on leave because they are only receiving a portion of their contracted salary. **NOTE**: Salary for a part-time employee is the yearly salary the employee is being paid. It is neither a per diem rate nor is it converted to a full-time salary.
+-   Salary for employees on charter school leave should be “0.”
+-   Salary for employees on worker’s compensation more than one year should be “0.”
+-   Salary for terminated employees should be “0.”
+-   Do not report hourly rates. Calculate the annual salary based on the estimated number of hours that will be worked and the hourly salary. If necessary, update the figure at the end of the year when the actual amount is known.
+-   Substitutes are not included in this report unless they are filling a vacant position.
+-   Contracted professional staff should be reported with salary information that reflects the actual cost to the LEA for that individual’s services.
+1.  **How do I report the salary of administrators who serve multiple charter schools?**
+-   Charter school administrators are prohibited from receiving compensation from more than one charter school.
+-   Administrators, including the chief executive officer, chief school administrator, and all other employees who by virtue of their positions exercise management or operational oversight responsibilities, shall report their full salary from the school that issues their paycheck.
+-   Enter a zero salary for the other charter schools served by these administrators. Ignore any corresponding feedback report warnings regarding these zero salaries.
+-   Continue to mark these administrators as part-time in the *Staff* and *Staff Snapshot* templates. Divide their percent time assigned in the *Staff Assignment* template among all schools.
+1.  **How do I report terminated staff?**
+-   You will report all staff that left your LEA since the previous school year.
+-   For October 2023 reporting, prior school year terminations will be identified as any staff that left since October 3, 2022
+-   Beginning in October 2024 prior school year terminations will be identified as staff that left over the summer, after June 30, when C6 Staff Updates is closed.
+-   Terminations reported in C1 October Staff should be included in both the Staff and Staff Snapshot templates.
+-   Terminated Staff should be reported with all appropriate termination data populated as follows:
+    -   Field 41, ACTIVE/INACTIVE INDICATOR – T (terminated)
+    -   Field 36, the exit date
+    -   Field 54, the appropriate termination code
+    -   Field 52, ANNUAL SALARY should be 0.
+-   After the Staff Snapshot date, any individual that leaves your LEA through the end of the School Year (6-30-XX) will be reported in C6 Staff updates with Staff template only (unless they are a PIL position) and must have all termination data fields populated as specified above.
+1.  **What termination code do I use to report staff who will no longer be reported but who still work for my LEA?**
+-   Use Termination Code 08 (Other) in Field 54 in the *Staff* and *Staff Snapshot* templates to indicate that staff who still work at the LEA will no longer be reported. This designation is applied to someone reported in a prior year that does not meet reporting requirements, such as support staff.
+1.  **What termination code do I use to correct invalid staff IDs that cannot be deleted?**
+-   Use termination code 15 in Field 54 in the *Staff* and *Staff Snapshot* templates to report staff that were uploaded with an invalid ID. This code should only be used when directed by PDE for specific cases in which a staff record could not be deleted.
+1.  **What happens if an LEA has no directly employed or contracted school security staff?**
+-   If an LEA has no directly employed or contracted security staff, a record indicating this must be entered in the *District Fact* template during the June reporting window. Refer to the *District Domain* section of the *PIMS Manual, Volume 1*. In this case, no school security records should be submitted in the *Staff*, *Staff Snapshot*, *Staff Assignment*, or *Staff Development Fact* templates.
+-   If an LEA is indicating that they have no security staff, there should be a single *District Fact* record with Category 2= ZERO, COUNT= 0. LEAs should not be submitting a record where Category 2= TOTAL.
+1.  **Do staff that provide security services at extracurricular activities such as sports need to be submitted?**
+-   No, these staff do not need to be submitted to PIMS.
+1.  **How do I report staff employed as non-supervisory dean of students?**
+-   Use Code 9900, “Other Not Listed Above (certificated personnel).”
+1.  **How do I report Years Experience (field \#39) & Years Experience In District (field \#43)?**
+-   **NOTE:** Both fields should only include years as a professional in Pre-K12 education.
+-   Years Experience [Field \#39]: This is the total number of years that an individual has worked in one or more educational institutions. Count all years as a professional in education in any state, any LEA, and any professional position. Do not count time in a support personnel position.
+-   Years Experience In District [Field \#43]: This is the total number of consecutive years that an individual has worked for the LEA. Count consecutive years of service in a professional position at your LEA. Do not count time before a break in service. Do not count time in a support personnel position.
+1.  **What fields are used to create a staff members PVAAS access?**
+-   Job Description (Field 8)- Level of access that should be granted in the PVAAS roster verification for this school year:
+    -   SWS- School and Student Access
+        -   SNS- School and No Student Access
+        -   NPA- No PVAAS Access/No Change to PVAAS Access
+-   Email Address (Field 70)
+-   Used in conjunction with the Job Description (Field 8) to create PVAAS user accounts
+-   Work email addresses are strongly recommended
+-   Must be a valid email address ([JohnDoe@LEAName.org](mailto:JohnDoe@LEAName.org))
+1.  **How should I report the School Safety & Security Coordinator?**
+-   Per section 1309-B of the Public School Code of 1949, the School Safety & Security Coordinator must be a School Administrator position which is considered a professional position and should be included in C1 October Staff Snapshot. This position is not part of the June snapshot for security personnel.
+-   Use code 1998 “School Safety & Security Coordinator” and location 0000.
+1.  **What information is required to report Contracted Staff?**
+-   Contracted Staff follow the same data requirements as any other Professional Staff member being reported to PIMS. They must be reported with Staff, Staff Snapshot and Staff Assignment templates and all required fields must be accounted for in those templates.
+-   PPID requires accurate First Name, Last Name and date of birth also be submitted in order to validate the data against what is stored in TIMS.
+-   If Years of Experience and Years of Experience in District are not known for contracted staff members, you may report them the first time as a “1”.
+-   If exact salary is not known you can report the cost of services for your LEA; if more than one individual is contracted for those services, you may divide the cost by the number of contracted staff providing those services.
+-   Contracted Staff should be reported with code “SC” in field 44 (Job Class Code Long)
+-   Contracted Staff should be reported with 1 Staff assignment record for each building that houses students receiving their services and each assignment should have the appropriate, adjusted FTE.
+-   Contracted staff should be reported for responsibility to your LEA only. If they are not filling a full schedule (just for your LEA) they should be reported as part-time status. (Ex. Contracted teacher providing 3 weekly online courses to your students is a part-time instructor for your LEA, regardless of their status with their contracting agency.)
+1.  **How do I know who is considered Contracted Staff that must be reported?**
+-   Please refer to the following diagram: all individuals that are “contracted staff” should be included in your C1 Staff upload.
+
+![Graphical user interface, diagram Description automatically generated](media/836ed88bf45b671c64cc84cefe5f68f4.png)
+
+## Staff Assignment Template FAQs
+
+1.  **Are itinerant elementary teachers, who are reported as teaching physical education, music, computers, and art, required to be reported at all schools at which they teach?**
+    -   Yes. The *Staff Assignments* template allows for LEAs to submit one record per staff member per location and assignment. This means that one staff member can have an unlimited number of location and assignment combinations. Report itinerant teachers at every relevant location.
+    -   **NOTE**: Percent of time for full-time staff should be 100 percent. The values of the Percent Time Assigned fields in all staff members’ Staff Assignment records may add up to more than 100 percent in rare cases. Please check with PDE if you have staff with more than 100 percent.
+    -   For part-time staff, the total must be less than 100 percent.
+2.  **Can a staff member have records for both certificated and non-certificated assignment code?**
+    -   Yes. Certificated staff can be associated with both certificated and non-certificated assignment codes. If a staff member has more than one position, it is possible one is certificated and one is non-certificated. For example, in charter schools it is common for a person to be both the chief administrative officer (non-certificated) and a principal (certificated). Also, a computer teacher (certificated) also could be the school computer technology specialist or director of management information systems (both non-certificated).
+1.  **How are staff reported if they are not assigned to a particular school?**
+    -   Each LEA will use a generic location code of 9999 for the staff working off-site, such as Intermediate Unit staff teaching at another LEA’s building. **NOTE**: Programs located outside a specific building due to lack of space or separate student populations are not necessarily “off site.” Staff should be reported at the appropriate school number. Contact PDE for guidance (see Appendix C for contact information).
+    -   Use a generic code of 0000 for LEA administrators assigned to district offices, who do not work directly with students. Some examples are superintendents, curriculum coordinators, business managers, home and school visitors, etc.
+    -   Psychologists, social workers, school nurses and other itinerants may have multiple assignments reflecting different locations.
+1.  **How do I choose an assignment code?**
+    -   Report the assignment code(s) which best reflects what each employee does. All elementary/secondary professional assignments must be reported. **NOTE**: A professional certificate is the credential an employee holds. Certification codes and assignment codes do not necessarily match. DO NOT report the number found on the professional certificate.
+1.  **Do I need to report assignments for terminated staff?**
+    -   No, you do not report an assignment for terminated staff. Report only active staff and those on leave unless they held a PIL position.
+    -   Terminated individuals holding a PIL position should be reported in Staff Assignment with appropriate end dates.
+1.  **Should I report substitutes?**
+    -   Substitutes are reported only when they are filling a vacancy. Do not report day-to-day substitutes or long-term substitutes replacing staff on leave.
+    -   Professional staff members, including substitutes, who are hired or contracted to fill a temporary need that is not caused by the absence of another staff member should be reported.
+1.  **What is a substitute filling a need?**
+-   A LTS filling a need indicates that you are filling a vacancy not created by the absence of another individual.
+-   An example of a need would be an LEA offering a new Virtual course and hiring an individual for one year to teach that course. The course was never offered before so nobody left to create the vacancy. This individual was hired short-term specifically to fill the need of instructing the new course that is being offered
+1.  **What happens if an LEA has no directly employed or contracted school security staff?**
+    -   If an LEA has no directly employed or contracted security staff, a record indicating this must be entered in the *District Fact* template during the June reporting window. Please refer to the District Section of the PIMS Manual, Volume I. In this case no school security records should be submitted in the *Staff*, *Staff Snapshot*, *Staff Assignments*, or *Staff Development Fact* templates.
+    -   If an LEA is indicating that they have no security staff, there should be a single *District Fact* record with Category 2= ZERO, COUNT= 0. LEAs should not submit a record where Category 2= TOTAL.
+1.  **Do staff that provide security services at extracurricular activities such as sports need to be submitted?**
+    -   No, these staff do not need to be submitted to PIMS.
+1.  **In the past I used a start date of July 1 of the current school year for any assignment that began before the current reporting year. Has that changed?**
+    -   Yes. Enter the true start date into Field 6 of this template. **NOTE: You may not change this field after you upload it the first time.** Field 6 is still a key field, so uploading a record with an updated (different) start date will create a duplicate record.
+2.  **How should the Percent Time Assigned field be populated?**
+    -   Instructors providing cyber instruction should be reported with *Staff Assignment* records and accurate Percent Time Assigned for each building with students that are receiving the cyber education.
+    -   This field is the ratio between the hours of work expected in a position (those hours actually worked) and the hours of work normally expected in a full-time position in the same setting, expressed as a percentage. Please see the following table for examples.
+
+| **Scenario No.** | **Scenario Description**                                                                                                                                                                                                                                                                                                    | **Data to be Reported**                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1                | A business manager is employed by the LEA full-time for the entire school year.                                                                                                                                                                                                                                             | One record for this staff member should be submitted in the *Staff* *Assignments* template. Location Code = 0000 Assignment Code = 9910 Percent Time Assigned = 100 Primary Assignment = Y                                                                                                                                                                                                                                                                      |
+| 2                | A principal is employed by the LEA full-time for the entire school year. This principal is assigned half-time to the high school and half-time to the middle school.                                                                                                                                                        | Two records for this staff member should be submitted in the *Staff* *Assignments* template, one for each school. **Record 1:** Location Code = Middle School Number Assignment Code = 1111 (Principal, K-12 or Middle School) Percent Time Assigned = 60 Primary Assignment = Y **Record 2:** Location Code = High School Number Assignment Code = 1105 (Secondary Principal) Percent Time Assigned = 40 Primary Assignment = N                                |
+| 3                | A kindergarten teacher works half-days at one school for the entire year.                                                                                                                                                                                                                                                   | One record for this staff member should be submitted in the *Staff Assignments* template. Assignment Code = 2843 Percent Time Assigned = 50 Primary Assignment = Y                                                                                                                                                                                                                                                                                              |
+| 4                | A Russian teacher works half-days at one location for only the first semester of the school year.                                                                                                                                                                                                                           | One record for this staff member should be submitted in the *Staff Assignments* template.  Assignment Code = 4480 Percent Time Assigned = 25 Primary Assignment = Y                                                                                                                                                                                                                                                                                             |
+| 5                | An elementary music teacher works full-time at five different locations for only the second semester of the school year.                                                                                                                                                                                                    | Five records for this staff member should be submitted in the *Staff Assignment* template, one for each school. For each record the assignment code will be the same, 7201. The “percent time assigned” will be 10 for each record. (The teacher’s total percent time assigned is 50 percent...full-time for half the school year.) One record must be chosen to have: ‘Primary Assignment = Y’ The four subsequent records must have: ‘Primary Assignment = N’ |
+| 6                | A middle school instructor has a Primary Assignment teaching “in-person” 8th grade Algebra classes for half of the school day at School 1. The other half of the school day the staff member conducts a cyber 8th grade Algebra course for students in two other buildings (Middle School 2, Middle School 3) in their LEA. | Three records for this staff member should be submitted in the *Staff Assignment* template. For each record, the assignment code will be the same, 2860.   **Record 1:** Location Code = Middle School 1 Percent Time Assigned = 50 Primary Assignment= Y **Record 2:** Location Code = Middle School 2 Percent Time Assigned = 25 Primary Assignment= N **Record 3:** Location Code = Middle School 3 Percent Time Assigned = 25 Primary Assignment= N         |
+| 7                | A long-term substitute is hired to teach 3 periods of a cyber-Spanish course at Highschool 1                                                                                                                                                                                                                                | One record for this staff member should be submitted in the *Staff Assignment* template. (The percent time assigned will not equal 100 because this instructor is only teaching three class periods a day and would not be reported as full-time status.) Location Code = Highschool 1 Assignment Code = 4490 Percent Time Assigned = 45 Primary Assignment= Y                                                                                                  |
+
+1.  **When should I report Staff Assignments in C6 Staff Updates?**
+    -   When a staff member holds any of the designated PIL assignment positions for 90 days or more, they must be reported in C6 Staff Updates with Staff and Staff Assignment records. (*Note: You can only upload Staff Assignment records that contain a PIL assignment code in field 3. If you attempt to upload Staff Assignment records for any other assignment codes, you will receive an error*.)
+    -   When adding a new PIL Staff Assignment in C6, that record should be reported with Primary Indicator= N and a data exception request will be required to allow FTE that exceeds 100.
+2.  **How do I report staff that prefer to be identified as neither male nor female?**
+    -   Staff may be identified as non-binary by providing indicator “X” in field 116 (Gender Identity).
+    -   Field 20 (Gender) is a required field and for federal reporting purposes valid values remain M/F only.
+
+# 
+
+# Support Personnel
+
+**Who Must Report**
+
+All public LEAs (school districts, intermediate units, career and technical centers, charter schools, and state juvenile correctional institutions) must report SupPer data.
+
+**What Must Be Reported**
+
+LEAs must report all support personnel who are employed, on long-term leave, or subcontracted from a non-PIMS-reporting entity on October 1 of the reporting year. Staff terminated prior to Oct 1 or hired after October 1 are excluded. This data set contains most positions not reported to the PIMS October Staff data set or the Safe Schools data set. It excludes the following positions:
+
+-   Positions reported in the PIMS October Staff data set;
+-   Positions filled by temporary staff (day-to-day temp workers); and
+-   Security staff
+
+Only report the support personnel who fill a given position, even if they are on long term leave. Do not report the non-permanent person filling the position while the regular employee is on leave.
+
+**SupPer PIMS Template**
+
+To simplify the process of submitting the SupPer collection, PDE provides an Excel spreadsheet that can be downloaded from the [PDE website](http://www.education.pa.gov/) at: [www.education.pa.gov](http://www.education.pa.gov/) under Data & Reporting \> PIMS \> Excel Reporting Tools. This spreadsheet includes Instructions, Reports, and PIMS Input tabs. By entering the counts into the indicated groupings on the Report tab, the PIMS Input tab will be populated and formatted for export as a .CSV file which can then be uploaded to the *District Fact* template.
+
+The *District Fact* template contains many district-level descriptors from several data sets. Specific to this data set, the template contains one record for each count encompassing multiple categories of support staff. A specification of the template (SupPer-specific) can be found in the Support Personnel domain of the *PIMS Manual Volume 1*.
+
+LEAs may also choose to create the PIMS extract directly from their local data systems. Consult the *PIMS Manual Volume 1* for the necessary template specifications.
+
+Listed below are the categories into which the counts are grouped.
+
+**Employment Status (Full Time / Part Time)**
+
+-   Full-Time – An employee who works at least five hours a day, five days a week, or the equivalent of 25 hours a week.
+-   Part-Time – A salaried employee or hourly employee who works less than five hours a day, five days a week, or less than 25 hours a week.
+
+**Gender**
+
+Gender is counted according to the designation on the employee’s birth certificate or most recent gender identifying government document.
+
+**Race**
+
+For complete Race/Ethnicity definitions and collection standards, please see the Section, "Race/Ethnicity: Federal Race and Ethnicity Standards" in the *PIMS Manual Volume I*. These categories describe groups to which individuals belong, identify with, or belong to in the eyes of the community. These categories do not denote scientific definitions of anthropological origins.
+
+-   American Indian/Alaskan Native – A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment.
+-   Asian – A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+-   Black or African American – A person having origins in any of the black racial groups of Africa (except those of Hispanic origin).
+-   Hispanic – A person of Mexican, Puerto Rican, Cuban, Central or South American, or other Spanish culture or origin, regardless of race.
+-   Native Hawaiian or Other Pacific Islander – A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+-   White – A person having origins in any of the original peoples of Europe, North Africa, or the Middle East (except those of Hispanic origin).
+-   Two or More Races/Multi-racial – A person having origins in more than one of the previous categories.
+
+**Support Personnel Categories**
+
+-   Instructional Aides – Paid staff members assigned to assist a teacher in activities requiring minor decisions regarding students, and in activities such as monitoring, conducting rote exercises, operating equipment and clerking. This does NOT include volunteer aides.
+-   School Admin Support Staff – Provide direct support to school office administrators, including secretarial and other clerical staff.
+-   Library/Media Support Staff – Render non-educating library or media services, such as preparing, maintaining, and providing instructional staff the equipment, films, filmstrips, tapes, TV programs, transparencies, and similar items (whether maintained separately or as part of an instructional materials center).
+-   LEA Admin Support Staff – Provide direct support to district office LEA administrators, including secretarial and other clerical staff.
+-   All other Support Staff – Support staff not reported in other categories, such as data processing, health, plant and equipment maintenance, bus drivers, security and food service workers.
+
+# Timeline
+
+**September Pre-Collection**
+
+LEAs should obtain a count of SupPer staff and group them into the categories indicated in the previous section. Each SupPer Staff Type, Employment Status, Gender, and Race are combined to make one category to count as illustrated below:
+
+| Position                    | Status    | Gender | American Indian/ Alaskan Native | Black or African American | Hispanic | White | Multi-Racial | Asian | Native Hawaiian/ Pacific Islander |
+|-----------------------------|-----------|--------|---------------------------------|---------------------------|----------|-------|--------------|-------|-----------------------------------|
+| Instructional Aides         | Full Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+|                             | Part Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+| School Admin Support Staff  | Full Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+|                             | Part Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+| Library/Media Support Staff | Full Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+|                             | Part Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+| LEA Admin Support Staff     | Full Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+|                             | Part Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+| All Other Support Staff     | Full Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+|                             | Part Time | Male   |                                 |                           |          |       |              |       |                                   |
+|                             |           | Female |                                 |                           |          |       |              |       |                                   |
+
+It is not necessary to enter zeros in the cells where there are no support personnel to count.
+
+**October 1 Collection Window**
+
+-   Download the SupPer file from the PIMS website ([www.education.pa.gov](http://education.pa.gov) \> Data and Reporting \> PIMS \> Excel Reporting Tools). The year designator will change to reflect the reporting year.
+-   Open the Excel file and select the Instructions tab. Follow all the instructions carefully to complete and upload the SupPer data to PIMS.
+
+**November Correction Window**
+
+Once the above steps are completed you can wait until you receive notification errors, if any are detected by the PDE PIMS review process. If you discover that you have made any errors in your counts or you receive a notice of errors, you can recreate a corrected file from the Excel form and resubmit it following the directions provided on the Instructions tab of the Excel file. The records in the *District Fact* Template are updateable and will be replaced with the corrected version you upload.
+
+**Post Correction Window**
+
+Run the LEA Staff Profile ACS report from PIMSReportsV2 and verify that the SupPer information contained within is correct. If it, along with the other included staff information, is correct, sign, scan, and return the LEA Staff Profile ACS to PDE at the email address provided on the first page of the ACS.
+
+It is critical for the CSA to review and confirm the data is accurate prior to signing and submitting the LEA Staff Profile ACS to PDE. Accurate reporting and verification through this document ensure that proper funding is allocated to an LEA. This information can be audited, and inaccuracies can result in loss of funding.
+
+# PIMSReportsV2
+
+PIMSReportsV2 reports for this data set can be found at the following locations:
+
+-   Staff \> Support Personnel \> **Support Personnel –** **District Fact Template**
+-   Staff \> Support Personnel \> **Support Personnel Details**
+
+# Frequently Asked Questions
+
+1.  **What happens if I need to make a change after I’ve completed the Excel form and submitted the District Fact Template to PIMS?**
+-   The Excel form can be edited and resaved as many times as is necessary. The District Fact Template records are updateable. Resubmit to PIMS to fix errors.
+1.  **Must I fill in zeros in the Excel file for cells where there are no support personnel for my organization?**
+-   No, you may leave those cells blank. The Excel form will add the appropriate zeros where required on the PIMS Input Page tab.
+1.  **Is there a separate ACS for SupPer?**
+-   No, the SupPer information is included on the LEA Staff Profile ACS.
+
+# 
+
+# EL Coordinator
+
+**Who Must Report**
+
+School Districts, Intermediate Units, Career and Technical Centers, Charter Schools, and State Juvenile Correctional Institutions must report EL Coordinator data.
+
+**What Must Be Reported**
+
+LEAs must identify an EL Coordinator in order to receive communications and updates for ACCESS for ELLs, the federally required English language proficiency assessment for all English Learners in the Commonwealth. This information will be submitted to the test vendor and will ensure that only authorized personnel have access to testing materials and LEA test setup information.
+
+**Templates**
+
+EL Coordinator data is submitted using the Person and Person Role templates. To simplify the process of submitting the EL Coordinator collection, PDE provides an Excel spreadsheet that can be downloaded from the [PDE website](http://www.education.pa.gov/) at: [www.education.pa.gov](http://www.education.pa.gov/) under Data & Reporting \> PIMS \> Excel Reporting Tools. This spreadsheet includes Instructions, PIMS Input and Person and Person Role tabs. By entering the information into the indicated PIMS Input tab, the Person and Person Role tabs will be populated and formatted for export as a .CSV file which can then be uploaded to PIMS. The Excel tool allows LEA’s to submit up to four individuals as EL Coordinators.
+
+# 
+
+# Timeline
+
+**October 1 Collection Window**
+
+-   Download the EL Coordinator file from the PIMS website ([www.education.pa.gov](http://education.pa.gov) \> Data and Reporting \> PIMS \> Excel Reporting Tools).
+-   Open the Excel file and select the Instructions tab. Follow all the instructions carefully to complete and upload the Person and Person Role data to PIMS.
+
+**Post Correction Window**
+
+It is important for LEAs to maintain current EL Coordinator information to ensure that they are receiving important communications. If a new individual has been designated as the EL Coordinator outside of the C1 Staff Reporting Collection window, the information can be updated in C6 Staff Updates which is open the entire year.
+
+# Frequently Asked Questions
+
+1.  **What happens if I need to make a change after I’ve completed the Excel form and submitted the Person and Person Role Templates to PIMS?**
+-   The Excel form can be edited and resaved as many times as is necessary. The Person Role records are updateable. Resubmit to PIMS with Active Indicator =N to remove an individual. There is no need to request a delete.
+1.  **We do not have any EL students, do I need to submit EL Coordinator information?**
+-   Yes, if your LEA type falls into one of the categories required to submit EL Coordinator data, you are expected to designate and report at least one individual to ensure that you are up to date on all procedures and information in case you enroll a student that requires EL services.
+1.  **Is there a separate ACS for EL Coordinator?**
+-   There is no ACS for EL Coordinator.
+
+# Professional Staff Vacancy
+
+**Who Must Report**
+
+All public LEAs (school districts, intermediate units, career and technical centers, charter schools, and state juvenile correctional institutions) that report Professional Staff data must report Professional Staff Vacancy.
+
+**What Must Be Reported**
+
+LEAs must report all Professional Staff vacancies as of the Staff Snapshot date.
+
+-   For the purposes of this collection, a vacant position is defined as “an unoccupied position that has been board approved and posted to allow the LEA to proceed through the hiring process”.
+-   Positions that are posted to meet requirements but are currently filled by an individual holding a Type 01 (intent to hire) Emergency Certificate are not considered a vacancy and should not be reported
+-   Vacancy reporting only applies to Professional Staff and should only include assignment codes found in PIMS Manual, Volume 2, Appendix B
+-   Assignment code 9998 is reserved for Security Staff and should not be reported as a vacancy as this code is only reportable for the Safe Schools data collection.
+
+**District Fact for Professional Staff Vacancy PIMS Template**
+
+For complete details on required fields and Valid Values, please review the District Fact for Professional Staff Vacancy Template details provided in PIMS Manual, Volume 1. Listed below are important data fields and reporting guidance:
+
+**Field 3 (CATEGORY 01)**
+
+-   Constant Value of PROFSTAFF
+-   Indicates that this District Fact Template is intended for reporting the Professional Staff Vacancy Data collection
+
+**Field 4 (CATEGORY 02)**
+
+-   Constant Value of VACANCY
+-   Indicates that this District Fact Template is intended for reporting the Professional Staff Vacancy Data collection
+
+**Field 5 (CATEGORY 03)**
+
+-   Valid Staff Assignment Code from PIMS Manual Volume 2, Appendix B
+-   Cannot be assignment code 9998, Security Staff
+-   If there are no current vacancies to report as of the Snapshot date, then enter the value NONE
+
+**Field 6 (MEASURE TYPE)**
+
+-   Constant Value of COUNT
+
+**Field 7 (COUNT)**
+
+-   Provide the number of current vacancies for the Staff Assignment code provided in CATEGORY 03
+-   If no vacancies to report and CATEGORY 03 was reported as NONE, then Field 7 (COUNT) must be= 0
+-   Note that Assignment codes provided in CATEGORY 03 will be reported separately for Full-time (F) and Part-time (P). If multiple vacancies exist, provide only the count for either Full-time or Part-time status as indicated in Field 11.
+
+**Field 11 (CATEGORY 04)**
+
+-   Staff Employment Type Code should reflect if you are reporting a staff vacancy position that is full-time (F) or part-time (P)
+-   If a Staff Assignment code is reported in CATEGORY 03 for which you have both full-time and part-time vacancies, each should have a separate record in the District Fact template with a unique Count value in Field 7
+-   If you have no vacancies to report and CATEGORY 03 was reported as NONE, then Field 11 should = NA
+
+**Field 12 (CATEGORY 05)**
+
+-   Valid Staff Status Code indicates how the position is being filled during the hiring process
+-   LTS (Long Term Sub) - indicates an individual that is board approved to fill the position long-term. This individual should also be reported in C1 Professional Staff
+-   STS (Short Term Sub) - indicates that the position is being filled by a short-term or day-to-day sub. This individual is not reportable in C1 Professional Staff
+-   NS (Not Staffed) - indicates that the position is not currently staffed. Examples shown below:
+    -   Vacant classroom teacher position is being covered by other classroom teachers that have a free period, on a day-to-day basis.
+    -   Vacant classroom teacher position where students are reassigned to an alternate section of the class until the hiring process is completed.
+-   If you have no vacancies to report and CATEGORY 03 was reported as NONE, then field 12 should = NA
+
+**Field 19 (START DATE)**
+
+-   Field 19 must = CY Staff Snapshot Date
+-   Report only board approved, active Vacancies as of the Start Date (Staff Snapshot Date)
+
+# Timeline
+
+## October 1 Collection Window
+
+Submit the following template to PIMS:
+
+-   *District Fact for Professional Staff Vacancy*
+
+## Correction Window
+
+-   Run Validation reports in PIMSReportsV2\> Staff (listed in the next section)
+-   Make any corrections necessary
+-   Upload data as needed to correct any errors
+-   Re-run reports to verify that errors have been corrected
+
+## Post Correction Window
+
+Run the LEA Staff Profile ACS report and verify that the Professional Staff Vacancy information is correct. If all included staff information is correct, then sign, scan and return the LEA Staff Profile ACS to PDE at the email address provided on the first page of the ACS.
+
+It is critical for the CSA to review and confirm the data is accurate prior to signing and submitting the LEA Staff Profile ACS to PDE. Accurate reporting and verification through this document ensure that your LEA is represented accurately in all reports and that proper funding is allocated to your LEA. This information can be audited, and inaccuracies can result in published audit findings.
+
+# PIMSReportsV2
+
+PIMSReportsV2 reports for this data set can be found at the following locations:
+
+-   Staff \> Professional Personnel \> Professional Staff Vacancy- District Fact Template Details
+-   Staff \> Professional Personnel \> Professional Staff Vacancy- District Fact Template Summary
+
+# Frequently Asked Questions
+
+1.  **If I do not have any vacancies to report, do I need to submit District Fact for Professional Staff Vacancy?**
+-   Yes. All LEAs that report C1 Professional Staff data must also report Professional Staff Vacancy.
+-   If you have no vacancies to report, you will upload a single District Fact record indicating that there are no vacancies and will include the following values:
+    -   Field 5 (CATEGORY 03) = NONE
+    -   Field 7 (COUNT) = 0
+    -   Field 11 (CATEGORY 04) = NA
+    -   Field 12 (CATEGORY 05) = NA
+1.  **If our LEA has had a long-term vacant position and does not intend to fill it, should that be reported as a vacancy?**
+-   No. A vacancy must be board approved and posted to allow your LEA to proceed through the hiring process.
+1.  **Is there a separate ACS for Professional Staff Vacancy?**
+-   No. Professional Staff Vacancy data is included on the LEA Staff Profile ACS.
+
+**Common Errors**
+
+1.  **Reporting Professional Staff on Leave**
+-   Professional Staff on leave should be included in the C1 Staff submission unless their position becomes vacant prior to October 1. Leave status should be submitted in Field \#41 (Active/Inactive Indicator) of the *Staff* and *Staff Snapshot* templates.
+-   Staff on leave should be reported with their full, contracted salary amount unless they are on Workman’s Compensation leave that extends beyond one year. Salary should not be prorated or 0.
+1.  **Not reporting a CSA (Chief School Administrator) or CAO (Chief Administrative Officer)**
+-   These errors are shown on the Professional Personnel Edits report. LEAs must report a CSA or CAO. If your LEA’s CSA/CAO position is currently vacant, submit the individual that has been determined to have signing authority for your ACS files as your assigned CSA or CAO.
+-   LEAs must report only one individual as CSA. LEAs should report whoever holds the position and designated signing authority as of October 1.
+1.  **Non-terminated Staff**
+-   Non-Terminated staff are individuals who were reported in the prior year October Staff collection but do not have any records in the current year October Staff collection and do not have a termination record.
+-   Review the *Previous Year Non-Terminated Staff Not in Current Year Staff Snapshot* report.
+-   If the individual on the report is a current employee, you must include records for them in *Staff*, *Staff Snapshot* and *Staff Assignment*.
+-   If the individual is no longer an employee of your LEA, you should upload complete termination data as follows:
+    -   Field 36 (Exit Date) = Last date of employment
+        -   Field 41 (Active/Inactive Indicator) = T
+        -   Field 52 (Annual Salary) = 0
+        -   Field 54 (Termination Code) - See PIMS Manual, Volume 2, Appendix AO
+        -   *Staff* and *Staff Snapshot* records only.
+-   Terminated staff should not have a *Staff Assignment* record unless they were in a PIL position.
+1.  **Years of Experience**
+-   Review the *Years Experience & Years Experience in District CY-PY* report.
+-   PIMS Staff reporting is not reported for PSERS and does not align with the calculated years of service toward retirement.
+-   Staff should accumulate one year of experience for every year that is worked in one or more educational institutions, regardless of calculated days of service.
+-   Staff should accumulate one year of experience in the district for every consecutive year that is worked in your LEA, regardless of calculated days of service. *Note: Do not count time before a break in service. Do not count time in a support personnel position.*
+1.  **Contracted Staff**
+-   Contracted Staff should be reported for their responsibility to your LEA only.
+-   A contracted individual should be reported as full-time status if they carry a full instructional schedule and/or work week (approximately 7 class periods daily or 35-40 hours) for just your LEA.
+-   Contracted individuals that are providing part-time services for your LEA should be reported with adjusted FTE (part time = \<100).
+
+# Appendices
+
+## Appendix A – PIMS Elementary/Secondary Collection Calendar
+
+The dates for the collection and correction window and the due date for the Accuracy Certification Statement are available in the *PIMS Elementary/Secondary Collection Calendar* located on PDE’s website.
+
+To access the *PIMS Elementary/Secondary Collection Calendar*:
+
+-   Go to the [PDE website: (www.education.pa.gov)](http://www.education.pa.gov/)
+-   Click Data and Reporting
+-   Select PIMS
+
+![](media/5a45f5a557b30a2f01949e52e5d396fa.png)
+
+-   Select Manuals and Calendar
+
+## Appendix B – Reference
+
+-   The *PIMS Elementary/Secondary Collection Cale*ndar is located on [PDE’s website](http://www.education.pa.gov/Teachers%20-%20Administrators/PIMS/Pages/default.aspx).
+-   PIMS Manual Ver 1.1.1 \> District Domain
+
+## Appendix C – Contact
+
+-   PIMS Application Support (questions related to PIMS uploads): 1-800-661-2423.
+    -   Monday - Friday 8 a.m.- 4 p.m. (closed on holidays)
+    -   www.education.pa.gov \> Data and Reporting \> PIMS Application Support \> PIMS Help Request Form
+-   PIMS Data Collection Team: [RA-DDQDataCollection@pa.gov](mailto:RA-DDQDataCollection@pa.gov).
+-   PIMS October Staff Data Set questions:
+    -   PIMS website resources
+-   No access to PIMS or PIMS Reports:
+    -   LEA’s PIMS Security Administrator
+    -   eGrants Help Desk (ra-eGrantsHelp@pa.gov)
+-   Non-PIMS staffing and certification issues:
+    -   LEA’s human resources staff
+    -   Bureau of School Leadership and Teacher Quality
+    -   Assistance with TIMS
+        -   PDE Website \> Educators \> Certification
