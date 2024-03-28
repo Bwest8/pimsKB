@@ -3,7 +3,7 @@
     "short_name": "PIMS KB",
     "theme_color": "{{themeColor}}",
     "background_color": "#ffffff",
-    "display": "standalone",
+    "display": "minimal-ui",
     "scope": "./",
     "start_url": "/docs/intro",
     "icons": [
