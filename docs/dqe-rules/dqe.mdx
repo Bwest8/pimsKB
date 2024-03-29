@@ -1,17 +1,63 @@
 ---
+title: Course - Rigor Course Code / Indicator Field Agreement Check
 description: DQE Rules Test
 displayed_sidebar: dqeRules
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Course - Rigor Course Code / Indicator Field Agreement Check
 
-<Tabs groupId="operating-systems">
-  <TabItem value="win" label="Windows">Windows in windows.</TabItem>
-  <TabItem value="mac" label="macOS">macOS is macOS.</TabItem>
-</Tabs>
+**ERROR FILENAME**: `rule_306`
 
-<Tabs groupId="non-mac-operating-systems">
-  <TabItem value="win" label="Windows">Windows is windows.</TabItem>
-  <TabItem value="unix" label="Unix">Unix is unix.</TabItem>
-</Tabs>
+This data quality rule checks for mismatches in course characteristics between the template file and PIMS. The rule ensures that the values for the following columns in the template file agree with the corresponding state values in PIMS:
+
+- `DUAL CREDIT`
+- `ADVANCED PLACEMENT INDICATOR`
+- `INTERNATIONAL BACCALAUREATE INDICATOR`
+- `CAMBRIDGE ADVANCED COURSE INDICATOR`
+
+## How the Rule Works
+
+When you upload a file, the data quality engine will compare the values in the specified columns between the template file and state values in PIMS .
+
+The rule will flag any records where there is a mismatch in the course characteristics.
+
+**The rule checks for the following conditions:**
+
+1. If Field 32 `DUAL CREDIT` is `N` in the template file, the state value for `DUAL_CREDIT` should be `NO` in PIMS, and vice versa.
+2. If Field 32 `DUAL CREDIT` is `Y` in the template file, the state value for `DUAL_CREDIT` should be `YES` in PIMS, and vice versa.
+3. If Field 33 `ADVANCED PLACEMENT INDICATOR` is `N` in the template file, the state value for `AP_IND` should be `NO` in PIMS, and vice versa.
+4. If Field 33 `ADVANCED PLACEMENT INDICATOR` is `Y` in the template file, the state value for `AP_IND` should be `YES` in PIMS, and vice versa.
+5. If Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` is `N` in the template file, the state value for `IB_IND` should be `NO` in PIMS, and vice versa.
+6. If Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` is `Y` in the template file, the state value for `IB_IND` should be `YES` in PIMS, and vice versa.
+7. If Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR` is `N` in the template file, the state value for `OTHER_CHARACTERISTIC_IND` should be `NO` in PIMS, and vice versa.
+8. If Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR` is `Y` in the template file, the state value for `OTHER_CHARACTERISTIC_IND` should be `YES` in PIMS, and vice versa.
+
+## What to Expect
+
+When you upload a file, the data quality engine will run the "**Course - Rigor Course Code / Indicator Field Agreement Check**" rule and provide feedback on any records that do not meet the expected conditions. If there are mismatches in the course characteristics between the template file and PIMS, those records will be flagged for review and correction.
+
+:::note
+To ensure a smooth data upload process, please make sure that the course characteristics values are consistent across both the template file and PIMS before uploading your file. This will help maintain data integrity and avoid any issues during the data quality check process.
+:::
+
+## Error Messages
+
+If there are mismatches in the course characteristics between the template file and the state values in PIMS, you may encounter one or more of the following error messages:
+
+```
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Dual Credit Indicator:`XXX` does not match the state value:`XXX`
+
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Advanced Placement Indicator:`XXX` does not match the state value:`XXX`
+
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; International Baccalaureate Indicator:`XXX` does not match the state value:`XXX`
+
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Cambridge Advanced Course Indicator:`XXX` does not match the state value:`XXX`
+```
+
+In these error messages, `XXX` represents the actual values from your template file and PIMS. The message indicates which specific course characteristic does not match between the two data sources.
+
+:::warning
+If you receive any of these error messages, review the flagged records in your template file and ensure that the corresponding course characteristic value matches the one in PIMS. Correct any discrepancies and re-upload the file.
+:::
+
+If you have any questions or need further assistance, please contact PIMS application support or refer to the data upload documentation for more information.
