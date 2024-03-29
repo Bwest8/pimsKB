@@ -21,22 +21,20 @@ This data quality rule checks for mismatches in course characteristics between t
 
 ## How the Rule Works
 
-When you upload a file, the data quality engine will compare the values in the specified columns between the template file and state values in PIMS.
-
-The rule will flag any records where there is a mismatch in the course characteristics.
+When you upload a file, the data quality engine will compare the values in the specified columns between the template file and state values in PIMS. It retrieves the state values using the provided Field 29 - [ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code) from the submitted template. The rule will identify and flag any records containing discrepancies between the course characteristics and the corresponding state values.
 
 **The rule checks for the following conditions:**
 
 | Template File Field                             | Template File Value | PIMS Column                  | PIMS State Value |
-|-------------------------------------------------|---------------------|----------------------------|------------|
-| Field 32 `DUAL CREDIT`                          | `N`                 | `DUAL_CREDIT`              | `NO`       |
-| Field 32 `DUAL CREDIT`                          | `Y`                 | `DUAL_CREDIT`              | `YES`      |
-| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `N`                 | `AP_IND`                   | `NO`       |
-| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `Y`                 | `AP_IND`                   | `YES`      |
-| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` | `N`                 | `IB_IND`                   | `NO`       |
-| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` | `Y`                 | `IB_IND`                   | `YES`      |
-| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `N`                 | `OTHER_CHARACTERISTIC_IND` | `NO`       |
-| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `Y`                 | `OTHER_CHARACTERISTIC_IND` | `YES`      |
+|-------------------------------------------------|---------------------|----------------------------|------------| 
+| Field 32 `DUAL CREDIT`                          | `N`                 | `DUAL_CREDIT`                | `NO`       |
+| Field 32 `DUAL CREDIT`                          | `Y`                 | `DUAL_CREDIT`                | `YES`      |
+| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `N`                 | `AP_IND`                     | `NO`       |
+| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `Y`                 | `AP_IND`                     | `YES`      |
+| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR`| `N`                 | `IB_IND`                     | `NO`       |
+| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR`| `Y`                 | `IB_IND`                     | `YES`      |
+| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `N`                 | `OTHER_CHARACTERISTIC_IND`   | `NO`       |
+| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `Y`                 | `OTHER_CHARACTERISTIC_IND`   | `YES`      |
 
 The rule checks that the values in the specified fields of the template file match the corresponding values in PIMS. If there is a mismatch, the rule will flag the record for review and correction.
 
@@ -45,7 +43,9 @@ The rule checks that the values in the specified fields of the template file mat
 When you upload a file, the data quality engine will run the "**Course - Rigor Course Code / Indicator Field Agreement Check**" rule and provide feedback on any records that do not meet the expected conditions. If there are mismatches in the course characteristics between the template file and PIMS, those records will be flagged for review and correction.
 
 :::note
+
 To ensure a smooth data upload process, please make sure that the course characteristics values are consistent across both the template file and PIMS before uploading your file. This will help maintain data integrity and avoid any issues during the data quality check process.
+
 :::
 
 ## Error Messages
@@ -64,7 +64,7 @@ Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Cambridge Ad
 
 In these error messages, `XXX` represents the actual values from your template file and PIMS. The message indicates which specific course characteristic does not match between the two data sources.
 
-:::warning
+:::warning[Important]
 If you receive any of these error messages, review the flagged records in your template file and ensure that the corresponding course characteristic value matches the one in PIMS. Correct any discrepancies and re-upload the file.
 :::
 
