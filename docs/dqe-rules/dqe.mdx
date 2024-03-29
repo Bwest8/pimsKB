@@ -8,7 +8,9 @@ displayed_sidebar: dqeRules
 
 **ERROR FILENAME**: `rule_306`
 
-This data quality rule checks for mismatches in course characteristics between the template file and PIMS. The rule ensures that the values for the following columns in the template file agree with the corresponding state values in PIMS:
+## Description
+
+This data quality rule checks for mismatches in course characteristics between the template file and PIMS. The rule ensures that the values for the following columns in the Course template file agree with the corresponding state course values in PIMS ([Appendix A](../appendix/appendix-A.mdx)):
 
 **Template:** [Course](../templates/course/course.mdx)
 
@@ -19,20 +21,24 @@ This data quality rule checks for mismatches in course characteristics between t
 
 ## How the Rule Works
 
-When you upload a file, the data quality engine will compare the values in the specified columns between the template file and state values in PIMS .
+When you upload a file, the data quality engine will compare the values in the specified columns between the template file and state values in PIMS.
 
 The rule will flag any records where there is a mismatch in the course characteristics.
 
 **The rule checks for the following conditions:**
 
-1. If Field 32 `DUAL CREDIT` is `N` in the template file, the state value for `DUAL_CREDIT` should be `NO` in PIMS, and vice versa.
-2. If Field 32 `DUAL CREDIT` is `Y` in the template file, the state value for `DUAL_CREDIT` should be `YES` in PIMS, and vice versa.
-3. If Field 33 `ADVANCED PLACEMENT INDICATOR` is `N` in the template file, the state value for `AP_IND` should be `NO` in PIMS, and vice versa.
-4. If Field 33 `ADVANCED PLACEMENT INDICATOR` is `Y` in the template file, the state value for `AP_IND` should be `YES` in PIMS, and vice versa.
-5. If Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` is `N` in the template file, the state value for `IB_IND` should be `NO` in PIMS, and vice versa.
-6. If Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` is `Y` in the template file, the state value for `IB_IND` should be `YES` in PIMS, and vice versa.
-7. If Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR` is `N` in the template file, the state value for `OTHER_CHARACTERISTIC_IND` should be `NO` in PIMS, and vice versa.
-8. If Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR` is `Y` in the template file, the state value for `OTHER_CHARACTERISTIC_IND` should be `YES` in PIMS, and vice versa.
+| Template File Field                             | Template File Value | PIMS Column                  | PIMS State Value |
+|-------------------------------------------------|---------------------|----------------------------|------------|
+| Field 32 `DUAL CREDIT`                          | `N`                 | `DUAL_CREDIT`              | `NO`       |
+| Field 32 `DUAL CREDIT`                          | `Y`                 | `DUAL_CREDIT`              | `YES`      |
+| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `N`                 | `AP_IND`                   | `NO`       |
+| Field 33 `ADVANCED PLACEMENT INDICATOR`         | `Y`                 | `AP_IND`                   | `YES`      |
+| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` | `N`                 | `IB_IND`                   | `NO`       |
+| Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR` | `Y`                 | `IB_IND`                   | `YES`      |
+| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `N`                 | `OTHER_CHARACTERISTIC_IND` | `NO`       |
+| Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`  | `Y`                 | `OTHER_CHARACTERISTIC_IND` | `YES`      |
+
+The rule checks that the values in the specified fields of the template file match the corresponding values in PIMS. If there is a mismatch, the rule will flag the record for review and correction.
 
 ## What to Expect
 
