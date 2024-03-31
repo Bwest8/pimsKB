@@ -4,31 +4,34 @@ description: DQE Rules Test
 displayed_sidebar: dqeRules
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Course - Rigor Course Code / Indicator Field Agreement Check
 
 **ERROR FILENAME**: `rule_306`
 
 ## Description
 
-This data quality rule checks for mismatches in course characteristics between the template file and PIMS. The rule ensures that the values for the following columns in the Course template file agree with the corresponding state course values in PIMS ([Appendix A](../appendix/appendix-A.mdx)):
+This data quality rule checks for mismatches in course characteristics between the **[Course](../templates/course/course.mdx)** template file and PIMS. 
 
-**Template:** [Course](../templates/course/course.mdx)
+The rule ensures that the values for the following columns in the Course template file agree with the corresponding state course values in PIMS (**[Appendix A](../appendix/appendix-A.mdx)**):
 
-- Field 32 - [DUAL CREDIT](../templates/course/#32---dual-credit)
-- Field 33 - [ADVANCED PLACEMENT INDICATOR](../templates/course/#33---advanced-placement-indicator)
-- Field 40 - [INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator)
-- Field 97 - [CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator)
+- Field 32 - **[DUAL CREDIT](../templates/course/#32---dual-credit)**
+- Field 33 - **[ADVANCED PLACEMENT INDICATOR](../templates/course/#33---advanced-placement-indicator)**
+- Field 40 - **[INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator)**
+- Field 97 - **[CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator)**
 
 ## How the Rule Works
 
-When you upload a file, the data quality engine compares the values in the specified columns between the template file and state values in PIMS. It retrieves the state values using the provided Field 29 - [ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code) from the submitted template. The rule identifies and flags any records containing discrepancies between the course characteristics and the corresponding state values.
+When you upload a file, the data quality engine compares the values in the specified columns between the template file and state values in PIMS. It retrieves the state values using the provided Field 29 - **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)** from the submitted template. The rule identifies and flags any records containing discrepancies between the course characteristics and the corresponding state values.
 
 The rule checks that the values in the specified fields of the template file match the corresponding values in PIMS:
 
-- Field 32 `DUAL CREDIT`: `N` in the template file should match `NO` in the `DUAL_CREDIT` column in PIMS, and `Y` should match `YES`.
-- Field 33 `ADVANCED PLACEMENT INDICATOR`: `N` in the template file should match `NO` in the `AP_IND` column in PIMS, and `Y` should match `YES`.
-- Field 40 `INTERNATIONAL BACCALAUREATE INDICATOR`: `N` in the template file should match `NO` in the `IB_IND` column in PIMS, and `Y` should match `YES`.
-- Field 97 `CAMBRIDGE ADVANCED COURSE INDICATOR`: `N` in the template file should match `NO` in the `OTHER_CHARACTERISTIC_IND` column in PIMS, and `Y` should match `YES`.
+- Field 32 [DUAL CREDIT](../templates/course/#32---dual-credit): `N` in the template file should match `NO` in the `DUAL_CREDIT` column in PIMS, and `Y` should match `YES`.
+- Field 33 [ADVANCED PLACEMENT INDICATOR](../templates/course/#33---advanced-placement-indicator): `N` in the template file should match `NO` in the `AP_IND` column in PIMS, and `Y` should match `YES`.
+- Field 40 [INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator): `N` in the template file should match `NO` in the `IB_IND` column in PIMS, and `Y` should match `YES`.
+- Field 97 [CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator): `N` in the template file should match `NO` in the `OTHER_CHARACTERISTIC_IND` column in PIMS, and `Y` should match `YES`.
 
 If there is a mismatch between the values in the template file and PIMS, the rule will flag the record for review and correction.
 
