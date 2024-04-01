@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 **ERROR FILENAME**: `rule_306`
 
-## Description
+## How the Rule Works
 
 This data quality rule checks for mismatches in course characteristics between the **[Course](../templates/course/course.mdx)** template file and PIMS. 
 
@@ -22,7 +22,8 @@ The rule ensures that the values for the following columns in the Course templat
 - Field 40 - **[INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator)**
 - Field 97 - **[CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator)**
 
-## How the Rule Works
+---
+
 
 When you upload a file, the data quality engine compares the values in the specified columns between the template file and state values in PIMS. It retrieves the state values using the provided Field 29 - **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)** from the submitted template. The rule identifies and flags any records containing discrepancies between the course characteristics and the corresponding state values.
 
@@ -39,6 +40,7 @@ If there is a mismatch between the values in the template file and PIMS, the rul
 The **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)** field serves as the key to look up the corresponding state values in PIMS. Ensure that this field is accurately populated in your template file for the data quality engine to retrieve the correct state values for comparison.
 :::
 
+---
 ## Error Messages
 
 If there are mismatches in the course characteristics between the template file and the state values in PIMS, you may encounter one or more of the following error messages:
@@ -55,7 +57,7 @@ Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Cambridge Ad
 <Highlight>
 
 ```
-*In these error messages, `XXX` represents the actual values from your template file and PIMS. The message indicates which specific course characteristic does not match between the two data sources.*
+***In these error messages, `XXX` represents the actual values from your template file and PIMS.***
 
 If you receive any of these error messages, review the flagged records in your template file and ensure that the corresponding course characteristic value matches the one in PIMS. Correct any discrepancies and re-upload the file.
 
