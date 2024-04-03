@@ -277,9 +277,9 @@ const CourseDataTable = () => {
   ];
 
   const rowStyleDescriptions = [
-    { label: "New Course", color: "rgba(255, 255, 0, 0.2)" },
-    { label: "Editorial Update", color: "rgba(0, 255, 0, 0.2)" },
-    { label: "Substantive Update", color: "rgba(0, 0, 255, 0.2)" },
+    { label: "New Course", color: "rgb(255, 255, 214)" },
+    { label: "Editorial Update", color: "rgb(229, 255, 214)" },
+    { label: "Substantive Update", color: "rgb(212, 212, 255)" },
   ];
 
   return (
