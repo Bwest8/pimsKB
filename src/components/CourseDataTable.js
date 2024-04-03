@@ -331,6 +331,7 @@ const CourseDataTable = () => {
         columns={columns}
         data={filteredData}
         pagination
+        paginationPerPage={15}
         expandableRows
         expandableRowExpanded={(row) =>
           expandedRows.includes(row.stateCourseCode)
