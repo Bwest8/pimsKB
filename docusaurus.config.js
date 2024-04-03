@@ -21,6 +21,7 @@ const config = {
   },
 
   plugins: [
+    require.resolve("docusaurus-lunr-search"),
     require.resolve("docusaurus-plugin-image-zoom"),
     [
       "@docusaurus/plugin-pwa",
@@ -89,11 +90,6 @@ const config = {
         config: {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
         },
-      },
-      algolia: {
-        appId: "T8RAD3G5SN",
-        apiKey: "c31109ba778fcf716d6deeb9579e5d85",
-        indexName: "pimskb",
       },
       image: "img/pimskb-social-card.png",
       navbar: {
