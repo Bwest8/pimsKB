@@ -1,9 +1,10 @@
-//src/components/CourseDataTable.js
+// CourseDataTable.js
 
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import courseCodes from "../data/CourseCodes2023-24.json";
 import Link from "@docusaurus/Link";
+import styles from "./CourseDataTable.module.css";
 
 const CourseDataTable = () => {
   const [searchText, setSearchText] = useState("");
@@ -38,25 +39,47 @@ const CourseDataTable = () => {
       cell: (row) => (
         <div>
           {row.isAP === "true" && (
-            <span className="badge badge--primary">AP</span>
+            <span
+              className="badge badge--primary"
+              style={{ marginRight: "5px" }}
+            >
+              AP
+            </span>
           )}
           {row.isIB === "true" && (
-            <span className="badge badge--info badge--black">IB</span>
+            <span className="badge badge--info" style={{ marginRight: "5px" }}>
+              IB
+            </span>
           )}
           {row.isDualCredit === "true" && (
-            <span className="badge badge--success">DC</span>
+            <span
+              className="badge badge--success"
+              style={{ marginRight: "5px" }}
+            >
+              DC
+            </span>
           )}
           {row.isCI === "true" && (
-            <span className="badge badge--warning">CI</span>
+            <span
+              className="badge badge--warning"
+              style={{ marginRight: "5px" }}
+            >
+              CI
+            </span>
           )}
           {row.isFutureReady === "true" && (
-            <span className="badge badge--secondary">FR</span>
+            <span
+              className="badge badge--secondary"
+              style={{ marginRight: "5px" }}
+            >
+              FR
+            </span>
           )}
         </div>
       ),
-      width: "200px",
+      width: "130px",
       selector: (row) => row.badges,
-      headerClassName: "badges-header",
+      headerClassName: styles.badgesHeader,
     },
   ];
 
@@ -105,101 +128,76 @@ const CourseDataTable = () => {
   });
 
   const ExpandableRowComponent = ({ data }) => (
-    <div
-      style={{
-        padding: "1em",
-        background: "#f9f9f9",
-        fontSize: "0.8em",
-        border: "1px solid #ccc",
-        borderTop: "none",
-        borderRadius: "0 0 5px 5px",
-      }}
-    >
+    <div className={styles.expandableRow}>
       <h3>{data.stateCourseName}</h3>
-      <table style={{ borderCollapse: "collapse", width: "100%" }}>
+      <table>
         <thead>
           <tr>
-            <th
-              style={{
-                border: "1px solid #ccc",
-                padding: "0.5em",
-                textAlign: "left",
-              }}
-            >
-              Course Template Field
-            </th>
-            <th
-              style={{
-                border: "1px solid #ccc",
-                padding: "0.5em",
-                textAlign: "left",
-              }}
-            >
-              Valid Value
-            </th>
+            <th>Course Template Field</th>
+            <th>Valid Value</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               29 -{" "}
               <Link to="../templates/course/#29---alternate-course-code">
                 ALTERNATE COURSE CODE
               </Link>
             </td>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               <b>
                 <code>{data.stateCourseCode}</code>
               </b>
             </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               32 -{" "}
               <Link to="../templates/course/#32---dual-credit">
                 DUAL CREDIT
               </Link>
             </td>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               <b>
                 <code>{data.isDualCredit === "true" ? "Y" : "N"}</code>
               </b>
             </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               33 -{" "}
               <Link to="../templates/course/#33---advanced-placement-indicator">
                 ADVANCED PLACEMENT INDICATOR
               </Link>
             </td>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               <b>
                 <code>{data.isAP === "true" ? "Y" : "N"}</code>
               </b>
             </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               40 -{" "}
               <Link to="../templates/course/#40---international-baccalaureate-indicator">
                 INTERNATIONAL BACCALAUREATE INDICATOR
               </Link>
             </td>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               <b>
                 <code>{data.isIB === "true" ? "Y" : "N"}</code>
               </b>
             </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               79 -{" "}
               <Link to="../templates/course/#79---cambridge-advanced-course-indicator">
                 CAMBRIDGE ADVANCED COURSE INDICATOR
               </Link>
             </td>
-            <td style={{ border: "1px solid #ccc", padding: "0.5em" }}>
+            <td>
               <b>
                 <code>{data.isCI === "true" ? "Y" : "N"}</code>
               </b>
@@ -207,12 +205,12 @@ const CourseDataTable = () => {
           </tr>
         </tbody>
       </table>
-      <p style={{ margin: "0 0 0.5em 0", fontWeight: "bold", color: "#333" }}>
-        SCED Code: <span style={{ fontWeight: "normal" }}>{data.scedCode}</span>
+      <p className={styles.scedCodeLabel}>
+        SCED Code: <span className={styles.scedCodeValue}>{data.scedCode}</span>
       </p>
-      <p style={{ margin: "0 0 0.5em 0", fontWeight: "bold", color: "#333" }}>
+      <p className={styles.scedDescriptionLabel}>
         SCED Description: <br />
-        <span style={{ fontWeight: "normal", wordWrap: "break-word" }}>
+        <span className={styles.scedDescriptionValue}>
           {data.scedDescription}
         </span>
       </p>
@@ -259,11 +257,23 @@ const CourseDataTable = () => {
   ];
 
   const badgeDescriptions = [
-    { label: "AP", description: "Advanced Placement" },
-    { label: "IB", description: "International Baccalaureate" },
-    { label: "DC", description: "Dual Credit" },
-    { label: "CI", description: "Cambridge Advanced" },
-    { label: "FR", description: "Future Ready" },
+    {
+      label: "AP",
+      description: "Advanced Placement",
+      className: "badge--primary",
+    },
+    {
+      label: "IB",
+      description: "International Baccalaureate",
+      className: "badge--info",
+    },
+    { label: "DC", description: "Dual Credit", className: "badge--success" },
+    {
+      label: "CI",
+      description: "Cambridge Advanced",
+      className: "badge--warning",
+    },
+    { label: "FR", description: "Future Ready", className: "badge--secondary" },
   ];
 
   const rowStyleDescriptions = [
@@ -272,82 +282,51 @@ const CourseDataTable = () => {
     { label: "Substantive Update", color: "rgba(0, 0, 255, 0.2)" },
   ];
 
-  const getBadgeClassName = (label) => {
-    switch (label) {
-      case "AP":
-        return "badge--primary";
-      case "IB":
-        return "badge--info badge--black";
-      case "DC":
-        return "badge--success";
-      case "CI":
-        return "badge--warning";
-      case "FR":
-        return "badge--secondary";
-      default:
-        return "";
-    }
-  };
-
   return (
     <div>
-      <div style={{ marginTop: "10px", fontSize: "0.8em" }}>
-        <span style={{ fontWeight: "bold" }}>Attribute Key:</span>
-        <div style={{ display: "flex", flexWrap: "wrap", marginTop: "5px" }}>
+      <hr />
+      <div className={styles.legendContainer}>
+        <span className={styles.legendTitle}>Attributes Key:</span>
+        <div className={styles.badgeDescriptionsContainer}>
           {badgeDescriptions.map((badge) => (
-            <div
-              key={badge.label}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginRight: "10px",
-              }}
-            >
-              <span className={`badge ${getBadgeClassName(badge.label)}`}>
+            <div key={badge.label} className={styles.badgeDescription}>
+              <span
+                className={`badge ${badge.className}`}
+                style={{ marginRight: "5px" }}
+              >
                 {badge.label}
               </span>
-              <span style={{ marginLeft: "5px" }}>{badge.description}</span>
+              <span>{badge.description}</span>
             </div>
           ))}
         </div>
       </div>
-      <div style={{ marginTop: "10px", fontSize: "0.8em" }}>
-        <span style={{ fontWeight: "bold" }}>Row Highlight Key:</span>
-        <div style={{ display: "flex", flexWrap: "wrap", marginTop: "5px" }}>
+      <div className={styles.legendContainer}>
+        <span className={styles.legendTitle}>Row Highlight Key:</span>
+        <div className={styles.rowStyleDescriptionsContainer}>
           {rowStyleDescriptions.map((style) => (
-            <div
-              key={style.label}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginRight: "10px",
-              }}
-            >
+            <div key={style.label} className={styles.rowStyleDescription}>
               <div
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  backgroundColor: style.color,
-                  marginRight: "5px",
-                }}
+                className={styles.rowStyleColor}
+                style={{ backgroundColor: style.color }}
               ></div>
               <span>{style.label}</span>
             </div>
           ))}
         </div>
-        <br />
+        <hr />
         <div>
           <input
             type="text"
             id="search"
             placeholder="Search..."
-            style={{ fontSize: "20px", width: "300px" }}
+            className={styles.searchInput}
             value={searchText}
             onChange={handleSearch}
           />
-        </div>{" "}
+        </div>
       </div>
-      <hr />
+      <br />
       <DataTable
         columns={columns}
         data={filteredData}

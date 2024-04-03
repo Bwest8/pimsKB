@@ -1,0 +1,67 @@
+/* CourseDataTable.module.css */
+
+.expandableRow {
+    padding: 1em;
+    background: #f9f9f9;
+    font-size: 0.8em;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .expandableRow table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .expandableRow th,
+  .expandableRow td {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    text-align: left;
+  }
+  .scedCodeLabel,
+  .scedDescriptionLabel {
+    margin: 0 0 0.5em 0;
+    font-weight: bold;
+    color: #333;
+  }
+    .scedCodeValue,
+  .scedDescriptionValue {
+    font-weight: normal;
+    word-wrap: break-word;
+  }
+  
+  .legendContainer {
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+  
+  .legendTitle {
+    font-weight: bold;
+  }
+  
+  .badgeDescriptionsContainer,
+  .rowStyleDescriptionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  
+  .badgeDescription,
+  .rowStyleDescription {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .rowStyleColor {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .searchInput {
+    font-size: 20px;
+    width: 300px;
+  }
