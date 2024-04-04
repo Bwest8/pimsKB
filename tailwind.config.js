@@ -8,7 +8,7 @@ module.exports = {
   },
   blocklist: ["container"],
   darkMode: ["class", '[data-theme="dark"]'],
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "../docs/**/*.mdx"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "../docs/**/*.{md,mdx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -16,14 +16,6 @@ module.exports = {
         jakarta: ['"Plus Jakarta Sans"', ...fontFamily.sans],
         mono: ['"Fira Code"', ...fontFamily.mono],
       },
-      borderRadius: {
-        sm: "4px",
-      },
-      screens: {
-        sm: "0px",
-        lg: "997px",
-      },
-      colors: {},
     },
   },
   plugins: [],
