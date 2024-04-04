@@ -104,7 +104,6 @@ const config = {
       },
       image: "img/pimskb-social-card.png",
       navbar: {
-        hideOnScroll: true,
         logo: {
           alt: "pimsKB Logo",
           src: "img/pimskb-logo-light.png",
