@@ -15,6 +15,7 @@ const config = {
   projectName: "pimsKB",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  staticDirectories: ["static", "data"],
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
