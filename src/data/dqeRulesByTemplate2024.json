@@ -1,0 +1,1472 @@
+[
+  {
+    "templateName": "COURSE",
+    "errorFileName": "rule_131_1",
+    "ruleName": "Course/Course Intructor Snapshot - Missing Course Instructor record",
+    "description": "Course/Course Intructor Snapshot - Missing Course Instructor record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE",
+    "errorFileName": "rule_306",
+    "ruleName": "Course - Rigor Course Code / Indicator Field Agreement Check",
+    "description": "Course - Rigor Course Code / Indicator Field Agreement Check",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE",
+    "errorFileName": "rule_307",
+    "ruleName": "Course/Student Course Enrollment - Course with matching Student Course Enrollment Record",
+    "description": "Course/Student Course Enrollment - Course with matching Student Course Enrollment Record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE",
+    "errorFileName": "rule_525",
+    "ruleName": "Course - Dual Credit=Y, Invalid AUN in Organization Defining Course",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE_ENROLL",
+    "errorFileName": "304b",
+    "ruleName": "Student Course Enrollment/ Course Instructor Snapshot - Student Course Enrollment with matching Course Instructor",
+    "description": "Student Course Enrollment/ Course Instructor Snapshot - Student Course Enrollment with matching Course Instructor",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE_ENROLL",
+    "errorFileName": "rule_304",
+    "ruleName": "Course Instructor Snapshot/Student Course Enrollment - Course Instructor with matching Student Course Enrollment Record",
+    "description": "Course Instructor Snapshot/Student Course Enrollment - Course Instructor with matching Student Course Enrollment Record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE_ENROLL",
+    "errorFileName": "rule_307",
+    "ruleName": "Course/Student Course Enrollment - Course with matching Student Course Enrollment Record",
+    "description": "Course/Student Course Enrollment - Course with matching Student Course Enrollment Record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE_ENROLL",
+    "errorFileName": "rule_511",
+    "ruleName": "Course Enrollment - Valid Staff ID",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "COURSE_ENROLL",
+    "errorFileName": "rule_526",
+    "ruleName": "Course Enroll - DUAL CREDIT STUDENT TAKE CREDIT must be Y or N if Dual Credit=Y",
+    "description": "Course Enrollment - DUAL CREDIT STUDENT TAKE CREDIT must be Y or N if Dual Credit=Y in Course",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CRSE_INSTRUCT_SNAPSHOT",
+    "errorFileName": "304b",
+    "ruleName": "Student Course Enrollment/ Course Instructor Snapshot - Student Course Enrollment with matching Course Instructor",
+    "description": "Student Course Enrollment/ Course Instructor Snapshot - Student Course Enrollment with matching Course Instructor",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CRSE_INSTRUCT_SNAPSHOT",
+    "errorFileName": "rule_131_1",
+    "ruleName": "Course/Course Intructor Snapshot - Missing Course Instructor record",
+    "description": "Course/Course Intructor Snapshot - Missing Course Instructor record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CRSE_INSTRUCT_SNAPSHOT",
+    "errorFileName": "rule_304",
+    "ruleName": "Course Instructor Snapshot/Student Course Enrollment - Course Instructor with matching Student Course Enrollment Record",
+    "description": "Course Instructor Snapshot/Student Course Enrollment - Course Instructor with matching Student Course Enrollment Record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CRSE_INSTRUCT_SNAPSHOT",
+    "errorFileName": "rule_509",
+    "ruleName": "Course Instructor - Valid Staff ID",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CRSE_INSTRUCT_SNAPSHOT",
+    "errorFileName": "rule_539",
+    "ruleName": "Course Instructor - Dual Credit PPID Check",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_CREDENTIAL",
+    "errorFileName": "rule_345",
+    "ruleName": "CTE - Credential school-program match to CTE Fact ",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_CREDENTIAL",
+    "errorFileName": "rule_352",
+    "ruleName": "CTE - Secondary Credential Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_CREDENTIAL",
+    "errorFileName": "rule_353",
+    "ruleName": "CTE - ADULT Credential Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_322",
+    "ruleName": "CTE Student Fact - Secondary CTE Program Enrollment Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_323",
+    "ruleName": "CTE Student Fact - Adult CTE Program Enrollment Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_324",
+    "ruleName": "CTE Student Fact - Secondary CTE Program Concentrator Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_325",
+    "ruleName": "CTE Student Fact - Adult CTE Program Concentrator Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_326",
+    "ruleName": "CTE Student Fact - Secondary Grade 12 CTE Completer Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_327",
+    "ruleName": "CTE Student Fact - Adult Affidavit (AAP) CTE Completer Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_330",
+    "ruleName": "CTE Student Fact - Adult CTE student less than 18 yrs old",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_331",
+    "ruleName": "CTE Student Fact - Secondary CTE student less than 14 or greater than 21 yrs old",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_332",
+    "ruleName": "CTE Student Fact - Program Hours Completed = 0.00",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_333",
+    "ruleName": "CTE Student Fact - Secondary CTE Low or zero enrollments",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_334",
+    "ruleName": "CTE Student Fact - LEA AAP Pell Grant Aggregate Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_335",
+    "ruleName": "CTE Student Fact - Non-senior graduates",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_337",
+    "ruleName": "CTE Student Fact - Grade 12 Continuing CTE",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_343",
+    "ruleName": "CTE Student Fact - CTE Fact Student ID match with June 30 Student Snap",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_344",
+    "ruleName": "CTE - Duplicate secondary CTE school enrollment",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_345",
+    "ruleName": "CTE - Credential school-program match to CTE Fact ",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_346",
+    "ruleName": "CTE - Check Secondary CTE Grade-Level",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_347",
+    "ruleName": "CTE - Pell grant vs. Economically Disadvantaged",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_352",
+    "ruleName": "CTE - Secondary Credential Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_353",
+    "ruleName": "CTE - ADULT Credential Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_354",
+    "ruleName": "CTE - Adult plan grade invalid",
+    "description": "CTE - Adult plan grade invalid",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "CTE_STUDENT_FACT",
+    "errorFileName": "rule_501",
+    "ruleName": "CTE STUDENT FACT - Adult CTE student with PELL Grant counted in multiple programs",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_401",
+    "ruleName": "District Fact - TAS unduplicated total student counts must match across ethnicity and grade category Totals",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_402",
+    "ruleName": "District Fact - SWP unduplicated total student counts must match across ethnicity and grade category Totals",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_403",
+    "ruleName": "District Fact - Nonpublic Served total must match Nonpublic grade category Totals",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_406",
+    "ruleName": "District Fact - Individual count of TAS/Special Category 3 < = Sum of PUBTAS/Grade",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_407",
+    "ruleName": "District Fact - Individual count of SWP/Special Category 3 < = Sum of PUBSWP/Grade",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_532",
+    "ruleName": "District Fact - Professional Staff Vacancy - Assignment Code Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_533",
+    "ruleName": "District Fact - Professional Staff Vacancy CATEGORY 03 Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_537",
+    "ruleName": "District Fact - ESSER - Min 20% LEA Set Aside for Learning Loss",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "DISTRICT_FACT",
+    "errorFileName": "rule_538",
+    "ruleName": "District Fact - ESSER - ARP ESSER LEARNING LOSS 3.D4",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT",
+    "errorFileName": "rule_500",
+    "ruleName": "Incident - must have Incident Offender Record",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR",
+    "errorFileName": "rule_485",
+    "ruleName": "Incident Offender - Assigned to Alternative Education Indicator Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR",
+    "errorFileName": "rule_487",
+    "ruleName": "Incident Offender - Grade Level Code Warning",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR",
+    "errorFileName": "rule_499",
+    "ruleName": "Incident Offender -  must have Incident Offender Infraction record",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR_DSPLNRY_ACTION",
+    "errorFileName": "rule_429",
+    "ruleName": "Incident Offender Disciplinary Action - Only Allow 1 Sanction per Incident - per Offender",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR_DSPLNRY_ACTION",
+    "errorFileName": "rule_484",
+    "ruleName": "Incident Offender Disciplinary Action - Disciplinary Action Code Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR_DSPLNRY_ACTION",
+    "errorFileName": "rule_527",
+    "ruleName": "Incident Offender Disciplinary Action - Discipline Duration greater than estimated school days remaining",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR_INFRACTION",
+    "errorFileName": "rule_483",
+    "ruleName": "Incident Offender Infraction - Infraction Code = 17, Verify two offenders",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_OFFNDR_INFRACTION",
+    "errorFileName": "rule_489",
+    "ruleName": "Incident Offender Infraction - Infraction has victims validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_VICTIM",
+    "errorFileName": "rule_488",
+    "ruleName": "Incident Victim - Grade Level Code Warning",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "INCIDENT_VICTIM",
+    "errorFileName": "rule_489",
+    "ruleName": "Incident Offender Infraction - Infraction has victims validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "Validation155",
+    "ruleName": "Expulsion category totals must match across Gender, Ethnicity, and Grade",
+    "description": "Expulsion category totals must match across Gender, Ethnicity, and Grade",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "Validation156",
+    "ruleName": "Suspension category totals must match across Gender, Ethnicity, and Grade",
+    "description": "Suspension category totals must match across Gender, Ethnicity, and Grade",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "Validation157",
+    "ruleName": "Truancy category totals must match across Gender, Ethnicity, and Grade",
+    "description": "Truancy category totals must match across Gender, Ethnicity, and Grade",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "rule_455",
+    "ruleName": "Location Fact - Bus Drill; NOBUS validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "rule_472",
+    "ruleName": "Location Fact - Drill; Date validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "rule_482",
+    "ruleName": "Location Fact - Security date validation - Location First 90 Days",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "rule_490",
+    "ruleName": "Location Fact - Security dates validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "LOCATION_FACT",
+    "errorFileName": "rule_491",
+    "ruleName": "Location Fact - Drill date reported before FIRSTDAY validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "Rule_160",
+    "ruleName": "Validate Calendar Program Code in School Calendar for specific LEA or LEA type",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "Rule_178",
+    "ruleName": "Validate ACTP Calendar Program Code for approved programs",
+    "description": "Validate ACTP Calendar Program Code for approved programs",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "Validation159",
+    "ruleName": "Invalid use of Act 80 field",
+    "description": "Invalid use of Act 80 field",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "Validation28",
+    "ruleName": "Validate against approved Act 80 days",
+    "description": "Validate against approved Act 80 days",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "Validation53",
+    "ruleName": "Validate student Days Enrolled against days in session",
+    "description": "Validate student Days Enrolled against days in session",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "rule_178a",
+    "ruleName": "Missing ACTP Calendar Program Code for approved CTE programs.",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "rule_450",
+    "ruleName": "Student Calendar Fact - Validate Special Education Indicator in Student Calendar Fact against Student",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "rule_451",
+    "ruleName": "Student Calendar Fact - Validate Percentage of Time Enrolled against Calendar Rotation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_SCHOOL_CALENDAR",
+    "errorFileName": "rule_452",
+    "ruleName": "School Calendar - Change in School Calendar Rotation Pattern for CTE-PT or CTE-PT-H program",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "Validation180",
+    "ruleName": "Validate Residence Status Code against other Student Calendar Fact key fields when SD uploads",
+    "description": "Validate District Code of Instruction against other key fields",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "Validation181",
+    "ruleName": "Validate Residence Status Code against other Student Calendar Fact key fields when CS uploads",
+    "description": "Validate District Code of Residence against other key fields",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "Validation182",
+    "ruleName": "Validate Residence Status Code against other Student Calendar Fact key fields when IU or CTC uploads",
+    "description": "Validate Funding District Code against other key fields",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "Validation183",
+    "ruleName": "Validate Residence Status Code against other Student Calendar Fact key fields when APS,PRRI or SJCI uploads",
+    "description": "Validate Residence Status Code against other key fields",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "Validation53",
+    "ruleName": "Validate student Days Enrolled against days in session",
+    "description": "Validate student Days Enrolled against days in session",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "rule_450",
+    "ruleName": "Student Calendar Fact - Validate Special Education Indicator in Student Calendar Fact against Student",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "rule_451",
+    "ruleName": "Student Calendar Fact - Validate Percentage of Time Enrolled against Calendar Rotation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PIMS_STUDENT_CALENDAR_FACT",
+    "errorFileName": "rule_522",
+    "ruleName": "PIMS Student Calendar Fact - Total Days Error",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "PROGRAMS_FACT",
+    "errorFileName": "rule_512",
+    "ruleName": "Programs Fact - Mode of Instruction Days Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_413",
+    "ruleName": "Student and Enrollment - Student must have a School Enrollment record",
+    "description": "Student must have a School Enrollment record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_414",
+    "ruleName": "Student Snapshot and Enrollment - Student must have a valid School Enrollment re",
+    "description": "Student must have a valid School Enrollment record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_415",
+    "ruleName": "School Enrollment - Proper Enrollment Sequence",
+    "description": "Proper Enrollment Sequence",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_416",
+    "ruleName": "School Enrollment + Student - DELETE reported but no valid Entry",
+    "description": "CheckEnrollment Rule - 416   School Enrollment + Student - DELETE reported but no valid Entry",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_418",
+    "ruleName": "School Enrollment - DELETE record must match an existing Entry or Withdrawal",
+    "description": "418\r\nSchool Enrollment - DELETE record must match an existing Entry or Withdrawal",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_419",
+    "ruleName": "School Enrollment - Student should not have an enrollment record",
+    "description": "419\r\nSchool Enrollment - Student should not have an enrollment record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_431",
+    "ruleName": "School Enrollment - Reported a WD code, verify Graduation Status is valid",
+    "description": "School Enrollment - Reported a WD code, verify Graduation Status is valid",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_475",
+    "ruleName": "Student - School Entry Date/Enrollment Date Validation",
+    "description": "Student - School Entry Date/Enrollment Date Validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_476",
+    "ruleName": "School Enrollment - 2 Transactions per day validation",
+    "description": "School Enrollment - 2 Transactions per day validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_507",
+    "ruleName": "School Enrollment - Student in October Snapshot; WD code validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SCHOOL_ENROLL",
+    "errorFileName": "rule_508",
+    "ruleName": "School Enrollment - Student in October Snapshot Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "Rule_179",
+    "ruleName": "Service Provider is valid APS, invalid Educational Environment",
+    "description": "If Field 70 Service Provider has an ORG TYPE of APS, then Field 44 Primary Setting Code must equal: 01 or 02.",
+    "errorMessage": "Student ID:XXXXXXXXXXX has a Primary Service Provider:XXXXXXXXX (Field 70) equal to a valid APS AUN; Educational Environment (Field 44) must be 01 or 02"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "Validation135",
+    "ruleName": "Educational Environment is 19, 20, or 21, Service Provider Location is invalid",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "Validation36",
+    "ruleName": "Service Provider Location = Public, Educational Environment must be 19, 20 or 21",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "Validation43",
+    "ruleName": "Educational Environment code is 01 or 02 and Service Provider Location is an invalid APS",
+    "description": "Educational Environment code is 01 or 02 and Service Provider Location is an invalid APS",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_312",
+    "ruleName": "Special Education - Exit Reason",
+    "description": "Special Education - Exit Reason",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_313",
+    "ruleName": "Location Code 0000 not valid for Service Provider other than APS or PRRI",
+    "description": "Special Education - Service Provider Location",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_361",
+    "ruleName": "Special Education - Transition IEP Status Code Required; Age >= 14",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_362",
+    "ruleName": "Special Education - (Exit Reason = 05, Special Education = E)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_363",
+    "ruleName": "Special Education - (Exit Reason = 03-reached maximum age, Age = 20,21,22)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_364",
+    "ruleName": "Special Education - (Exit Reason = 01-Grad/02-GED, Age = 16,17,18,19,20,21,22)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_365",
+    "ruleName": "Special Education - (Primary Disability = Challenge Type)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_366",
+    "ruleName": "Special Education Snapshot - Service Provider -AUN is not reported in EdNA",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_367",
+    "ruleName": "Special Education Snapshot - Location of Special Education Services - Location code is not reported in EdNA",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_408",
+    "ruleName": "Special Education Snapshot - Student Special Education = Y or E for Special Education Snapshot record",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_448",
+    "ruleName": "Change in CY Special Education indicator",
+    "description": "Change in CY Special Education indicator",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_519",
+    "ruleName": "Special Ed Snapshot - LEP Status Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_531",
+    "ruleName": "Special Ed Snap - Student Race/Ethnicity matches Special Education Race/Ethnicity",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "SPECIAL_ED_SNAP",
+    "errorFileName": "rule_536",
+    "ruleName": "Special Education - Special Education Exits prior to 12/1",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF",
+    "errorFileName": "Validation148",
+    "ruleName": "Staff - Reported staff member as full-time, total FTE in Staff Assignment <> 100%",
+    "description": "Staff - FTE for full-time staff <> 100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF",
+    "errorFileName": "Validation149",
+    "ruleName": "Staff - Reported staff member as part-time, total FTE in Staff Assignment >=100%",
+    "description": "FTE for part-time staff >=100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF",
+    "errorFileName": "rule_TIMS_StaffFirstNameAndDOB",
+    "ruleName": "Staff - FirstName(3) & DOB Check",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation145",
+    "ruleName": "Staff/Staff Snapshot - Reported staff member as full-time, total FTE in Staff Assignment > 150%",
+    "description": "FTE for full-time staff > 150%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation148",
+    "ruleName": "Staff - Reported staff member as full-time, total FTE in Staff Assignment <> 100%",
+    "description": "Staff - FTE for full-time staff <> 100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation148a",
+    "ruleName": "Staff Snapshot - Reported staff member as full-time, total FTE in Staff Assignment <> 100%",
+    "description": "Staff Snapshot - FTE for full-time staff <> 100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation149",
+    "ruleName": "Staff - Reported staff member as part-time, total FTE in Staff Assignment >=100%",
+    "description": "FTE for part-time staff >=100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation149a",
+    "ruleName": "Staff Snapshot - Reported staff member as part-time, total FTE in Staff Assignment >=100%",
+    "description": "FTE for part-time staff >=100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation151",
+    "ruleName": "Staff Snapshot - Active staff member reported without a Staff Assignment",
+    "description": "Staff Snapshot - Active staff member reported without a Staff Assignment",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "Validation302",
+    "ruleName": "Staff Assignment - Reported without a Staff Snapshot record",
+    "description": "Staff Assignment - Staff member reported without a Staff Snapshot record",
+    "errorMessage": "Staff Assignment - Staff member reported without a Staff Snapshot record"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "rule_131_x",
+    "ruleName": "Staff Assignment - Invalid Location Code",
+    "description": "131- Staff Assignment - Invalid Location Code",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "rule_316",
+    "ruleName": "Staff Assignment - Verify Primary Assignment",
+    "description": "Staff Assignment - Verify Primary Assignment",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_ASSIGNMENT",
+    "errorFileName": "rule_430",
+    "ruleName": "Staff Assignment - Duplicate Assignment",
+    "description": "Prevents duplicate assignments at the same location from being uploaded, regardless of Primary Assignment, Assignment Date, Completion Date & FTE being different.",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "Validation148a",
+    "ruleName": "Staff Snapshot - Reported staff member as full-time, total FTE in Staff Assignment <> 100%",
+    "description": "Staff Snapshot - FTE for full-time staff <> 100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "Validation149a",
+    "ruleName": "Staff Snapshot - Reported staff member as part-time, total FTE in Staff Assignment >=100%",
+    "description": "FTE for part-time staff >=100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "Validation151",
+    "ruleName": "Staff Snapshot - Active staff member reported without a Staff Assignment",
+    "description": "Staff Snapshot - Active staff member reported without a Staff Assignment",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "Validation302",
+    "ruleName": "Staff Assignment - Reported without a Staff Snapshot record",
+    "description": "Staff Assignment - Staff member reported without a Staff Snapshot record",
+    "errorMessage": "Staff Assignment - Staff member reported without a Staff Snapshot record"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "rule_317",
+    "ruleName": "Staff Snapshot - Verify Annual Salary",
+    "description": "Staff Snapshot - Verify Annual Salary",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "rule_456",
+    "ruleName": "Staff Snapshot - Duplicate Terminations",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "rule_457",
+    "ruleName": "Staff Snapshot - Annual Salary >=25% CY-PY",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "rule_477",
+    "ruleName": "Staff Snapshot - Years Experience & Years Experience in District CY-PY validation",
+    "description": "Staff Snapshot - Years Experience & Years Experience in District CY-PY validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_SNAPSHOT",
+    "errorFileName": "rule_TIMS_StaffSnapshotFirstNameAndDOB",
+    "ruleName": "Staff Snapshot - FirstName(3) & DOB Check",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_STUDENT_SUBTEST",
+    "errorFileName": "Validation20",
+    "ruleName": "Staff Student Subtest - Invalid grade and subtest identifier combination",
+    "description": "Staff Student Subtest - Invalid grade and subtest identifier combination",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_STUDENT_SUBTEST",
+    "errorFileName": "rule_458",
+    "ruleName": "Staff Student Subtest - Duplicate Teacher/Student/Assessment",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_STUDENT_SUBTEST",
+    "errorFileName": "rule_520",
+    "ruleName": "Staff Student Subtest - Job Description NPA validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_STUDENT_SUBTEST",
+    "errorFileName": "rule_524",
+    "ruleName": "Staff Student Subtest - PASA Test Taker with PSSA Subtest Records",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STAFF_STUDENT_SUBTEST",
+    "errorFileName": "rule_534",
+    "ruleName": "Staff Student Subtest - Non PASA Test Taker with PASA Subtest Records",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Rule_320",
+    "ruleName": "Student - Check Retained Grade",
+    "description": "Student - Check Retained Grade",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Rule_UID_Student_LastnameDOB",
+    "ruleName": "Validation UID Student First(3)Name/Last Name/DOB/Gender",
+    "description": "Validation UID Student First(3)Name/Last Name/DOB/Gender",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "StudentReportedGraduated",
+    "ruleName": "Student reported as a graduate",
+    "description": "Student reported as a graduate",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation301",
+    "ruleName": "Student - School grade level not in the EdNA grade configuration for this school",
+    "description": "Student - School grade level is not in the EdNA grade configuration for this school",
+    "errorMessage": "Student - School grade level is not in the EdNA grade configuration for this school"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation76PY11",
+    "ruleName": "Student -District Code of Enrollment validation",
+    "description": "Student -District Code of Enrollment validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation76PY12",
+    "ruleName": "Verify year to year change in a students \"Displaced Homemaker\" classification.",
+    "description": "Verify year to year change in a students \"Displaced Homemaker\" classification.",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation76PY5",
+    "ruleName": "Change in Special Education indicator PY was Y and CY is N",
+    "description": "Change in Special Education indicator PY was Y and CY is N",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation76PY6",
+    "ruleName": "Student - Valid EL Status Reported; CY-PY",
+    "description": "Valid EL Status Reported; CY-PY",
+    "errorMessage": "na"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "Validation76PY7",
+    "ruleName": "Repeating Last Year reported Y, PY grade level not equal to CY grade level ",
+    "description": "Repeating Last Year reported Y, PY grade level not equal to CY grade level ",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_311",
+    "ruleName": "Student - Graduation Status Code J Check",
+    "description": "Student - Graduation Status Code J Check",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_312",
+    "ruleName": "Special Education - Exit Reason",
+    "description": "Special Education - Exit Reason",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_362",
+    "ruleName": "Special Education - (Exit Reason = 05, Special Education = E)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_363",
+    "ruleName": "Special Education - (Exit Reason = 03-reached maximum age, Age = 20,21,22)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_364",
+    "ruleName": "Special Education - (Exit Reason = 01-Grad/02-GED, Age = 16,17,18,19,20,21,22)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_365",
+    "ruleName": "Special Education - (Primary Disability = Challenge Type)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_368",
+    "ruleName": "Student - SD,CS,Comp CTC Grade 09 Entry Required",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_413",
+    "ruleName": "Student and Enrollment - Student must have a School Enrollment record",
+    "description": "Student must have a School Enrollment record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_420",
+    "ruleName": "Student - Special Ed Ref = Y only for Org Types of SD or CS - Special Ed must = Y or E",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_447",
+    "ruleName": "Student - CY Graduation Status Code = S, student was not reported as a Graduate in PY",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_448",
+    "ruleName": "Change in CY Special Education indicator",
+    "description": "Change in CY Special Education indicator",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_470",
+    "ruleName": "Student - Location Code of Residence; EdNA grade level validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_474",
+    "ruleName": "Student - Age/Grade Validation",
+    "description": "Student - Age/Grade Validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_475",
+    "ruleName": "Student - School Entry Date/Enrollment Date Validation",
+    "description": "Student - School Entry Date/Enrollment Date Validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_478",
+    "ruleName": "Student - Student Status Validation",
+    "description": "Student - Student Status Validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_480",
+    "ruleName": "Student - Grade 09 Entry Range",
+    "description": "Student - Grade 09 Entry Range",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_481",
+    "ruleName": "Special Ed Snapshot - Student Status/Primary Placement Status Validation.",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_492",
+    "ruleName": "Validation UID Student First Name/Last Name/DOB/Gender",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_496",
+    "ruleName": "Student - Access for ELLs Assessment Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_502",
+    "ruleName": "Student - Students at 9999 Location",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_504",
+    "ruleName": "Student - ELA Assessment Exemption months Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_506",
+    "ruleName": "Student - Reported a Graduation Status, verify WD code is valid",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_513",
+    "ruleName": "Student - Spec Ed student PIMS field 38=Y, Grad Status populated and field 38=E",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_514",
+    "ruleName": "Student - PASA Testing Agency is not reported in EdNA",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_516",
+    "ruleName": "Student - Diploma Type Code (Keystone Diploma) Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_517",
+    "ruleName": "Student - BID School Number Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_521",
+    "ruleName": "Student - ELA Assessment Exemption Indicator: Y - Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_523",
+    "ruleName": "Student - Reporting a Grad Status = G, Student record exists in the next school year",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_529",
+    "ruleName": "Student - Invalid ID Check",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_535",
+    "ruleName": "Student - Sending Charter School; EdNA grade level validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_69",
+    "ruleName": "Student - Secondary Students cannot be reported in Adult CTE Programs",
+    "description": "Student - Secondary Students cannot be reported in Adult CTE Programs",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_80",
+    "ruleName": "Student - Change in CY Graduation Status Code",
+    "description": "Student - Change in CY Graduation Status Code",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT",
+    "errorFileName": "rule_grade9EntryDaye_v2",
+    "ruleName": "Student - Grade 9 Entry Date Check v2",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT_AWARD_FACT",
+    "errorFileName": "rule_473",
+    "ruleName": "Student Award Fact - Student Grade Level Validation (007-012)",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUDENT_FACT",
+    "errorFileName": "rule_408",
+    "ruleName": "Student Fact - Student Special Education = Y or E for Student Fact record",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "Rule_UID_StudSnapshot_LastnameDOB",
+    "ruleName": "Validation UID Student Snapshot First(3)Name/Last Name/DOB/Gender",
+    "description": "Validation UID Student Snapshot First(3)Name/Last Name/DOB/Gender",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "Validation301a",
+    "ruleName": "Student Snapshot - Sch grade level not in the EdNA grade config for this school",
+    "description": "Student Snapshot - School grade level is not in the EdNA grade configuration for this school",
+    "errorMessage": "Student Snapshot - School grade level is not in the EdNA grade configuration for this school"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "Validation76PY6a",
+    "ruleName": "Student Snapshot - Valid EL Status Reported; CY-PY",
+    "description": "Student Snapshot - Valid EL Status Reported; CY-PY",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "Validation999",
+    "ruleName": "Student Snapshot - CS,COMCTC or SD cannot report 0000",
+    "description": "Student Snapshot - CS,COMCTC or SD cannot report 0000",
+    "errorMessage": "N"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_305",
+    "ruleName": "Student Snapshot - Secondary Students cannot be reported in Adult CTE Programs",
+    "description": "Staff Student Course - Total instructional responsibility cannot exceed 100%",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_324",
+    "ruleName": "CTE Student Fact - Secondary CTE Program Concentrator Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_325",
+    "ruleName": "CTE Student Fact - Adult CTE Program Concentrator Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_326",
+    "ruleName": "CTE Student Fact - Secondary Grade 12 CTE Completer Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_327",
+    "ruleName": "CTE Student Fact - Adult Affidavit (AAP) CTE Completer Total Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_330",
+    "ruleName": "CTE Student Fact - Adult CTE student less than 18 yrs old",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_331",
+    "ruleName": "CTE Student Fact - Secondary CTE student less than 14 or greater than 21 yrs old",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_334",
+    "ruleName": "CTE Student Fact - LEA AAP Pell Grant Aggregate Change",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_335",
+    "ruleName": "CTE Student Fact - Non-senior graduates",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_337",
+    "ruleName": "CTE Student Fact - Grade 12 Continuing CTE",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_343",
+    "ruleName": "CTE Student Fact - CTE Fact Student ID match with June 30 Student Snap",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_346",
+    "ruleName": "CTE - Check Secondary CTE Grade-Level",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_347",
+    "ruleName": "CTE - Pell grant vs. Economically Disadvantaged",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_354",
+    "ruleName": "CTE - Adult plan grade invalid",
+    "description": "CTE - Adult plan grade invalid",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_414",
+    "ruleName": "Student Snapshot and Enrollment - Student must have a valid School Enrollment re",
+    "description": "Student must have a valid School Enrollment record",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_471",
+    "ruleName": "Student Snapshot - Location Code of Residence; EdNA grade level validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_479",
+    "ruleName": "Student Snapshot - Age/Grade Validation",
+    "description": "Student Snapshot - Age/Grade Validation",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_493",
+    "ruleName": "Validation UID Student Snapshot First Name/Last Name/DOB/Gender",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_515",
+    "ruleName": "Student Snapshot - PASA Testing Agency is not reported in EdNA",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_518",
+    "ruleName": "Student Snapshot - BID School Number Validation",
+    "description": "NA",
+    "errorMessage": "NA"
+  },
+  {
+    "templateName": "STUD_SNAPSHOT",
+    "errorFileName": "rule_530",
+    "ruleName": "Student Snapshot - Invalid ID Check",
+    "description": "NA",
+    "errorMessage": "NA"
+  }
+]
