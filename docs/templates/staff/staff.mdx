@@ -58,7 +58,17 @@ The unique, 9-digit Administrative Unit Number (AUN) assigned by PDE for the LEA
 ### 2 - PPID
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
 
-A unique identifier for each staff member; use the 7-digit Professional Personnel ID (PPID) for all certificated staff and non-certificated staff. For school security personnel who have a PPID, report the PPID. For school security personnel without a PPID: Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by SS; or if the school security personnel does not have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by SS.
+A unique identifier for each staff member:
+- For all certificated and non-certificated staff, use the 7-digit Professional Personnel ID (PPID)
+- For school security personnel:
+    - If they have a PPID, report the PPID
+    - If they don't have a PPID:
+        - Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by `SS`
+        - If they don't have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by `SS`
+
+:::warning[Business Rules:]
+The PPID must be consistent across all templates and must not include leading zeroes.
+:::
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>

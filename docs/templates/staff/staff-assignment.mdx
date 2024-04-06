@@ -10,7 +10,7 @@ import Badge from '@site/src/components/badges/badges';
 
 | **Load Sequence/Dependency** |
 |------------------------------|
-| STAFF                        |
+| [Staff](docs/templates/staff/staff.mdx) |
 
 ## Template Description
 
@@ -44,7 +44,13 @@ All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa
 ### 2 - PPID
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
 
-A unique identifier for each staff member; use the 7-digit Professional Personnel ID (PPID) for all certificated staff and non-certificated staff.  For school security personnel who have a PPID, report the PPID.   For school security personnel without a PPID:  Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by SS; or if the school security personnel does not have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by SS.
+A unique identifier for each staff member:
+- For all certificated and non-certificated staff, use the 7-digit Professional Personnel ID (PPID)
+- For school security personnel:
+    - If they have a PPID, report the PPID
+    - If they don't have a PPID:
+        - Use the 5- or 6-digit Municipal Police Officer Training ID (MPTID) preceded by `SS`
+        - If they don't have an MPTID, the LEA must assign the individual a unique and consistent 5- or 6-digit ID preceded by `SS`
 
 :::warning[Business Rules:]
 The PPID must be consistent across all templates and must not include leading zeroes.
@@ -79,11 +85,15 @@ See [Appendix B](docs/appendix/appendix-B.mdx) for a list of valid values.
 ### 4 - SCHOOL NUMBER
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
 
-The PDE-defined, 4-digit code identifying the school where the staff member is assigned.  For Staff Assignment, school security staff should be reported at their individual locations. 0000 should only be used if they are assigned to an administrative building.
+The PDE-defined, 4-digit code identifying the school where the staff member is assigned.  
+
+For Staff Assignment, school security staff should be reported at their individual locations. 
+
+`0000` should only be used if they are assigned to an administrative building.
 
 :::warning[Business Rules:]
-- Classroom teacher positions should not be reported at 0000 (Only applies to the following organizational types: CS, CTC, SD, SJCI).
-- Administrative staff identified as an LEA level position, location must be reported at 0000 (Only applies to the following organizational types: IU, SD, SJCI).
+- Classroom teacher positions should not be reported at `0000` (Only applies to the following organizational types: CS, CTC, SD, SJCI).
+- Administrative staff identified as an LEA level position, location must be reported at `0000` (Only applies to the following organizational types: IU, SD, SJCI).
 :::
 
 <details open>
@@ -112,7 +122,11 @@ A single date (June 30), the last day of the current school year indicating the 
 ### 6 - ASSIGNMENT DATE
 <p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
 
-If the assignment is a continuation from the previous school year, enter the actual date the employee began an assignment. For staff assignments within the current school year, enter the actual start date of the staff assignment.  For school security staff ONLY, you may use 2019-07-01 if the actual start date during the year is unknown.
+If the assignment is a continuation from the previous school year, enter the actual date the employee began an assignment. 
+
+For staff assignments within the current school year, enter the actual start date of the staff assignment.  
+
+For school security staff ONLY, you may use 2019-07-01 if the actual start date during the year is unknown.
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
@@ -125,7 +139,19 @@ If the assignment is a continuation from the previous school year, enter the act
 ### 7 - COMPLETION DATE
 <p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={10} /></p>
 
-Assignment exit date – the date an employee left a specific assignment to move to another assignment in the same LEA, or the date an employee was terminated from the LEA.  This field does not apply to school security staff.
+Assignment Exit Date - represents one of the following:
+
+- The date an employee left a specific assignment to move to another assignment within the same LEA.
+  - This indicates a change in the employee's role or responsibilities within the organization.
+
+**OR**
+
+- The date an employee was terminated from the LEA.
+  - This signifies the end of the employee's employment with the organization.
+
+:::note
+The COMPLETION DATE field does not apply to school security staff.
+:::
 
 :::warning[Business Rules:]
 - Conditionally Required (CR) for PA Inspired Leadership (PIL) positions that have ended.
@@ -150,13 +176,13 @@ Fields not collected. Must be delimited in template file.
 The actual number of hours worked in a position divided by the maximum number of hours the position allows.  See the Staff How-To Guide for more information on this field.
 
 :::note
-The total percent of time for all assignments for the **entire** school year should equal 100 for full-time staff. Accurate value must be reported for all staff, including school security staff.
+- The total percent of time for all assignments for the **entire** school year should equal **100** for full-time staff.
+- In rare instances a staff member may accept additional Pre-K – 12 duties that are beyond the requirements of her full-time position, resulting in a percent time assigned greater than 100.
+- Accurate value must be reported for all staff, including school security staff.
 :::
 
 :::warning[Business Rules:]
-An FTE of 90% should be entered as 90, not as 0.90 (do not include the percentage symbol).
-
-**NOTE:** In rare instances a staff member may accept additional Pre-K – 12 duties that are beyond the requirements of her full-time position, resulting in a percent time assigned greater than 100.
+An FTE of 90% should be entered as `90`, not as 0.90 (**do not include the percentage symbol**).
 :::
 
 <details open>
@@ -177,7 +203,8 @@ An indication of whether the assignment is the staff member's main assignment.
 
 :::warning[Business Rules:]
 - Additional assignments can be submitted for a staff member, but only one assignment can be primary.  
-- Primary Assignment will be used to group staff into categories when averaging salaries. Primary Assignment should be chosen to ensure staff are categorized appropriately in averages.
+- Primary Assignment will be used to group staff into categories when averaging salaries. 
+- Primary Assignment should be chosen to ensure staff are categorized appropriately in averages.
 :::
 
 <details open>
