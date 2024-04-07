@@ -3,15 +3,29 @@ title: Course Instructor Template
 description: Course Instructor Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(22 Fields, 8 Collected, Delimited)**
-
-**Target Table: `CRSE_INSTRUCT`**
-
-| **Load Sequence/Dependencies** |
-|--------------------------------|
-| [Course](docs/templates/course/course.mdx)|
-| [Staff](docs/templates/staff/staff.mdx) |
+<div class="template-info-card">
+  <div class="card">
+    <div class="card__header">
+      <h3>(22 Fields, 8 Collected, Delimited)</h3>
+      <p><strong>Target Table:</strong> <code>CRSE_INSTRUCT</code></p>
+    </div>
+    <div class="card__body">
+      <div class="load-sequence">
+        <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/course">Course</Link>
+          </li>
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/staff">Staff</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Template Description
 

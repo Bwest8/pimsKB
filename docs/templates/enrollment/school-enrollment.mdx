@@ -4,17 +4,26 @@ description: School Enrollment Template Documentation
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(10 Fields, 10 Collected, Delimited)**
-
-**Rules:** See the Rules Section of the Template Domain for rules consistent throughout all templates
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-|  [Student](docs/templates/student/student.mdx)  | 
-
-
-**Target Table(s): `SCHOOL_ENROLL`**
+<div class="template-info-card">
+ <div class="card">
+   <div class="card__header">
+     <h3>(10 Fields, 10 Collected, Delimited)</h3>
+     <p><strong>Target Table(s):</strong> <code>SCHOOL_ENROLL</code></p>
+   </div>
+   <div class="card__body">
+     <div class="load-sequence">
+       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+       <ul class="breadcrumbs">
+         <li class="breadcrumbs__item">
+           <Link to="/docs/templates/student">Student</Link>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</div>
 
 ## Template Description
 

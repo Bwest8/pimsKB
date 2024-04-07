@@ -3,15 +3,29 @@ title: Incident Offender Disciplinary Action Template
 description: Incident Offender Disciplinary Action Template Documentation 
 ---
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(11 Fields, 8 Collected, Delimited)**
-
-**Target Table: `INCIDENT_OFFNDR_DSPLNRY_ACTION`**
-
-| **Load Sequence/Dependencies** |
-|--------------------------------|
-| [Person](docs/templates/discipline/person.mdx) |
-| [Incident Offender](docs/templates/discipline/incident-offender.mdx)             |
+<div class="template-info-card">
+ <div class="card">
+   <div class="card__header">
+     <h3>(11 Fields, 8 Collected, Delimited)</h3>
+     <p><strong>Target Table:</strong> <code>INCIDENT_OFFNDR_DSPLNRY_ACTION</code></p>
+   </div>
+   <div class="card__body">
+     <div class="load-sequence">
+       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+       <ul class="breadcrumbs">
+         <li class="breadcrumbs__item">
+           <Link to="/docs/templates/discipline/person">Person</Link>
+         </li>
+         <li class="breadcrumbs__item breadcrumbs__item">
+           <Link to="/docs/templates/discipline/incident-offender">Incident Offender</Link>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</div>
 
 ## Template Description
 This template is used to track disciplinary sanctions as well as referral to or participation in remedial programs. Each known offender should have one and only one sanction record in this template identifying the "highest" or most severe sanction (Disciplinary Action Code between `S1` and `S10`). If referred to or participating in remedial programs the offender also will have one or multiple additional records in this template with the Disciplinary Action Code between `R1` and `R9`.

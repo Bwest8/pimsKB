@@ -2,17 +2,33 @@
 title: Incident Offender Parent Involvement Template
 description: Incident Offender Parent Involvement Template Documentation
 ---
-import Badge from '@site/src/components/badges/badges';  
+import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(6 Fields, 6 Collected, Delimited)**
-
-**Target Table: `INCIDENT_OFFNDR_PARENT_INVOLVE`**
-
-| **Load Sequence/Dependencies** |
-|--------------------------------|
-| [Incident](docs/templates/discipline/incident.mdx) |
-| [Person](docs/templates/discipline/person.mdx) |
-| [Incident Offender](docs/templates/discipline/incident-offender.mdx)             |
+<div class="template-info-card">
+  <div class="card">
+    <div class="card__header">
+      <h3>(6 Fields, 6 Collected, Delimited)</h3>
+      <p><strong>Target Table:</strong> <code>INCIDENT_OFFNDR_PARENT_INVOLVE</code></p>
+    </div>
+    <div class="card__body">
+      <div class="load-sequence">
+        <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/discipline/incident">Incident</Link>
+          </li>
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/discipline/person">Person</Link>
+          </li>
+          <li class="breadcrumbs__item breadcrumbs__item">
+            <Link to="/docs/templates/discipline/incident-offender">Incident Offender</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Template Description
 This template connects an incident and the offender to one or multiple parental involvement types. If there are multiple parental involvement types for an incident/offender, include multiple records within this template with the same Incident ID and Offender ID. If there is no parental involvement, do not submit a record in this template.

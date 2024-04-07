@@ -4,16 +4,25 @@ description: PIMS School Calendar Template Specifications
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-# School Calendar Template
+<div class="template-info-card">
+ <div class="card">
+   <div class="card__header">
+     <h3>(21 Fields, 19 Collected, Delimited)</h3>
+     <p><strong>Target Table:</strong> <code>PIMS_SCHOOL_CALENDAR</code></p>
+   </div>
+   <div class="card__body">
+     <div class="load-sequence">
+       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+       <p>No Dependencies</p>
+     </div>
+   </div>
+ </div>
+</div>
+<br />
 
-**(21 Fields, 19 Collected, Delimited)**
-
-**Target Table: `PIMS_SCHOOL_CALENDAR`**
-
-**Load Sequence/Dependencies:** No Dependencies
-
-This domain applies to the following organizational types only:
+**This domain applies to the following organizational types only:**
 - School Districts
 - Intermediate Units
 - Career and Technical Centers

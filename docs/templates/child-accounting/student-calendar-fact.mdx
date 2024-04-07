@@ -4,18 +4,32 @@ description: PIMS Student Calendar Fact Template Specifications
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(16 Fields, 15 Collected, Delimited)**
+<div class="template-info-card">
+  <div class="card">
+    <div class="card__header">
+      <h3>(16 Fields, 15 Collected, Delimited)</h3>
+      <p><strong>Target Table:</strong> <code>PIMS_STUDENT_CALENDAR_FACT</code></p>
+    </div>
+    <div class="card__body">
+      <div class="load-sequence">
+        <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/child-accounting/school-calendar">PIMS School Calendar</Link>
+          </li>
+          <li class="breadcrumbs__item">
+            <Link to="/docs/templates/student">Student</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
 
-**Target Table: `PIMS_STUDENT_CALENDAR_FACT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [PIMS School Calendar](school-calendar.mdx)        |
-| [Student](docs/templates/student/student.mdx) |
-
-
-This domain only applies to the following organizational types:
+**This domain only applies to the following organizational types:**
 - School Districts
 - Intermediate Units
 - Career and Technical Centers

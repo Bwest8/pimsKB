@@ -3,18 +3,41 @@ title: Incident Victim Template
 description: Incident Victim Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import Link from '@docusaurus/Link';
 
-**(12 Fields, 11 Collected, Delimited)**
-
-**Target Table: `INCIDENT_VICTIM`**
-
-| **Load Sequence/Dependencies** |
-|--------------------------------|
-| [Incident](docs/templates/discipline/incident.mdx) |
-| [Person](docs/templates/discipline/person.mdx) |
+<div class="template-info-card">
+ <div class="card">
+   <div class="card__header">
+     <h3>(12 Fields, 11 Collected, Delimited)</h3>
+     <p><strong>Target Table:</strong> <code>INCIDENT_VICTIM</code></p>
+   </div>
+   <div class="card__body">
+     <div class="load-sequence">
+       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
+       <ul class="breadcrumbs">
+         <li class="breadcrumbs__item">
+           <Link to="/docs/templates/discipline/incident">Incident</Link>
+         </li>
+         <li class="breadcrumbs__item">
+           <Link to="/docs/templates/discipline/person">Person</Link>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</div>
 
 ## Template Description
-This template connects one or multiple victims to each specific incident. In cases of incidents when there are crimes against property, such as vandalism in Field 5 of this template, Valid Value 8 (school/school facility) should be used. Note that not all incidents will have a victim. For example, a fighting incident will not have a victim (all parties are considered offenders in this case). See [Appendix Z](docs/appendix/appendix-Z.mdx) for more information (the "Infraction has Victims" column). If there are no victims associated with the incident, do not submit any records in this template.
+
+This template is designed to connect one or multiple victims to each specific incident. It is important to note that not all incidents will have a victim. For example, a fighting incident will not have a victim as all parties involved are considered offenders.
+
+In cases where there are crimes against property, such as vandalism, the value `8` - *school/school facility* should be used in Field 5 - [VICTIM TYPE](#5---victim-type) of this template.
+
+For more information, please refer to [Appendix Z](docs/appendix/appendix-Z.mdx) and check the "*Infraction has Victims*" column. 
+
+:::note
+If there are no victims associated with the incident, please do not submit any records in this template.
+:::
 
 ## Template Specifications {#template-specs}
 
