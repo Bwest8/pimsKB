@@ -3,29 +3,17 @@ title: Incident Victim Template
 description: Incident Victim Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
- <div class="card">
-   <div class="card__header">
-     <h3>(12 Fields, 11 Collected, Delimited)</h3>
-     <p><strong>Target Table:</strong> <code>INCIDENT_VICTIM</code></p>
-   </div>
-   <div class="card__body">
-     <div class="load-sequence">
-       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-       <ul class="breadcrumbs">
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/discipline/incident">Incident</Link>
-         </li>
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/discipline/person">Person</Link>
-         </li>
-       </ul>
-     </div>
-   </div>
- </div>
-</div>
+<TemplateCard
+  fields={12}
+  collected={11}
+  targetTables={['INCIDENT_VICTIM']}
+  dependencies={[
+    { label: 'Incident', link: '/docs/templates/discipline/incident' },
+    { label: 'Person', link: '/docs/templates/discipline/person' }
+  ]}
+/>
 
 ## Template Description
 

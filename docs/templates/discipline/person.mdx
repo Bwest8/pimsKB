@@ -3,26 +3,16 @@ title: Person Template
 description: Person Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
- <div class="card">
-   <div class="card__header">
-     <h3>(10 Fields, 10 Collected, Delimited)</h3>
-     <p><strong>Target Table:</strong> <code>PERSON</code></p>
-   </div>
-   <div class="card__body">
-     <div class="load-sequence">
-       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-       <ul class="breadcrumbs">
-         <li class="breadcrumbs__item breadcrumbs__item">
-           <Link to="/docs/templates/student">Student</Link>
-         </li>
-       </ul>
-     </div>
-   </div>
- </div>
-</div>
+<TemplateCard
+  fields={10}
+  collected={10}
+  targetTables={['PERSON']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 This template defines the primary details of both offenders and victims.

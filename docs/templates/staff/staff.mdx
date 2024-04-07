@@ -3,12 +3,14 @@ title: Staff Template
 description: Staff Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(116 Fields, 35 Collected, Delimited)**
-
-**Target Table(s): `STAFF`**
-
-**Load Sequence/Dependencies:** No dependencies
+<TemplateCard
+  fields={116}
+  collected={35}
+  targetTables={['STAFF']}
+  dependencies={[]}
+/>
 
 ## Template Description
 
@@ -24,15 +26,15 @@ Staff that were reported as Active in the previous year and have terminated for 
 
 Staff that leave the LEA for any reason after the C1 Staff Collection should be terminated in C6 Staff updates with Staff template having all termination fields completed.
 
-Fields required for the Safe Schools data set during Collection Window 6:
+**Fields required for the Safe Schools data set during Collection Window 6:**
 
-- Field 1 – SUBMITTING AUN
-- Field 2 – PPID  
-- Field 14 – SCHOOL NUMBER
-- Field 48 - STAFF QUALIFICATION STATUS CODE
-- Field 65 - FIRST NAME
-- Field 66 - LAST NAME 
-- Field 95 - AUTHORIZED TO CARRY WEAPON INDICATOR
+- Field 1 – [SUBMITTING AUN](#1---submitting-aun)
+- Field 2 – [PPID](#2---ppid)
+- Field 14 – [SCHOOL NUMBER](#14---school-number)
+- Field 48 - [STAFF QUALIFICATION STATUS CODE](#48---staff-qualification-status-code)
+- Field 65 - [FIRST NAME](#65---first-name)
+- Field 66 - [LAST NAME](#66---last-name)
+- Field 95 - [AUTHORIZED TO CARRY WEAPON INDICATOR](#95---authorized-to-carry-weapon-indicator)
 
 :::note
 If an LEA has no directly employed or contracted school security personnel, a record indicating this must be entered in the District Fact Template, refer to this section.
@@ -484,7 +486,54 @@ Indicates whether the staff member has a current contract or is working without 
 </details>
 
 ---
-### 64-70
+### 64
+Field not collected. Must be delimited in template file.
+
+--- 
+### 65 - FIRST NAME
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={60} /></p>
+
+A legal name given to an individual at birth, baptism, or during another naming ceremony, or through legal change.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+`Thomas`
+</details>
+
+**eScholar Name**: `FIRST NAME LONG`
+
+---
+### 66 - LAST NAME 
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={60} /></p>
+
+The legal name borne in common by members of a family, also known as the surname.
+
+:::warning[Business Rules:]
+See the October Student How-To Guide for further information.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+`Smith`
+</details>
+
+**eScholar Name**: `LAST NAME LONG`
+
+---
+### 67 - NAME SUFFIX
+<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={10} /></p>
+
+An appendage, if any, used to denote an individual's generation in their family (e.g., Jr., Sr., III).
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Examples: Jr, Sr, II, III, IV, V, etc.
+</details>
+
+---
+### 68-70
 Fields not collected. Must be delimited in template file.
 
 ---

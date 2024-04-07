@@ -4,14 +4,16 @@ description: Student Fact Template Documentation for the Act 16 Report
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(7 Fields, 7 Collected, Delimited)**
-
-**Target Table(s): `STUDENT_FACT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-|  [Student](docs/templates/student/student.mdx)  | 
+<TemplateCard
+  fields={7}
+  collected={7}
+  targetTables={['STUDENT_FACT']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 

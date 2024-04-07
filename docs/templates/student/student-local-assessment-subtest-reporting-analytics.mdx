@@ -3,14 +3,16 @@ title: Student Local Assessment Subtest for Reporting and Analytics
 description: Student Local Assessment Subtest for Reporting and Analytics Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(27 Fields, 19 Collected, Delimited)**
-
-**Target Table(s): `STUDENT_LOCAL_ASSMNT_SUBTEST`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Student](docs/templates/student/student.mdx) |
+<TemplateCard
+  fields={27}
+  collected={19}
+  targetTables={['STUDENT_LOCAL_ASSMNT_SUBTEST']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 

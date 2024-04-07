@@ -4,15 +4,17 @@ description: Staff Student Subtest Template Documentation
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(12 Fields, 12 Collected, Delimited)**
-
-**Target Table: `STAFF_STUDENT_SUBTEST`**
-
-| **Load Sequence/Dependencies** |
-|--------------------------------|
-| [Student](docs/templates/student/student.mdx) | 
-| [Staff](docs/templates/staff/staff.mdx) |
+<TemplateCard
+  fields={12}
+  collected={12}
+  targetTables={['STAFF_STUDENT_SUBTEST']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' },
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
 
 ## Template Description
 

@@ -4,14 +4,16 @@ description: Special Education Snapshot Template Documentation
 ---
 
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(80 Fields, 25 Collected, Delimited)**
-
-**Target Table(s): `SPECIAL_ED_SNAP`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Student](docs/templates/student/student.mdx) | 
+<TemplateCard
+  fields={80}
+  collected={25}
+  targetTables={['SPECIAL_ED_SNAP']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 

@@ -3,29 +3,17 @@ title: Course Instructor Template
 description: Course Instructor Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
-  <div class="card">
-    <div class="card__header">
-      <h3>(22 Fields, 8 Collected, Delimited)</h3>
-      <p><strong>Target Table:</strong> <code>CRSE_INSTRUCT</code></p>
-    </div>
-    <div class="card__body">
-      <div class="load-sequence">
-        <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-        <ul class="breadcrumbs">
-          <li class="breadcrumbs__item">
-            <Link to="/docs/templates/course">Course</Link>
-          </li>
-          <li class="breadcrumbs__item">
-            <Link to="/docs/templates/staff">Staff</Link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<TemplateCard
+  fields={22}
+  collected={8}
+  targetTables={['CRSE_INSTRUCT']}
+  dependencies={[
+    { label: 'Course', link: '/docs/templates/course' },
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
 
 ## Template Description
 

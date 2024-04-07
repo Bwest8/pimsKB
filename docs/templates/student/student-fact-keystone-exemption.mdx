@@ -3,14 +3,16 @@ title: Student Fact Template for Keystone Exemption Reporting
 description: Student Fact Template for Keystone Exemption Reporting Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(13 Fields, 8 Collected, Delimited)**
-
-**Target Table(s): `STUDENT_FACT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Student](docs/templates/student/student.mdx) |
+<TemplateCard
+  fields={13}
+  collected={8}
+  targetTables={['STUDENT_FACT']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 

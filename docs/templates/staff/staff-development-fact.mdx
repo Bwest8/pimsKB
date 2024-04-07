@@ -3,14 +3,16 @@ title: Staff Development Fact Template
 description: Staff Development Fact Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(14 Fields, 5 Collected, Delimited)**
-
-**Target Table(s): `STAFF_DEV_FACT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Staff](docs/templates/staff/staff.mdx) |
+<TemplateCard
+  fields={14}
+  collected={5}
+  targetTables={['STAFF_DEV_FACT']}
+  dependencies={[
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
 
 ## Template Description
 

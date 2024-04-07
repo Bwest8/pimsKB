@@ -3,14 +3,16 @@ title: Staff Snapshot Template
 description: Staff Snapshot Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(116 Fields, 36 Collected, Delimited)**
-
-**Target Table(s): `STAFF_SNAPSHOT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Staff](docs/templates/staff/staff.mdx) |
+<TemplateCard
+  fields={116}
+  collected={36}
+  targetTables={['STAFF_SNAPSHOT']}
+  dependencies={[
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
 
 ## Template Description
 
@@ -31,7 +33,7 @@ Fields required for the Safe Schools data set during Collection Window 6:
 - Field 50 – SNAPSHOT DATE
 - Field 65 – FIRST NAME
 - Field 66 – LAST NAME
-- Field 95 – AUTHORIZED TO CARRY WEAPON INDICATOR
+- Field 95 – [AUTHORIZED TO CARRY WEAPON INDICATOR]
 
 If an LEA has no directly employed or contracted security staff, a record indicating this must be entered in the District Fact Template, refer to this section.
 

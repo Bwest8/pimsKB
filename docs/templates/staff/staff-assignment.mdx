@@ -3,14 +3,16 @@ title: Staff Assignment Template
 description: Staff Assignment Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-**(26 Fields, 9 Collected, Delimited)**
-
-**Target Table(s): `STAFF_ASSIGNMENT`**
-
-| **Load Sequence/Dependencies** |
-|------------------------------|
-| [Staff](docs/templates/staff/staff.mdx) |
+<TemplateCard
+  fields={26}
+  collected={9}
+  targetTables={['STAFF_ASSIGNMENT']}
+  dependencies={[
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
 
 ## Template Description
 

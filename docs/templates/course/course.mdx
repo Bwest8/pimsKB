@@ -3,22 +3,14 @@ title: Course Template
 description: Course Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
-  <div class="card">
-    <div class="card__header">
-      <h3>(79 Fields, 15 Collected, Delimited)</h3>
-      <p><strong>Target Table:</strong> <code>COURSE</code></p>
-    </div>
-    <div class="card__body">
-      <div class="load-sequence">
-        <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-        <p>No dependencies</p>
-      </div>
-    </div>
-  </div>
-</div>
+<TemplateCard
+  fields={79}
+  collected={15}
+  targetTables={['COURSE']}
+  dependencies={[]}
+/>
 
 ## Template Description
 

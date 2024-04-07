@@ -3,32 +3,18 @@ title: Student Course Enrollment Template
 description: Student Course Enrollment Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
- <div class="card">
-   <div class="card__header">
-     <h3>(24 Fields, 14 Collected, Delimited)</h3>
-     <p><strong>Target Table:</strong> <code>COURSE_ENROLL</code></p>
-   </div>
-   <div class="card__body">
-     <div class="load-sequence">
-       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-       <ul class="breadcrumbs">
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/course">Course</Link>
-         </li>
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/student">Student</Link>
-         </li>
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/course/course-instructor">Course Instructor</Link>
-         </li>
-       </ul>
-     </div>
-   </div>
- </div>
-</div>
+<TemplateCard
+  fields={24}
+  collected={14}
+  targetTables={['COURSE_ENROLL']}
+  dependencies={[
+    { label: 'Course', link: '/docs/templates/course' },
+    { label: 'Student', link: '/docs/templates/student' },
+    { label: 'Course Instructor', link: '/docs/templates/course/course-instructor' }
+  ]}
+/>
 
 ## Template Description
 

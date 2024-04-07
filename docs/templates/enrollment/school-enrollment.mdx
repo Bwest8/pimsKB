@@ -4,26 +4,16 @@ description: School Enrollment Template Documentation
 ---
 
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
- <div class="card">
-   <div class="card__header">
-     <h3>(10 Fields, 10 Collected, Delimited)</h3>
-     <p><strong>Target Table(s):</strong> <code>SCHOOL_ENROLL</code></p>
-   </div>
-   <div class="card__body">
-     <div class="load-sequence">
-       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-       <ul class="breadcrumbs">
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/student">Student</Link>
-         </li>
-       </ul>
-     </div>
-   </div>
- </div>
-</div>
+<TemplateCard
+  fields={10}
+  collected={10}
+  targetTables={['SCHOOL_ENROLL']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' }
+  ]}
+/>
 
 ## Template Description
 

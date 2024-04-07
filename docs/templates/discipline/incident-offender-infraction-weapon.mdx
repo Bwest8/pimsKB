@@ -3,35 +3,19 @@ title: Incident Offender Infraction Weapon Template
 description: Incident Offender Infraction Weapon Template Documentation
 ---
 import Badge from '@site/src/components/badges/badges';
-import Link from '@docusaurus/Link';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
 
-<div class="template-info-card">
- <div class="card">
-   <div class="card__header">
-     <h3>(7 Fields, 7 Collected, Delimited)</h3>
-     <p><strong>Target Table:</strong> <code>INCIDENT_OFFNDR_INFR_WEAPON</code></p>
-   </div>
-   <div class="card__body">
-     <div class="load-sequence">
-       <p class="load-sequence__label"><strong>Load Sequence/Dependencies:</strong></p>
-       <ul class="breadcrumbs">
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/discipline/incident">Incident</Link>
-         </li>
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/discipline/person">Person</Link>
-         </li>
-         <li class="breadcrumbs__item">
-           <Link to="/docs/templates/discipline/incident-offender">Incident Offender</Link>
-         </li>
-         <li class="breadcrumbs__item breadcrumbs__item">
-           <Link to="/docs/templates/discipline/incident-offender-infraction">Incident Offender Infraction</Link>
-         </li>
-       </ul>
-     </div>
-   </div>
- </div>
-</div>
+<TemplateCard
+  fields={7}
+  collected={7}
+  targetTables={['INCIDENT_OFFNDR_INFR_WEAPON']}
+  dependencies={[
+    { label: 'Incident', link: '/docs/templates/discipline/incident' },
+    { label: 'Person', link: '/docs/templates/discipline/person' },
+    { label: 'Incident Offender', link: '/docs/templates/discipline/incident-offender' },
+    { label: 'Incident Offender Infraction', link: '/docs/templates/discipline/incident-offender-infraction' }
+  ]}
+/>
 
 ## Template Description
 This template connects a weapon to the offender and infraction. If multiple weapon types apply to the incident/offender submit multiple records.
