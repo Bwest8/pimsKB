@@ -1,3 +1,5 @@
+import Badge from '@site/src/components/badges/badges';
+
 # Templates
 
 Templates are the files that will be used to load data into the PIMS data warehouse. Template specifications define the fields required for each file submitted to PIMS. Each template maps directly to a separate table in the data warehouse. By using templates, LEAs are able to use a variety of file formats (comma delimited, tab delimited, pipe) to transmit data as long as all fields within the template are accounted for. Within a given template not all eScholar-defined fields are collected by PDE.
@@ -38,8 +40,8 @@ This section describes any rules that must be followed in creating the template 
 - All dates must be entered in ISO format: YYYY-MM-DD.
 - PASECUREID's must be unique within an LEA.
 - Code Column:
-  - K - component of primary key
-  - U - value is updatable if row exists
+  - <Badge color="key" /> - component of primary key
+  - <Badge color="updateable" /> - value is updatable if row exists
 - Data can be supplied in either ASCII flat file or delimited formats. Full delimiter support is available.
 - Every PA public school, including charter schools and career and technical centers (CTCs), has a 4-digit SCHOOL NUMBER.
 
@@ -52,11 +54,11 @@ Each template specification within this document will have a table that indicate
 | **Template Headers**               | **Data Field Definition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Field No.                          | eScholar-designated field number; each field can be uniquely identified within the template.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Max Length                         | Field lengths are identified in each template in the “Length” column. Maximum field lengths are specified for fields that do not have pre-defined code sets. This information is critical because the **eScholar load plans will reject any record that contains a field that is greater than the designated length**. Template fields that have pre-defined code sets do not have a length specified – simply adhere to the predefined code set. If the “Max Length” column has “N/A,” that indicates a code set is available for that field. If the length number is followed by a comma and then another number, the latter indicates the number of digits to the right of the decimal point. |
+| Max Length                         | Field lengths are identified in each template in the <Badge length={1} /> badge.<br /> Maximum field lengths are specified for fields that do not have pre-defined code sets. This information is critical because the **eScholar load plans will reject any record that contains a field that is greater than the designated length**. Template fields that have pre-defined code sets do not have a length specified – simply adhere to the predefined code set. If the “Max Length” column has “N/A,” that indicates a code set is available for that field. If the length number is followed by a comma and then another number, the latter indicates the number of digits to the right of the decimal point. |
 | Field Name                         | PDE Field Name; highlighted field numbers (Field No.) are those that are collected for PDE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| R/O/CR                             | **R:** Required **O:** Optional  **CR:** Conditionally Required – if the condition is not met, leave the field blank.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| R/O/CR                             | <Badge color="required" /><br /> <Badge color="optional" /> <br /> <Badge color="conditional" />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Not Collected                      | Field numbers (Field No.) that are not highlighted are not collected by PDE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Code                               | The code column is used to identify how the specific field is applied to the target table in the eScholar Data Warehouse. **K:** Indicates that this column is a component of the set of columns that make up the primary key for the target table. The primary key specifies the uniqueness of each entry in the target table. **U:** Indicates that this column will be updated in the target table if the entry exists and the value of this column has changed.                                                                                                                                                                                                                              |
+| Code                               | The code column is used to identify how the specific field is applied to the target table in the eScholar Data Warehouse.<br /> <Badge color="key" /> - Indicates that this column is a component of the set of columns that make up the primary key for the target table. The primary key specifies the uniqueness of each entry in the target table. <br /><Badge color="updateable" /> - Indicates that this column will be updated in the target table if the entry exists and the value of this column has changed.                                                                                                                                                                                                                              |
 | Definitions                        | PDE definition of each field to be collected                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Business Rules                     | Any relevant PDE business rules that must be followed in creating the field value are defined here.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Sample/Valid Values / Example Data | If a field requires one value in a specific code set (e.g., Gender – “M” for male and “F” for female), that code set will be defined here. If the field is a free-form field (e.g., Last Name Long), example data will be supplied. If the valid values are located in Volume 2, a note will indicate which appendix.                                                                                                                                                                                                                                                                                                                                                                            |
@@ -84,17 +86,369 @@ This section identifies any prerequisite files that must be loaded into eScholar
 
 **PIMS Template Dependency**
 
-| Load This                    | Before These                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Student                      | Student<br />Snapshot Student<br />Course Enrollment<br />CTE Student Fact<br />CTE Student Industry Credential<br />Staff Student Subtest<br />Programs Fact<br />Student Calendar Fact<br />School Enrollment<br />Special Education Snapshot<br />Student Award Fact for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students<br />Student Fact for Career Standards Benchmarks Student Local Assessment Subtest for Early Indicators of Success<br />Student Local Assessment Subtest for Reporting and Analytics Person (see note on page with table of Load Sequence/Dependencies) |
-| Course                       | Course Instructor<br />Student Course Enrollment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Course Instructor            | Student Course Enrollment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Staff                        | Staff Snapshot<br />Staff Assignment<br />Staff Development Fact<br />Course Instructor<br />Staff Student Subtest                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| School Calendar              | Student Calendar Fact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Incident                     | Incident Offender<br />Incident Offender Infraction<br />Incident Offender Infraction Weapon Incident Offender Disciplinary Action<br />Incident Offender Parent Involve Incident Victim                                                                                                                                                                                                                                                                                                                                                                                        |
-| Person                       | Incident Offender<br />Incident Offender Infraction<br />Incident Offender Infraction Weapon Incident Offender Disciplinary Action<br />Incident Offender Parent Involve Incident Victim                                                                                                                                                                                                                                                                                                                                                                                        |
-| Incident Offender            | Incident Offender<br />Infraction Incident Offender Infraction Weapon<br />Incident Offender Disciplinary Action<br />Incident Offender Parent Involve                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Incident Offender Infraction | Incident Offender<br />Infraction Weapon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+<div>
+<table>
+ <thead>
+   <tr>
+     <th><strong>Template/Domain</strong></th>
+     <th><strong>Reporting LEAs</strong></th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Child Accounting</strong></td>
+   </tr>
+   <tr>
+     <td>School Calendar</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>School Calendar Fact</td>
+     <td>
+       <ul>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Course</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Course</li>
+         <li>Course Instructor</li>
+         <li>Student Course Enrollment</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Discipline</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Incident</li>
+         <li>Person</li>
+         <li>Incident Offender</li>
+         <li>Incident Offender Infraction</li>
+         <li>Incident Offender Infraction Weapon</li>
+         <li>Incident Offender Disciplinary Action</li>
+         <li>Incident Offender Parent Involvement</li>
+         <li>Incident Victim</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>District</strong></td>
+   </tr>
+   <tr>
+     <td>District Fact for Safe Schools</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>District Fact for Title III Professional Development Activities Survey</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Comprehensive Career and Technical Centers</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>District Fact for LIEP Survey</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Comprehensive Career and Technical Centers</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>District Fact for EL Nonpublic Student Counts</td>
+     <td>School Districts</td>
+   </tr>
+   <tr>
+     <td>District Fact for Title I</td>
+     <td>
+       <ul>
+         <li>School Districts that serve Title I students</li>
+         <li>Intermediate Units that serve Title I students (see the Volume 1 of the Manual for more information)</li>
+         <li>Charter Schools that serve Title I students</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>District Fact for Home Education and Private Tutoring</td>
+     <td>School Districts</td>
+   </tr>
+   <tr>
+     <td>District Fact for Support Personnel Data</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Location</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Location Fact for Safe Schools</li>
+         <li>Location Fact for Bus Evacuation Drill</li>
+         <li>Location Fact for Fire and Security Drills</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Location Fact for Automatic External Defibrillator (AED)</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI) (see the Volume 1 of the Manual for more information)</li>
+         <li>Approved Private Schools (APS) (see the Volume 1 of the Manual for more information)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Location Fact for Interscholastic Athletic Opportunities Data</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Comprehensive Career and Technical Centers</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+   <td colspan="2" style={{ fontSize: '20px' }}><strong>Staff</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Staff</li>
+         <li>Staff Snapshot</li>
+         <li>Staff Assignment</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Staff Development Fact</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Person for EL Coordinator</li>
+         <li>Person Role for EL Coordinator</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Comprehensive Career and Technical Centers</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Student</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Student</li>
+         <li>Student Snapshot</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Staff Student Subtest</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Student Award Fact for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Student Fact for Career Standards Benchmarks</td>
+     <td>
+       <ul>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Student Local Assessment Subtest For Early Indicators of Success</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Comprehensive Career and Technical Centers</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Student Local Assessment Subtest For Reporting and Analytics</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td>Student Fact for Keystone Exemption Reporting</td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Intermediate Units</li>
+         <li>Career and Technical Centers (CTC)</li>
+         <li>Charter Schools</li>
+         <li>State Juvenile Correctional Institutions (SJCI)</li>
+         <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+         <li>Approved Private Schools (APS)</li>
+       </ul>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Career and Technical Education (CTE)</strong></td>
+   </tr>
+   <tr>
+     <td>CTE Student Fact</td>
+     <td>Submit only if LEA had reportable enrollees in approved reimbursable secondary CTE programs and/or registered adult affidavit programs.</td>
+   </tr>
+   <tr>
+     <td>CTE Student Industry Credential</td>
+     <td>Submit only if CTE (secondary and/or adult affidavit) program enrollees earned reportable industry certifications.</td>
+   </tr>
+   <tr>
+     <td colspan="2" style={{ fontSize: '20px' }}><strong>Special Education</strong></td>
+   </tr>
+   <tr>
+     <td>
+       <ul>
+         <li>Student</li>
+         <li>Special Education Snapshot</li>
+       </ul>
+     </td>
+     <td>
+       <ul>
+         <li>School Districts</li>
+         <li>Charter Schools</li>
+       </ul>
+     </td>
+   </tr>
+ </tbody>
+</table>
+</div>
 
 ## Extracting Data into Template Format
 
@@ -145,18 +499,132 @@ Where the following comment is used, “*All fields may not be mandatory; howeve
 
 ## Template Submissions by LEA Type
 
-| **Template/Domain**                                                                                                                                                                           | **Reporting LEAs**                                                                                                                                                                            |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Child Accounting**                                                                                                                                                                          |                                                                                                                                                                                               |
-| School Calendar<br />School Calendar Fact                                                                                                                                                         | School Districts<br />Intermediate Units Career and Technical Centers (CTC)<br />Charter Schools<br />Private Residential Rehabilitation Institutions (PRRI)<br />Approved Private Schools (APS)                  |
-| **Course**                                                                                                                                                                                    |                                                                                                                                                                                               |
-| Course<br />Course Instructor<br />Student Course Enrollment                                                                                                                                            | School Districts<br />Intermediate Units Career and Technical Centers (CTC)<br />Charter Schools<br />State Juvenile Correctional Institutions (SJCI)                                                        |
-| **Discipline**                                                                                                                                                                                |                                                                                                                                                                                               |
-| Incident<br />Person<br />Incident Offender<br />Incident Offender Infraction<br />Incident Offender Infraction Weapon<br />Incident Offender Disciplinary Action<br />Incident Offender Parent Involvement<br />Incident Victim | School Districts<br />Intermediate Units Career and Technical Centers (CTC)<br />Charter Schools                                                                                                        |
-| **District**                                                                                                                                                                                  |                                                                                                                                                                                               |
-| District Fact for Safe Schools                                                                                                                                                                | School Districts<br />Intermediate Units<br />Career and Technical Centers (CTC)<br />Charter Schools                                                                                                        |
-| District Fact for Title III Professional  Development Activities Survey                                                                                                                       | School Districts<br />Intermediate Units<br />Comprehensive Career and Technical<br />Centers Charter Schools                                                                                                |
-| District Fact for LIEP Survey                                                                                                                                                                 | School Districts<br />Comprehensive Career and Technical Centers<br />Charter Schools                                                                                                                   |
-| District Fact for EL Nonpublic  Student Counts                                                                                                                                                | School Districts                                                                                                                                                                              |
-| District Fact for Title I                                                                                                                                                                     | School Districts that serve Title I students Intermediate Units that serve Title I students (see the Volume 1 of the Manual for more information)<br />Charter Schools that serve Title I students |
-| District Fact for Home Education and Private Tutoring                                                                                                                                                          | School Districts                                                                                                                                                                              |
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Template/Domain</th>
+        <th>Reporting LEAs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colSpan="2"><strong>Child Accounting</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>School Calendar</li>
+            <li>School Calendar Fact</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Intermediate Units Career and Technical Centers (CTC)</li>
+            <li>Charter Schools</li>
+            <li>Private Residential Rehabilitation Institutions (PRRI)</li>
+            <li>Approved Private Schools (APS)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colSpan="2"><strong>Course</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Course</li>
+            <li>Course Instructor</li>
+            <li>Student Course Enrollment</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Intermediate Units Career and Technical Centers (CTC)</li>
+            <li>Charter Schools</li>
+            <li>State Juvenile Correctional Institutions (SJCI)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colSpan="2"><strong>Discipline</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Incident</li>
+            <li>Person</li>
+            <li>Incident Offender</li>
+            <li>Incident Offender Infraction</li>
+            <li>Incident Offender Infraction Weapon</li>
+            <li>Incident Offender Disciplinary Action</li>
+            <li>Incident Offender Parent Involvement</li>
+            <li>Incident Victim</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Intermediate Units Career and Technical Centers (CTC)</li>
+            <li>Charter Schools</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colSpan="2"><strong>District</strong></td>
+      </tr>
+      <tr>
+        <td>District Fact for Safe Schools</td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Intermediate Units</li>
+            <li>Career and Technical Centers (CTC)</li>
+            <li>Charter Schools</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>District Fact for Title III Professional Development Activities Survey</td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Intermediate Units</li>
+            <li>Comprehensive Career and Technical Centers</li>
+            <li>Charter Schools</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>District Fact for LIEP Survey</td>
+        <td>
+          <ul>
+            <li>School Districts</li>
+            <li>Comprehensive Career and Technical Centers</li>
+            <li>Charter Schools</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>District Fact for EL Nonpublic Student Counts</td>
+        <td>School Districts</td>
+      </tr>
+      <tr>
+        <td>District Fact for Title I</td>
+        <td>
+          <ul>
+            <li>School Districts that serve Title I students</li>
+            <li>Intermediate Units that serve Title I students (see Volume 1 of the Manual for more information)</li>
+            <li>Charter Schools that serve Title I students</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>District Fact for Home Education and Private Tutoring</td>
+        <td>School Districts</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

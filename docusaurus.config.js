@@ -67,11 +67,9 @@ const config = {
           sidebarPath: "./sidebars.js",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          editUrl: "https://github.com/Bwest8/pimsKB/tree/master/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/Bwest8/pimsKB/tree/master/blog/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -128,12 +126,6 @@ const config = {
             position: "left",
             sidebarId: "dqeRules",
             label: "DQE Rules",
-          },
-          // {to: 'blog', label: 'Blog', position: 'left'},
-          {
-            href: "https://github.com/Bwest8/pimsKB",
-            label: "GitHub",
-            position: "right",
           },
         ],
       },
