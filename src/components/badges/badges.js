@@ -22,7 +22,6 @@ const tooltipTextMap = {
 };
 
 const Badge = ({ color, children, length }) => {
-  const { colorMode } = useColorMode();
   const badgeColor = color || (length ? "maxLength" : "secondary");
   const tooltipText = length
     ? `This field has a maximum length of: ${length}`

@@ -36,6 +36,7 @@
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
   --theme-color-light: hsl(0, 0%, 90%);
   --theme-color-dark: hsl(0, 0%, 15%);
+  --ifm-container-width-xl: 90%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -52,17 +53,13 @@
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
 }
 
-/* .container {
-/*   max-width: 85% !important;
-/*   margin: 0 auto;
-/* }
-
 /* Light mode header background */
 .markdown > h2#template-specs ~ h3 {
   background-color: hsl(0, 0%, 90%);
   padding: 0.2em 0.5em;
-  border-radius: 8px;
+  border-radius: 4px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* Dark mode header background */
@@ -108,4 +105,3 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 .load-sequence__label {
   margin: 0.1em;
 }
-

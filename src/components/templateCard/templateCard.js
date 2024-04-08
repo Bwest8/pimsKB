@@ -47,13 +47,13 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
             className={`h-5 w-5 mr-2 ${isDarkTheme ? "filter invert" : ""}`}
             alt="Load Sequence"
           />
-          <strong
+          <span
             className={`font-semibold ${
               isDarkTheme ? "text-white" : "text-gray-800"
             }`}
           >
             Load Sequence/Dependencies:
-          </strong>
+          </span>
         </div>
         {dependencies.length === 0 ? (
           <p className={`ml-7 ${isDarkTheme ? "text-white" : "text-gray-800"}`}>
@@ -64,7 +64,7 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
             {dependencies.map((dependency, index) => (
               <React.Fragment key={dependency.link}>
                 <div className="flex items-center">
-                  <em className="flex items-center">
+                  <em>
                     <Link to={dependency.link}>{dependency.label}</Link>
                     {index < dependencies.length - 1 && (
                       <ChevronRightSmallSvg
