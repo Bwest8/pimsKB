@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
-import loadSequenceSvg from "!!url-loader!@site/static/img/icons/load-sequence.svg";
-import targetTableSvg from "!!url-loader!@site/static/img/icons/target-table.svg";
-import chevronRightSmallSvg from "!!url-loader!@site/static/img/icons/chevron-right-small.svg";
+import LoadSequenceSvg from "./load-sequence.svg";
+import TargetTableSvg from "./target-table.svg";
+import ChevronRightSmallSvg from "./chevron-right-small.svg";
 
 const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
   const { colorMode } = useColorMode();
@@ -24,13 +24,10 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
       </div>
       <div className="space-y-2">
         <div className="flex items-center">
-          <em className="flex items-center">
-            <img
-              src={targetTableSvg}
-              className={`h-5 w-5 mr-2 ${isDarkTheme ? "filter invert" : ""}`}
-              alt="Target Table"
-            />{" "}
-          </em>
+          <TargetTableSvg
+            className={`h-5 w-5 mr-2 ${isDarkTheme ? "filter invert" : ""}`}
+            alt="Target Table"
+          />
           <strong
             className={`font-semibold ${
               isDarkTheme ? "text-white" : "text-gray-800"
@@ -38,7 +35,6 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
           >
             Target Table:&nbsp;
           </strong>
-
           {targetTables.map((table, index) => (
             <React.Fragment key={table}>
               <code>{table}</code>
@@ -47,13 +43,10 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
           ))}
         </div>
         <div className="flex items-center">
-          <em className="flex items-center">
-            <img
-              src={loadSequenceSvg}
-              className={`h-5 w-5 mr-2 ${isDarkTheme ? "filter invert" : ""}`}
-              alt="Load Sequence"
-            />
-          </em>
+          <LoadSequenceSvg
+            className={`h-5 w-5 mr-2 ${isDarkTheme ? "filter invert" : ""}`}
+            alt="Load Sequence"
+          />
           <strong
             className={`font-semibold ${
               isDarkTheme ? "text-white" : "text-gray-800"
@@ -74,8 +67,7 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
                   <em className="flex items-center">
                     <Link to={dependency.link}>{dependency.label}</Link>
                     {index < dependencies.length - 1 && (
-                      <img
-                        src={chevronRightSmallSvg}
+                      <ChevronRightSmallSvg
                         className={`h-4 w-4 mx-0.5 ${
                           isDarkTheme ? "filter invert" : "text-gray-600"
                         }`}

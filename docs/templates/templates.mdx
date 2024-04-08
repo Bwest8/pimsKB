@@ -88,6 +88,159 @@ This section identifies any prerequisite files that must be loaded into eScholar
 
 <div>
 <table>
+  <thead>
+    <tr>
+      <th>Load This</th>
+      <th>Before These</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Student</td>
+      <td>
+        <ul>
+          <li>Student Snapshot</li>
+          <li>Student Course Enrollment</li>
+          <li>CTE Student Fact</li>
+          <li>CTE Student Industry Credential</li>
+          <li>Staff Student Subtest</li>
+          <li>Programs Fact</li>
+          <li>Student Calendar Fact</li>
+          <li>School Enrollment</li>
+          <li>Special Education Snapshot</li>
+          <li>Student Award Fact for Industry-Recognized Credentials and Work-Based Learning Experiences for Non-CTE Students</li>
+          <li>Student Fact for Career Standards Benchmarks</li>
+          <li>Student Local Assessment Subtest for Early Indicators of Success</li>
+          <li>Student Local Assessment Subtest for Reporting and Analytics</li>
+          <li>Person (see note on page with table of Load Sequence/Dependencies)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Course</td>
+      <td>
+        <ul>
+          <li>Course Instructor</li>
+          <li>Student Course Enrollment</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Course Instructor</td>
+      <td>Student Course Enrollment</td>
+    </tr>
+    <tr>
+      <td>Staff</td>
+      <td>
+        <ul>
+          <li>Staff Snapshot</li>
+          <li>Staff Assignment</li>
+          <li>Staff Development Fact</li>
+          <li>Course Instructor</li>
+          <li>Staff Student Subtest</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>School Calendar</td>
+      <td>Student Calendar Fact</td>
+    </tr>
+    <tr>
+      <td>Incident</td>
+      <td>
+        <ul>
+          <li>Incident Offender</li>
+          <li>Incident Offender Infraction</li>
+          <li>Incident Offender Infraction Weapon</li>
+          <li>Incident Offender Disciplinary Action</li>
+          <li>Incident Offender Parent Involve</li>
+          <li>Incident Victim</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Person</td>
+      <td>
+        <ul>
+          <li>Incident Offender</li>
+          <li>Incident Offender Infraction</li>
+          <li>Incident Offender Infraction Weapon</li>
+          <li>Incident Offender Disciplinary Action</li>
+          <li>Incident Offender Parent Involve</li>
+          <li>Incident Victim</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Incident Offender</td>
+      <td>
+        <ul>
+          <li>Incident Offender Infraction</li>
+          <li>Incident Offender Infraction Weapon</li>
+          <li>Incident Offender Disciplinary Action</li>
+          <li>Incident Offender Parent Involve</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Incident Offender Infraction</td>
+      <td>Incident Offender Infraction Weapon</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Extracting Data into Template Format
+
+This section will provide guidance on extracting data from source systems into eScholar template format. This information can be used to create individual extraction routines or a system of extraction.
+
+### Data Extraction
+
+Data extraction and submission involve the process of:
+
+-   taking data from source systems
+-   securely submitting files to PIMS
+-   loading data into the PIMS data warehouse
+
+The components of data extraction include:
+
+-   extraction tools
+-   eScholar templates
+-   automation components
+-   documentation
+
+### File Naming Conventions and Common Problems
+
+The following naming convention must be used to extract data files:
+
+-   SubmittingAUN_TargetTable_YYYYMMDDHHMM.xxx
+-   Example: **100000009_STUDENT_201509051134.csv**
+    1.  The AUN is the 9-digit Administrative Unit Number code
+        -   For example, `100000009`
+    2.  Target Table
+        -   Located on line 5 of the eScholar templates – e.g., “Student”
+        -   Exact name listed must be used for File naming convention (e.g. Student Course Enrollment Template is COURSE_ENROLL)
+    3.  Time Stamp (ensures uniqueness for the file) e.g., “201509051134”
+        -   Related to the time the file is created, not the collection reporting dates
+    4.  File Extension (data separator type) e.g., “csv”
+        -   csv: comma separated
+        -   tab: tab separated
+
+:::note
+-   Only PIMS Administrators can upload files in PIMS.
+-   For more detail around data extraction, refer to the *eScholar Guide to Extracting Data*
+:::
+
+**Templates within a Collection Data Set and Data Field Accountability**
+
+Please note that all templates required in a data set are not necessarily found within the same domain. For a complete list of templates within each data set, see the “Templates” column of the Elementary\\Secondary Data Collection Calendar.
+
+Where the following comment is used, “*All fields may not be mandatory; however, all fields within each template* **MUST BE** *accounted for in order to transmit data*,” each field from the template must be accounted for in the record. So, for a client building a delimited file, there must be a delimiter for each field in the template, even if there is no value in between delimiters. Similarly, for a client building a fixed-width file, the extract must account for all positions of each field, even if there is no value in those positions.
+
+## Template Submissions by LEA Type
+
+<div>
+<table>
  <thead>
    <tr>
      <th><strong>Template/Domain</strong></th>
@@ -448,183 +601,4 @@ This section identifies any prerequisite files that must be loaded into eScholar
    </tr>
  </tbody>
 </table>
-</div>
-
-## Extracting Data into Template Format
-
-This section will provide guidance on extracting data from source systems into eScholar template format. This information can be used to create individual extraction routines or a system of extraction.
-
-### Data Extraction
-
-Data extraction and submission involve the process of:
-
--   taking data from source systems
--   securely submitting files to PIMS
--   loading data into the PIMS data warehouse
-
-The components of data extraction include:
-
--   extraction tools
--   eScholar templates
--   automation components
--   documentation
-
-### File Naming Conventions and Common Problems
-
-The following naming convention must be used to extract data files:
-
--   SubmittingAUN_TargetTable_YYYYMMDDHHMM.xxx
--   Example: **100000009_STUDENT_201509051134.csv**
-    1.  The AUN is the 9-digit Administrative Unit Number code
-        -   For example, `100000009`
-    2.  Target Table
-        -   Located on line 5 of the eScholar templates – e.g., “Student”
-        -   Exact name listed must be used for File naming convention (e.g. Student Course Enrollment Template is COURSE_ENROLL)
-    3.  Time Stamp (ensures uniqueness for the file) e.g., “201509051134”
-        -   Related to the time the file is created, not the collection reporting dates
-    4.  File Extension (data separator type) e.g., “csv”
-        -   csv: comma separated
-        -   tab: tab separated
-
-:::note
--   Only PIMS Administrators can upload files in PIMS.
--   For more detail around data extraction, refer to the *eScholar Guide to Extracting Data*
-:::
-
-**Templates within a Collection Data Set and Data Field Accountability**
-
-Please note that all templates required in a data set are not necessarily found within the same domain. For a complete list of templates within each data set, see the “Templates” column of the Elementary\\Secondary Data Collection Calendar.
-
-Where the following comment is used, “*All fields may not be mandatory; however, all fields within each template* **MUST BE** *accounted for in order to transmit data*,” each field from the template must be accounted for in the record. So, for a client building a delimited file, there must be a delimiter for each field in the template, even if there is no value in between delimiters. Similarly, for a client building a fixed-width file, the extract must account for all positions of each field, even if there is no value in those positions.
-
-## Template Submissions by LEA Type
-
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Template/Domain</th>
-        <th>Reporting LEAs</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colSpan="2"><strong>Child Accounting</strong></td>
-      </tr>
-      <tr>
-        <td>
-          <ul>
-            <li>School Calendar</li>
-            <li>School Calendar Fact</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Intermediate Units Career and Technical Centers (CTC)</li>
-            <li>Charter Schools</li>
-            <li>Private Residential Rehabilitation Institutions (PRRI)</li>
-            <li>Approved Private Schools (APS)</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td colSpan="2"><strong>Course</strong></td>
-      </tr>
-      <tr>
-        <td>
-          <ul>
-            <li>Course</li>
-            <li>Course Instructor</li>
-            <li>Student Course Enrollment</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Intermediate Units Career and Technical Centers (CTC)</li>
-            <li>Charter Schools</li>
-            <li>State Juvenile Correctional Institutions (SJCI)</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td colSpan="2"><strong>Discipline</strong></td>
-      </tr>
-      <tr>
-        <td>
-          <ul>
-            <li>Incident</li>
-            <li>Person</li>
-            <li>Incident Offender</li>
-            <li>Incident Offender Infraction</li>
-            <li>Incident Offender Infraction Weapon</li>
-            <li>Incident Offender Disciplinary Action</li>
-            <li>Incident Offender Parent Involvement</li>
-            <li>Incident Victim</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Intermediate Units Career and Technical Centers (CTC)</li>
-            <li>Charter Schools</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td colSpan="2"><strong>District</strong></td>
-      </tr>
-      <tr>
-        <td>District Fact for Safe Schools</td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Intermediate Units</li>
-            <li>Career and Technical Centers (CTC)</li>
-            <li>Charter Schools</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>District Fact for Title III Professional Development Activities Survey</td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Intermediate Units</li>
-            <li>Comprehensive Career and Technical Centers</li>
-            <li>Charter Schools</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>District Fact for LIEP Survey</td>
-        <td>
-          <ul>
-            <li>School Districts</li>
-            <li>Comprehensive Career and Technical Centers</li>
-            <li>Charter Schools</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>District Fact for EL Nonpublic Student Counts</td>
-        <td>School Districts</td>
-      </tr>
-      <tr>
-        <td>District Fact for Title I</td>
-        <td>
-          <ul>
-            <li>School Districts that serve Title I students</li>
-            <li>Intermediate Units that serve Title I students (see Volume 1 of the Manual for more information)</li>
-            <li>Charter Schools that serve Title I students</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>District Fact for Home Education and Private Tutoring</td>
-        <td>School Districts</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
