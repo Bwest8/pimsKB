@@ -31,10 +31,10 @@
   --ifm-color-primary-light: #3b4bc7;
   --ifm-color-primary-lighter: #4454ca;
   --ifm-color-primary-lightest: #606dd2;
-  --ifm-navbar-background-color: hsl(0, 0%, 90%); /* Light shade of gray header */
-  --ifm-menu-color-background-active: hsl(0, 0%, 90%);
+  --ifm-navbar-background-color: hsl(0, 0%, 89%); /* Light shade of gray header */
+  --ifm-menu-color-background-active: hsl(0, 0%, 89%);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
-  --theme-color-light: hsl(0, 0%, 90%);
+  --theme-color-light: rgb(255, 255, 255);
   --theme-color-dark: hsl(0, 0%, 15%);
   --ifm-container-width-xl: 90%;
 }
@@ -55,16 +55,17 @@
 
 /* Light mode header background */
 .markdown > h2#template-specs ~ h3 {
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 95%);
   padding: 0.2em 0.5em;
-  border-radius: 4px;
+  border-radius: 0px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  border: 0.08rem solid #808080;
 }
 
 /* Dark mode header background */
 html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
-  background-color: #424242;
+  background-color: hsl(0, 0%, 22%);
   color: #ffffff;
 }
 
@@ -95,4 +96,14 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 .table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
   font-weight: bold;
+}
+
+/* Sticky breadcrumbs */
+.theme-doc-breadcrumbs.breadcrumbsContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocBreadcrumbs-styles-module {
+  position: sticky;
+  top: 60px;
+  background-color: var(--theme-color-light);
+  padding-bottom: 6px;
+  padding-top: 6px;
+  font-weight: 600;
 }
