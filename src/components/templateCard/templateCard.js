@@ -29,7 +29,7 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
             alt="Target Table"
           />
           <strong
-            className={`font-semibold ${
+            className={`font-bold ${
               isDarkTheme ? "text-white" : "text-gray-800"
             }`}
           >
@@ -48,7 +48,7 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
             alt="Load Sequence"
           />
           <span
-            className={`font-semibold ${
+            className={`font-bold ${
               isDarkTheme ? "text-white" : "text-gray-800"
             }`}
           >
@@ -63,15 +63,14 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
           <div className="ml-7 flex flex-wrap items-center">
             {dependencies.map((dependency, index) => (
               <React.Fragment key={dependency.link}>
-                <div className="flex items-center">
+                <div className="flex items-center font-medium">
                   <em>
                     <Link to={dependency.link}>{dependency.label}</Link>
                     {index < dependencies.length - 1 && (
                       <ChevronRightSmallSvg
-                        className={`h-4 w-4 mx-0.5 ${
+                        className={`h-4 w-4 mx-0.4 align-middle ${
                           isDarkTheme ? "filter invert" : "text-gray-600"
                         }`}
-                        alt="Chevron Right"
                       />
                     )}
                   </em>
