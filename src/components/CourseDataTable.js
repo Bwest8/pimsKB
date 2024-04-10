@@ -5,10 +5,12 @@ import DataTable from "react-data-table-component";
 import courseCodes from "../data/CourseCodes2023-24.json";
 import Link from "@docusaurus/Link";
 import styles from "./CourseDataTable.module.css";
+import { useColorMode } from "@docusaurus/theme-common";
 
 const CourseDataTable = () => {
   const [searchText, setSearchText] = useState("");
   const [expandedRows, setExpandedRows] = useState([]);
+  const { colorMode } = useColorMode();
 
   const handleSearch = (event) => {
     setSearchText(event.target.value);
@@ -308,7 +310,10 @@ const CourseDataTable = () => {
             <div key={style.label} className={styles.rowStyleDescription}>
               <div
                 className={styles.rowStyleColor}
-                style={{ backgroundColor: style.color }}
+                style={{
+                  backgroundColor: style.color,
+                  border: "1px solid black",
+                }}
               ></div>
               <span>{style.label}</span>
             </div>
@@ -340,6 +345,7 @@ const CourseDataTable = () => {
         onRowExpandToggled={handleRowExpand}
         conditionalRowStyles={conditionalRowStyles}
         keyField="stateCourseCode"
+        theme={colorMode === "dark" ? "dark" : "default"}
       />
     </div>
   );

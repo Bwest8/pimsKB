@@ -2,9 +2,8 @@
 
 .expandableRow {
     padding: 1em;
-    background: #f9f9f9;
     font-size: 0.8em;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-top: none;
     border-radius: 0 0 5px 5px;
   }
@@ -16,7 +15,7 @@
   
   .expandableRow th,
   .expandableRow td {
-    border: 1px solid #ccc;
+    border: 1px solid ;
     padding: 0.5em;
     text-align: left;
   }
@@ -24,7 +23,6 @@
   .scedDescriptionLabel {
     margin: 0 0 0.5em 0;
     font-weight: bold;
-    color: #333;
   }
     .scedCodeValue,
   .scedDescriptionValue {
