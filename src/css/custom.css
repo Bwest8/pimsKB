@@ -53,7 +53,7 @@
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
 }
 
-/* Light mode header background */
+/* Light mode h3 header background for template specs */
 .markdown > h2#template-specs ~ h3 {
   background-color: hsl(0, 0%, 95%);
   padding: 0.2em 0.5em;
@@ -66,7 +66,7 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/* Dark mode header background */
+/* Dark mode h3 header background for template specs */
 html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   border-bottom: 0.10rem solid hsl(0, 0%, 40%);
   background-color: hsl(0, 0%, 22%);
