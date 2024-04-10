@@ -57,18 +57,24 @@
 .markdown > h2#template-specs ~ h3 {
   background-color: hsl(0, 0%, 95%);
   padding: 0.2em 0.5em;
-  border-radius: 0px;
   font-weight: bold;
-  margin-bottom: 4px;
-  border: 0.08rem solid #808080;
+  margin-bottom: 0.3em;
+  border-bottom: 0.08rem solid hsl(0, 0%, 80%);
+  border-radius: var(--ifm-alert-border-radius);
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /* Dark mode header background */
 html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
+  border-bottom: 0.10rem solid hsl(0, 0%, 40%);
   background-color: hsl(0, 0%, 22%);
   color: #ffffff;
+  
 }
 
+/* Sidebar */
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
   font-weight: 750;
   line-height: 100%;
@@ -96,14 +102,4 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 .table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
   font-weight: bold;
-}
-
-/* Sticky breadcrumbs */
-.theme-doc-breadcrumbs.breadcrumbsContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocBreadcrumbs-styles-module {
-  position: sticky;
-  top: 60px;
-  background-color: var(--theme-color-light);
-  padding-bottom: 6px;
-  padding-top: 6px;
-  font-weight: 600;
 }

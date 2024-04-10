@@ -14,8 +14,8 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
       className={`${
         isDarkTheme
           ? "bg-[hsl(0,0%,15%)] text-white"
-          : "bg-[hsl(0,0%,99%)] text-gray-800 shadow-md"
-      } rounded-lg p-4`}
+          : "bg-[hsl(0,0%,99%)] text-gray-800 shadow-sm"
+      } rounded-md p-4`}
     >
       <div className="mb-2">
         <h3>

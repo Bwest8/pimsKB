@@ -29,8 +29,8 @@ const Badge = ({ color, children, length }) => {
 
   return (
     <span
-      title={tooltipText}
-      className={`${styles.badge} ${styles[badgeColor]}`}
+      data-tooltip={tooltipText}
+      className={`${styles.badge} ${styles[badgeColor]} ${styles.tooltip}`}
     >
       {length ? (
         <>
@@ -42,5 +42,4 @@ const Badge = ({ color, children, length }) => {
     </span>
   );
 };
-
 export default Badge;
