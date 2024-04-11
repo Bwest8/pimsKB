@@ -106,5 +106,5 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 /* Search */
   html[data-theme="dark"] {
-  --search-local-highlight-color: var(--ifm-color-primary-darkest);;
+  --search-local-highlight-color: var(--ifm-color-primary-darkest) !important;
   }
