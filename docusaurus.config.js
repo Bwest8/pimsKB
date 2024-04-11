@@ -138,54 +138,6 @@ const config = {
           srcDark: "/img/pde-white.png",
           href: "https://www.education.pa.gov",
         },
-        links: [
-          {
-            title: "Affiliates",
-            items: [
-              {
-                label: "Office of Commonwealth Libraries",
-                to: "https://www.statelibrary.pa.gov/Pages/default.aspx",
-              },
-              {
-                label: "Professional Standards and Practices Commission",
-                to: "https://www.pspc.education.pa.gov/Pages/default.aspx",
-              },
-              {
-                label: "State Board of Education",
-                to: "https://www.stateboard.education.pa.gov/Pages/default.aspx",
-              },
-            ],
-          },
-          {
-            title: "Social Links",
-            items: [
-              {
-                label: "Facebook",
-                href: "https://www.facebook.com/PADepartmentofEducation/",
-              },
-              { label: "Twitter", href: "https://twitter.com/PADeptofEd" },
-              {
-                label: "YouTube",
-                href: "https://www.youtube.com/c/PADeptofEd",
-              },
-              {
-                label: "Pinterest",
-                href: "https://www.pinterest.com/PADeptOfEd/",
-              },
-              {
-                label: "Blog",
-                href: "https://www.education.pa.gov/SchoolofThought/Pages/Blog.aspx",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              { label: "Blog", to: "/blog" },
-              { label: "GitHub", href: "https://github.com/Bwest8/pimsKB" },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()}  Commonwealth of Pennsylvania. All rights reserved.`,
       },
       prism: {

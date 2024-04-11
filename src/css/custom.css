@@ -44,7 +44,7 @@
   --ifm-color-primary: #2e99dc;
   --ifm-color-primary-dark: #228bcd;
   --ifm-color-primary-darker: #2084c2;
-  --ifm-color-primary-darkest: #1b6c9f;
+  --ifm-color-primary-darkest: #053757;
   --ifm-color-primary-light: #45a4e0;
   --ifm-color-primary-lighter: #50aae2;
   --ifm-color-primary-lightest: #72bae7;
@@ -103,3 +103,8 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 .table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
   font-weight: bold;
 }
+
+/* Search */
+  html[data-theme="dark"] {
+  --search-local-highlight-color: var(--ifm-color-primary-darkest);;
+  }
