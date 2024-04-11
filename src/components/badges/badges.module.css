@@ -90,22 +90,50 @@
     border-color: rgb(75, 85, 99);
   }
 
+  :root {
+    --tooltip-bg-color: rgba(59, 59, 59, 0.98);
+  }
+  
   .tooltip {
     position: relative;
     display: inline-block;
+    cursor: pointer;
   }
   
-  .tooltip:hover::after {
-    content: attr(data-tooltip);
+  .tooltip::before,
+  .tooltip::after {
     position: absolute;
-    top: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .tooltip::before {
+    content: "";
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--tooltip-bg-color) transparent;
+    top: calc(100% - 6px);
     left: 50%;
     transform: translateX(-50%);
-    padding: 8px;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    font-size: 12px;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    background-color: var(--tooltip-bg-color);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
     white-space: nowrap;
+    padding: 4px 8px;
+    top: calc(100% + 6px);
+    left: 20%;
+    transform: translateX(-20%);
     z-index: 1;
+  }
+  
+  .tooltip:hover::before,
+  .tooltip:hover::after {
+    opacity: 1;
   }

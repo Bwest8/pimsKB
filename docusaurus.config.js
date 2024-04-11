@@ -22,7 +22,8 @@ const config = {
   },
 
   plugins: [
-    require.resolve("docusaurus-lunr-search"),
+    // require.resolve("docusaurus-lunr-search"),
+    require.resolve("docusaurus-plugin-search-local"),
     require.resolve("docusaurus-plugin-image-zoom"),
     async function myPlugin(context, options) {
       return {
