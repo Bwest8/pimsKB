@@ -51,7 +51,7 @@
   --ifm-navbar-background-color: hsl(0, 0%, 15%); /* Dark gray for header */
   --ifm-menu-color-background-active: hsl(0, 0%, 15%);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
-  --search-local-highlight-color: var(--ifm-color-primary-darkest) !important;
+  --search-local-highlight-color: #053757 !important;
 }
 
 /* Light mode h3 header background for template specs */
