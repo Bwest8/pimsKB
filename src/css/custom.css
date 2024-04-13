@@ -24,15 +24,15 @@
 }
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #3443b7;
-  --ifm-color-primary-dark: #2f3ca5;
-  --ifm-color-primary-darker: #2c399c;
-  --ifm-color-primary-darkest: #242f80;
-  --ifm-color-primary-light: #3b4bc7;
-  --ifm-color-primary-lighter: #4454ca;
-  --ifm-color-primary-lightest: #606dd2;
-  --ifm-navbar-background-color: hsl(0, 0%, 89%); /* Light shade of gray header */
-  --ifm-menu-color-background-active: hsl(0, 0%, 89%);
+  --ifm-color-primary: #1d4ed8;
+  --ifm-color-primary-dark: #1a46c2;
+  --ifm-color-primary-darker: #1942b8;
+  --ifm-color-primary-darkest: #143797;
+  --ifm-color-primary-light: #2b5be3;
+  --ifm-color-primary-lighter: #3663e4;
+  --ifm-color-primary-lightest: #567ce8;
+  --ifm-navbar-background-color: #f4f4f5; /* Light shade of gray header */
+  --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
   --theme-color-light: rgb(255, 255, 255);
   --theme-color-dark: hsl(0, 0%, 15%);
@@ -42,18 +42,44 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #0076bf;
-  --ifm-color-primary-dark: #228bcd;
-  --ifm-color-primary-darker: #2084c2;
-  --ifm-color-primary-darkest: rgb(3, 45, 71);
-  --ifm-color-primary-light: #45a4e0;
-  --ifm-color-primary-lighter: #50aae2;
-  --ifm-color-primary-lightest: #72bae7;
-  --ifm-navbar-background-color: hsl(0, 0%, 15%); /* Dark gray for header */
-  --ifm-menu-color-background-active: hsl(0, 0%, 15%);
+  --ifm-color-primary: #0090ff;
+  --ifm-color-primary-dark: #0082e6;
+  --ifm-color-primary-darker: #007ad9;
+  --ifm-color-primary-darkest: #0065b3;
+  --ifm-color-primary-light: #1a9bff;
+  --ifm-color-primary-lighter: #26a1ff;
+  --ifm-color-primary-lightest: #4db1ff;
+  --ifm-navbar-background-color: #262626; /* Dark gray for header */
+  --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
   --search-local-highlight-color: #053757 !important;
 }
+
+.menu__list .menu__link.menu__link--active {
+  border-left-color: var(--ifm-color-primary)!important;
+  border-left-width: 4px; /* Increased from 0 for visibility */
+  font-weight: bold;
+  color: var(--ifm-color-primary); /* Ensures the text color matches the border */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.menu__list a[href].menu__link.menu__link--active:not(.menu__link--sublist) {
+  background: var(--ifm-navbar-background-color)!important;
+  border-left-style: solid;
+  border-left-width: 4px; /* Make the active link more prominent */
+  border-top-left-radius: 2px; /* Soften the corners for a modern look */
+  border-bottom-left-radius: 2px;
+  padding-left: 16px!important; /* Increase padding for better alignment */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transition */
+}
+
+/* Hover effect for menu links */
+.menu__list .menu__link:hover {
+  padding-left: 16px!important; /* Consistent padding with active state */
+  transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for hover effects */
+  font-weight: bolder;
+}
+
 
 /* Light mode h3 header background for template specs */
 .markdown > h2#template-specs ~ h3 {
@@ -94,14 +120,62 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   font-size: 0.95em;
 }
 
-.navbar__link {
-  font-weight: 750;
-}
-
+/* Sidebar: Table of Contents */
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible {
   border-bottom: 0.10rem solid #808080;
 }
 
 .table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
   font-weight: bold;
+}
+
+/* Navbar */
+/* Default styles for light mode */
+.navbar__item {
+  font-weight: 800; /* Set font weight to 800 */
+  padding: 8px 16px; /* Add padding between items */
+  border-radius: 4px; /* Add border-radius */
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+}
+
+/* Hover effect for navbar items in light mode */
+.navbar__item:hover {
+  background-color: var(--ifm-color-emphasis-200); /* Gray background on hover */
+  color: var(--ifm-color-primary); /* Change text color on hover */
+  border-radius: 8px; /* Increase border-radius on hover */
+}
+
+/* Active navbar item styles in light mode */
+.navbar .navbar__item.navbar__item--active {
+  font-weight: 900; /* Set font weight to 900 (extra bold) */
+  font-size: 18px; /* Increase font size */
+  color: var(--ifm-color-primary);
+  padding: 8px 20px; /* Match hover padding */
+  border-radius: 10px; /* Match hover border-radius */
+}
+
+/* Dark mode styles */
+[data-theme='dark'] .navbar__item {
+  --ifm-navbar-background-color: #262626; /* Navbar background color in dark mode */
+  font-weight: 800;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* Hover effect for navbar items in dark mode */
+[data-theme='dark'] .navbar__item:hover {
+  background-color: #3a3a3a; /* Darker gray background on hover */
+  color: var(--ifm-color-primary-lighter); /* Lighter primary color on hover */
+  border-radius: 8px; /* Increase border-radius on hover */
+}
+
+/* Active navbar item styles in dark mode */
+[data-theme='dark'] .navbar .navbar__item.navbar__item--active {
+  font-weight: 900; /* Set font weight to 900 (extra bold) */
+  font-size: 18px; /* Increase font size */
+  color: var(--ifm-color-primary-lighter);
+  padding: 8px 20px; /* Match hover padding */
+  border-radius: 10px; /* Match hover border-radius */
 }
