@@ -28,7 +28,7 @@ const Badge = ({ color, children, length }) => {
   // Ensure that tooltipTextMap[badgeColor] exists; use an empty string as a fallback
   const tooltipText = length
     ? `This field has a maximum length of: ${length}`
-    : tooltipTextMap[badgeColor];
+    : (tooltipTextMap[badgeColor] || "").replace(/\n/g, "\n");
 
   return (
     <span
