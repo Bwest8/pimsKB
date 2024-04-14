@@ -126,3 +126,12 @@
     opacity: 1;
   }
   
+  /* Media Query to Disable Tooltip on Mobile */
+@media (max-width: 996px) {
+  .tooltip::after {
+      display: none; /* Hides the tooltip content completely on mobile */
+  }
+  .tooltip {
+      cursor: default; /* Resets the cursor to default as there is no tooltip to trigger */
+  }
+}
