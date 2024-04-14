@@ -108,10 +108,8 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 /* Sidebar */
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
-  font-weight: 700;
+  font-weight: bold;
   line-height: 100%;
-  margin-top: 0.50rem;
-  margin-bottom: 0.25rem;
   text-transform: uppercase;
 }
 
@@ -122,8 +120,9 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 /* Sidebar: Table of Contents */
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
-  
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for subtle depth */
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2); /* Soft shadow for subtle depth */
   transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
 }
 
