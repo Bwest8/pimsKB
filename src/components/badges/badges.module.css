@@ -6,8 +6,9 @@
   padding: 0.2rem 0.5rem; /* Top/Bottom, Left/Right padding */
   border-radius: 1rem; /* Fully rounded corners */
   border: 1px solid transparent; /* Specify default border color if needed */
-  margin-right: 0.4rem; /* Right margin to separate from adjacent elements */
+  margin-left: 0.3rem;
   white-space: nowrap; /* Prevent badge text from wrapping */
+  margin-bottom: 0.2rem;
 }
 
   
