@@ -1,14 +1,15 @@
 /* badges.module.css */
 
 .badge {
-    font-size: 0.80rem;
-    font-weight: 700;
-    padding: 0.25rem 0.625rem;
-    border-radius: 1rem;
-    border: 1px solid;
-    margin-right: 0.3rem;
-    white-space: normal;
-  }
+  font-size: 0.70rem; /* Smaller font size for badge */
+  font-weight: bold; /* Using 'bold' for clarity */
+  padding: 0.2rem 0.5rem; /* Top/Bottom, Left/Right padding */
+  border-radius: 1rem; /* Fully rounded corners */
+  border: 1px solid transparent; /* Specify default border color if needed */
+  margin-right: 0.4rem; /* Right margin to separate from adjacent elements */
+  white-space: nowrap; /* Prevent badge text from wrapping */
+}
+
   
   @media (max-width: 996px) {
     .badge {
@@ -91,49 +92,36 @@
   }
 
   :root {
-    --tooltip-bg-color: rgba(59, 59, 59, 0.98);
+    --tooltip-bg-color: rgba(25, 42, 86, 0.95); /* Deep blue background */
+    --tooltip-text-color: #EFEFEF; /* Off-white text for readability */
   }
   
   .tooltip {
     position: relative;
-    display: inline-block;
     cursor: pointer;
-  }
-  
-  .tooltip::before,
-  .tooltip::after {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    pointer-events: none;
-  }
-  
-  .tooltip::before {
-    content: "";
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent transparent var(--tooltip-bg-color) transparent;
-    top: calc(100% - 6px);
-    left: 50%;
-    transform: translateX(-50%);
   }
   
   .tooltip::after {
     content: attr(data-tooltip);
-    background-color: var(--tooltip-bg-color);
-    color: #fff;
+    white-space: pre-line; /* Allows for natural line breaks */
+    visibility: hidden;
+    text-align: center;
+    background-color: var(--tooltip-bg-color); /* Using variable for background color */
+    color: var(--tooltip-text-color); /* Using variable for text color */
     border-radius: 6px;
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
-    padding: 4px 8px;
-    top: calc(100% + 6px);
-    left: 20%;
-    transform: translateX(-20%);
+    padding: 3px 8px;
+    position: absolute;
     z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290px; /* Adjust width as necessary */
+    opacity: 0;
+    transition: opacity 0.3s;
   }
   
-  .tooltip:hover::before,
   .tooltip:hover::after {
+    visibility: visible;
     opacity: 1;
   }
+  

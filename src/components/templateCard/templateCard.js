@@ -12,10 +12,9 @@ const TemplateCard = ({ fields, collected, targetTables, dependencies }) => {
   return (
     <div
       className={`${
-        isDarkTheme
-          ? "bg-[hsl(0,0%,15%)] text-white"
-          : "bg-[hsl(0,0%,99%)] text-gray-800 shadow-sm"
+        isDarkTheme ? "text-white" : "text-gray-800 shadow-sm"
       } rounded-md p-4`}
+      style={{ backgroundColor: "var(--ifm-navbar-background-color)" }}
     >
       <div className="mb-2">
         <h3>

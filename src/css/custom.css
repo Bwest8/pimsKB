@@ -30,7 +30,7 @@
   --ifm-color-primary-darkest: #143797;
   --ifm-color-primary-light: #2b5be3;
   --ifm-color-primary-lighter: #3663e4;
-  --ifm-color-primary-lightest: #567ce8;
+  --ifm-color-primary-lightest: #567de818;
   --ifm-navbar-background-color: #f4f4f5; /* Light shade of gray header */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
@@ -48,11 +48,15 @@
   --ifm-color-primary-darkest: #0065b3;
   --ifm-color-primary-light: #1a9bff;
   --ifm-color-primary-lighter: #26a1ff;
-  --ifm-color-primary-lightest: #4db1ff;
+  --ifm-color-primary-lightest: #4db2ff1b;
   --ifm-navbar-background-color: #262626; /* Dark gray for header */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
   --search-local-highlight-color: #053757 !important;
+}
+
+.menu__list {
+  font-size: 0.9em;
 }
 
 .menu__list .menu__link.menu__link--active {
@@ -64,9 +68,9 @@
 }
 
 .menu__list a[href].menu__link.menu__link--active:not(.menu__link--sublist) {
-  background: var(--ifm-navbar-background-color)!important;
+  background: var(--ifm-color-primary-lightest)!important;
   border-left-style: solid;
-  border-left-width: 4px; /* Make the active link more prominent */
+  border-left-width: 2px; /* Make the active link more prominent */
   border-top-left-radius: 2px; /* Soften the corners for a modern look */
   border-bottom-left-radius: 2px;
   padding-left: 16px!important; /* Increase padding for better alignment */
@@ -75,7 +79,7 @@
 
 /* Hover effect for menu links */
 .menu__list .menu__link:hover {
-  padding-left: 16px!important; /* Consistent padding with active state */
+  padding-left: 14px!important; /* Consistent padding with active state */
   transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for hover effects */
   font-weight: bolder;
 }
@@ -104,11 +108,11 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 
 /* Sidebar */
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
-  font-weight: 750;
+  font-weight: 700;
   line-height: 100%;
-  margin-top: 0.25rem;
+  margin-top: 0.50rem;
   margin-bottom: 0.25rem;
-
+  text-transform: uppercase;
 }
 
 .theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible .menu__link {
@@ -116,15 +120,18 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   line-height: 100%;
 }
 
-.menu__list {
-  font-size: 0.95em;
-}
-
 /* Sidebar: Table of Contents */
-.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible {
-  border-bottom: 0.10rem solid #808080;
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
+  
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for subtle depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
 }
 
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+/* Right Sidebar: Table of Contents make active choice bold */
 .table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
   font-weight: bold;
 }
@@ -137,6 +144,7 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   border-radius: 4px; /* Add border-radius */
   font-size: 16px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  position: relative; /* Required for positioning the pseudo-element */
 }
 
 /* Hover effect for navbar items in light mode */
@@ -146,13 +154,25 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   border-radius: 8px; /* Increase border-radius on hover */
 }
 
-/* Active navbar item styles in light mode */
+/* Active navbar item styles in light mode with underline */
 .navbar .navbar__item.navbar__item--active {
   font-weight: 900; /* Set font weight to 900 (extra bold) */
   font-size: 18px; /* Increase font size */
   color: var(--ifm-color-primary);
   padding: 8px 20px; /* Match hover padding */
   border-radius: 10px; /* Match hover border-radius */
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.navbar .navbar__item.navbar__item--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px; /* Distance from the text bottom */
+  height: 2px; /* Height of the underline */
+  background-color: var(--ifm-color-primary); /* Color of the underline */
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
 }
 
 /* Dark mode styles */
@@ -171,11 +191,28 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   border-radius: 8px; /* Increase border-radius on hover */
 }
 
-/* Active navbar item styles in dark mode */
+/* Active navbar item styles in dark mode with underline */
 [data-theme='dark'] .navbar .navbar__item.navbar__item--active {
   font-weight: 900; /* Set font weight to 900 (extra bold) */
   font-size: 18px; /* Increase font size */
   color: var(--ifm-color-primary-lighter);
   padding: 8px 20px; /* Match hover padding */
   border-radius: 10px; /* Match hover border-radius */
+}
+
+[data-theme='dark'] .navbar .navbar__item.navbar__item--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px; /* Distance from the text bottom */
+  height: 2px; /* Height of the underline */
+  background-color: var(--ifm-color-primary-lighter); /* Light primary color for underline in dark mode */
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+details summary {
+  font: var(--ifm-heading-font-weight) var(--ifm-h5-font-size) /
+    var(--ifm-heading-line-height) var(--ifm-heading-font-family);
+  text-transform: uppercase;
 }
