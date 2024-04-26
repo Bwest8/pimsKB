@@ -134,8 +134,8 @@ const config = {
         style: "light",
         logo: {
           alt: "Agency Image",
-          src: "/img/pde-blue.png",
-          srcDark: "/img/pde-white.png",
+          src: "/img/pde-blue1.png",
+          srcDark: "/img/pde-white1.png",
           href: "https://www.education.pa.gov",
         },
         copyright: `Copyright © ${new Date().getFullYear()}  Commonwealth of Pennsylvania. All rights reserved.`,
