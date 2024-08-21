@@ -8,7 +8,7 @@ const config = {
   title: "PIMS Knowledge Base",
   tagline: "Resources for PIMS",
   favicon: "img/favicon.ico",
-  url: "https://pimskb.vercel.app/",
+  url: "https://pimskb.vercel.app",
   baseUrl: "/",
   organizationName: "PDE",
   trailingSlash: false,
@@ -23,7 +23,25 @@ const config = {
 
   plugins: [
     // require.resolve("docusaurus-lunr-search"),
-    require.resolve("docusaurus-plugin-search-local"),
+    [
+      require.resolve("docusaurus-plugin-search-local"),
+      {
+        indexDocs: true, // Index documentation pages
+        indexBlog: false, // Do not index blog posts
+        indexPages: false, // Do not index other pages
+        docsRouteBasePath: '/', // Base route for documentation
+        blogRouteBasePath: '/blog', // Base route for blog
+        hashed: false, // No hashed query for index
+        docsDir: 'docs', // Directory for docs
+        blogDir: 'blog', // Directory for blog
+        removeDefaultStopWordFilter: false, // Keep default stop words
+        highlightSearchTermsOnTargetPage: true, // Highlight search terms on target page
+        searchResultLimits: 8, // Limit search results
+        searchResultContextMaxLength: 50, // Max length of search result context
+        translations: {}, // Add translations if needed
+        ignoreFiles: ['**/meta/**'], // Ignore files with 'meta' in the path
+      },
+    ],
     require.resolve("docusaurus-plugin-image-zoom"),
     async function myPlugin(context, options) {
       return {
