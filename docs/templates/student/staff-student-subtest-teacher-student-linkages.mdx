@@ -1,0 +1,191 @@
+---
+title: Staff Student Subtest Template for Teacher-Student Linkages
+description: Documentation for the Staff Student Subtest Template used to report teacher-student linkages for PVAAS data viewing
+---
+import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
+
+<TemplateCard
+  fields={12}
+  collected={9}
+  targetTables={['STAFF_STUDENT_SUBTEST']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' },
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
+
+## Template Description
+
+This template is used to report teacher-student linkages to facilitate pre-population of the custom student list from which teachers can select current year students for whom they will be able to view historical data in PVAAS. This data will be collected in two different collection windows. See the Elementary/Secondary Data Collection Calendar for details.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+:::warning[Business Rules:]
+Use the AUN of the LEA submitting this PIMS template.
+:::
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](https://www.edna.pa.gov/).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `STAFF DISTRICT CODE`
+
+---
+### 2 - PPID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+A unique identifier assigned by the PDE to each staff member reported in PIMS.
+
+Use the 7-digit Professional Personnel ID (PPID) for all certificated and non-certificated staff with direct instructional responsibility for students.
+
+:::warning[Business Rules:]
+Do not use leading zeros or spaces in PPIDs.
+
+Field 8 of the Staff template for this PPID cannot be 'NPA'.
+:::
+
+
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `3456789`
+</details>
+
+**eScholar Name**: `STAFF ID`
+
+---
+### 3 - STUDENT AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+Use the AUN(s) of the LEA(s) in which the student is enrolled while participating in the course/grade/subject of instruction.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](https://www.edna.pa.gov/).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `STUDENT DISTRICT CODE`
+
+---
+### 4 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, 10-digit identifier (PAsecureID) assigned by PDE to each student.
+
+Create a record for each PAsecureID, indicating all students for whom staff have direct instructional responsibility for the applicable course/grade/subject of instruction.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 5 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `2025-06-30`
+</details>
+
+---
+### 6 - ASSESSMENT AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+Use the AUN for the state.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Valid Value: `999999999`
+</details>
+
+**eScholar Name**: `ASSESSMENT DISTRICT CODE`
+
+---
+### 7 - REPORTING PERIOD
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={1} /></p>
+
+Numeric value to identify the collection period identified in the Elementary/Secondary Data Collection Calendar.
+
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `1` - October
+- `2` - January
+</details>
+
+**eScholar Name**: `TEST DESCRIPTION`
+
+---
+### 8 - ASSESSMENT SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date indicating the whole school year; June 30 at the end of the standard school year is used to designate the Assessment school year.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+Example: `2025-06-30`
+</details>
+
+---
+### 9 - SUBTEST IDENTIFIER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The unique code that corresponds with the reporting period for this template.
+
+<details open>
+<summary>**Sample / Valid Value:**</summary>
+
+- `TSL1` - October
+- `TSL2` - January
+</details>
+
+---
+### 10-12
+Fields not collected. Must be delimited in template file.
+
+---
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates.
+
+## Sample
+
+**Sample Staff Student Subtest Template for Teacher-Student Linkages**
+:::note
+NC stands for Not Collected
+:::
+
+| **Submitting AUN** | **PPID** | **Student AUN** | **PASECUREID** | **School Year Date** | **Assessment AUN** | **Reporting Period** | **Assessment School Year Date** | **Subtest Identifier** | **NC** | **NC** | **NC** |
+|--------------------|----------|-----------------|----------------|----------------------|--------------------|----------------------|---------------------------------|------------------------|--------|--------|--------|
+| 123456789          | 3456789  | 123456789       | 1000000009     | 2025-06-30           | 999999999          | 1                    | 2025-06-30                      | TSL1                   |        |        |        |
+| 123456789          | 3456790  | 123456789       | 1000000010     | 2025-06-30           | 999999999          | 1                    | 2025-06-30                      | TSL1                   |        |        |        |
+| 123456789          | 3456789  | 123456789       | 1000000011     | 2025-06-30           | 999999999          | 2                    | 2025-06-30                      | TSL2                   |        |        |        |
+| 123456789          | 3456791  | 987654321       | 1000000012     | 2025-06-30           | 999999999          | 2                    | 2025-06-30                      | TSL2                   |        |        |        |

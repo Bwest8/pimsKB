@@ -1,0 +1,169 @@
+---
+title: District Fact for ACT 35
+description: District Fact for ACT 35 Documentation
+---
+import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
+
+<TemplateCard
+  fields={21}
+  collected={7}
+  targetTables={['DISTRICT_FACT']}
+  dependencies={[]}
+/>
+
+## Template Description
+
+The District Fact Template is used to submit counts of the total budgeted complement of professional staff positions and the number of those budgeted professional staff positions that are vacant as of the date of final budget adoption by the LEA's governing Board.
+
+Professional staff positions are those that are listed in PIMS Manual, Volume 2, Appendix B. For this collection, a vacant position shall be defined as an unoccupied position that has been board approved and posted to allow the LEA to proceed through the hiring process.
+
+:::note
+Any posted position that is currently filled by an individual with a Type 01 Emergency Permit is not considered unoccupied and should not be counted as a vacancy.
+:::
+
+**This report is required for all LEAs that report Staff data.**
+
+Information is captured in an Excel file, automatically creating the District Fact Template to be submitted to PIMS. The Act35 Form and directions on how to complete this form are located on the PDE website under Data and Reporting/PIMS/Excel Reporting Tools/ACT35. After reading the directions, proceed as follows:
+
+1. Open the Excel file "ACT35"
+2. Complete the required information on the PIMS_Input Tab:
+   a. Supply your LEA Information by entering your 9-digit AUN.
+   b. Select the current School Year from the drop-down menu.
+   c. Enter the Count of TOTAL Budgeted Professional Staff.
+   d. Enter the Count of VACANT Budgeted Professional Staff.
+3. When all information has been completed the form should be saved in Excel.
+4. After saving the Input form in Excel, click on the DISTRICT_FACT tab and do the following:
+   a. click on File
+   b. click on Save As
+   c. name the file correctly (SUBMITTINGAUN_DISTRICT_FACT_DATE&TIME). Example file name: 123456789_DISTRICT_FACT_201506110800
+   d. save file type as .csv
+5. Upload the .csv file into the PIMS system as a District Fact Template
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2025-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+---
+### 3 - CATEGORY 01
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Constant Value defining the type of data entered.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`ACT35`
+</details>
+
+---
+### 4 - CATEGORY 02
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={7} /></p>
+
+Constant Value defining the type of data entered.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`BUDGET`
+</details>
+
+---
+### 5 - CATEGORY 03
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+Constant value defining the type of data entered.
+
+As of the date of final Budget adoption:
+TOTAL - The Total Number of budgeted Professional Staff.
+VACANT - The number of budgeted Professional Staff positions that are vacant.
+
+*Professional Staff includes any position listed in PIMS Manual Volume 2, Appendix B.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+- `TOTAL`
+- `VACANT`
+</details>
+
+:::note
+Your template will have two rows of data.
+:::
+
+---
+### 6 - MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`COUNT`
+</details>
+
+**eScholar Name**: `PRIMARY MEASURE TYPE`
+
+---
+### 7 - COUNT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+Provide the COUNT of TOTAL budgeted professional Staff positions when CATEGORY 03= TOTAL
+
+Provide the COUNT of VACANT budgeted professional Staff positions when CATEGORY 03= VACANT
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Must be a whole number. If None to report, then enter as 0.
+
+You must provide a COUNT for each Valid Value in CATEGORY 03 (TOTAL, VACANT)
+
+Example: `2`
+</details>
+
+---
+### 8-21
+Fields not collected. Must be delimited in template file.
+
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+## Sample
+
+**Sample ACT 35 Submission for the District Fact Template**
+:::note
+NC stands for Not Collected
+:::
+
+| **Submitting AUN** | **School Year Date** | **Category 01** | **Category 02** | **Category 03** | **Measure Type** | **Count** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** |
+|--------------------|----------------------|-----------------|-----------------|-----------------|------------------|-----------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 123456789          | 2025-06-30           | ACT35           | BUDGET          | TOTAL           | COUNT            | 100       |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| 123456789          | 2025-06-30           | ACT35           | BUDGET          | VACANT          | COUNT            | 5         |        |        |        |        |        |        |        |        |        |        |        |        |        |        |

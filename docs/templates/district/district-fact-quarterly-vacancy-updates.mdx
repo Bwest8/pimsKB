@@ -1,0 +1,210 @@
+---
+title: District Fact for Quarterly Vacancy Updates
+description: District Fact for Quarterly Vacancy Updates Documentation
+---
+import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
+
+<TemplateCard
+  fields={21}
+  collected={10}
+  targetTables={['DISTRICT_FACT']}
+  dependencies={[]}
+/>
+
+## Template Description
+
+The District Fact Template is used to submit counts of all full-time and part-time, vacant, professional staff (Appendix B) positions as of the START DATE. For this collection, a vacant position shall be defined as an unoccupied position that has been board approved and posted to allow the LEA to proceed through the hiring process.
+
+:::note
+Any posted position that is currently filled by an individual with a Type 01 Emergency Permit is not considered unoccupied and should not be reported as a vacancy.
+:::
+
+**This report is required for all LEAs that report Staff data.**
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit Administrative Unit Number (AUN) assigned by the PDE.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `DISTRICT CODE`
+
+---
+### 2 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2024-06-30`
+</details>
+
+**eScholar Name**: `REPORTING DATE`
+
+---
+### 3 - CATEGORY 01
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+Constant Value defining the type of data entered.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`PROFSTAFF`
+</details>
+
+---
+### 4 - CATEGORY 02
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={7} /></p>
+
+Constant Value defining the type of data entered.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`VACANCY`
+</details>
+
+---
+### 5 - CATEGORY 03
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+Assignment Code
+
+:::warning[Business Rules:]
+- If no vacancies to report, then CATEGORY 03 must = `NONE`  
+- CATEGORY 03 cannot = `9998` (security personnel are only reported in the Safe Schools Collection)
+:::
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+See Appendix B of Volume 2 of the PIMS User Manual for a complete list of valid values.
+
+`NONE`
+</details>
+
+---
+### 6 - MEASURE TYPE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+`COUNT`
+</details>
+
+---
+### 7 - COUNT
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+If MEASURE TYPE = `COUNT`, the count should be supplied in this field
+
+:::warning[Business Rules:] 
+If Category 03 = `NONE` then Count must = `0`
+:::
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2`
+</details>
+
+---
+### 8-10
+Fields not collected. Must be delimited in template file.
+
+---
+### 11 - CATEGORY 04
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={2} /></p>
+
+Staff Employment Type Code
+
+:::warning[Business Rules:]
+If Category 03 = `NONE` then Category 04 must = `NA`
+:::
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+- `F` - Full Time
+- `P` - Part Time
+- `NA`
+</details>
+
+---
+### 12 - CATEGORY 05
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={3} /></p>
+
+Staff Status (How is the position being staffed)
+
+:::warning[Business Rules:] 
+If Category 03 = `NONE` then Category 05 must = `NA`
+:::
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+- `LTS` - Long Term Sub
+- `STS` - Short Term Sub
+- `NS` - Not Staffed (No individual regularly designated to fill this position)
+- `NA`
+</details>
+
+---
+### 13-18
+Fields not collected. Must be delimited in template file.
+
+---
+### 19 - START DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+Snapshot Date that identifies the quarter represented by data being submitted
+
+:::warning[Business Rules:]
+JAN 2- Quarter 2 (Oct-Dec)
+APR 2- Quarter 3 (Jan- March)
+JULY 2- Quarter 4 (April- June)
+
+Field 19 must = START DATE (Specific to each Quarterly requirement)
+:::
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2025-01-02`
+</details>
+
+---
+### 20-21
+Fields not collected. Must be delimited in template file.
+
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates
+
+## Sample
+
+**Sample Quarterly Vacancy Updates Submission for the District Fact Template**
+:::note
+NC stands for Not Collected
+:::
+
+| **Submitting AUN** | **School Year Date** | **Category 01** | **Category 02** | **Category 03** | **Measure Type** | **Count** | **NC** | **NC** | **NC** | **Category 04** | **Category 05** | **NC** | **NC** | **NC** | **NC** | **NC** | **NC** | **Start Date** | **NC** | **NC** |
+|--------------------|----------------------|-----------------|-----------------|-----------------|------------------|-----------|--------|--------|--------|----------------|----------------|--------|--------|--------|--------|--------|--------|----------------|--------|--------|
+| 123456789          | 2024-06-30           | PROFSTAFF       | VACANCY         | 1875            | COUNT            | 1         |        |        |        | F              | NS             |        |        |        |        |        |        | 2025-01-02     |        |        |
+| 123456789          | 2024-06-30           | PROFSTAFF       | VACANCY         | 8405            | COUNT            | 2         |        |        |        | F              | LTS            |        |        |        |        |        |        | 2025-01-02     |        |        |
+| 123456789          | 2024-06-30           | PROFSTAFF       | VACANCY         | 3250            | COUNT            | 1         |        |        |        | P              | STS            |        |        |        |        |        |        | 2025-01-02     |        |        |
+| 123456789          | 2024-06-30           | PROFSTAFF       | VACANCY         | NONE            | COUNT            | 0         |        |        |        | NA             | NA             |        |        |        |        |        |        | 2025-01-02     |        |        |

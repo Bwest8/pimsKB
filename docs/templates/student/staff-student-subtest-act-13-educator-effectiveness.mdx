@@ -1,0 +1,208 @@
+---
+title: Staff Student Subtest Template for Act 13 Educator Effectiveness
+description: Staff Student Subtest Template for Act 13 Educator Effectiveness Documentation
+---
+
+import Badge from '@site/src/components/badges/badges';
+import TemplateCard from '@site/src/components/templateCard/templateCard';
+
+<TemplateCard
+  fields={12}
+  collected={12}
+  targetTables={['STAFF_STUDENT_SUBTEST']}
+  dependencies={[
+    { label: 'Student', link: '/docs/templates/student' },
+    { label: 'Staff', link: '/docs/templates/staff' }
+  ]}
+/>
+
+## Template Description
+
+The Staff Student Subtest Template for Act 13 Educator Effectiveness contains a record for each teacher/student instructional relationship for each assessment. The Staff Student Subtest Template for Act 13 Educator Effectiveness must be submitted in a cumulative fashion indicating all instructional relationships related to PSSA and Keystone Assessments for the school year.
+
+## Template Specifications {#template-specs}
+
+---
+### 1 - SUBMITTING AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `STAFF DISTRICT CODE`
+
+---
+### 2 - PPID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+A unique identifier assigned by the PDE to each staff member reported in PIMS.
+
+Use the 7-digit Professional Personnel ID (PPID) for all certificated and non-certificated staff with direct instructional responsibility for students.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Do not use leading zeros or spaces in PPIDs.
+
+Example: `3456789`
+</details>
+
+**eScholar Name**: `STAFF ID`
+
+---
+### 3 - STUDENT AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+Use the AUN(s) of the LEA(s) in which the student is enrolled while participating in the course/grade/subject of instruction.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx).
+
+Example: `123456789`
+</details>
+
+**eScholar Name**: `STUDENT DISTRICT CODE`
+
+---
+### 4 - PASECUREID
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+The unique, 10-digit identifier (PAsecureID) assigned by PDE to each student.
+
+Create a record for each PAsecureID, indicating all students for whom staff have direct instructional responsibility for the applicable course/grade/subject of instruction.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `1000000009`
+</details>
+
+**eScholar Name**: `STUDENT ID`
+
+---
+### 5 - SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date (June 30), the last day of the current school year indicating the whole school year.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2025-06-30`
+</details>
+
+---
+### 6 - ASSESSMENT AUN
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+The unique, 9-digit AUN assigned by the PDE.
+
+Use the AUN for the state.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Valid Value: `999999999`
+</details>
+
+**eScholar Name**: `ASSESSMENT DISTRICT CODE`
+
+---
+### 7 - TEST DESCRIPTION
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={7} /></p>
+
+The unique code that represents the assessment for which this teacher is assigned instructional responsibility.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid values.
+</details>
+
+---
+### 8 - ASSESSMENT SCHOOL YEAR DATE
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+A single date indicating the whole school year; June 30 at the end of the standard school year is used to designate the Assessment school year.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Example: `2025-06-30`
+</details>
+
+---
+### 9 - SUBTEST IDENTIFIER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+
+The unique code that represents the more specific subtest for which this teacher is assigned instructional responsibility.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+See Appendix AK in Volume 2 of the PIMS User Manual for a complete list of valid values.
+</details>
+
+---
+### 10 - PERCENTAGE OF SHARED INSTRUCTION (INSTRUCTIONAL RESPONSIBILITY WEIGHT)
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The percentage of content-specific instruction for a state assessment that a teacher is responsible for providing to an individual student. The PERCENTAGE OF SHARED INSTRUCTION (INSTRUCTIONAL RESPONSIBILITY WEIGHT) will account for shared instruction of a student from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEA's testing window opens for that state assessment.
+
+Zero will add the students to the "removed from roster". 1-100 will add the students to the teacher's roster.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Whole number from 0 to and including 100.
+
+Example: `50`
+</details>
+
+---
+### 11 - PERCENTAGE OF CONCURRENT ENROLLMENT (INSTRUCTIONAL RELATIONSHIP WEIGHT)
+<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={3} /></p>
+
+The percentage of days in which a student and a teacher are enrolled together (concurrently enrolled) for instruction for a state assessment, from Day One of the instruction (subject/grade/course) for the state assessment, up to and including the last school day before the LEA's testing window opens for that state assessment.
+
+Zero will add the students to the "removed from roster." 1-100 will add the students to the teacher's roster.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+Whole number from 0 to and including 100.
+
+Example: `25`
+</details>
+
+---
+### 12 - RELATIONSHIP SCHOOL NUMBER
+<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+The PDE defined, 4-digit code associated with the instructional relationship being reported.
+
+NOTE: Each record represents a relationship, not a teacher or student.
+
+<details open>
+<summary>**Sample/Valid Values:**</summary>
+
+RELATIONSHIP SCHOOL NUMBER must be related to the matching Field 1 (SUBMITTING AUN) in EdNA.
+
+Example: `1010`
+</details>
+
+**eScholar Name**: `RELATIONSHIP LOCATION CODE`
+
+## Rules
+See the Rules Section of the Template Domain for rules consistent throughout all templates

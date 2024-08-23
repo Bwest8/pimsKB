@@ -97,6 +97,8 @@ module.exports = {
             "templates/district/distract-fact-home-ed-private-tutoring",
             "templates/district/district-fact-staff-vacancies",
             "templates/district/district-fact-support-personnel",
+            "templates/district/district-fact-act-35",
+            "templates/district/district-fact-quarterly-vacancy-updates",
           ],
         },
         {
@@ -170,7 +172,8 @@ module.exports = {
           items: [
             "templates/student/student",
             "templates/student/student-snapshot",
-            "templates/student/staff-student-subtest",
+            "templates/student/staff-student-subtest-act-13-educator-effectiveness",
+            "templates/student/staff-student-subtest-teacher-student-linkages",
             "templates/student/student-award-fact-icn-wbl",
             "templates/student/student-fact-career-standards-benchmarks",
             "templates/student/student-local-assessment-subtest-early-indicators-success",

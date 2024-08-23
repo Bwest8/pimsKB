@@ -1,21 +1,21 @@
 {
-    "name": "PIMS Knowledge Base",
-    "short_name": "PIMS KB",
-    "theme_color": "{{themeColor}}",
-    "background_color": "#ffffff",
-    "display": "minimal-ui",
-    "scope": "./",
-    "start_url": "/docs/intro",
-    "icons": [
-      {
-        "src": "img/pimskb-logo-pwa.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "img/pimskb-logo-pwa.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  }
+  "name": "PIMS Knowledge Base",
+  "short_name": "PIMS KB",
+  "theme_color": "{{themeColor}}",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "/docs/intro",
+  "icons": [
+    {
+      "src": "img/pimskb-logo-pwa.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/pimskb-logo-pwa.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
