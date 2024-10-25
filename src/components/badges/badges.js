@@ -1,5 +1,6 @@
 import React from "react";
 import { useColorMode } from "@docusaurus/theme-common";
+import clsx from "clsx";
 import styles from "./badges.module.css";
 
 const colorTextMap = {
@@ -23,27 +24,30 @@ const tooltipTextMap = {
   maxLength: "This field has a maximum length",
 };
 
-const Badge = ({ color, children, length }) => {
-  const badgeColor = color || (length ? "maxLength" : "secondary");
-  // Ensure that tooltipTextMap[badgeColor] exists; use an empty string as a fallback
+export default function Badge({ color, children, length }) {
+  const { colorMode } = useColorMode();
+  const badgeColor = color || (length ? "maxLength" : "optional");
   const tooltipText = length
     ? `This field has a maximum length of: ${length}`
-    : (tooltipTextMap[badgeColor] || "").replace(/\n/g, "\n");
+    : tooltipTextMap[badgeColor].replace(/\n/g, "\n");
 
   return (
     <span
       data-tooltip={tooltipText}
-      className={`${styles.badge} ${styles[badgeColor]} ${styles.tooltip}`}
+      className={clsx(
+        styles.badge,
+        styles[badgeColor],
+        styles.tooltip,
+        colorMode === "dark" && styles.dark
+      )}
     >
       {length ? (
         <>
           Max Length: <code>{length}</code>
         </>
       ) : (
-        children || colorTextMap[color]
+        children || colorTextMap[badgeColor]
       )}
     </span>
   );
-};
-
-export default Badge;
+}

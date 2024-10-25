@@ -1,65 +1,138 @@
 /* CourseDataTable.module.css */
 
+.container {
+  margin-bottom: 2rem;
+}
+
+.divider {
+  margin: 1rem 0;
+}
+
+.legendSection {
+  margin-bottom: 1rem;
+}
+
+.legendTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.badgeDescriptions,
+.rowStyleDescriptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badgeDescription,
+.rowStyleDescription {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.badgeAP {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+.badgeIB {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+.badgeDC {
+  background-color: #ddd6fe;
+  color: #5b21b6;
+}
+.badgeCI {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.badgeFR {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.colorSample {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid black;
+  margin-right: 0.25rem;
+}
+
+.searchSection {
+  margin-bottom: 1rem;
+}
+
+.searchInputWrapper {
+  position: relative;
+  max-width: 20rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #f3f4f6;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  background-color: #ffffff;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.attributesContainer {
+  display: flex;
+  gap: 0.25rem;
+}
+
 .expandableRow {
-    padding: 1em;
-    font-size: 0.8em;
-    border: 1px solid;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-  }
-  
-  .expandableRow table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .expandableRow th,
-  .expandableRow td {
-    border: 1px solid ;
-    padding: 0.5em;
-    text-align: left;
-  }
-  .scedCodeLabel,
-  .scedDescriptionLabel {
-    margin: 0 0 0.5em 0;
-    font-weight: bold;
-  }
-    .scedCodeValue,
-  .scedDescriptionValue {
-    font-weight: normal;
-    word-wrap: break-word;
-  }
-  
-  .legendContainer {
-    margin-top: 10px;
-    font-size: 0.8em;
-  }
-  
-  .legendTitle {
-    font-weight: bold;
-  }
-  
-  .badgeDescriptionsContainer,
-  .rowStyleDescriptionsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5px;
-  }
-  
-  .badgeDescription,
-  .rowStyleDescription {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-  }
-  
-  .rowStyleColor {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-  
-  .searchInput {
-    font-size: 20px;
-    width: 300px;
-  }
+  padding: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid #d1d5db;
+  border-top: none;
+  border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.expandableTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.expandableTable th,
+.expandableTable td {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.scedCode,
+.scedDescription {
+  margin: 0.5rem 0;
+}
+
+.scedCode span,
+.scedDescription span {
+  font-weight: normal;
+}

@@ -1,137 +1,165 @@
-/* badges.module.css */
-
-.badge {
-  font-size: 0.70rem; /* Smaller font size for badge */
-  font-weight: bold; /* Using 'bold' for clarity */
-  padding: 0.2rem 0.5rem; /* Top/Bottom, Left/Right padding */
-  border-radius: 1rem; /* Fully rounded corners */
-  border: 1px solid transparent; /* Specify default border color if needed */
-  margin-left: 0.3rem;
-  white-space: nowrap; /* Prevent badge text from wrapping */
-  margin-bottom: 0.2rem;
+:root {
+  --tooltip-bg-color: hsl(222.2 84% 4.9%);
+  --tooltip-text-color: hsl(210 40% 98%);
+  --tooltip-border-radius: 4px;
+  --tooltip-font-size: 0.775rem;
+  --tooltip-line-height: 1.25rem;
+  --tooltip-padding: 0.5rem 0.75rem;
+  --tooltip-max-width: 20rem;
+  --tooltip-arrow-size: 8px;
 }
 
-  
-  @media (max-width: 996px) {
-    .badge {
-      font-size: 0.65rem;
-      padding: 0.2rem 0.5rem;
-    }
-  }
-  
-  .required {
-    background-color: rgb(254, 226, 226);
-    color: rgb(153, 27, 27);
-    border-color: rgb(248, 113, 113);
-  }
-  
-  .key {
-    background-color: rgb(255, 248, 230);
-    color: rgb(146, 64, 14);
-    border-color: rgb(253, 224, 71);
-  }
-  
-  .optional {
-    background-color: rgb(250, 250, 250);
-    color: rgb(51, 65, 85);
-    border-color: rgb(148, 163, 184);
-  }
-  
-  .updateable {
-    background-color: rgb(224, 231, 255);
-    color: rgb(55, 48, 163);
-    border-color: rgb(129, 140, 248);
-  }
-  
-  .conditional {
-    background-color: rgb(255, 237, 213);
-    color: rgb(154, 52, 18);
-    border-color: rgb(255, 152, 0);
-  }
-  
-  .maxLength {
-    background-color: rgb(230, 230, 230);
-    color: rgb(55, 65, 81);
-    border-color: rgb(156, 163, 175);
-  }
-  
-  /* Dark mode styles */
-  [data-theme='dark'] .required {
-    background-color: rgb(127, 29, 29);
-    color: rgb(252, 165, 165);
-    border-color: rgb(220, 38, 38);
-  }
-  
-  [data-theme='dark'] .key {
-    background-color: rgb(74, 58, 5);
-    color: rgb(254, 243, 199);
-    border-color: rgb(217, 119, 6);
-  }
-  
-  [data-theme='dark'] .optional {
-    background-color: rgb(10, 10, 10);
-    color: rgb(203, 213, 225);
-    border-color: rgb(100, 116, 139);
-  }
-  
-  [data-theme='dark'] .updateable {
-    background-color: rgb(49, 46, 129);
-    color: rgb(191, 219, 254);
-    border-color: rgb(99, 102, 241);
-  }
-  
-  [data-theme='dark'] .conditional {
-    background-color: rgb(120, 53, 15);
-    color: rgb(254, 215, 170);
-    border-color: rgb(249, 115, 22);
-  }
-  
-  [data-theme='dark'] .maxLength {
-    background-color: rgb(31, 41, 55);
-    color: rgb(197, 204, 216);
-    border-color: rgb(75, 85, 99);
-  }
+.badge {
+  font-size: 0.70rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  margin: 0 0 0.2rem 0.3rem;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
 
-  :root {
-    --tooltip-bg-color: rgba(25, 42, 86, 0.95); /* Deep blue background */
-    --tooltip-text-color: #EFEFEF; /* Off-white text for readability */
-  }
-  
-  .tooltip {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .tooltip::after {
-    content: attr(data-tooltip);
-    white-space: pre-line; /* Allows for natural line breaks */
-    visibility: hidden;
-    text-align: center;
-    background-color: var(--tooltip-bg-color); /* Using variable for background color */
-    color: var(--tooltip-text-color); /* Using variable for text color */
-    border-radius: 6px;
-    padding: 3px 8px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 290px; /* Adjust width as necessary */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip:hover::after {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  /* Media Query to Disable Tooltip on Mobile */
 @media (max-width: 996px) {
-  .tooltip::after {
-      display: none; /* Hides the tooltip content completely on mobile */
+  .badge {
+    font-size: 0.65rem;
+  }
+}
+
+.required {
+  background-color: rgb(254, 226, 226);
+  color: rgb(153, 27, 27);
+  border-color: rgb(248, 113, 113);
+}
+
+.key {
+  background-color: rgb(255, 248, 230);
+  color: rgb(146, 64, 14);
+  border-color: rgb(253, 224, 71);
+}
+
+.optional {
+  background-color: rgb(250, 250, 250);
+  color: rgb(51, 65, 85);
+  border-color: rgb(148, 163, 184);
+}
+
+.updateable {
+  background-color: rgb(224, 231, 255);
+  color: rgb(55, 48, 163);
+  border-color: rgb(129, 140, 248);
+}
+
+.conditional {
+  background-color: rgb(255, 237, 213);
+  color: rgb(154, 52, 18);
+  border-color: rgb(255, 152, 0);
+}
+
+.maxLength {
+  background-color: rgb(230, 230, 230);
+  color: rgb(55, 65, 81);
+  border-color: rgb(156, 163, 175);
+}
+
+.dark.required {
+  background-color: rgb(127, 29, 29);
+  color: rgb(252, 165, 165);
+  border-color: rgb(220, 38, 38);
+}
+
+.dark.key {
+  background-color: rgb(74, 58, 5);
+  color: rgb(254, 243, 199);
+  border-color: rgb(217, 119, 6);
+}
+
+.dark.optional {
+  background-color: rgb(10, 10, 10);
+  color: rgb(203, 213, 225);
+  border-color: rgb(100, 116, 139);
+}
+
+.dark.updateable {
+  background-color: rgb(49, 46, 129);
+  color: rgb(191, 219, 254);
+  border-color: rgb(99, 102, 241);
+}
+
+.dark.conditional {
+  background-color: rgb(120, 53, 15);
+  color: rgb(254, 215, 170);
+  border-color: rgb(249, 115, 22);
+}
+
+.dark.maxLength {
+  background-color: rgb(31, 41, 55);
+  color: rgb(197, 204, 216);
+  border-color: rgb(75, 85, 99);
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + var(--tooltip-arrow-size));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: var(--tooltip-max-width);
+  width: max-content;
+  background-color: var(--tooltip-bg-color);
+  color: var(--tooltip-text-color);
+  text-align: center;
+  border-radius: var(--tooltip-border-radius);
+  padding: var(--tooltip-padding);
+  font-size: var(--tooltip-font-size);
+  line-height: var(--tooltip-line-height);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: pre-line;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: var(--tooltip-arrow-size);
+  border-style: solid;
+  border-color: var(--tooltip-bg-color) transparent transparent transparent;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover::after {
+  transform: translateX(-50%) translateY(-0.5rem);
+}
+
+@media (max-width: 996px) {
+  .tooltip::after,
+  .tooltip::before {
+    display: none;
   }
   .tooltip {
-      cursor: default; /* Resets the cursor to default as there is no tooltip to trigger */
+    cursor: default;
   }
+}
+
+[data-theme='dark'] {
+  --tooltip-bg-color: hsl(0 0% 100% / 0.1);
+  --tooltip-text-color: hsl(0 0% 98%);
 }

@@ -24,19 +24,45 @@ The rule ensures that the values for the following columns in the Course templat
 
 ---
 
-
 When you upload a file, the data quality engine compares the values in the specified columns between the template file and state values in PIMS. It retrieves the state values using the provided Field 29 - **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)** from the submitted template. The rule identifies and flags any records containing discrepancies between the course characteristics and the corresponding state values.
 
 The rule checks that the values in the specified fields of the template file match the corresponding values in PIMS:
 
-- Field 32 [DUAL CREDIT](../templates/course/#32---dual-credit): `N` in the template file should match `NO` in the `DUAL_CREDIT` column in PIMS, and `Y` should match `YES`.
-- Field 33 [ADVANCED PLACEMENT INDICATOR](../templates/course/#33---advanced-placement-indicator): `N` in the template file should match `NO` in the `AP_IND` column in PIMS, and `Y` should match `YES`.
-- Field 40 [INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator): `N` in the template file should match `NO` in the `IB_IND` column in PIMS, and `Y` should match `YES`.
-- Field 97 [CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator): `N` in the template file should match `NO` in the `OTHER_CHARACTERISTIC_IND` column in PIMS, and `Y` should match `YES`.
+<Tabs>
+  <TabItem value="dual-credit" label="Dual Credit" default>
 
+**Field 32 [DUAL CREDIT](../templates/course/#32---dual-credit)**
+
+In the template file, 'N' should match 'NO' in the DUAL_CREDIT column in PIMS, and 'Y' should match 'YES'.
+
+  </TabItem>
+  <TabItem value="ap" label="Advanced Placement">
+
+**Field 33 [ADVANCED PLACEMENT INDICATOR](../templates/course/#33---advanced-placement-indicator)**
+
+In the template file, 'N' should match 'NO' in the AP_IND column in PIMS, and 'Y' should match 'YES'.
+
+  </TabItem>
+  <TabItem value="ib" label="International Baccalaureate">
+
+**Field 40 [INTERNATIONAL BACCALAUREATE INDICATOR](../templates/course/#40---international-baccalaureate-indicator)**
+
+In the template file, 'N' should match 'NO' in the IB_IND column in PIMS, and 'Y' should match 'YES'.
+
+  </TabItem>
+  <TabItem value="cambridge" label="Cambridge Advanced">
+
+**Field 97 [CAMBRIDGE ADVANCED COURSE INDICATOR](../templates/course/#79---cambridge-advanced-course-indicator)**
+
+In the template file, 'N' should match 'NO' in the OTHER_CHARACTERISTIC_IND column in PIMS, and 'Y' should match 'YES'.
+
+  </TabItem>
+</Tabs>
+
+---
 If there is a mismatch between the values in the template file and PIMS, the rule will flag the record for review and correction.
 
-:::caution[IMPORTANT]
+:::caution
 The **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)** field serves as the key to look up the corresponding state values in PIMS. Ensure that this field is accurately populated in your template file for the data quality engine to retrieve the correct state values for comparison.
 :::
 
@@ -45,17 +71,40 @@ The **[ALTERNATE COURSE CODE](../templates/course/#29---alternate-course-code)**
 
 If there are mismatches in the course characteristics between the template file and the state values in PIMS, you may encounter one or more of the following error messages:
 
+<Tabs>
+  <TabItem value="dual-credit" label="Dual Credit" default>
+
 ```
 Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Dual Credit Indicator:`XXX` does not match the state value:`XXX`
+```
 
-Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Advanced Placement Indicator:`XXX` does not match the state value:`XXX`
-
-Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; International Baccalaureate Indicator:`XXX` does not match the state value:`XXX`
-
-Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Cambridge Advanced Course Indicator:`XXX` does not match the state value:`XXX`
+  </TabItem>
+  <TabItem value="ap" label="Advanced Placement">
 
 ```
-***In these error messages, `XXX` represents the actual values from your template file and PIMS.***
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Advanced Placement Indicator:`XXX` does not match the state value:`XXX`
+```
+
+  </TabItem>
+  <TabItem value="ib" label="International Baccalaureate">
+
+```
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; International Baccalaureate Indicator:`XXX` does not match the state value:`XXX`
+```
+
+  </TabItem>
+  <TabItem value="cambridge" label="Cambridge Advanced">
+
+```
+Course Record: Course Code Long:`XXX`; Alternate Course Code:`XXX`; Cambridge Advanced Course Indicator:`XXX` does not match the state value:`XXX`
+```
+
+  </TabItem>
+</Tabs>
+
+:::info
+In these error messages, `XXX` represents the actual values from your template file and PIMS.
+:::
 
 If you receive any of these error messages, review the flagged records in your template file and ensure that the corresponding course characteristic value matches the one in PIMS. Correct any discrepancies and re-upload the file.
 

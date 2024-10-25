@@ -1,0 +1,69 @@
+---
+title: District Fact - Staff Vacancy Date Validation
+sidebar_label: Staff Vacancy Date Validation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# District Fact - Staff Vacancy Date Validation
+
+**ERROR FILENAME:** `rule_staff_vacancy_date_validation`
+
+## Understanding the Rule
+
+This rule ensures that the [START DATE](docs/templates/district/district-fact-quarterly-vacancy-updates.mdx#19---start-date) (field 19) in your [DISTRICT_FACT](docs/templates/district/district-fact-quarterly-vacancy-updates.mdx) submission aligns with the official start date for the reporting quarter. It also verifies that your submission falls within the allowed time frame.
+
+## How It Works
+
+The rule performs two primary checks:
+
+1. **Submission Timing**: Verifies that your data submission occurs within the designated time frame for the quarter.
+
+2. **Start Date Accuracy**: Ensures the Start Date in your file matches the official start date for the reporting quarter.
+
+:::info
+**Key Information**
+
+The quarter (`CATEGORY_06`) and school year (`REPORTING_DATE`) are crucial for determining the correct start date. Ensure these fields are accurately populated.
+:::
+
+## Possible Error Messages
+
+<Tabs>
+  <TabItem value="submission-window" label="Submission Window Not Open">
+
+:::caution
+**Example Error:**
+
+"The submission period for `APR` quarter is from `2025-04-01` to `2025-06-26`. Your upload date: `2025-04-30`. Please submit a data exception request."
+:::
+
+  </TabItem>
+  <TabItem value="incorrect-date" label="Incorrect Start Date">
+
+:::caution
+**Example Error:**
+
+"For the `APR` quarter, the start date should be `2025-04-02`, but you entered `2025-04-03`. Please check the correct start date in the PIMS Manual."
+:::
+
+  </TabItem>
+</Tabs>
+
+### Resolving Errors
+
+1. **Review the Record**: Verify the Start Date and submission date against the official dates for your reporting quarter.
+2. **Fix Discrepancies**: Correct any inconsistencies in your file and re-upload.
+
+## About the District Fact Template
+
+The District Fact Template is used to report vacancies for full-time and part-time professional staff positions as of the Start Date for each quarter. A vacancy is defined as any unfilled position that has been approved and posted for hiring.
+
+:::important
+Positions currently filled by individuals with a Type 01 Emergency Permit should not be reported as vacancies.
+:::
+
+## Need Assistance?
+
+If you encounter any issues or have questions, please don't hesitate to contact PIMS application support. For more detailed instructions, refer to the data upload documentation.
