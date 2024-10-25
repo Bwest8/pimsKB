@@ -2,24 +2,25 @@
   --tooltip-bg-color: hsl(222.2 84% 4.9%);
   --tooltip-text-color: hsl(210 40% 98%);
   --tooltip-border-radius: 4px;
-  --tooltip-font-size: 0.775rem;
+  --tooltip-font-size: 0.675rem;
   --tooltip-line-height: 1.25rem;
   --tooltip-padding: 0.5rem 0.75rem;
   --tooltip-max-width: 20rem;
   --tooltip-arrow-size: 8px;
+  --badge-border-radius: 4px;
 }
 
 .badge {
   font-size: 0.70rem;
   font-weight: bold;
   padding: 0.2rem 0.5rem;
-  border-radius: 1rem;
+  border-radius: var(--badge-border-radius);
   border: 1px solid transparent;
   margin: 0 0 0.2rem 0.3rem;
   white-space: nowrap;
   display: inline-block;
   position: relative;
-  cursor: pointer;
+  cursor: help;
 }
 
 @media (max-width: 996px) {
@@ -121,7 +122,7 @@
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   pointer-events: none;
   white-space: pre-line;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
 }
 
 .tooltip::before {
@@ -160,6 +161,10 @@
 }
 
 [data-theme='dark'] {
-  --tooltip-bg-color: hsl(0 0% 100% / 0.1);
-  --tooltip-text-color: hsl(0 0% 98%);
+  --tooltip-bg-color: hsl(222.2 84% 4.9%);
+  --tooltip-text-color: hsl(210 40% 98%);
+}
+
+[data-theme='dark'] .tooltip::after {
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
 }
