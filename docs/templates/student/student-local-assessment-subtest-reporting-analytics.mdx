@@ -2,6 +2,7 @@
 title: Student Local Assessment Subtest for Reporting and Analytics
 description: Student Local Assessment Subtest for Reporting and Analytics Documentation
 ---
+
 import Badge from '@site/src/components/badges/badges';
 import TemplateCard from '@site/src/components/templateCard/templateCard';
 
@@ -24,306 +25,372 @@ Valid combinations of Test Description, Subtest Area, Subtest Version ID, Score 
 
 ## Template Specifications {#template-specs}
 
----
 ### 1 - SUBMITTING AUN
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={9} />
+</div>
 
 The unique, 9-digit AUN assigned by PDE.
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-`123456789`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    `123456789`
+  </div>
 </details>
 
 **eScholar Name**: `DISTRICT CODE`
 
----
 ### 2 - TEST DESCRIPTION
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={5} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={5} />
+</div>
 
 The code pertaining to the title or name of the assessment.
 
-:::warning[Business Rules:]
+:::warning
 Must be consistent for all records of an assessment.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx).
+  </div>
 </details>
 
----
 ### 3 - SCHOOL YEAR DATE
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={10} />
+</div>
 
 A single date (June 30), the last day of the current school year indicating the whole school year.
 
 **eScholar Name**: `ASSESSMENT SCHOOL YEAR DATE`
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-`2024-06-30`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    `2024-06-30`
+  </div>
 </details>
 
----
 ### 4 - SUBTEST SUBJECT AREA
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={25} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={25} />
+</div>
 
 Description of the test subject area.
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx) for valid values.
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx) for valid values.
+  </div>
 </details>
 
----
 ### 5 - SUBTEST GRADE LEVEL
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={15} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={15} />
+</div>
 
 Grade level for which the test was administered. If the test is applicable to more than one grade level, the student's grade level at the time of the test.
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix K](docs/appendix/appendix-K.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix K](docs/appendix/appendix-K.mdx).
+  </div>
 </details>
 
----
 ### 6 - SUBTEST VERSION ID
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={8} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={8} />
+</div>
 
 The skill or performance measure for which the score(s) is (are) being reported.
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx).
+  </div>
 </details>
 
----
 ### 7
 Field not collected. Must be delimited in template file.
 
----
 ### 8 - SUBTEST IDENTIFIER ORGANIZATION TYPE CODE
-<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={20} />
+</div>
 
 The constant value: 08
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `08`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `08`
+  </div>
 </details>
 
----
 ### 9
 Field not collected. Must be delimited in template file.
 
----
 ### 10 - PASECUREID
-<p><Badge color="required" /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+</div>
 
 The unique, 10-digit PAsecureID assigned to the student
 
 **eScholar Name**: `STUDENT ID`
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `1000000009`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `1000000009`
+  </div>
 </details>
 
----
 ### 11 - TEST DATE
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="key" />
+  <Badge variant="length" value={10} />
+</div>
 
 The date the assessment was administered, or the first day of administration if the assessment spans multiple days.
 
-:::warning[Business Rules:]
+:::warning
 Cannot be greater than the current date.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `2023-10-30`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `2023-10-30`
+  </div>
 </details>
 
----
 ### 12 - STATUS
-<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={20} /></p>
+<div className="field-badges">
+  <Badge variant="required" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={20} />
+</div>
 
 Code to identify the source of the data uploaded.
 
 **eScholar Name**: `STUDENT ASSESSMENT STATUS`
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `15` - upload file was created by the reporting LEA
-- `16` - upload file was created for the LEA by the assessment provider
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `15` - upload file was created by the reporting LEA
+    - `16` - upload file was created for the LEA by the assessment provider
+  </div>
 </details>
 
----
 ### 13-14
 Fields not collected. Must be delimited in template file.
 
----
 ### 15 - SCORE TYPE 1
-<p><Badge color="conditional" /> <Badge color="mandatory" /> <Badge length={3} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="mandatory" />
+  <Badge variant="length" value={3} />
+</div>
 
 Defines the type of score being reported as the scaled score.
 
-:::warning[Business Rules:]
+:::warning
 Required if SCORE 1 is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx).
+  </div>
 </details>
 
----
 ### 16 - SCORE 1
-<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={35} /></p>
+<div className="field-badges">
+  <Badge variant="optional" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={35} />
+</div>
 
 The value of the scaled score if reported.
 
-:::warning[Business Rules:]
+:::warning
 Report as a whole number. Decimals and fractions are to be rounded.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `86`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `86`
+  </div>
 </details>
 
----
 ### 17 - SCORE VALUE TYPE 1
-<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={50} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={50} />
+</div>
 
 The type of score value being reported.
 
-:::warning[Business Rules:]
+:::warning
 Required if SCORE 1 is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `INTEGER`
-- (blank)
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `INTEGER`
+    - (blank)
+  </div>
 </details>
 
----
 ### 18-19
 Fields not collected. Must be delimited in template file.
 
----
 ### 20 - SCORE TYPE 2
-<p><Badge color="conditional" /> <Badge color="mandatory" /> <Badge length={3} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="mandatory" />
+  <Badge variant="length" value={3} />
+</div>
 
 Defines the type of score being reported as the raw score.
 
-:::warning[Business Rules:]
+:::warning
 Required if SCORE 2 is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx).
+  </div>
 </details>
 
----
 ### 21 - SCORE 2
-<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={35} /></p>
+<div className="field-badges">
+  <Badge variant="optional" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={35} />
+</div>
 
 The value of the raw score if reported.
 
-:::warning[Business Rules:]
+:::warning
 Report as a whole number. Decimals and fractions are to be rounded.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `86`
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `86`
+  </div>
 </details>
 
----
 ### 22 - SCORE VALUE TYPE 2
-<p><Badge color="conditional" /> <Badge color="updateable" /> <Badge length={50} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="updateable" />
+  <Badge variant="length" value={50} />
+</div>
 
 The type of score value being reported.
 
-:::warning[Business Rules:]
+:::warning
 Required if SCORE 2 is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `INTEGER`
-- (blank)
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `INTEGER`
+    - (blank)
+  </div>
 </details>
 
----
 ### 23-24
 Fields not collected. Must be delimited in template file.
 
----
 ### 25 - SCORE TYPE 3
-<p><Badge color="conditional" /> <Badge color="mandatory" /> <Badge length={50} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="mandatory" />
+  <Badge variant="length" value={50} />
+</div>
 
 Defines the type of score being reported as the scaled score.
 
-:::warning[Business Rules:]
+:::warning
 Required if SCORE 3 is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx).
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx).
+  </div>
 </details>
 
----
 ### 26 - SCORE 3
-<p><Badge color="optional" /> <Badge length={35} /></p>
+<div className="field-badges">
+  <Badge variant="optional" />
+  <Badge variant="length" value={35} />
+</div>
 
 The value of the Performance Level score if reported.
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-See [Appendix AR](docs/appendix/appendix-AR.mdx) for valid values.
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    See [Appendix AR](docs/appendix/appendix-AR.mdx) for valid values.
+  </div>
 </details>
 
----
 ### 27 - SCORE VALUE TYPE 3
-<p><Badge color="conditional" /> <Badge length={50} /></p>
+<div className="field-badges">
+  <Badge variant="conditional" />
+  <Badge variant="length" value={50} />
+</div>
 
 The type of score value being reported.
 
-:::warning[Business Rules:]
+:::warning
 Required if [SCORE 3](#26---score-3) is reported.
 :::
 
-<details open>
-<summary>**Sample / Valid Value:**</summary>
-
-- `LEVEL`
-- (blank)
+<details>
+  <summary>**Sample / Valid Value:**</summary>
+  <div>
+    - `LEVEL`
+    - (blank)
+  </div>
 </details>
 
----
 ## Rules
 See the Rules Section of the Template Domain
