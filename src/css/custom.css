@@ -3,11 +3,11 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
- @tailwind base;
- @tailwind components;
- @tailwind utilities;
- 
- @font-face {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
   font-family: InterVariable;
   font-style: normal;
   font-weight: 100 900;
@@ -20,11 +20,10 @@
   font-weight: 100 900;
   font-display: swap;
   src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
-
 }
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #3A5BC7;
+  --ifm-color-primary: #3a5bc7;
   --ifm-color-primary-dark: #1a46c2;
   --ifm-color-primary-darker: #1942b8;
   --ifm-color-primary-darkest: #143797;
@@ -33,15 +32,16 @@
   --ifm-color-primary-lightest: #567de818;
   --ifm-navbar-background-color: #f4f4f5; /* Light shade of gray header */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
-  --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
+  --ifm-font-family-base: "InterVariable", sans-serif;
+  font-optical-sizing: auto;
   --theme-color-light: rgb(255, 255, 255);
   --theme-color-dark: hsl(0, 0%, 15%);
   --ifm-hero-font-color: var(--theme-color-dark);
- /* --ifm-container-width-xl: 90%; */
+  /* --ifm-container-width-xl: 90%; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #0090ff;
   --ifm-color-primary-dark: #0082e6;
   --ifm-color-primary-darker: #007ad9;
@@ -51,7 +51,8 @@
   --ifm-color-primary-lightest: #4db2ff1b;
   --ifm-navbar-background-color: #262626; /* Dark gray for header */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
-  --ifm-font-family-base: "InterVariable", sans-serif; font-optical-sizing: auto;
+  --ifm-font-family-base: "InterVariable", sans-serif;
+  font-optical-sizing: auto;
   --search-local-highlight-color: #053757 !important;
 }
 
@@ -60,30 +61,32 @@
 }
 
 .menu__list .menu__link.menu__link--active {
-  border-left-color: var(--ifm-color-primary)!important;
+  border-left-color: var(--ifm-color-primary) !important;
   border-left-width: 4px; /* Increased from 0 for visibility */
   font-weight: bold;
-  color: var(--ifm-color-primary); /* Ensures the text color matches the border */
+  color: var(
+    --ifm-color-primary
+  ); /* Ensures the text color matches the border */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .menu__list a[href].menu__link.menu__link--active:not(.menu__link--sublist) {
-  background: var(--ifm-color-primary-lightest)!important;
+  background: var(--ifm-color-primary-lightest) !important;
   border-left-style: solid;
   border-left-width: 2px; /* Make the active link more prominent */
   border-top-left-radius: 2px; /* Soften the corners for a modern look */
   border-bottom-left-radius: 2px;
-  padding-left: 16px!important; /* Increase padding for better alignment */
+  padding-left: 16px !important; /* Increase padding for better alignment */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transition */
 }
 
 /* Hover effect for menu links */
 .menu__list .menu__link:hover {
-  padding-left: 14px!important; /* Consistent padding with active state */
-  transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for hover effects */
+  padding-left: 14px !important; /* Consistent padding with active state */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    padding-left 0.3s ease; /* Smooth transition for hover effects */
   font-weight: bolder;
 }
-
 
 /* Light mode h3 header background for template specs */
 .markdown > h2#template-specs ~ h3 {
@@ -95,25 +98,29 @@
   border-radius: var(--ifm-alert-border-radius);
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /* Dark mode h3 header background for template specs */
-html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
-  border-bottom: 0.10rem solid hsl(0, 0%, 40%);
+html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
+  border-bottom: 0.1rem solid hsl(0, 0%, 40%);
   background-color: hsl(0, 0%, 22%);
   color: #ffffff;
-  
 }
 
 /* Sidebar */
-.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
+.theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  .menu__link {
   font-weight: bold;
   line-height: 100%;
   text-transform: uppercase;
 }
 
-.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible .menu__link {
+.theme-doc-sidebar-item-category-level-2
+  > .menu__list-item-collapsible
+  .menu__link {
   font-weight: 600;
   line-height: 100%;
 }
@@ -131,7 +138,10 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 }
 
 /* Right Sidebar: Table of Contents make active choice bold */
-.table-of-contents__link--active,.table-of-contents__link--active code,.table-of-contents__link:hover,.table-of-contents__link:hover code {
+.table-of-contents__link--active,
+.table-of-contents__link--active code,
+.table-of-contents__link:hover,
+.table-of-contents__link:hover code {
   font-weight: bold;
 }
 
@@ -142,13 +152,17 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   padding: 8px 16px; /* Add padding between items */
   border-radius: 4px; /* Add border-radius */
   font-size: 16px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out, padding 0.3s ease-in-out,
+    font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
   position: relative; /* Required for positioning the pseudo-element */
 }
 
 /* Hover effect for navbar items in light mode */
 .navbar__item:hover {
-  background-color: var(--ifm-color-emphasis-200); /* Gray background on hover */
+  background-color: var(
+    --ifm-color-emphasis-200
+  ); /* Gray background on hover */
   color: var(--ifm-color-primary); /* Change text color on hover */
   border-radius: 8px; /* Increase border-radius on hover */
 }
@@ -164,7 +178,7 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 }
 
 .navbar .navbar__item.navbar__item--active::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -175,23 +189,25 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
 }
 
 /* Dark mode styles */
-[data-theme='dark'] .navbar__item {
+[data-theme="dark"] .navbar__item {
   --ifm-navbar-background-color: #262626; /* Navbar background color in dark mode */
   font-weight: 800;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out, padding 0.3s ease-in-out,
+    font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
   padding: 8px 16px;
   border-radius: 4px;
 }
 
 /* Hover effect for navbar items in dark mode */
-[data-theme='dark'] .navbar__item:hover {
+[data-theme="dark"] .navbar__item:hover {
   background-color: #3a3a3a; /* Darker gray background on hover */
   color: var(--ifm-color-primary-lighter); /* Lighter primary color on hover */
   border-radius: 8px; /* Increase border-radius on hover */
 }
 
 /* Active navbar item styles in dark mode with underline */
-[data-theme='dark'] .navbar .navbar__item.navbar__item--active {
+[data-theme="dark"] .navbar .navbar__item.navbar__item--active {
   font-weight: 900; /* Set font weight to 900 (extra bold) */
   font-size: 18px; /* Increase font size */
   color: var(--ifm-color-primary-lighter);
@@ -199,19 +215,32 @@ html[data-theme='dark'] .markdown > h2#template-specs ~ h3 {
   border-radius: 10px; /* Match hover border-radius */
 }
 
-[data-theme='dark'] .navbar .navbar__item.navbar__item--active::after {
-  content: '';
+[data-theme="dark"] .navbar .navbar__item.navbar__item--active::after {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: -10px; /* Distance from the text bottom */
   height: 2px; /* Height of the underline */
-  background-color: var(--ifm-color-primary-lighter); /* Light primary color for underline in dark mode */
+  background-color: var(
+    --ifm-color-primary-lighter
+  ); /* Light primary color for underline in dark mode */
   transition: background-color 0.3s ease; /* Smooth transition for color change */
 }
 
-details summary {
-  font: var(--ifm-heading-font-weight) var(--ifm-h5-font-size) /
-    var(--ifm-heading-line-height) var(--ifm-heading-font-family);
-  text-transform: uppercase;
+/* Adjust footer link colors */
+#__docusaurus > footer > div > div.text--center > div > a {
+  color: unset;
+}
+
+#__docusaurus > footer > div > div.text--center > div > a:hover {
+  color: var(--ifm-link-color);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 997px) {
+  /* Show inline table of contents on mobile only */
+  div[class^="tableOfContentsInline"] {
+    display: none;
+  }
 }

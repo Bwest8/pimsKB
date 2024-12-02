@@ -1,0 +1,198 @@
+---
+id: el-reporting-how-to-guide
+title: EL Reporting How-to Guide
+sidebar_label: EL Reporting Guide
+description: Comprehensive guide for reporting English Learner (EL) data in Pennsylvania's education system
+keywords: [EL, English Learner, Pennsylvania, education, reporting, PIMS, LEA, Title III]
+last_update:
+  date: July 2024
+  author: Pennsylvania Department of Education
+---
+
+# English Learner (EL) Reporting How-to Guide
+
+## Overview
+
+The EL Reporting How-to Guide provides essential information on reporting English Learner (EL) data, as mandated by the federal government and required by Pennsylvania's Department of Education (PDE). This document serves as a reference for LEAs responsible for maintaining data quality in PIMS for all EL-related reporting requirements.
+
+## Executive Summary
+
+The October Student Data Set includes critical demographics such as low-income, immigrant, special education, and English learner data. This dataset serves as the official school enrollment count for the year and is mandated by federal requirements.
+
+:::info Important Reporting Requirements
+Local Education Agencies (LEAs) must ensure data accuracy by reviewing and submitting the data to the Pennsylvania Department of Education (PDE) within the October collection window's deadline.
+:::
+
+### Key Uses of EL Data
+
+- Graduation, dropout, and cohort calculations
+- Teacher Loan Forgiveness (TCLI) program eligibility
+- Community Eligibility Provision (CEP) for food program participation
+- Statewide public reporting on student demographics
+
+:::note Impact
+Accurate EL data reporting is essential for various educational programs, funding allocation, and analytical purposes. LEA personnel responsible for PIMS-related data must collaborate closely to review, edit, and verify all information prior to final submission.
+:::
+
+## Collection Overview
+
+### Who Must Report
+
+The following entities must report data for all students enrolled on the first business day in October:
+
+| Entity Type | Description |
+|------------|-------------|
+| SD | School Districts |
+| SJCI | State Juvenile Correctional Institutions |
+| IU | Intermediate Units |
+| APS | Approved Private Schools |
+| CS | Charter Schools (including cyber) |
+| PRRI | Private Residential Rehabilitation Institutions |
+| CTC | Career and Technical Centers |
+
+### Submission Process
+
+1. **Collection Window**
+   - LEAs gather required data
+   - Review for accuracy and completeness
+   - Prepare for submission
+
+2. **Certification**
+   - Complete LEA Profile
+   - Submit Accuracy Certification Statement (ACS)
+   - Chief School Administrator (CSA) signature required
+
+:::tip Best Practice
+Ensure all reporting LEA personnel collaborate closely to verify accuracy before final submission. Regular data reviews can prevent common reporting errors.
+:::
+
+## Identification and Reclassification
+
+### EL Status Codes
+
+All students must be assigned one of the following status codes:
+
+| Code | Status | Description |
+|------|--------|-------------|
+| 99 | Never EL | Student has never been identified as an English Learner |
+| 01 | Current EL | Current EL student, not LIFE |
+| 06 | Current EL LIFE | Current EL student with Limited or Interrupted Formal Education |
+| 03 | Monitoring Year 1 | Former EL in first year of monitoring |
+| 04 | Monitoring Year 2 | Former EL in second year of monitoring |
+| 07 | Monitoring Year 3 | Former EL in third year of monitoring |
+| 08 | Monitoring Year 4 | Former EL in fourth year of monitoring |
+| 05 | Completed | Former EL, completed monitoring period |
+
+### Required Data Fields
+
+#### Core Fields
+
+| Field Number | Name | Description | Required For |
+|--------------|------|-------------|--------------|
+| 41 | EL Status | Current EL classification | All students |
+| 45 | LIEP Type | Language Instruction Program type | Current EL students |
+| 68 | First ELD Date | Initial ELD program enrollment | Current/Former EL |
+| 95 | Title III Eligibility | Title III service eligibility | Current EL students |
+| 110 | US School Entry | First US school enrollment date | All EL students |
+| 123 | Home Language | Primary home language code | All students |
+| 125 | Years in US Schools | Cumulative US education years | All students |
+
+:::caution Pre-K Student Requirements
+Pre-K students identified as EL must be screened upon entering kindergarten. If they do not meet EL criteria during kindergarten screening, their status should be updated to `99 - Never EL`.
+:::
+
+## EL-Related Data Collections
+
+### C1 EL Coordinator Requirements
+
+#### Reporting Requirements
+
+1. All LEAs must designate at least one EL Coordinator
+2. Up to four coordinators may be reported
+3. Contact information must remain current
+4. Required even for LEAs with no current EL students
+
+### Title III Nonpublic Student Count
+
+#### School District Requirements
+
+1. Report October Title III Nonpublic Student Count data
+2. Consult with nonpublic schools within district boundaries
+3. Count ELs and immigrant students for Title III allocations
+4. Report zero values if no nonpublic students to report
+
+## Internal Snapshots
+
+### ACCESS Testing Requirements
+
+#### Who Must Report
+- School Districts
+- Comprehensive career and technical centers
+- Charter schools
+
+#### ACCESS for ELLs Accountability Criteria
+
+Students are included if they meet both conditions:
+- EL Status (Field 41) = `01` or `06`
+- LIEP Type (Field 45) ≠ `98`
+
+:::tip Verification Process
+Run these reports in sequence:
+1. Pre-snap Verification Report-3
+2. Pre-Snap ACCESS for ELLs Accountability Report
+3. ACCESS for ELLs Accountability – ACS
+:::
+
+## Frequently Asked Questions
+
+<details>
+<summary>How should pre-K EL students be handled upon entering kindergarten?</summary>
+
+Pre-K students identified as EL must be screened when they enter kindergarten. If they do not meet the criteria for EL status after screening, their status can be changed to `99 - Never EL`.
+</details>
+
+<details>
+<summary>How are nonpublic students included in Title III services?</summary>
+
+Nonpublic students receive Title III services only if they participate in Title III within their LEA's boundaries. LEAs must consult with nonpublic schools to confirm participation and allocate Title III services appropriately.
+</details>
+
+<details>
+<summary>If a student has exited EL services, are they still required to take ACCESS for ELLs tests?</summary>
+
+Yes. Students who have exited EL services are required to participate in ACCESS for ELLs testing as part of annual federal requirements.
+</details>
+
+<details>
+<summary>How should an LEA report a student as "Current EL" when parents have refused services?</summary>
+
+Report the student as EL in Field 41 with `01` (Current EL) or `06` (Current EL - LIFE), even if parents have opted out. Set LIEP Type (Field 45) to `27 - Parent refusal`.
+</details>
+
+<details>
+<summary>Can a student previously identified as EL be re-identified if they struggle academically?</summary>
+
+Yes. If a student who exited EL services faces academic challenges related to language, re-identification is warranted. Review the guidelines for reclassification, monitoring, and re-designation.
+</details>
+
+<details>
+<summary>What if a student moves out of the U.S. and later re-enrolls?</summary>
+
+The calculation for Years in US Schools is cumulative, so time spent in the U.S. prior to the move would count towards their total upon re-enrollment.
+</details>
+
+<details>
+<summary>Do all immigrant students need to be coded as EL?</summary>
+
+No. A student may qualify as an immigrant without meeting the criteria for EL. Immigrant status is based on birth location and enrollment history, while EL status is determined by language proficiency screenings.
+</details>
+
+## Contact Information
+
+For additional questions or specific guidance, contact the Data Quality Team:
+
+[RA-DDQDataCollection@pa.gov](mailto:RA-DDQDataCollection@pa.gov)
+
+:::tip Additional Resources
+For detailed instructions and the latest updates, refer to the full [PIMS Manual](https://www.education.pa.gov/pims).
+:::
