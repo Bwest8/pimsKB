@@ -87,10 +87,10 @@ function Features() {
 }
 function QuickLinks() {
   const links = [
-    { title: "Data Collection Calendar", href: "/docs/calendar" },
+    { title: "Data Collection Calendar", href: "/docs/intro" },
     { title: "Reporting Templates", href: "/docs/templates" },
-    { title: "Error Code Reference", href: "/docs/error-codes" },
-    { title: "PIMS Updates", href: "/docs/updates" },
+    { title: "Error Code Reference", href: "/docs/intro" },
+    { title: "PIMS Updates", href: "/docs/intro" },
   ];
 
   return (
@@ -128,7 +128,7 @@ function Support() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            to="/docs/contact"
+            to="/docs/intro"
             className="button button--outline button--primary flex items-center"
           >
             <Users className="w-5 h-5 mr-2" />
