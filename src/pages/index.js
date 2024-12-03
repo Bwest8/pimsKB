@@ -1,135 +1,146 @@
 import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
-import { Database, BarChart3, Users, School } from "lucide-react";
+import { BookOpen, FileQuestion, Database, Users, Phone } from "lucide-react";
 
-function HomepageHeader() {
+function Hero() {
   const { siteConfig } = useDocusaurusContext();
+
   return (
-    <header
-      className={clsx("hero", "py-16 lg:py-24")}
-      style={{ backgroundColor: "#1e40af" }}
-    >
-      <div className="container">
-        <div className="flex flex-col items-center space-y-8 text-center">
-          <div className="space-y-4 max-w-[800px]">
-            <Heading
-              as="h1"
-              className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
-              style={{ color: "#ffffff" }}
-            >
-              {siteConfig.title}
-            </Heading>
-            <p
-              className="text-xl md:text-2xl font-['InterVariable']"
-              style={{ color: "rgba(255, 255, 255, 0.8)" }}
-            >
-              {siteConfig.tagline}
-            </p>
-          </div>
-          <div className="flex gap-4">
+    <section className="px-4 py-24 bg-gradient-to-br from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center space-y-8">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white dark:text-gray-100 tracking-tight leading-tight">
+            {siteConfig.title}
+          </h1>
+          <p className="text-lg md:text-xl text-blue-100 dark:text-blue-200 max-w-3xl mx-auto">
+            Your comprehensive resource for managing and understanding the
+            Pennsylvania Information Management System (PIMS)
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              className="button button--lg button--primary"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#1e40af",
-                borderColor: "#ffffff",
-              }}
               to="/docs/intro"
+              className="button button--lg button--primary"
             >
               Get Started
             </Link>
             <Link
-              className="button button--lg button--outline"
-              style={{
-                color: "#ffffff",
-                borderColor: "#ffffff",
-              }}
               to="/docs/templates"
+              className="button button--lg button--secondary"
             >
-              View Templates
+              Data Templates
             </Link>
           </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 }
 
+const FeatureCard = ({ icon: Icon, title, description }) => (
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col items-center text-center">
+    <Icon size={48} className="text-blue-500 mb-4" />
+    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+      {title}
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400">{description}</p>
+  </div>
+);
+
 function Features() {
+  const features = [
+    {
+      icon: BookOpen,
+      title: "Comprehensive Guides",
+      description:
+        "Step-by-step instructions for data entry, validation, and reporting processes.",
+    },
+    {
+      icon: FileQuestion,
+      title: "Troubleshooting Tips",
+      description:
+        "Common issues and their solutions to help you quickly resolve problems.",
+    },
+    {
+      icon: Database,
+      title: "Data Standards",
+      description:
+        "Detailed information on PIMS data standards and best practices for data management.",
+    },
+  ];
+
   return (
-    <section
-      className="py-16 lg:py-24"
-      style={{ backgroundColor: "var(--ifm-background-color)" }}
-    >
-      <div className="container">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div
-            className="flex flex-col items-start p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: "var(--ifm-card-background-color)" }}
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-12">
+          Resources for Data Administrators
+        </h2>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function QuickLinks() {
+  const links = [
+    { title: "Data Collection Calendar", href: "/docs/calendar" },
+    { title: "Reporting Templates", href: "/docs/templates" },
+    { title: "Error Code Reference", href: "/docs/error-codes" },
+    { title: "PIMS Updates", href: "/docs/updates" },
+  ];
+
+  return (
+    <section className="px-4 py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto max-w-4xl">
+        <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">
+          Quick Links
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              to={link.href}
+              className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md text-blue-600 dark:text-blue-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
+            >
+              {link.title}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Support() {
+  return (
+    <section className="px-4 py-16 bg-blue-50 dark:bg-gray-800">
+      <div className="container mx-auto max-w-4xl text-center">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          Need Additional Support?
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 mb-6">
+          Our team is here to help you with any questions or issues you may
+          encounter.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/docs/contact"
+            className="button button--outline button--primary flex items-center"
           >
-            <div
-              className="p-2 rounded-lg mb-4"
-              style={{ backgroundColor: "#dbeafe" }}
-            >
-              <Database className="w-6 h-6" style={{ color: "#1e40af" }} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2 font-['InterVariable']">
-              Data Management
-            </h3>
-            <p
-              className="font-['InterVariable']"
-              style={{ color: "var(--ifm-color-emphasis-700)" }}
-            >
-              Efficiently store and manage data using the eScholar data
-              warehouse model with standardized templates.
-            </p>
-          </div>
-          <div
-            className="flex flex-col items-start p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: "var(--ifm-card-background-color)" }}
+            <Users className="w-5 h-5 mr-2" />
+            <span>Contact Support Team</span>
+          </Link>
+          <Link
+            to="tel:+18005551234"
+            className="button button--outline button--secondary flex items-center"
           >
-            <div
-              className="p-2 rounded-lg mb-4"
-              style={{ backgroundColor: "#dbeafe" }}
-            >
-              <BarChart3 className="w-6 h-6" style={{ color: "#1e40af" }} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2 font-['InterVariable']">
-              Analytics & Reporting
-            </h3>
-            <p
-              className="font-['InterVariable']"
-              style={{ color: "var(--ifm-color-emphasis-700)" }}
-            >
-              Access comprehensive analytics and reporting tools to make
-              data-driven decisions.
-            </p>
-          </div>
-          <div
-            className="flex flex-col items-start p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: "var(--ifm-card-background-color)" }}
-          >
-            <div
-              className="p-2 rounded-lg mb-4"
-              style={{ backgroundColor: "#dbeafe" }}
-            >
-              <Users className="w-6 h-6" style={{ color: "#1e40af" }} />
-            </div>
-            <h3 className="text-lg font-semibold mb-2 font-['InterVariable']">
-              Collaboration
-            </h3>
-            <p
-              className="font-['InterVariable']"
-              style={{ color: "var(--ifm-color-emphasis-700)" }}
-            >
-              Foster collaboration between PDE and local education agencies
-              across the commonwealth.
-            </p>
-          </div>
+            <Phone className="w-5 h-5 mr-2" />
+            <span>Call Helpline</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -139,11 +150,14 @@ function Features() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title="Home" description="Resources for PIMS">
-      <HomepageHeader />
-      <main>
-        <Features />
-      </main>
+    <Layout
+      title={`Home | ${siteConfig.title}`}
+      description="Pennsylvania Information Management System (PIMS) Documentation and Resources"
+    >
+      <Hero />
+      <Features />
+      <QuickLinks />
+      <Support />
     </Layout>
   );
 }
