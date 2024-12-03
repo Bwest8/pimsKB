@@ -75,67 +75,82 @@ export default function Badge({ color = 'optional', children, length }) {
   }, []);
 
   return (
-    <style>{`
-      @media screen and (max-width: 996px) {
-        .badge-tooltip {
-          display: none !important;
+    <>
+      <style>{`
+        @media screen and (max-width: 996px) {
+          .badge-tooltip {
+            display: none !important;
+          }
+          .badge-hover {
+            cursor: default !important;
+            transform: none !important;
+            box-shadow: none !important;
+          }
+          .badge {
+            height: 1.25rem !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+            font-size: 0.65rem !important;
+          }
+          .badge .icon {
+            width: 0.75rem !important;
+            height: 0.75rem !important;
+            margin-right: 0.25rem !important;
+          }
         }
-        .badge-hover {
-          cursor: default !important;
-          transform: none !important;
-          box-shadow: none !important;
-        }
-      }
-    `}
-    </style>,
-    <span
-      ref={badgeRef}
-      className={`
-        relative inline-flex items-center px-3 py-1 text-[0.7rem] font-bold rounded-md
-        border border-solid
-        ${colorClasses[color]}
-        ${borderClasses[color]}
-        transform transition-transform duration-200 ease-in-out
-        hover:shadow-md hover:-translate-y-0.5 badge-hover
-        cursor-help
-        group
-        mx-1 my-0.5
-      `}
-    >
-      <Icon className="w-3.5 h-3.5 mr-1.5" />
-      {length ? (
-        <>
-          Max Length: <code className="ml-1 font-mono">{length}</code>
-        </>
-      ) : (
-        children || colorTextMap[color]
-      )}
+      `}</style>
       <span
-        ref={tooltipRef}
+        ref={badgeRef}
         className={`
-          badge-tooltip
-          absolute ${tooltipPosition === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'}
-          ${tooltipAlignment === 'left' ? 'left-0' : tooltipAlignment === 'right' ? 'right-0' : 'left-1/2 -translate-x-1/2'}
-          w-max max-w-xs px-3 py-2 text-[0.675rem] leading-5
-          bg-gray-900 text-gray-100 rounded-md
-          opacity-0 invisible group-hover:opacity-100 group-hover:visible
-          transition-opacity duration-200 ease-in-out
-          dark:bg-gray-800 dark:text-gray-200
-          z-10 shadow-lg
+          badge
+          relative inline-flex items-center px-3 h-6 text-[0.7rem] font-bold rounded-md
+          border border-solid
+          ${colorClasses[color]}
+          ${borderClasses[color]}
+          transform transition-transform duration-200 ease-in-out
+          hover:shadow-md hover:-translate-y-0.5 badge-hover
+          cursor-help
+          group
+          mx-1 my-0.5
         `}
-        role="tooltip"
       >
-        {length ? `This field has a maximum length of: ${length}` : tooltipTextMap[color]}
-        <span 
+        <Icon className="icon w-3.5 h-3.5 mr-1.5 flex-shrink-0" />
+        <span className="inline-flex items-center">
+          {length ? (
+            <>
+              Max Length: <code className="ml-1 font-mono">{length}</code>
+            </>
+          ) : (
+            children || colorTextMap[color]
+          )}
+        </span>
+        <span
+          ref={tooltipRef}
           className={`
-            absolute ${tooltipPosition === 'top' ? 'bottom-0 -mb-2' : 'top-0 -mt-2'}
-            left-1/2 -translate-x-1/2
-            border-8 border-transparent
-            ${tooltipPosition === 'top' ? 'border-t-gray-900 dark:border-t-gray-800' : 'border-b-gray-900 dark:border-b-gray-800'}
+            badge-tooltip
+            absolute ${tooltipPosition === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'}
+            ${tooltipAlignment === 'left' ? 'left-0' : tooltipAlignment === 'right' ? 'right-0' : 'left-1/2 -translate-x-1/2'}
+            w-max max-w-xs px-3 py-2 text-[0.675rem] leading-5
+            bg-gray-900 text-gray-100 rounded-md
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible
+            transition-opacity duration-200 ease-in-out
+            dark:bg-gray-800 dark:text-gray-200
+            z-10 shadow-lg
           `}
-          aria-hidden="true"
-        ></span>
+          role="tooltip"
+        >
+          {length ? `This field has a maximum length of: ${length}` : tooltipTextMap[color]}
+          <span 
+            className={`
+              absolute ${tooltipPosition === 'top' ? 'bottom-0 -mb-2' : 'top-0 -mt-2'}
+              left-1/2 -translate-x-1/2
+              border-8 border-transparent
+              ${tooltipPosition === 'top' ? 'border-t-gray-900 dark:border-t-gray-800' : 'border-b-gray-900 dark:border-b-gray-800'}
+            `}
+            aria-hidden="true"
+          ></span>
+        </span>
       </span>
-    </span>
+    </>
   );
 }
