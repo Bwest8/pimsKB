@@ -2,22 +2,24 @@
 title: Course Instructor Template
 description: Course Instructor Template Documentation
 ---
-import Badge from '@site/src/components/badges/badges';
-import TemplateCard from '@site/src/components/templateCard/templateCard';
+
+import Badge from "@site/src/components/badges/badges";
+import TemplateCard from "@site/src/components/templateCard/templateCard";
+import { EScholar } from "@site/src/components/escholar/EScholar";
 
 <TemplateCard
   fields={22}
   collected={8}
-  targetTables={['CRSE_INSTRUCT']}
+  targetTables={["CRSE_INSTRUCT"]}
   dependencies={[
-    { label: 'Course', link: '/docs/templates/course' },
-    { label: 'Staff', link: '/docs/templates/staff' }
+    { label: "Course", link: "/docs/templates/course" },
+    { label: "Staff", link: "/docs/templates/staff" },
   ]}
 />
 
 ## Template Description
 
-The Course Instructor Template is used to identify the instructor(s) of each section of every course reported in the Course Template. 
+The Course Instructor Template is used to identify the instructor(s) of each section of every course reported in the Course Template.
 
 The Course Instructor Template should be submitted in a cumulative fashion so that the primary instructor associated with each section and each course are reported for the entire school year.
 
@@ -27,13 +29,17 @@ The Course Instructor Template should be submitted in a cumulative fashion so th
 - Teachers who are terminated during the school year are not reported unless the course they were teaching also ended with their departure.
 - Retired teachers may be reported if they taught a portion of the class prior to their retirement.
 - Long term substitutes are reported when they are the teacher of record, or when they are a professional or temporary professional employee.
-:::
+  :::
 
 ## Template Specifications {#template-specs}
 
 ---
+
 ### 1 - SUBMITTING AUN
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={9} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={9} />
+</p>
 
 The unique, 9-digit AUN assigned by the PDE.
 
@@ -43,13 +49,18 @@ The unique, 9-digit AUN assigned by the PDE.
 All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)
 
 `123456789`
+
 </details>
 
-**eScholar Name**: `DISTRICT CODE`
+<EScholar fieldName="SUBMITTING DISTRICT CODE" />
 
 ---
+
 ### 2 - SCHOOL NUMBER
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={4} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={4} />
+</p>
 
 The PDE defined 4-digit code identifying the school.
 
@@ -59,13 +70,18 @@ The PDE defined 4-digit code identifying the school.
 All LEA and School Numbers can be found on the [EdNA website](http://www.edna.pa.gov/Screens/wfHome.aspx)
 
 `1234`
+
 </details>
 
-**eScholar Name**: `LOCATION CODE`
+<EScholar fieldName="LOCATION CODE" />
 
 ---
+
 ### 3 - SCHOOL YEAR DATE
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={10} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={10} />
+</p>
 
 A single date (June 30), the last day of the current school year indicating the whole school year.
 
@@ -73,31 +89,45 @@ A single date (June 30), the last day of the current school year indicating the 
 <summary>**Sample / Valid Value:**</summary>
 
 `2024-06-30`
+
 </details>
 
 ---
+
 ### 4-7
+
 Fields not Collected. Must be delimited in template file.
 
 ---
-### 8 - PRIMARY INSTRUCTOR ID
-<p><Badge color="required" /> <Badge color="updateable" /> <Badge length={7} /></p>
 
-A unique identifier for all instructors, regardless of whether they hold a PA certificate; the 7-digit Professional Personnel ID (PPID).  Professional personnel can obtain a PPID from the TIMS system. Helpful information is found at the PDE website > Educators > Certification.
+### 8 - PRIMARY INSTRUCTOR ID
+
+<p>
+  <Badge color="required" /> <Badge color="updateable" /> <Badge length={7} />
+</p>
+
+A unique identifier for all instructors, regardless of whether they hold a PA certificate; the 7-digit Professional Personnel ID (PPID). Professional personnel can obtain a PPID from the TIMS system. Helpful information is found at the PDE website > Educators > Certification.
 
 <details open>
 <summary>**Sample / Valid Value:**</summary>
 
 `0123456`
+
 </details>
 
 ---
+
 ### 9-16
+
 Fields not Collected. Must be delimited in template file.
 
 ---
+
 ### 17 - SUPPLEMENTARY COURSE DIFFERENTIATOR
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={2} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={2} />
+</p>
 
 This field is used to help make a course unique where the same COURSE CODE is offered in more than one-time period during the school year. This field will represent the general span of time in which a course and its sections are offered.
 
@@ -109,27 +139,39 @@ This field should match the Supplementary Course Differentiator (Semester) colum
 <summary>**Sample / Valid Value:**</summary>
 
 See [Appendix O](docs/appendix/appendix-O.mdx) for a complete list of valid values.
+
 </details>
 
 ---
+
 ### 18
+
 Field not Collected. Must be delimited in template file.
 
 ---
+
 ### 19 - COURSE CODE LONG
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={12} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={12} />
+</p>
 
 The unique, local, LEA-specific COURSE CODE.
 
 :::warning[Business Rules:]
-- Courses may have multiple sections. 
-- Each course should have a single COURSE CODE LONG.   
+
+- Courses may have multiple sections.
+- Each course should have a single COURSE CODE LONG.
 - **Do not** assign separate course codes to sections of the same course.
-:::
+  :::
 
 ---
+
 ### 20 - PRIMARY INSTRUCTION LANGUAGE CODE
-<p><Badge color="optional" /> <Badge color="updateable" /> <Badge length={4} /></p>
+
+<p>
+  <Badge color="optional" /> <Badge color="updateable" /> <Badge length={4} />
+</p>
 
 The primary language in which a course is taught.
 
@@ -141,15 +183,22 @@ This field should be left blank for courses taught in US English.
 <summary>**Sample / Valid Value:**</summary>
 
 See [Appendix J](docs/appendix/appendix-J.mdx) for a complete list of valid values.
+
 </details>
 
 ---
+
 ### 21
+
 Field not Collected. Must be delimited in template file.
 
 ---
+
 ### 22 - SECTION CODE LONG
-<p><Badge color="required" /> <Badge color="key" /> <Badge length={25} /></p>
+
+<p>
+  <Badge color="required" /> <Badge color="key" /> <Badge length={25} />
+</p>
 
 Class section number assigned by LEA to identify distinct classes.
 
