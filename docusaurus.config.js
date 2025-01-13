@@ -29,17 +29,17 @@ const config = {
         indexDocs: true, // Index documentation pages
         indexBlog: false, // Do not index blog posts
         indexPages: false, // Do not index other pages
-        docsRouteBasePath: '/', // Base route for documentation
-        blogRouteBasePath: '/blog', // Base route for blog
+        docsRouteBasePath: "/", // Base route for documentation
+        blogRouteBasePath: "/blog", // Base route for blog
         hashed: false, // No hashed query for index
-        docsDir: 'docs', // Directory for docs
-        blogDir: 'blog', // Directory for blog
+        docsDir: "docs", // Directory for docs
+        blogDir: "blog", // Directory for blog
         removeDefaultStopWordFilter: false, // Keep default stop words
         highlightSearchTermsOnTargetPage: true, // Highlight search terms on target page
         searchResultLimits: 8, // Limit search results
         searchResultContextMaxLength: 50, // Max length of search result context
         translations: {}, // Add translations if needed
-        ignoreFiles: ['**/meta/**'], // Ignore files with 'meta' in the path
+        ignoreFiles: ["**/meta/**"], // Ignore files with 'meta' in the path
       },
     ],
     require.resolve("docusaurus-plugin-image-zoom"),
@@ -148,6 +148,7 @@ const config = {
           },
         ],
       },
+      scrollToTop: false,
       footer: {
         style: "light",
         logo: {

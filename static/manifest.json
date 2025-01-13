@@ -4,8 +4,8 @@
   "theme_color": "{{themeColor}}",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "/docs/intro",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "img/pimskb-logo-pwa.png",
