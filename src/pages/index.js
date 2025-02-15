@@ -1,15 +1,63 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { BookOpen, FileQuestion, Database, Users, Phone } from "lucide-react";
 
+// Starfield Component
+const Starfield = () => {
+  const STAR_COUNT = 100;
+
+  const randomPercent = () => `${Math.floor(Math.random() * 101)}%`;
+  const randomDelay = (max = 3) => `${(Math.random() * max).toFixed(2)}s`;
+  const randomSize = (min = 1, max = 3) =>
+    (Math.random() * (max - min) + min).toFixed(1);
+  const randomHue = () => Math.floor(Math.random() * 360);
+
+  const stars = useMemo(() => {
+    return Array.from({ length: STAR_COUNT }, (_, i) => {
+      const hue = randomHue();
+      return {
+        id: i,
+        top: randomPercent(),
+        left: randomPercent(),
+        delay: randomDelay(),
+        size: randomSize(),
+        color: `hsl(${hue}, 100%, 80%)`,
+      };
+    });
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="absolute animate-pulse" // Tailwind's simple pulsing animation
+          style={{
+            top: star.top,
+            left: star.left,
+            animationDelay: star.delay,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            backgroundColor: star.color,
+            borderRadius: "50%",
+            boxShadow: `0 0 6px 2px ${star.color}`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Modified Hero Component
 function Hero() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <section className="px-4 py-24 bg-gradient-to-br from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600">
-      <div className="container mx-auto max-w-4xl">
+    <section className="px-4 py-24 bg-gradient-to-br from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600 relative overflow-hidden">
+      <Starfield />
+      <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-8">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white dark:text-gray-100 tracking-tight leading-tight">
             {siteConfig.title}

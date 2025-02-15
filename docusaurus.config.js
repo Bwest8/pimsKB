@@ -148,7 +148,11 @@ const config = {
           },
         ],
       },
-      scrollToTop: false,
+      scrollToTop: true,
+      scrollToTopOptions: {
+        smooth: true,
+        offset: 100,
+      },
       footer: {
         style: "light",
         logo: {

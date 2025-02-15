@@ -4,6 +4,13 @@
   "outputDirectory": "build",
   "routes": [
     {
+      "src": "^/$",
+      "status": 308,
+      "headers": {
+        "Location": "/docs/"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {
