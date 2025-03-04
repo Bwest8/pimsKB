@@ -14,6 +14,7 @@
   font-display: swap;
   src: url("/fonts/InterVariable.woff2") format("woff2");
 }
+
 @font-face {
   font-family: InterVariable;
   font-style: italic;
@@ -21,6 +22,7 @@
   font-display: swap;
   src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
 }
+
 /* You can override the default Infima variables here. */
 :root {
   --breadcrumb-bg: var(--ifm-background-color);
@@ -28,55 +30,91 @@
   --breadcrumb-border: 1px solid var(--ifm-color-emphasis-100);
   --breadcrumb-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   --breadcrumb-hover-color: var(--ifm-color-primary);
-  --ifm-color-primary: #3a5bc7;
-  --ifm-color-primary-dark: #3451b3;
-  --ifm-color-primary-darker: #3149a9;
-  --ifm-color-primary-darkest: #28398b;
-  --ifm-color-primary-light: #4f6dcf;
-  --ifm-color-primary-lighter: #5975d2;
-  --ifm-color-primary-lightest: #7790db;
-  --ifm-navbar-background-color: #f4f4f5;
+  --ifm-color-primary: #0050d8;
+  /* U.S. Web Design System blue */
+  --ifm-color-primary-dark: #1a4480;
+  /* USWDS darker blue */
+  --ifm-color-primary-darker: #162e51;
+  /* USWDS darkest blue */
+  --ifm-color-primary-darkest: #0b1526;
+  /* Even darker for contrast */
+  --ifm-color-primary-light: #2672de;
+  /* USWDS lighter blue */
+  --ifm-color-primary-lighter: #4f97d1;
+  /* USWDS blue-cool-40v */
+  --ifm-color-primary-lightest: #73b3e7;
+  /* USWDS blue-cool-30v */
+  --ifm-navbar-background-color: #f0f0f0;
+  /* Standard light gray */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif;
   --theme-color-light: #ffffff;
-  --theme-color-dark: #262626;
-  --ifm-hero-background-color: #3a5bc7;
+  /* Standard white */
+  --theme-color-dark: #1b1b1b;
+  /* Section 508 compliant dark gray */
+  --ifm-hero-background-color: #0050d8;
+  /* USWDS primary blue */
   --ifm-hero-text-color: #ffffff;
+  /* Contrast compliant white */
   --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f4f4f5;
-  --ifm-link-color: #3a5bc7;
-  --ifm-button-background-color: #3a5bc7;
+  /* Standard white */
+  --ifm-background-surface-color: #f0f0f0;
+  /* Standard light gray */
+  --ifm-link-color: #0050d8;
+  /* USWDS blue */
+  --ifm-button-background-color: #0050d8;
+  /* USWDS blue */
   --ifm-button-color: #ffffff;
-  --sidebar-activeselect-background: #567de823;
+  /* Contrast compliant white */
+  --sidebar-activeselect-background: #e9f1fa;
+  /* Light blue background */
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode using U.S. Web Design System (USWDS) standards */
 [data-theme="dark"] {
   --breadcrumb-bg: var(--ifm-background-color);
   --breadcrumb-color: var(--ifm-color-content);
   --breadcrumb-border: 1px solid var(--ifm-color-emphasis-200);
   --breadcrumb-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  --ifm-color-primary: #0090ff;
-  --ifm-color-primary-dark: #0081e6;
-  --ifm-color-primary-darker: #007ad9;
-  --ifm-color-primary-darkest: #0064b3;
-  --ifm-color-primary-light: #1a9bff;
-  --ifm-color-primary-lighter: #26a1ff;
-  --ifm-color-primary-lightest: #4db2ff;
-  --ifm-navbar-background-color: #262626;
+  --ifm-color-primary: #73b3e7;
+  /* USWDS blue-cool-30v */
+  --ifm-color-primary-dark: #4f97d1;
+  /* USWDS blue-cool-40v */
+  --ifm-color-primary-darker: #2672de;
+  /* USWDS lighter blue */
+  --ifm-color-primary-darkest: #0050d8;
+  /* USWDS blue */
+  --ifm-color-primary-light: #8ec8f5;
+  /* USWDS blue-cool-20v */
+  --ifm-color-primary-lighter: #a8daff;
+  /* USWDS blue-cool-10v */
+  --ifm-color-primary-lightest: #d4e5ff;
+  /* USWDS blue-cool-5v */
+  --ifm-navbar-background-color: #1b1b1b;
+  /* USWDS gray-90 */
   --ifm-menu-color-background-active: var(--ifm-navbar-background-color);
   --ifm-font-family-base: "InterVariable", sans-serif;
   --theme-color-light: #ffffff;
-  --theme-color-dark: #262626;
-  --ifm-hero-background-color: #0090ff;
+  --theme-color-dark: #1b1b1b;
+  /* Section 508 compliant dark gray */
+  --ifm-hero-background-color: #1a4480;
+  /* USWDS darker blue */
   --ifm-hero-text-color: #ffffff;
-  --ifm-background-color: #1a1a1a;
-  --ifm-background-surface-color: #262626;
-  --ifm-link-color: #0090ff;
-  --ifm-button-background-color: #0090ff;
+  /* Contrast compliant white */
+  --ifm-background-color: #171717;
+  /* USWDS gray-90 */
+  --ifm-background-surface-color: #1b1b1b;
+  /* USWDS gray-80 */
+  --ifm-link-color: #73b3e7;
+  /* USWDS blue-cool-30v */
+  --ifm-button-background-color: #2672de;
+  /* USWDS lighter blue */
   --ifm-button-color: #ffffff;
-  --search-local-highlight-color: #053757;
-  --sidebar-activeselect-background: #4db2ff1b;
+  /* Contrast compliant white */
+  --search-local-highlight-color: #162e51;
+  /* USWDS darkest blue */
+  --sidebar-activeselect-background: rgba(115, 179, 231, 0.1);
+  /* blue-cool-30v with opacity */
 }
 
 .menu__list {
@@ -85,34 +123,41 @@
 
 .menu__list .menu__link.menu__link--active {
   border-left-color: var(--ifm-color-primary) !important;
-  border-left-width: 4px; /* Increased from 0 for visibility */
+  border-left-width: 4px;
+  /* Increased from 0 for visibility */
   font-weight: bold;
-  color: var(
-    --ifm-color-primary
-  ); /* Ensures the text color matches the border */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: var(--ifm-color-primary);
+  /* Ensures the text color matches the border */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
 .menu__list a[href].menu__link.menu__link--active:not(.menu__link--sublist) {
   background: var(--sidebar-activeselect-background) !important;
   border-left-style: solid;
-  border-left-width: 2px; /* Make the active link more prominent */
-  border-top-left-radius: 2px; /* Soften the corners for a modern look */
+  border-left-width: 2px;
+  /* Make the active link more prominent */
+  border-top-left-radius: 2px;
+  /* Soften the corners for a modern look */
   border-bottom-left-radius: 2px;
-  padding-left: 16px !important; /* Increase padding for better alignment */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transition */
+  padding-left: 16px !important;
+  /* Increase padding for better alignment */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth background and text color transition */
 }
 
 /* Hover effect for menu links */
 .menu__list .menu__link:hover {
-  padding-left: 14px !important; /* Consistent padding with active state */
+  padding-left: 14px !important;
+  /* Consistent padding with active state */
   transition: background-color 0.3s ease, color 0.3s ease,
-    padding-left 0.3s ease; /* Smooth transition for hover effects */
+    padding-left 0.3s ease;
+  /* Smooth transition for hover effects */
   font-weight: bolder;
 }
 
 /* Light mode h3 header background for template specs */
-.markdown > h2#template-specs ~ h3 {
+.markdown>h2#template-specs~h3 {
   background-color: hsl(0, 0%, 95%);
   padding: 0.2em 0.5em;
   font-weight: bold;
@@ -126,38 +171,37 @@
 }
 
 /* Dark mode h3 header background for template specs */
-html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
+html[data-theme="dark"] .markdown>h2#template-specs~h3 {
   border-bottom: 0.1rem solid hsl(0, 0%, 40%);
   background-color: hsl(0, 0%, 22%);
   color: #ffffff;
 }
 
 /* Sidebar */
-.theme-doc-sidebar-item-category-level-1
-  > .menu__list-item-collapsible
-  .menu__link {
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
   font-weight: bold;
   line-height: 100%;
   text-transform: uppercase;
 }
 
-.theme-doc-sidebar-item-category-level-2
-  > .menu__list-item-collapsible
-  .menu__link {
+.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible .menu__link {
   font-weight: 600;
   line-height: 100%;
 }
 
 /* Sidebar: Table of Contents */
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible {
   border-bottom: 1px;
   border-bottom-style: solid;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2); /* Soft shadow for subtle depth */
-  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for subtle depth */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for the shadow effect */
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:hover {
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  /* More pronounced shadow on hover */
 }
 
 /* Right Sidebar: Table of Contents make active choice bold */
@@ -171,32 +215,41 @@ html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
 /* Navbar */
 /* Default styles for light mode */
 .navbar__item {
-  font-weight: 800; /* Set font weight to 800 */
-  padding: 8px 16px; /* Add padding between items */
-  border-radius: 4px; /* Add border-radius */
+  font-weight: 800;
+  /* Set font weight to 800 */
+  padding: 8px 16px;
+  /* Add padding between items */
+  border-radius: 4px;
+  /* Add border-radius */
   font-size: 16px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     border-radius 0.3s ease-in-out, padding 0.3s ease-in-out,
     font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
-  position: relative; /* Required for positioning the pseudo-element */
+  position: relative;
+  /* Required for positioning the pseudo-element */
 }
 
 /* Hover effect for navbar items in light mode */
 .navbar__item:hover {
-  background-color: var(
-    --ifm-color-emphasis-200
-  ); /* Gray background on hover */
-  color: var(--ifm-color-primary); /* Change text color on hover */
-  border-radius: 8px; /* Increase border-radius on hover */
+  background-color: var(--ifm-color-emphasis-200);
+  /* Gray background on hover */
+  color: var(--ifm-color-primary);
+  /* Change text color on hover */
+  border-radius: 8px;
+  /* Increase border-radius on hover */
 }
 
 /* Active navbar item styles in light mode with underline */
 .navbar .navbar__item.navbar__item--active {
-  font-weight: 900; /* Set font weight to 900 (extra bold) */
-  font-size: 18px; /* Increase font size */
+  font-weight: 900;
+  /* Set font weight to 900 (extra bold) */
+  font-size: 18px;
+  /* Increase font size */
   color: var(--ifm-color-primary);
-  padding: 8px 20px; /* Match hover padding */
-  border-radius: 10px; /* Match hover border-radius */
+  padding: 8px 20px;
+  /* Match hover padding */
+  border-radius: 10px;
+  /* Match hover border-radius */
   background-color: var(--ifm-color-emphasis-200);
 }
 
@@ -205,15 +258,20 @@ html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px; /* Distance from the text bottom */
-  height: 2px; /* Height of the underline */
-  background-color: var(--ifm-color-primary); /* Color of the underline */
-  transition: background-color 0.3s ease; /* Smooth transition for color change */
+  bottom: -10px;
+  /* Distance from the text bottom */
+  height: 2px;
+  /* Height of the underline */
+  background-color: var(--ifm-color-primary);
+  /* Color of the underline */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for color change */
 }
 
 /* Dark mode styles */
 [data-theme="dark"] .navbar__item {
-  --ifm-navbar-background-color: #262626; /* Navbar background color in dark mode */
+  --ifm-navbar-background-color: #262626;
+  /* Navbar background color in dark mode */
   font-weight: 800;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     border-radius 0.3s ease-in-out, padding 0.3s ease-in-out,
@@ -224,18 +282,25 @@ html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
 
 /* Hover effect for navbar items in dark mode */
 [data-theme="dark"] .navbar__item:hover {
-  background-color: #3a3a3a; /* Darker gray background on hover */
-  color: var(--ifm-color-primary-lighter); /* Lighter primary color on hover */
-  border-radius: 8px; /* Increase border-radius on hover */
+  background-color: #3a3a3a;
+  /* Darker gray background on hover */
+  color: var(--ifm-color-primary-lighter);
+  /* Lighter primary color on hover */
+  border-radius: 8px;
+  /* Increase border-radius on hover */
 }
 
 /* Active navbar item styles in dark mode with underline */
 [data-theme="dark"] .navbar .navbar__item.navbar__item--active {
-  font-weight: 900; /* Set font weight to 900 (extra bold) */
-  font-size: 18px; /* Increase font size */
+  font-weight: 900;
+  /* Set font weight to 900 (extra bold) */
+  font-size: 18px;
+  /* Increase font size */
   color: var(--ifm-color-primary-lighter);
-  padding: 8px 20px; /* Match hover padding */
-  border-radius: 10px; /* Match hover border-radius */
+  padding: 8px 20px;
+  /* Match hover padding */
+  border-radius: 10px;
+  /* Match hover border-radius */
 }
 
 [data-theme="dark"] .navbar .navbar__item.navbar__item--active::after {
@@ -243,25 +308,28 @@ html[data-theme="dark"] .markdown > h2#template-specs ~ h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px; /* Distance from the text bottom */
-  height: 2px; /* Height of the underline */
-  background-color: var(
-    --ifm-color-primary-lighter
-  ); /* Light primary color for underline in dark mode */
-  transition: background-color 0.3s ease; /* Smooth transition for color change */
+  bottom: -10px;
+  /* Distance from the text bottom */
+  height: 2px;
+  /* Height of the underline */
+  background-color: var(--ifm-color-primary-lighter);
+  /* Light primary color for underline in dark mode */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for color change */
 }
 
 /* Adjust footer link colors */
-#__docusaurus > footer > div > div.text--center > div > a {
+#__docusaurus>footer>div>div.text--center>div>a {
   color: unset;
 }
 
-#__docusaurus > footer > div > div.text--center > div > a:hover {
+#__docusaurus>footer>div>div.text--center>div>a:hover {
   color: var(--ifm-link-color);
   text-decoration: underline;
 }
 
 @media screen and (min-width: 997px) {
+
   /* Show inline table of contents on mobile only */
   div[class^="tableOfContentsInline"] {
     display: none;

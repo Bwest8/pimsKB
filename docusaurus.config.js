@@ -22,37 +22,23 @@ const config = {
   },
 
   plugins: [
-    [
-      "@orama/plugin-docusaurus-v3",
-      {
-        searchbox: {
-          placeholder: "Search...",
-        },
-        searchButton: {
-          text: "Click here to search..."
-        }
-      },
-    ],
-    // require.resolve("docusaurus-lunr-search"),
     // [
-    //   require.resolve("docusaurus-plugin-search-local"),
+    //   "@orama/plugin-docusaurus-v3",
     //   {
-    //     indexDocs: true, // Index documentation pages
-    //     indexBlog: false, // Do not index blog posts
-    //     indexPages: false, // Do not index other pages
-    //     docsRouteBasePath: "/", // Base route for documentation
-    //     blogRouteBasePath: "/blog", // Base route for blog
-    //     hashed: false, // No hashed query for index
-    //     docsDir: "docs", // Directory for docs
-    //     blogDir: "blog", // Directory for blog
-    //     removeDefaultStopWordFilter: false, // Keep default stop words
-    //     highlightSearchTermsOnTargetPage: true, // Highlight search terms on target page
-    //     searchResultLimits: 8, // Limit search results
-    //     searchResultContextMaxLength: 50, // Max length of search result context
-    //     translations: {}, // Add translations if needed
-    //     ignoreFiles: ["**/meta/**"], // Ignore files with 'meta' in the path
-    //   }, 
+    //     searchbox: {
+    //       placeholder: "Search...",
+    //     },
+    //     searchButton: {
+    //       text: "Click here to search..."
+    //     },
+    //     resultMap: {
+    //       title: "name",
+    //       description: "content",
+    //       section: "category",
+    //     },
+    //   },
     // ],
+    require.resolve("docusaurus-lunr-search"),
     // require.resolve("docusaurus-plugin-image-zoom"),
     //require.resolve("docusaurus-plugin-search-local"),
     async function myPlugin(context, options) {
