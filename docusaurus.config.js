@@ -2,8 +2,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-// Load environment variables for build-time config (DOCSEARCH_*)
-import "dotenv/config";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -24,26 +22,22 @@ const config = {
   },
 
   plugins: [
-    // [
-    //   "@orama/plugin-docusaurus-v3",
-    //   {
-    //     searchbox: {
-    //       placeholder: "Search...",
-    //     },
-    //     searchButton: {
-    //       text: "Click here to search..."
-    //     },
-    //     resultMap: {
-    //       title: "name",
-    //       description: "content",
-    //       section: "category",
-    //     },
-    //   },
-    // ],
-  // Remove Lunr search plugin in favor of Algolia DocSearch
-  // require.resolve("docusaurus-lunr-search"),
-    // require.resolve("docusaurus-plugin-image-zoom"),
-    //require.resolve("docusaurus-plugin-search-local"),
+    [
+      "@orama/plugin-docusaurus-v3",
+      {
+        searchbox: {
+          placeholder: "Search...",
+        },
+        searchButton: {
+          text: "Search",
+        },
+        resultMap: {
+          title: "name",
+          description: "content",
+          section: "category",
+        },
+      },
+    ],
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
@@ -77,7 +71,7 @@ const config = {
       },
     ],
   ],
-  // Algolia DocSearch theme is automatically handled when configuring themeConfig.algolia
+  // Using Orama for local full‑text search
 
   presets: [
     [
@@ -111,18 +105,14 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ((() => {
-      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      const cfg = {
+    ({
       zoom: {
         selector: ".markdown :not(em) > img",
         background: {
           light: "#EEEEF0",
           dark: "#313131",
         },
-        config: {
-          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
-        },
+        config: {},
       },
       image: "img/pimskb-social-card.png",
       navbar: {
@@ -153,10 +143,7 @@ const config = {
         ],
       },
       scrollToTop: true,
-      scrollToTopOptions: {
-        smooth: true,
-        offset: 100,
-      },
+      scrollToTopOptions: { smooth: true, offset: 100 },
       footer: {
         style: "light",
         logo: {
@@ -167,22 +154,8 @@ const config = {
         },
         copyright: `Copyright © ${new Date().getFullYear()}  Commonwealth of Pennsylvania. All rights reserved.`,
       },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-      };
-      // Algolia DocSearch configuration
-      // Provide env-driven values with safe fallbacks to satisfy config validation
-      cfg.algolia = {
-        appId: process.env.DOCSEARCH_APP_ID || "DUMMY_APP_ID",
-        apiKey: process.env.DOCSEARCH_API_KEY || "DUMMY_SEARCH_API_KEY",
-        indexName: process.env.DOCSEARCH_INDEX_NAME || "DUMMY_INDEX",
-        contextualSearch: true,
-        searchPagePath: "search",
-      };
-      return cfg;
-    })()),
+      prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+    }),
 };
 
 export default config;
