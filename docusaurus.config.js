@@ -2,6 +2,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+// Load environment variables for build-time config (DOCSEARCH_*)
+import "dotenv/config";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,7 +40,8 @@ const config = {
     //     },
     //   },
     // ],
-    require.resolve("docusaurus-lunr-search"),
+  // Remove Lunr search plugin in favor of Algolia DocSearch
+  // require.resolve("docusaurus-lunr-search"),
     // require.resolve("docusaurus-plugin-image-zoom"),
     //require.resolve("docusaurus-plugin-search-local"),
     async function myPlugin(context, options) {
@@ -74,6 +77,7 @@ const config = {
       },
     ],
   ],
+  // Algolia DocSearch theme is automatically handled when configuring themeConfig.algolia
 
   presets: [
     [
@@ -107,7 +111,9 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    ((() => {
+      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      const cfg = {
       zoom: {
         selector: ".markdown :not(em) > img",
         background: {
@@ -165,7 +171,18 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-    }),
+      };
+      // Algolia DocSearch configuration
+      // Provide env-driven values with safe fallbacks to satisfy config validation
+      cfg.algolia = {
+        appId: process.env.DOCSEARCH_APP_ID || "DUMMY_APP_ID",
+        apiKey: process.env.DOCSEARCH_API_KEY || "DUMMY_SEARCH_API_KEY",
+        indexName: process.env.DOCSEARCH_INDEX_NAME || "DUMMY_INDEX",
+        contextualSearch: true,
+        searchPagePath: "search",
+      };
+      return cfg;
+    })()),
 };
 
 export default config;

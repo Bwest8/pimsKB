@@ -1,3 +1,7 @@
+# PIMS Knowledge Base
+
+Welcome to the Pennsylvania Information Management System (PIMS) Knowledge Base, also known as PIMS KB! This documentation has been converted from PDF to a web site for improved accessibility and navigation.
+
 # PIMS Knowledge Base (PIMS KB)
 
 Welcome to the Pennsylvania Information Management System (PIMS) Knowledge Base, also known as PIMS KB! This documentation has been converted from PDF to a web site for improved accessibility and navigation.
@@ -9,11 +13,6 @@ The Pennsylvania Information Management System (PIMS) is a collaborative effort 
 ## Key Purposes of PIMS
 
 PIMS serves several important purposes, including:
-
-- Meeting current state and federal reporting requirements
-- Improving education decision-making through the use of high-quality data and decision support tools
-- Providing longitudinal tracking of education progress over time and across LEAs
-- Reporting timely and accurate education data through standardized and ad hoc reporting capabilities
 
 ## Getting Started
 
